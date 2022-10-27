@@ -1,0 +1,10 @@
+- react:
+react react-dom react-router-dom
+
+- webpack:
+webpack weboack-cli babel-loader file-loader css-loader
+
+-babel: @babel/core @babel/preset-env @babel/preset-react
+
+-server:
+nodemon express
