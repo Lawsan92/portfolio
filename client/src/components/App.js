@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 
 import {
   About,
@@ -13,6 +13,8 @@ const App = () => {
 
   const [light, flipSwitch] = useState(true);
 
+  const contactRef = useRef()
+
   const toggle = useCallback(() => {
     flipSwitch(prevState => !prevState);
   }, []);
@@ -25,11 +27,11 @@ const App = () => {
       {/* <h1>Portfolio</h1>
       <p>{light ? 'is on' : 'turn on the light'}</p>
       <button onClick={() => {toggle()}}>Switch</button> */}
-      <NavBar/>
+      <NavBar contactRef={contactRef} />
       <About/>
       <Skills/>
       <Projects/>
-      <Contact/>
+      <Contact contactRef={contactRef} />
       <Footer/>
     </div>
   )

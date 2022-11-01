@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
-const NavBar = () => {
+const NavBar = ({ contactRef }) => {
+
   return (
     <section id='navbar'>
-      <h2>Home</h2>
-      <h2>About</h2>
-      <h2>Skills</h2>
-      <h2>Projects</h2>
-      <h2>Education</h2>
-      <h2>Contact Me</h2>
+      <div id='name'>
+      <h1>Lawrence Sanzogni</h1>
+      </div>
+      <div id='nav-buttons'>
+        <h3 id='nav-button'>Home</h3>
+        <h3 id='nav-button'>About</h3>
+        <h3 id='nav-button'>Skills</h3>
+        <h3 id='nav-button'>Projects</h3>
+        <h3 id='nav-button'>Education</h3>
+        <h3 id='nav-button' onClick={() => {contactRef.current.scrollIntoView()}}>Contact Me</h3>
+      </div>
     </section>
   )
 }
