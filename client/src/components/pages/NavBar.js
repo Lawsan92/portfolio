@@ -12,7 +12,7 @@ const NavBar = ({ contactRef }) => {
         <h3>About</h3>
         <h3>Skills</h3>
         <h3>Projects</h3>
-        <h3>Education</h3>
+        {/* <h3>Education</h3> */}
         <h3 onClick={() => {contactRef.current.scrollIntoView()}}>Contact Me</h3>
       </div>
     </section>

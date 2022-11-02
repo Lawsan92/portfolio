@@ -6,7 +6,9 @@ const Contact = ({ contactRef }) => {
   const renderContact = () => {
     return contacts.map((contact) => {
       return(
-        <img id='contact-icon' src={contact.url}/>
+        <a href={contact.href}>
+          <img src={contact.url}/>
+        </a>
       )
     })
   }
