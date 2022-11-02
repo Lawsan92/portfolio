@@ -15,7 +15,7 @@ const Skills = () => {
               <img src={icons[index].url} style={{ border: 'solid 1px', maxHeight: '80%' }}/>
             </div>
             <div id='row'>
-              <h3>{icons[mid].title}</h3>
+              <h3>{icons[index + mid].title}</h3>
               <img src={icons[index + mid].url} style={{ border: 'solid 1px' }}/>
             </div>
           </div>
