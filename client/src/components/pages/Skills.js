@@ -12,11 +12,11 @@ const Skills = () => {
           <div id='icon' key={index}>
             <div id='row'>
               <h3>{icons[index].title}</h3>
-              <img src={icons[index].url} style={{ border: 'solid 1px', maxHeight: '80%' }}/>
+              <img src={icons[index].url}/>
             </div>
             <div id='row'>
               <h3>{icons[index + mid].title}</h3>
-              <img src={icons[index + mid].url} style={{ border: 'solid 1px' }}/>
+              <img src={icons[index + mid].url}/>
             </div>
           </div>
         );
