@@ -10,11 +10,11 @@ const Skills = () => {
       while (index < mid) {
         return (
           <div id='icon' key={index}>
-            <div id='row1'>
+            <div id='row'>
               <h3>{icons[index].title}</h3>
               <img src={icons[index].url} style={{ border: 'solid 1px', maxHeight: '80%' }}/>
             </div>
-            <div id='row2'>
+            <div id='row'>
               <h3>{icons[mid].title}</h3>
               <img src={icons[index + mid].url} style={{ border: 'solid 1px' }}/>
             </div>
