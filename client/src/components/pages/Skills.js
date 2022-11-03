@@ -2,7 +2,7 @@ import React from 'react';
 
 import icons from '../../data/icons.js'
 
-const Skills = () => {
+const Skills = ({ skillsRef }) => {
 
   const mapIcons = () => {
     return icons.map((icon, index) => {
@@ -12,11 +12,11 @@ const Skills = () => {
           <div id='icon' key={index}>
             <div id='row'>
               <h3>{icons[index].title}</h3>
-              <img src={icons[index].url}/>
+              <img style={{margin: '10px'}} src={icons[index].url}/>
             </div>
             <div id='row'>
               <h3>{icons[index + mid].title}</h3>
-              <img src={icons[index + mid].url}/>
+              <img style={{margin: '10px'}} src={icons[index + mid].url}/>
             </div>
           </div>
         );
@@ -25,8 +25,8 @@ const Skills = () => {
   };
 
   return (
-    <section id='skills'>
-      <h1>Skills</h1>
+    <section id='skills' ref={skillsRef}>
+      <h1>{'Skills'}</h1>
       <div id='icons'>
         { mapIcons() }
       </div>

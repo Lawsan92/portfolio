@@ -1,5 +1,6 @@
 body {
   background-image: linear-gradient(white,  #C4A484);
+  margin: 0;
 }
 
 * {
@@ -8,7 +9,6 @@ body {
 }
 
 section {
-  margin: auto;
   width: 100%;
   /* border: solid 1px; */
   display: flex;
@@ -18,7 +18,7 @@ section {
 
 #navbar {
   height: 75px;
-  /* justify-content: space-evenly; */
+  background-color: white;
 }
 
 #name {
@@ -53,10 +53,11 @@ section {
 
 #about p {
   max-width: 50%;
+  font-size: 18px;
 }
 
 #portrait {
-  height: 300px;
+  height: 350px;
   border-radius: 20px;
   margin: 10px;
   flex-direction: column;
@@ -74,17 +75,28 @@ section {
 
 #icons {
   display: flex;
-  /* border: solid 1px red; */
 }
 
 #icon {
   width: 100px;
   height: fit-content;
-  margin: 10px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
+}
+
+#row {
+  display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
+}
+
+#icon img {
+  max-height: 100px;
+}
+
+#icon h3 {
+  align-self: center;
 }
 /* #row {
   display: flex;
@@ -108,9 +120,9 @@ img {
 }
 
 #project {
+  display: flex;
   border-radius: 20px;
-  max-width: 500px;
-  max-height: 500px;
+  height: 500px;
   margin: 20px;
   border: solid 1px;
   overflow: auto;
@@ -121,6 +133,10 @@ img {
   height: 100%;
   justify-self: stretch;
 }
+
+/* #col {
+  margin: 20px
+} */
 
 /*CONTACT*/
 
@@ -133,10 +149,11 @@ img {
 
 #contact-icons {
   display: flex;
+  margin: 20px;
 }
 
 #contact-icons img {
-border: solid 1px;
+/* border: solid 1px; */
 border-radius: 30px;
 margin: 10px;
 max-height: 50px;
@@ -146,10 +163,11 @@ max-height: 50px;
 
 #footer {
   margin: 0;
+  background-color: white;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 75px;
+  height: 100px;
 }
 
 

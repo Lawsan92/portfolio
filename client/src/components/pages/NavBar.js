@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-const NavBar = ({ contactRef }) => {
+const NavBar = ({ contactRef, homeRef, skillsRef, projectsRef }) => {
 
   return (
     <section id='navbar'>
@@ -8,11 +8,9 @@ const NavBar = ({ contactRef }) => {
       <h1>Lawrence Sanzogni</h1>
       </div>
       <div id='nav-buttons'>
-        <h3>Home</h3>
-        <h3>About</h3>
-        <h3>Skills</h3>
-        <h3>Projects</h3>
-        {/* <h3>Education</h3> */}
+        <h3 onClick={() => {homeRef.current.scrollIntoView()}}>Home</h3>
+        <h3 onClick={() => {skillsRef.current.scrollIntoView()}}>Skills</h3>
+        <h3 onClick={() => {projectsRef.current.scrollIntoView()}}>Projects</h3>
         <h3 onClick={() => {contactRef.current.scrollIntoView()}}>Contact Me</h3>
       </div>
     </section>

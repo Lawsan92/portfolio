@@ -15,7 +15,7 @@ const Contact = ({ contactRef }) => {
 
   return (
     <section id='contact' ref={contactRef}>
-      <h1>Contact</h1>
+      <h1>{'Contact'}</h1>
       <div id='contact-icons'>
         {renderContact()}
       </div>
