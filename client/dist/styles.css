@@ -25,7 +25,7 @@ section {
   justify-self: start;
   display: flex;
   align-items: center;
-  margin: 10px;
+  margin: 15px;
 }
 
 #nav-buttons {
@@ -34,6 +34,7 @@ section {
   margin-left: auto; /* for some reason this moves the element to the far right
   while justify-self: flex-end; doesn't work????
   */
+  margin-right: 15px;
 }
 
 #nav-buttons h3 {
@@ -128,15 +129,59 @@ img {
   overflow: auto;
 }
 
-#project img {
-  width: 100%;
-  height: 100%;
-  justify-self: stretch;
+
+#col {
+  height: fit-content;
+  border: solid 5px;
 }
 
-/* #col {
-  margin: 20px
-} */
+/*PROJECT CARD*/
+
+#project-card {
+  border: solid 1px;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  overflow: auto;
+}
+
+#project-card a {
+  height: 50%;
+  margin-bottom: auto;
+}
+
+#project-card-img {
+  /* border: solid 3px green; */
+  height: 100%;
+}
+
+#project-card-img img{
+  max-width: 400px;
+  max-height: 400px;
+}
+
+#project-card p {
+  /* border: solid 1px; */
+}
+
+#title {
+  margin-left: 5px;
+}
+
+#techstack {
+  display: flex;
+  justify-content: center;
+}
+
+#summary {
+  /* border: solid 1px; */
+  height: 25%;
+}
 
 /*CONTACT*/
 
