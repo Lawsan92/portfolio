@@ -139,19 +139,19 @@ img {
 
 #project-card {
   border: solid 1px;
-  background-color: aliceblue;
   display: flex;
   flex-direction: column;
   height: 400px;
   width: 400px;
   justify-content: space-evenly;
-  margin-bottom: 20px;
+  margin: 25px;
   border-radius: 20px;
+  background-image: linear-gradient(white,  #C4A484);
   overflow: auto;
 }
 
 #project-card a {
-  height: 50%;
+  height: inherit;
   margin-bottom: auto;
 }
 
@@ -185,7 +185,7 @@ img {
 
 /*CONTACT*/
 
-#contact{
+#contact {
   margin: 0;
   flex-direction: column;
   justify-content: center;
