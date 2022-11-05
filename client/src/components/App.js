@@ -6,20 +6,21 @@ import {
   Projects,
   Contact,
   NavBar,
-  Footer
+  Footer,
+  Email
 } from './Imports.js';
 
 const App = () => {
 
   const [light, flipSwitch] = useState(true);
 
-  const contactRef = useRef()
+  const [contactRef, projectsRef, skillsRef, homeRef,] = [useRef(), useRef(), useRef(), useRef()];
 
   const toggle = useCallback(() => {
     flipSwitch(prevState => !prevState);
   }, []);
 
-
+  const [emailModal, isOpen] = useState(false);
 
 
   return (
@@ -27,11 +28,17 @@ const App = () => {
       {/* <h1>Portfolio</h1>
       <p>{light ? 'is on' : 'turn on the light'}</p>
       <button onClick={() => {toggle()}}>Switch</button> */}
-      <NavBar contactRef={contactRef} />
-      <About/>
-      <Skills/>
-      <Projects/>
-      <Contact contactRef={contactRef} />
+      {emailModal && <Email isOpen={isOpen}/>}
+      <NavBar
+        contactRef={contactRef}
+        homeRef={homeRef}
+        projectsRef={projectsRef}
+        skillsRef={skillsRef}
+      />
+      <About homeRef={homeRef}/>
+      <Skills skillsRef={skillsRef}/>
+      <Projects projectsRef={projectsRef}/>
+      <Contact contactRef={contactRef} emailModal={emailModal} isOpen={isOpen}/>
       <Footer/>
     </div>
   )

@@ -6,6 +6,7 @@ import Projects from './pages/Projects.js';
 import Contact from './pages/Contact.js';
 import NavBar from './pages/NavBar.js';
 import Footer from './pages/Footer.js';
+import Email from './pages/EMAIL.js';
 
 
 export {
@@ -14,5 +15,6 @@ export {
   Projects,
   Contact,
   NavBar,
-  Footer
+  Footer,
+  Email
 };

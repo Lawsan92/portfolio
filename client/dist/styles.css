@@ -1,15 +1,15 @@
 body {
-  background-color: #3c88ab;
+  background-image: linear-gradient(white,  #C4A484);
+  margin: 0;
 }
 
 * {
-  color: antiquewhite;
+  /* color: #f2e4d2; */
+  color: #A3A2A3
 }
 
 section {
-  margin: 0;
   width: 100%;
-  border: solid 1px;
   display: flex;
 }
 
@@ -17,19 +17,26 @@ section {
 
 #navbar {
   height: 75px;
-  justify-content: space-evenly;
+  background-color: white;
 }
 
 #name {
   justify-self: start;
+  display: flex;
+  align-items: center;
+  margin: 15px;
 }
 
 #nav-buttons {
   display: flex;
-  border: solid 1px;
+  align-items: center;
+  margin-left: auto; /* for some reason this moves the element to the far right
+  while justify-self: flex-end; doesn't work????
+  */
+  margin-right: 15px;
 }
 
-#nav-button {
+#nav-buttons h3 {
   margin: 10px;
   cursor: pointer;
 }
@@ -39,13 +46,19 @@ section {
 
 #about {
   margin: 0;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+#about p {
+  max-width: 50%;
+  font-size: 30px;
+  margin: 30px;
+  color: grey;
+}
+
 #portrait {
-  height: 200px;
+  height: 550px;
   border-radius: 20px;
   margin: 10px;
   flex-direction: column;
@@ -63,17 +76,28 @@ section {
 
 #icons {
   display: flex;
-  border: solid 1px red;
 }
 
 #icon {
   width: 100px;
   height: fit-content;
-  margin: 10px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
+}
+
+#row {
+  display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
+}
+
+#icon img {
+  max-height: 100px;
+}
+
+#icon h3 {
+  align-self: center;
 }
 /* #row {
   display: flex;
@@ -83,8 +107,8 @@ section {
 
 
 img {
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /*PROJECTS*/
@@ -96,17 +120,73 @@ img {
   align-items: center;
 }
 
-#project{
+#project {
+  display: flex;
   border-radius: 20px;
-  max-width: 500px;
-  max-height: 500px;
+  height: 500px;
   margin: 20px;
   border: solid 1px;
+  overflow: auto;
+}
+
+
+#col {
+  height: fit-content;
+  border: solid 5px;
+}
+
+/*PROJECT CARD*/
+
+#project-card {
+  border: solid 1px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
+  justify-content: space-evenly;
+  margin: 25px;
+  border-radius: 20px;
+  background-image: linear-gradient(white,  #C4A484);
+  overflow: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#project-card a {
+  height: inherit;
+  margin-bottom: auto;
+}
+
+#project-card-img {
+  /* border: solid 3px green; */
+  height: 100%;
+}
+
+#project-card-img img{
+  max-width: 400px;
+  max-height: 400px;
+}
+
+#project-card p {
+  /* border: solid 1px; */
+}
+
+#title {
+  margin-left: 5px;
+}
+
+#techstack {
+  display: flex;
+  justify-content: center;
+}
+
+#summary {
+  /* border: solid 1px; */
+  height: 25%;
 }
 
 /*CONTACT*/
 
-#contact{
+#contact {
   margin: 0;
   flex-direction: column;
   justify-content: center;
@@ -115,23 +195,87 @@ img {
 
 #contact-icons {
   display: flex;
+  margin: 20px;
+}
+
+#contact-icons img {
+/* border: solid 1px; */
+border-radius: 30px;
+margin: 10px;
+max-height: 50px;
+}
+
+/*EMAIL*/
+
+#email-modal-background {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(250, 250, 250, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#email-modal-header {
+  display: flex;
   flex-direction: row;
 }
 
-#contact-icon {
-height: auto;
-width: auto;
-max-height: 100px;
-max-width: fit-content;
+#email-modal-header h2{
+  margin: auto;
+}
+
+#email-modal-body {
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+#email-modal-body input{
+  margin: 15px;
+}
+
+#email-modal-close{
+  display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+#email-modal-body textarea {
+  margin: 15px;
+  height: 33vh;
+}
+
+#email-modal-send{
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#email-modal-send input {
+  width: 150px;
+  height: 35px;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 /*FOOTERS*/
 
 #footer {
   margin: 0;
+  background-color: white;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100px;
 }
 
 

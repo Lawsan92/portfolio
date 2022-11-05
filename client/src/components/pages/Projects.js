@@ -1,25 +1,16 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import projects from '../../data/projects.js';
+import ProjectCard from './ProjectCard';
+import ProjectCol from './format/ProjectCol';
+import ProjectSlides from './format/ProjectSlides';
 
-const Projects = () => {
 
-  const renderProjects = () => {
-   return projects.map((project) => {
-      return (
-        <div id='project'>
-          <a href={project.href}>
-            <img id='project-img' src={project.url} href/>
-          </a>
-        </div>
-      )
-    })
-  }
-
+const Projects = ({ projectsRef }) => {
   return (
-    <section id='projects'>
-      <h1>Projects</h1>
-      {renderProjects()}
+    <section id='projects' ref={projectsRef}>
+      <h1>{'Projects'}</h1>
+      <ProjectCol/>
+      {/* <ProjectSlides/> */}
     </section>
   )
 }
