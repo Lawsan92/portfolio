@@ -10,7 +10,6 @@ body {
 
 section {
   width: 100%;
-  /* border: solid 1px; */
   display: flex;
 }
 
@@ -148,7 +147,7 @@ img {
   border-radius: 20px;
   background-image: linear-gradient(white,  #C4A484);
   overflow: auto;
-   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #project-card a {
@@ -217,7 +216,16 @@ max-height: 50px;
   align-items: center;
 }
 
-#email-modal-body{
+#email-modal-header {
+  display: flex;
+  flex-direction: row;
+}
+
+#email-modal-header h2{
+  margin: auto;
+}
+
+#email-modal-body {
   width: 500px;
   height: 500px;
   border-radius: 12px;
@@ -229,7 +237,7 @@ max-height: 50px;
 }
 
 #email-modal-body input{
-  margin: 10px;
+  margin: 15px;
 }
 
 #email-modal-close{
@@ -238,13 +246,18 @@ max-height: 50px;
   cursor: pointer;
 }
 
+#email-modal-body textarea {
+  margin: 15px;
+  height: 33vh;
+}
+
 #email-modal-send{
   margin: 10px;
   display: flex;
   justify-content: center;
 }
 
-#email-modal-send button {
+#email-modal-send input {
   width: 150px;
   height: 35px;
   background-color: cornflowerblue;
