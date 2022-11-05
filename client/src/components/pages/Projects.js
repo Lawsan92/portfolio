@@ -9,7 +9,7 @@ const Projects = () => {
       return (
         <div id='project'>
           <a href={project.href}>
-            <img src={project.url} href/>
+            <img id='project-img' src={project.url} href/>
           </a>
         </div>
       )
