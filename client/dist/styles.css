@@ -228,8 +228,29 @@ max-height: 50px;
   padding: 25px;
 }
 
-#email form input {
+#email-modal-body input{
   margin: 10px;
+}
+
+#email-modal-close{
+  display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+#email-modal-send{
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#email-modal-send button {
+  width: 150px;
+  height: 35px;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 /*FOOTERS*/
