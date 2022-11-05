@@ -6,7 +6,8 @@ import {
   Projects,
   Contact,
   NavBar,
-  Footer
+  Footer,
+  Email
 } from './Imports.js';
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
     flipSwitch(prevState => !prevState);
   }, []);
 
-
+  const [emailModal, isOpen] = useState(false);
 
 
   return (
@@ -27,6 +28,7 @@ const App = () => {
       {/* <h1>Portfolio</h1>
       <p>{light ? 'is on' : 'turn on the light'}</p>
       <button onClick={() => {toggle()}}>Switch</button> */}
+      {emailModal && <Email isOpen={isOpen}/>}
       <NavBar
         contactRef={contactRef}
         homeRef={homeRef}
@@ -36,7 +38,7 @@ const App = () => {
       <About homeRef={homeRef}/>
       <Skills skillsRef={skillsRef}/>
       <Projects projectsRef={projectsRef}/>
-      <Contact contactRef={contactRef} />
+      <Contact contactRef={contactRef} emailModal={emailModal} isOpen={isOpen}/>
       <Footer/>
     </div>
   )

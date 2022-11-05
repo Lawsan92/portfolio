@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import contacts from '../../data/contacts.js';
-import Email from './Email.js';
 
-const Contact = ({ contactRef }) => {
-  const [emailModal, isOpen] = useState(false);
+const Contact = ({ contactRef, emailModal, isOpen }) => {
 
   const renderContact = () => {
     return contacts.map((contact) => {
@@ -26,7 +24,6 @@ const Contact = ({ contactRef }) => {
       <h1>{'Contact'}</h1>
       <div id='contact-icons'>
         {renderContact()}
-        {emailModal && <Email isOpen={isOpen}/>}
       </div>
     </section>
   )

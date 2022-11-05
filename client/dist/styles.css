@@ -148,6 +148,7 @@ img {
   border-radius: 20px;
   background-image: linear-gradient(white,  #C4A484);
   overflow: auto;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #project-card a {
@@ -215,6 +216,18 @@ max-height: 50px;
   justify-content: center;
   align-items: center;
 }
+
+#email-modal-body{
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
 #email form input {
   margin: 10px;
 }
