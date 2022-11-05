@@ -28,10 +28,10 @@ const Email = ({ isOpen }) => {
           </div>
           <h2>Contact Me</h2>
         </div>
-        <input type='text' placeholder='Full Name'></input>
-        <input type='text' placeholder='Email'></input>
-        <input type='text' placeholder='Subject'></input>
-        <textarea></textarea>
+        <input type='text' name='user_name' placeholder='Full Name'></input>
+        <input type='email' name='user_email' placeholder='Email'></input>
+        <input type='text' name='subject' placeholder='Subject'></input>
+        <textarea name='message'></textarea>
         <div id='email-modal-send'>
         <input type='submit' value ='Send'></input>
         </div>
