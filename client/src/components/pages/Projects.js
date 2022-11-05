@@ -9,8 +9,8 @@ const Projects = ({ projectsRef }) => {
   return (
     <section id='projects' ref={projectsRef}>
       <h1>{'Projects'}</h1>
-      {/* <ProjectCol/> */}
-      <ProjectSlides/>
+      <ProjectCol/>
+      {/* <ProjectSlides/> */}
     </section>
   )
 }

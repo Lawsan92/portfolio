@@ -18,6 +18,16 @@ const ProjectSlides = () => {
     }
   }
 
+  // iterate through the array and map each item onto a div
+   // if the current index is equal to the current slide
+          // set the id of the div to be active
+        // otherwise
+          // set it to be inactive
+          // If the current index is equal to the current slide
+            // return the 'project-card' div containing the data of the current project
+          // otherwise
+            // don't return the project card
+
   // function for slides
   const projectSlider = () => {
     return projects.map((project, index) => {
