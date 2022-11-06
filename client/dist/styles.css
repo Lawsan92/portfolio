@@ -169,7 +169,6 @@ img {
 }
 
 #project-card-img {
-  /* border: solid 3px green; */
   height: 100%;
 }
 
@@ -178,8 +177,12 @@ img {
   max-height: 400px;
 }
 
+#project-card h2 {
+  margin-left: 10px;
+}
+
 #project-card p {
-  /* border: solid 1px; */
+  margin: 10px;
 }
 
 #title {
@@ -189,10 +192,10 @@ img {
 #techstack {
   display: flex;
   justify-content: center;
+  border-bottom: solid 1px;
 }
 
 #summary {
-  /* border: solid 1px; */
   height: 25%;
 }
 
@@ -213,6 +216,7 @@ img {
 #contact-icons img {
 margin: 10px;
 max-height: 50px;
+cursor: pointer;
 }
 
 /*EMAIL*/
