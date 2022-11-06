@@ -28,6 +28,9 @@ const App = () => {
       {/* <h1>Portfolio</h1>
       <p>{light ? 'is on' : 'turn on the light'}</p>
       <button onClick={() => {toggle()}}>Switch</button> */}
+      <button id='float-button' onClick={() => {homeRef.current.scrollIntoView()}}>
+        <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667693371/icons/home-icon-silhouette-svgrepo-com_tnbczc.svg' style={{opacity: '0.75'}}/>
+      </button>
       {emailModal && <Email isOpen={isOpen}/>}
       <NavBar
         contactRef={contactRef}
