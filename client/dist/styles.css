@@ -64,13 +64,13 @@ section {
 
 #about p {
   max-width: 50%;
-  font-size: 30px;
+  font-size: 1.5vw;
   margin: 30px;
   color: grey;
 }
 
 #portrait {
-  height: 550px;
+  height: 53vh;
   border-radius: 20px;
   margin: 10px;
   flex-direction: column;
@@ -111,12 +111,6 @@ section {
 #icon h3 {
   align-self: center;
 }
-/* #row {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-} */
-
 
 img {
   max-width: 100%;
@@ -153,8 +147,10 @@ img {
   border: solid 1px;
   display: flex;
   flex-direction: column;
-  height: 400px;
-  width: 400px;
+  height: 40vh;
+  width: 30vw;
+  /* height: 400px;
+  width: 400px; */
   justify-content: space-evenly;
   margin: 25px;
   border-radius: 20px;
@@ -179,10 +175,12 @@ img {
 
 #project-card h2 {
   margin-left: 10px;
+  /* font-size: 2vw; */
 }
 
 #project-card p {
   margin: 10px;
+  /* font-size: 1vw; */
 }
 
 #title {
