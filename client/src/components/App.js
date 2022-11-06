@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+// const axios = require('axios');
 
 import {
   About,
@@ -20,8 +21,19 @@ const App = () => {
     flipSwitch(prevState => !prevState);
   }, []);
 
+  // email state
   const [emailModal, isOpen] = useState(false);
 
+  const [emailAuth] = useState({
+    serviceID: '',
+    emailID: '',
+    apiKEY: ''
+  })
+
+
+  const getEmailAuth = () => {
+
+  }
 
   return (
     <div id='app'>
