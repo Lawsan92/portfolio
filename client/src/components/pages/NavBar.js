@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 const NavBar = ({ contactRef, homeRef, skillsRef, projectsRef }) => {
 
   return (
-    <section id='navbar'>
+    <section id='navbar' ref={homeRef}>
       <div id='name'>
       <h1>Lawrence Sanzogni</h1>
       </div>
