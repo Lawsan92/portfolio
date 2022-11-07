@@ -173,7 +173,7 @@ img {
 }
 
 #project-card a {
-  height: inherit;
+  height: 100%;
   margin-bottom: auto;
 }
 

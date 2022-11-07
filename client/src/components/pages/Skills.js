@@ -13,7 +13,7 @@ const Skills = ({ skillsRef }) => {
             {icon.title === 'JS' ?
                 <div id='row'>
                 <h3>{icons[index].title}</h3>
-                <img id='js-icon' style={{margin: '10px', padding: '10px'}} src={icons[index].url}/>
+                <img id='js-icon' style={{margin: '10px', padding: '11.5px'}} src={icons[index].url}/>
               </div>
               :
               <div id='row'>
