@@ -4,11 +4,12 @@ import ProjectCard from '../ProjectCard';
 
 const ProjectCol = () => {
 
+  const renderProjectColumms = () => {
     return projects.map((project, index) => {
       let mid = Math.floor(projects.length / 2);
       while (index < mid) { {/* By the time index meets the mid point, the 2nd row will have reached the last element */}
         return (
-      <div style={{display: 'flex', flexDirection:'row', margin: '20px'}}>
+      <div id='col'>
         {/*We're splitting our component in two by returning two divs instead of one */}
       <div id='project-card'> {/* (1) */}
         <a href={projects[index].href}>
@@ -41,7 +42,14 @@ const ProjectCol = () => {
     </div>
         );
       }
-  })
+    })
+  }
+
+  return (
+    <div id='project-col'>
+      {renderProjectColumms()}
+    </div>
+  );
 };
 
 export default ProjectCol;

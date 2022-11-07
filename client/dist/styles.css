@@ -60,6 +60,7 @@ section {
   margin: 0;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 
 #about p {
@@ -137,8 +138,9 @@ img {
 
 
 #col {
-  height: fit-content;
-  border: solid 5px;
+  display: flex;
+  flex-direction: row;
+  margin: 20px
 }
 
 /*PROJECT CARD*/
@@ -147,10 +149,10 @@ img {
   border: solid 1px;
   display: flex;
   flex-direction: column;
-  height: 40vh;
-  width: 30vw;
-  /* height: 400px;
-  width: 400px; */
+  /* height: 40vh;
+  width: 30vw; */
+  height: 400px;
+  width: 400px;
   justify-content: space-evenly;
   margin: 25px;
   border-radius: 20px;
@@ -158,6 +160,27 @@ img {
   overflow: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+/*special conditions to resize elements based on screen size*/
+@media screen and (max-width: 700px) {
+
+  #about {
+    flex-direction: column;
+  }
+
+  #icons {
+    flex-direction: column;
+  }
+  /* #project-card {
+    height: 280px;
+    width: 2800px;
+  } */
+  #col {
+    flex-direction: column;
+  }
+}
+
+
 
 #project-card a {
   height: inherit;
