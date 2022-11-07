@@ -13,13 +13,8 @@ import {
 
 const App = () => {
 
-  const [light, flipSwitch] = useState(true);
-
+  // div refs for scrolling
   const [contactRef, projectsRef, skillsRef, homeRef,] = [useRef(), useRef(), useRef(), useRef()];
-
-  const toggle = useCallback(() => {
-    flipSwitch(prevState => !prevState);
-  }, []);
 
   // email state
   const [emailModal, isOpen] = useState(false);
@@ -41,7 +36,7 @@ const App = () => {
       <p>{light ? 'is on' : 'turn on the light'}</p>
       <button onClick={() => {toggle()}}>Switch</button> */}
       <button id='float-button' onClick={() => {homeRef.current.scrollIntoView()}}>
-        <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667693371/icons/home-icon-silhouette-svgrepo-com_tnbczc.svg' style={{opacity: '0.75'}}/>
+        {/* <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667693371/icons/home-icon-silhouette-svgrepo-com_tnbczc.svg' style={{opacity: '0.75'}}/> */}
       </button>
       {emailModal && <Email isOpen={isOpen}/>}
       <NavBar

@@ -30,8 +30,17 @@ section {
   height: 50px;
   border-radius: 30px;
   cursor: pointer;
-  opacity: 0.75;
+  opacity: 0.5;
+  background-image: url('https://res.cloudinary.com/darp0mj9i/image/upload/v1667693371/icons/home-icon-silhouette-svgrepo-com_tnbczc.svg');
+  background-size: 72%;
+  background-position: center;
+  background-repeat: no-repeat;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#float-button:hover {
+  background-color: rgba(137, 196, 244, 0.35);
+  background-image: url('https://res.cloudinary.com/darp0mj9i/image/upload/v1667840705/icons/home-icon-silhouette-svgrepo-com_tnbczc_vtqten.svg');
 }
 
 /*NAVBAR*/
@@ -61,6 +70,12 @@ section {
 #nav-buttons h3 {
   margin: 10px;
   cursor: pointer;
+}
+
+#nav-buttons h3:hover {
+  background-color: rgba(137, 196, 244, 0.35);
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+  color: white;
 }
 
 
