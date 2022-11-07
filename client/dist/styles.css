@@ -5,7 +5,9 @@ body {
 
 * {
   /* color: #f2e4d2; */
-  color: #A3A2A3
+  color: #A3A2A3;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 100;
 }
 
 section {
@@ -30,6 +32,7 @@ section {
 #navbar {
   height: 75px;
   background-color: white;
+  max-width: 100%;
 }
 
 #name {
@@ -65,7 +68,7 @@ section {
 
 #about p {
   max-width: 50%;
-  font-size: 1.5vw;
+  font-size: 30px;
   margin: 30px;
   color: grey;
 }
@@ -160,27 +163,6 @@ img {
   overflow: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
-/*special conditions to resize elements based on screen size*/
-@media screen and (max-width: 700px) {
-
-  #about {
-    flex-direction: column;
-  }
-
-  #icons {
-    flex-direction: column;
-  }
-  /* #project-card {
-    height: 280px;
-    width: 2800px;
-  } */
-  #col {
-    flex-direction: column;
-  }
-}
-
-
 
 #project-card a {
   height: inherit;
@@ -313,4 +295,47 @@ cursor: pointer;
   height: 100px;
 }
 
+
+/*special conditions to resize elements based on screen size*/
+@media screen and (max-width: 700px) {
+
+  #name {
+    margin: 5px;
+    font-size: 15px;
+  }
+
+  #nav-buttons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  #nav-buttons h3 {
+    margin: 5px;
+    font-size: 15px;
+  }
+
+  #about {
+    flex-direction: column;
+  }
+
+  #icons {
+    flex-direction: column;
+  }
+  /* #project-card {
+    height: 280px;
+    width: 2800px;
+  } */
+  #col {
+    flex-direction: column;
+  }
+
+  #about p {
+    max-width: 50%;
+    font-size: 15px;
+    margin: 30px;
+    color: grey;
+  }
+
+}
 
