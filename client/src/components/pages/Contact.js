@@ -21,6 +21,7 @@ const Contact = ({ contactRef, emailModal, isOpen }) => {
 
   return (
     <section id='contact' ref={contactRef}>
+      <div id='border'/>
       <h1>{'Contact'}</h1>
       <div id='contact-icons'>
         {renderContact()}

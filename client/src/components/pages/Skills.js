@@ -26,6 +26,7 @@ const Skills = ({ skillsRef }) => {
 
   return (
     <section id='skills' ref={skillsRef}>
+      <div id='border'/>
       <h1>{'Skills'}</h1>
       <div id='icons'>
         { mapIcons() }

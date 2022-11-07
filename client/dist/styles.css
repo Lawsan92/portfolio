@@ -15,6 +15,13 @@ section {
   display: flex;
 }
 
+#border{
+  border-top: solid 1px #A3A2A3;
+  width: 80%;
+  justify-self: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 #float-button {
   position: fixed;
   right: 3vw;
@@ -64,6 +71,7 @@ section {
   justify-content: center;
   align-items: center;
   display: flex;
+  margin-bottom: 20px;
 }
 
 #about p {
@@ -76,7 +84,7 @@ section {
 #portrait {
   height: 53vh;
   border-radius: 20px;
-  margin: 10px;
+  margin: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
