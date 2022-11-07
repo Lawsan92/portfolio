@@ -15,7 +15,7 @@ section {
   display: flex;
 }
 
-#border{
+#border {
   border-top: solid 1px #A3A2A3;
   width: 80%;
   justify-self: center;
@@ -330,20 +330,31 @@ cursor: pointer;
   #icons {
     flex-direction: column;
   }
-  /* #project-card {
-    height: 280px;
-    width: 2800px;
-  } */
+  #project-card {
+    height: 300px;
+    width: 300px;
+  }
+
+  #project-card h2 {
+    margin: 4px 4px 4px 10px;
+    /* font-size: 2vw; */
+  }
+  #project-card p {
+    /* font-size: 1vw; */
+    margin: 5px;
+  }
+
   #col {
     flex-direction: column;
   }
 
   #about p {
     max-width: 50%;
-    font-size: 15px;
+    font-size: 18px;
     margin: 30px;
     color: grey;
   }
 
 }
+
 
