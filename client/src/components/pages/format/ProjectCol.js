@@ -4,6 +4,17 @@ import ProjectCard from '../ProjectCard';
 
 const ProjectCol = () => {
 
+  const [gitSVG, setSVG] = useState(true);
+  let gitB = "https://res.cloudinary.com/darp0mj9i/image/upload/v1667398265/icons/icons8-github_ld3amz.svg";
+  let gitW = "https://res.cloudinary.com/darp0mj9i/image/upload/v1670091319/icons/icons8-github_ld3amz_neg4sd.svg";
+
+  const hoverHandler = (id) => {
+    setSVG((prevState) => ({
+      ...gitSVG,
+      [id]: !prevState[id]
+    }))
+  }
+
   const renderProjectColumms = () => {
     return projects.map((project, index) => {
       let mid = Math.floor(projects.length / 2);
@@ -21,7 +32,16 @@ const ProjectCol = () => {
             }}>
         </div>
         </a>
-        <p id='techstack'>{projects[index].techstack}</p>
+        <p id='techstack'>
+          {projects[index].techstack}
+          <span>
+            <a href={projects[index].githref !== '' ? projects[index].githref : null}>
+              <img src={gitSVG[index] ? gitW : gitB}
+              onMouseEnter={() => hoverHandler(index)}
+              onMouseLeave={() => hoverHandler(index)}/>
+            </a>
+          </span>
+        </p>
         <h2 id='title'>{projects[index].name}</h2>
         <p id='summary'>{projects[index].summary}</p>
       </div>
@@ -35,7 +55,16 @@ const ProjectCol = () => {
           }}>
       </div>
       </a>
-      <p id='techstack'>{projects[index + mid].techstack}</p>
+      <p id='techstack'>
+        {projects[index + mid].techstack}
+        <span>
+          <a href={projects[index + mid].githref !== '' ? projects[index + mid].githref : null}>
+          <img src={gitSVG[index + mid] ? gitW : gitB}
+              onMouseEnter={() => hoverHandler(index + mid)}
+              onMouseLeave={() => hoverHandler(index + mid)}/>
+          </a>
+        </span>
+      </p>
       <h2 id='title'>{projects[index + mid].name}</h2>
       <p id='summary'>{projects[index + mid].summary}</p>
     </div>

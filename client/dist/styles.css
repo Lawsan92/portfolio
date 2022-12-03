@@ -211,6 +211,11 @@ img {
   /* font-size: 1vw; */
 }
 
+#project-card span {
+  height: 2.5vh;
+  margin-left: inherit
+}
+
 #title {
   margin-left: 5px;
 }
@@ -243,6 +248,10 @@ img {
 margin: 10px;
 max-height: 50px;
 cursor: pointer;
+}
+
+#contact-icons svg:hover {
+  fill: #ffffff
 }
 
 /*EMAIL*/
