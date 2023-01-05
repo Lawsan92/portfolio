@@ -3,12 +3,14 @@ import emailjs from '@emailjs/browser';
 
 const Email = ({ isOpen }) => {
 
+  console.log(process.env.EMAIL_JS_SERVICE_ID, process.env.EMAIL_JS_TEMPLATE_ID,  process.env.EMAIL_JS_PUBLIC_KEY);
+
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_qy43j0i', 'template_xb4upxz', form.current, 'eo3RnBaxVa4viVTnr')
+    emailjs.sendForm(process.env.EMAIL_JS_SERVICE_ID, process.env.EMAIL_JS_TEMPLATE_ID, form.current, process.env.PUBLIC_KEY)
       .then((result) => {
         console.log('result:', result.text);
       })

@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 const clientConfig = {
   mode: 'development',
@@ -24,7 +25,10 @@ const clientConfig = {
         loader: 'css-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new Dotenv({systemvars: true})
+  ]
 }
 
 module.exports = clientConfig;
