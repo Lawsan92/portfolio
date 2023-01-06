@@ -8,6 +8,7 @@ import ProjectSlides from './format/ProjectSlides';
 const Projects = ({ projectsRef }) => {
   return (
     <section id='projects' ref={projectsRef}>
+      <div id='border'/>
       <h1>{'Projects'}</h1>
       <ProjectCol/>
       {/* <ProjectSlides/> */}

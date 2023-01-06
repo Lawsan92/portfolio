@@ -10,10 +10,17 @@ const Skills = ({ skillsRef }) => {
       while (index < mid) {
         return (
           <div id='icon' key={index}>
-            <div id='row'>
+            {icon.title === 'JS' ?
+                <div id='row'>
+                <h3>{icons[index].title}</h3>
+                <img id='js-icon' style={{margin: '10px', padding: '11.5px'}} src={icons[index].url}/>
+              </div>
+              :
+              <div id='row'>
               <h3>{icons[index].title}</h3>
               <img style={{margin: '10px'}} src={icons[index].url}/>
             </div>
+            }
             <div id='row'>
               <h3>{icons[index + mid].title}</h3>
               <img style={{margin: '10px'}} src={icons[index + mid].url}/>
@@ -26,6 +33,7 @@ const Skills = ({ skillsRef }) => {
 
   return (
     <section id='skills' ref={skillsRef}>
+      <div id='border'/>
       <h1>{'Skills'}</h1>
       <div id='icons'>
         { mapIcons() }

@@ -8,18 +8,14 @@ import {
   Contact,
   NavBar,
   Footer,
-  Email
+  Email,
+  Experience
 } from './Imports.js';
 
 const App = () => {
 
-  const [light, flipSwitch] = useState(true);
-
-  const [contactRef, projectsRef, skillsRef, homeRef,] = [useRef(), useRef(), useRef(), useRef()];
-
-  const toggle = useCallback(() => {
-    flipSwitch(prevState => !prevState);
-  }, []);
+  // div refs for scrolling
+  const [contactRef, projectsRef, skillsRef, homeRef, experienceRef] = [useRef(), useRef(), useRef(), useRef(), useRef()];
 
   // email state
   const [emailModal, isOpen] = useState(false);
@@ -37,11 +33,7 @@ const App = () => {
 
   return (
     <div id='app'>
-      {/* <h1>Portfolio</h1>
-      <p>{light ? 'is on' : 'turn on the light'}</p>
-      <button onClick={() => {toggle()}}>Switch</button> */}
       <button id='float-button' onClick={() => {homeRef.current.scrollIntoView()}}>
-        <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667693371/icons/home-icon-silhouette-svgrepo-com_tnbczc.svg' style={{opacity: '0.75'}}/>
       </button>
       {emailModal && <Email isOpen={isOpen}/>}
       <NavBar
@@ -53,6 +45,7 @@ const App = () => {
       <About homeRef={homeRef}/>
       <Skills skillsRef={skillsRef}/>
       <Projects projectsRef={projectsRef}/>
+      {/* <Experience experienceRef={experienceRef} /> */}
       <Contact contactRef={contactRef} emailModal={emailModal} isOpen={isOpen}/>
       <Footer/>
     </div>
