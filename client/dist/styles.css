@@ -168,19 +168,19 @@ img {
   height: 100%;
 }
 
-#project-card-img img{
+/* #project-card-img img{
   max-width: 400px;
   max-height: 400px;
-}
+} */
 
 #project-card h2 {
   margin-left: 10px;
-  /* font-size: 2vw; */
+  font-size: 2vw;
 }
 
 #project-card p {
   margin: 10px;
-  /* font-size: 1vw; */
+  font-size: 1vw;
 }
 
 #title {
