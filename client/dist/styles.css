@@ -1,5 +1,5 @@
 body {
-  background-image: linear-gradient(white,  #C4A484);
+  /* background-image: linear-gradient(white,  #C4A484); */
   margin: 0;
 }
 
@@ -87,22 +87,36 @@ section {
   align-items: center;
   display: flex;
   margin-bottom: 20px;
+  height: 100vh;
+}
+
+#about_text {
+  display: flex;
+  flex-direction: column;
+  margin: .5em;
 }
 
 #about p {
   max-width: 50%;
-  font-size: 30px;
-  margin: 30px;
+  font-size: 1em;
+  margin: .5em;
   color: grey;
 }
 
-#portrait {
-  height: 53vh;
+#about_portrait {
+  height: 65vh;
   border-radius: 20px;
-  margin: 20px;
+  margin: 1em;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.about_textsphere {
+  height: 60vh;
+  width: 60vw;
+  border: solid;
+  margin: 1em;
 }
 
 /*SKILLS*/
@@ -182,7 +196,7 @@ img {
   justify-content: space-evenly;
   margin: 25px;
   border-radius: 20px;
-  background-image: linear-gradient(white,  #C4A484);
+  /* background-image: linear-gradient(white,  #C4A484); */
   overflow: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

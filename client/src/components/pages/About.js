@@ -1,15 +1,22 @@
 import React from 'react';
+import Textsphere from './Textsphere.js';
 
 const About = ({ homeRef }) => {
   return (
     <section id='about'>
       <h1></h1>
-      <img id='portrait' src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667331066/icons/IMG_0041_rxkdai.jpg'/>
+      <div id ='about_text'>
       <p>
-        Hi, I'm Lawrence. I'm a fullstack javascript engineer with a specialty in MERN and PERN tech stacks. I'm an avid problem solver and love creating new content. After finishing college, I decided to undertake the task of enrolling in Hack Reactor.
-        <br/>   Now graduated, I'm a fully capable full stack engineer always seeking to learn more and am ready to take on any challenge. I currently live in Austin but I'm originally from Rome and have spent time all over the United States, as well as a few years in France. My hobbies include: working on web applications, programming, playing guitar, singing, writing songsand running. Open to work.
-
+        Hi, I'm Lawrence. I'm a fullstack javascript engineer with a specialty in MERN and PERN tech stacks.
+        I'm an avid problem solver and love creating new content. After finishing college, I decided to undertake the task of enrolling in Hack Reactor.
       </p>
+      <p>
+        Now graduated, I'm a fully capable full stack engineer always seeking to learn more and am ready to take on any challenge. I currently live in Austin but I'm originally from Rome and have spent time all over the United States, as well as a few years in France.
+         My hobbies include: working on web applications, programming, playing guitar, singing, writing songsand running. Open to work.
+      </p>
+      </div>
+      {/* <img id='about_portrait' src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667331066/icons/IMG_0041_rxkdai.jpg'/> */}
+      <Textsphere/>
     </section>
   )
 }
