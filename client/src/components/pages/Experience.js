@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Experience = () => {
+const Experience = ({ experienceRef }) => {
   return (
     <div id='experience'>
       <div id='border'/>
-      <h2>Experience</h2>
+      <h2 ref={experienceRef} >Experience</h2>
       <div className='experience_container'>
         <h3>Software Engineer</h3>
         <h3>Freelance</h3>

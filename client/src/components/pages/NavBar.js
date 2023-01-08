@@ -1,17 +1,18 @@
 import React, { useRef } from 'react';
+import Logo from './Logo.js';
+import { Link } from 'react-router-dom';
 
-const NavBar = ({ contactRef, homeRef, skillsRef, projectsRef }) => {
+const NavBar = ({ contactRef, homeRef, skillsRef, projectsRef, experienceRef }) => {
 
   return (
     <section id='navbar' ref={homeRef}>
-      <div id='name'>
-      <h1>Lawrence Sanzogni</h1>
-      </div>
+      <Logo/>
       <div id='nav-buttons'>
-        <h3 onClick={() => {homeRef.current.scrollIntoView()}}>Home</h3>
-        <h3 onClick={() => {skillsRef.current.scrollIntoView()}}>Skills</h3>
-        <h3 onClick={() => {projectsRef.current.scrollIntoView()}}>Projects</h3>
-        <h3 onClick={() => {contactRef.current.scrollIntoView()}}>Contact Me</h3>
+        <Link to='/' style={{textDecoration: 'none'}}><h3 onClick={() => {homeRef.current.scrollIntoView({behavior: 'smooth'})}}>Home</h3></Link>
+        <Link to='/skills' style={{textDecoration: 'none'}} ><h3 onClick={() => {skillsRef.current.scrollIntoView({behavior: 'smooth'})}} >Skills</h3></Link>
+        <h3 onClick={() => {projectsRef.current.scrollIntoView({behavior: 'smooth'})}}>Projects</h3>
+        <h3 onClick={() => {experienceRef.current.scrollIntoView({behavior: 'smooth'})}}>Experience</h3>
+        <h3 onClick={() => {contactRef.current.scrollIntoView({behavior: 'smooth'})}}>Contact Me</h3>
       </div>
     </section>
   )
