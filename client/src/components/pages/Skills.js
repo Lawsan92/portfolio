@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Textsphere from './Textsphere.js';
 import icons from '../../data/icons.js'
 
 const Skills = ({ skillsRef }) => {
@@ -38,6 +38,7 @@ const Skills = ({ skillsRef }) => {
       <div id='icons'>
         { mapIcons() }
       </div>
+      <Textsphere/>
     </section>
   )
 }

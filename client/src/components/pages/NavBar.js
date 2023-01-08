@@ -5,7 +5,7 @@ const NavBar = ({ contactRef, homeRef, skillsRef, projectsRef, experienceRef }) 
   return (
     <section id='navbar' ref={homeRef}>
       <div id='name'>
-      <h1>Lawrence Sanzogni</h1>
+      {/* <h1>Lawrence Sanzogni</h1> */}
       </div>
       <div id='nav-buttons'>
         <h3 onClick={() => {homeRef.current.scrollIntoView({behavior: 'smooth'})}}>Home</h3>

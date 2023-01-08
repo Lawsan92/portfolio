@@ -12,6 +12,7 @@ body {
 
 section {
   width: 100%;
+  height: 100vh;
   display: flex;
 }
 
@@ -46,9 +47,13 @@ section {
 /*NAVBAR*/
 
 #navbar {
-  height: 75px;
+  height: 100vh;
   background-color: white;
-  max-width: 100%;
+  flex-direction: column;
+  border: solid;
+  width: fit-content;
+  align-items: center;
+  background-color: #bababa;
 }
 
 #name {
@@ -61,13 +66,11 @@ section {
 #nav-buttons {
   display: flex;
   align-items: center;
-  margin-left: auto; /* for some reason this moves the element to the far right
-  while justify-self: flex-end; doesn't work????
-  */
-  margin-right: 15px;
+  flex-direction: column;
 }
 
 #nav-buttons h3 {
+  color: white;
   margin: 10px;
   cursor: pointer;
 }
@@ -79,7 +82,7 @@ section {
 }
 
 
-/*ABOUT*/
+/*ABOUT/HOME*/
 
 #about {
   margin: 0;
@@ -89,28 +92,44 @@ section {
   margin-bottom: 20px;
 }
 
-#about p {
-  max-width: 50%;
-  font-size: 30px;
-  margin: 30px;
-  color: grey;
+.home_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
-#portrait {
+.home_header {
+  display: flex;
+}
+
+.home_content {
+  display: flex;
+  width: fit-content
+}
+
+.home_content p {
+  font-size: 4.5em;
+  margin: 30px;
+  color: white;
+  background-color: #d9d9d9;
+}
+
+.home_content.portrait {
   height: 53vh;
-  border-radius: 20px;
+  border-radius: 20em;
   margin: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.about_textsphere {
-  height: 50vh;
-  width: 50vw;
-  justify-self: center;
-  border: solid;
-  margin: 1em;
+.home_text {
+  color: white;
+  background-color: #d9d9d9;
+  display: flex;
 }
 
 /*SKILLS*/
@@ -150,6 +169,19 @@ section {
 img {
   max-width: 100%;
   max-height: 100%;
+}
+
+.tagcloud{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: solid; */
+  margin: 1em;
+}
+
+.tagcloud--item:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white
 }
 
 /*PROJECTS*/
@@ -400,12 +432,3 @@ cursor: pointer;
 
 
 
-.tagcloud {
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-  font-weight: 650;
-  margin-left: 30%;
-}
-.tagcloud--item:hover {
-  color: #36454f;
-}

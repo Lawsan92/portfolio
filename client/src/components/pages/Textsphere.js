@@ -10,6 +10,7 @@ const Textsphere = () => {
     'HTML',
     'React',
     'Redux',
+    'React-Router-Dom',
     'Git',
     'Node.js',
     'MySQL',
@@ -22,7 +23,12 @@ const Textsphere = () => {
     'AWS',
     'npm',
     'nano',
-    'vim'
+    'vim',
+    'K6',
+    'Bootstrap',
+    'Loader.io',
+    'Data Structures',
+    'Algorithms'
   ];
 
   const options = {
@@ -31,15 +37,14 @@ const Textsphere = () => {
     initSpeed: 'fast',
     direction: 135,
     keep: true,
+    useContainerInlineStyles: true
   }
 
 
   return (
-    <div className='about_textsphere'>
-      <TagCloud options={options}>
-        {tags}
-      </TagCloud>
-    </div>
+    <TagCloud options={options} >
+      {tags}
+    </TagCloud>
   );
 };
 
