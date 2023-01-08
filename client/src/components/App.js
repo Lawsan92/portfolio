@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 // const axios = require('axios');
 import Router from './Router.js';
+
 const App = () => {
 
   // div refs for scrolling
@@ -19,6 +20,8 @@ const App = () => {
   const getEmailAuth = () => {
 
   }
+
+
 
   return (
     <div id='app'>

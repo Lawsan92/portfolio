@@ -1,13 +1,13 @@
 import React from 'react';
 import NavBar from './NavBar.js';
 
-const About = ({ homeRef }) => {
+const Home = ({ homeRef }) => {
   return (
-    <section id='about'>
+    <section id='home'>
       <NavBar/>
       <div className='home_container'>
         <div className="home_header">
-          <h1>{'<h1>About Me</h1>'}</h1>
+          <h1>{'<h1>Home</h1>'}</h1>
         </div>
         <div className='home_content'>
           <img className='home_content portrait' src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667331066/icons/IMG_0041_rxkdai.jpg'/>
@@ -36,4 +36,4 @@ const About = ({ homeRef }) => {
   )
 }
 
-export default About;
+export default Home;

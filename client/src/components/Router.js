@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import {
-  About,
+  Home,
   Skills,
   Projects,
   Contact,
@@ -15,7 +15,7 @@ import {
 const Router = () => {
   return (
     <Routes>
-      <Route path='/' element={<About/>}></Route>
+      <Route path='/' element={<Home/>}></Route>
       {/* <Route></Route>
       <Route></Route>
       <Route></Route> */}

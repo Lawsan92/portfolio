@@ -1,12 +1,11 @@
 import React, { useRef } from 'react';
+import Logo from './Logo.js';
 
 const NavBar = ({ contactRef, homeRef, skillsRef, projectsRef, experienceRef }) => {
 
   return (
     <section id='navbar' ref={homeRef}>
-      <div id='name'>
-      {/* <h1>Lawrence Sanzogni</h1> */}
-      </div>
+      <Logo/>
       <div id='nav-buttons'>
         <h3 onClick={() => {homeRef.current.scrollIntoView({behavior: 'smooth'})}}>Home</h3>
         <h3 onClick={() => {skillsRef.current.scrollIntoView({behavior: 'smooth'})}}>Skills</h3>
