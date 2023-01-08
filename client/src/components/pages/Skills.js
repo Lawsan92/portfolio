@@ -1,6 +1,7 @@
 import React from 'react';
 import Textsphere from './Textsphere.js';
 import icons from '../../data/icons.js'
+import NavBar from './NavBar.js';
 
 const Skills = ({ skillsRef }) => {
 
@@ -33,10 +34,11 @@ const Skills = ({ skillsRef }) => {
 
   return (
     <section id='skills' ref={skillsRef}>
+      <NavBar/>
       <div id='border'/>
       <h1>{'Skills'}</h1>
       <div id='icons'>
-        { mapIcons() }
+        {/* { mapIcons() } */}
       </div>
       <Textsphere/>
     </section>

@@ -1,12 +1,19 @@
-import React, { useEffect } from 'react';
-import {Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, Color} from 'three';
+import React, { useEffect, useState } from 'react';
+import {Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, TextureLoader} from 'three';
 
 const Logo = () => {
+
+  const [canvasSize, getSize] = useState({height: 160, width: 160})
 
   // Appends renderer to DOM element
   useEffect(() => {
     const container = document.querySelector('.navbar_logo');
     container.appendChild(renderer.domElement);
+    window.addEventListener('resize', () => {
+      let canvasHeight = window.getComputedStyle(document.querySelector(".navbar_logo")).height;
+      let canvasWidth = window.getComputedStyle(document.querySelector(".navbar_logo")).width;
+      console.log('canvasHeight:', canvasHeight, 'canvasWidth:', canvasWidth);
+    })
   }, [])
 
   const styles = {
@@ -15,16 +22,19 @@ const Logo = () => {
       justifyContent: 'center',
       height: '10em',
       width: '10em',
-      backgroundColor: 'white'
+      // backgroundColor: 'white'
     }
   }
+
+  // TEXT
+  const texture = new TextureLoader().load('https://res.cloudinary.com/darp0mj9i/image/upload/v1673181941/icons/Screen_Shot_2023-01-08_at_06.45.37_q21fhw.jpg');
 
   // Scene
   const scene = new Scene();
   // scene.background = new Color(0xadd8e6)
 
   // Camera
-  const camera = new PerspectiveCamera(30, 160 / 160, 0.1, 1000);
+  const camera = new PerspectiveCamera(30, canvasSize.height / canvasSize.width, 0.1, 1000);
   // this will move our scene behind our 3D elements
   camera.position.z = 5;
 
@@ -32,9 +42,8 @@ const Logo = () => {
   const renderer = new WebGLRenderer({alpha:  true});
    // this sets the render size to the size of the window element
 
-  const [rendererWidth, rendererHeight] = [160, 160]
 
-  renderer.setSize( rendererWidth, rendererHeight );
+  renderer.setSize( canvasSize.height, canvasSize.width );
   renderer.setPixelRatio(window.devicePixelRatio)
 
   // 3D element
@@ -42,7 +51,7 @@ const Logo = () => {
   // set of vectors ( {x, y, x} corrdinates/points) that make up a shape
   const geometry = new BoxGeometry( 1, 1, 1 );
   // The “wrapping paper” of a geometry, this give the shape color and texture
-  const material = new MeshBasicMaterial( { color: 0xdedede, wireframe: false } );
+  const material = new MeshBasicMaterial( { map: texture } );
   //takes the geometry and applies a material to it
   const cube = new Mesh( geometry, material );
 

@@ -30,8 +30,10 @@ const Home = ({ homeRef }) => {
             I'm Lawrence Sanzogni <br/>
             Software Engineer</p>
           </div>
+
         </div>
       </div>
+      {/* <div style={{fontSize: '20vh', backgroundColor: '#white', color: '#dededede', padding: '20px'}}>LS</div> */}
     </section>
   )
 }

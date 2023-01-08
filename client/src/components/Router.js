@@ -16,9 +16,9 @@ const Router = () => {
   return (
     <Routes>
       <Route path='/' element={<Home/>}></Route>
-      {/* <Route></Route>
+      <Route path='/skills' element={<Skills/>}></Route>
       <Route></Route>
-      <Route></Route> */}
+      <Route></Route>
     </Routes>
   )
 }
