@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <div id='app'>
-      <button id='float-button' onClick={() => {homeRef.current.scrollIntoView()}}>
+      <button id='float-button' onClick={() => {homeRef.current.scrollIntoView({behavior: 'smooth'})}}>
       </button>
       {emailModal && <Email isOpen={isOpen}/>}
       <NavBar
@@ -41,11 +41,12 @@ const App = () => {
         homeRef={homeRef}
         projectsRef={projectsRef}
         skillsRef={skillsRef}
+        experienceRef={experienceRef}
       />
       <About homeRef={homeRef}/>
       <Skills skillsRef={skillsRef}/>
       <Projects projectsRef={projectsRef}/>
-      {/* <Experience experienceRef={experienceRef} /> */}
+      <Experience experienceRef={experienceRef} />
       <Contact contactRef={contactRef} emailModal={emailModal} isOpen={isOpen}/>
       <Footer/>
     </div>

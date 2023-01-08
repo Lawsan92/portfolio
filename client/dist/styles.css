@@ -1,5 +1,5 @@
 body {
-  background-image: linear-gradient(white,  #C4A484);
+  /* background-image: linear-gradient(white,  #C4A484); */
   margin: 0;
 }
 
@@ -105,6 +105,14 @@ section {
   align-items: center;
 }
 
+.about_textsphere {
+  height: 50vh;
+  width: 50vw;
+  justify-self: center;
+  border: solid;
+  margin: 1em;
+}
+
 /*SKILLS*/
 
 #skills {
@@ -182,7 +190,7 @@ img {
   justify-content: space-evenly;
   margin: 25px;
   border-radius: 20px;
-  background-image: linear-gradient(white,  #C4A484);
+  /* background-image: linear-gradient(white,  #C4A484); */
   overflow: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -390,3 +398,14 @@ cursor: pointer;
 }
 
 
+
+
+.tagcloud {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 650;
+  margin-left: 30%;
+}
+.tagcloud--item:hover {
+  color: #36454f;
+}
