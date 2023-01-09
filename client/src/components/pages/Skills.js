@@ -35,12 +35,16 @@ const Skills = ({ skillsRef }) => {
   return (
     <section id='skills' ref={skillsRef}>
       <NavBar/>
-      <div id='border'/>
-      <h1>{'Skills'}</h1>
-      <div id='icons'>
-        {/* { mapIcons() } */}
+      <div className='skills_container'>
+        <div className='skills_header'>
+          <div id='border'/>
+          <h1>{'Skills'}</h1>
+        </div>
+        <div className='skills_content'>
+          {/* { mapIcons() } */}
+          <Textsphere/>
+        </div>
       </div>
-      <Textsphere/>
     </section>
   )
 }
