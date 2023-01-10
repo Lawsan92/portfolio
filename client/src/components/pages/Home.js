@@ -15,7 +15,7 @@ const Home = ({ homeRef }) => {
           <img className='home_content portrait' src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667331066/icons/IMG_0041_rxkdai.jpg'/>
           <div className='home_text'>
             <p>Hi,<br/>
-            I'm Lawrence Sanzogni <br/>
+            I'm Lawrence Sanzogni, <br/>
             Software Engineer</p>
           </div>
 
@@ -24,9 +24,9 @@ const Home = ({ homeRef }) => {
       {/* <div style={{
         fontSize: '20vh',
         backgroundColor: '#white',
-        color: '#0047AB',
+        color: '#9eb0c7',
         padding: '20px',
-        fontFamily: 'Cedarville cursive',
+        // fontFamily: 'Cedarville cursive',
         }}>LS</div> */}
     </section>
   )

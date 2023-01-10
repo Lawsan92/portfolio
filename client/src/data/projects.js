@@ -11,7 +11,7 @@ let projects = [
   },
   {
     name:'Guitune',
-    url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1667414711/icons/Screen_Shot_2022-11-02_at_1.42.38_PM_x1mwkq.png',
+    url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1673252362/samples/Screen_Shot_2022-11-02_at_14238_PM_x1mwkq-transformed_lommbv.png',
     href: '',
     githref: 'https://github.com/Lawsan92/guiTune',
     techstack: 'REACT-NATIVE EXPO EXPO-AV',
