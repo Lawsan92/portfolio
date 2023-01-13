@@ -1,0 +1,23 @@
+/*CONTACT*/
+
+#contact {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact-icons {
+  display: flex;
+  margin: 20px;
+}
+
+#contact-icons img {
+margin: 10px;
+max-height: 50px;
+cursor: pointer;
+}
+
+#contact-icons svg:hover {
+  fill: #ffffff
+}

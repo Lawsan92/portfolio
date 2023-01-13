@@ -33,8 +33,8 @@ const Textsphere = () => {
 
   const options = {
     radius: 300,
-    maxSpeed: 'fast',
-    initSpeed: 'fast',
+    maxSpeed: 'medium',
+    initSpeed: 'medium',
     direction: 135,
     keep: true,
     useContainerInlineStyles: true
@@ -42,7 +42,7 @@ const Textsphere = () => {
 
 
   return (
-    <TagCloud options={options} >
+    <TagCloud options={options} style={{fontSize: '3.5vh'}}>
       {tags}
     </TagCloud>
   );

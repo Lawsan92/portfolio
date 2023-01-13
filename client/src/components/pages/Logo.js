@@ -27,7 +27,7 @@ const Logo = () => {
   }
 
   // TEXT
-  const texture = new TextureLoader().load('https://res.cloudinary.com/darp0mj9i/image/upload/v1673193359/icons/Screenshot_2023-01-08_at_9.55.33_AM_eorvm3.png');
+  const texture = new TextureLoader().load('https://res.cloudinary.com/darp0mj9i/image/upload/v1673239781/icons/Screen_Shot_2023-01-08_at_22.49.37_zjlzwr.jpg');
 
   // Scene
   const scene = new Scene();
