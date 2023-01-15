@@ -1,0 +1,68 @@
+/*HOME*/
+.home_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.home_content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90vw;
+  height: 100vh;
+  color: #9eb0c7;
+}
+
+.home_content p {
+  font-size: 7vh;
+  font-weight: 500;
+  margin: 30px;
+}
+
+.home_text {
+  display: flex;
+  height: 53vh;
+  width: 50vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.tagcloud {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+}
+
+.tagcloud--item:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white
+}
+
+/*------------------------
+    DARK STYLES
+------------------------*/
+
+.home_text.dark {
+  color: white;
+  background-color: #000000;
+  display: flex;
+  height: 53vh;
+  width: 50vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.home_content.dark {
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  width: fit-content;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90vw;
+  height: 100vh;
+}
