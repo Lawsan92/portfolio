@@ -13,9 +13,9 @@
 }
 
 #contact-icons img {
-margin: 10px;
-max-height: 50px;
-cursor: pointer;
+  margin: 10px;
+  max-height: 50px;
+  cursor: pointer;
 }
 
 #contact-icons svg:hover {

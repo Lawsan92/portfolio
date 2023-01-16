@@ -81,3 +81,31 @@
   justify-content: center;
   align-items: center;
 }
+
+.home_text.border_left {
+  width: 1px;
+  height: 5vh;
+  background-color: #9eb0c7;
+  align-self: flex-end
+}
+
+.home_text.border_bottom {
+  width: 2.5vw;
+  height: 1px;
+  background-color: #9eb0c7;
+  align-self: flex-end
+}
+
+.home_text.border_right {
+  width: 1px;
+  height: 5vh;
+  background-color: #9eb0c7;
+  align-self: flex-start
+}
+
+.home_text.border_top {
+  width: 2.5vw;
+  height: 1px;
+  background-color: #9eb0c7;
+  align-self: flex-start
+}
