@@ -17,6 +17,7 @@ const NavBar = ({ contactRef, homeRef, skillsRef, projectsRef, experienceRef }) 
         <Link to='/skills' ><h3 onClick={() => {skillsRef.current.scrollIntoView({behavior: 'smooth'})}} >Skills</h3></Link>
         <Link to='/projects'><h3 onClick={() => {projectsRef.current.scrollIntoView({behavior: 'smooth'})}}>Projects</h3></Link>
         <Link to='/experience'><h3 onClick={() => {experienceRef.current.scrollIntoView({behavior: 'smooth'})}}>Experience</h3></Link>
+        <Link to='/contact'><h3 onClick={() => {experienceRef.current.scrollIntoView({behavior: 'smooth'})}}>Contact</h3></Link>
       </div>
       <button className='navbar_themebutton' onClick={() => {toggleTheme()}} >
         {darkTheme ? <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766274/icons/dark-mode-6682_1_tluczz.svg'/> :

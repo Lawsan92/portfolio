@@ -4,11 +4,11 @@ import {
   Home,
   Skills,
   Projects,
-  Contact,
   NavBar,
   Footer,
   Email,
-  Experience
+  Contact,
+  Experience,
 } from './Exports.js';
 
 
@@ -19,8 +19,7 @@ const Router = () => {
       <Route path='/skills' element={<Skills/>}></Route>
       <Route path='/projects' element={<Projects/>}></Route>
       <Route path='/experience' element={<Experience/>}></Route>
-      {/* <Route path='/contact' element={<Contact/>}></Route> */}
-      <Route></Route>
+      <Route path='/contact' element={<Email/>}></Route>
     </Routes>
   )
 }

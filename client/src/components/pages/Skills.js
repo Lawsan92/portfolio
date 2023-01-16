@@ -13,8 +13,8 @@ const Skills = ({ skillsRef }) => {
       <NavBar/>
       <div className={ darkTheme ? 'skills_container dark' : 'skills_container'}>
         <div className='skills_content'>
-          <div className='about_text'>
-            <h1 className='about_text header'>
+          <div className='skills_text'>
+            <h1 className='skills_text header'>
               About Me
             </h1>
             <p>
@@ -35,8 +35,31 @@ const Skills = ({ skillsRef }) => {
           <div className='skills_graph entry'>
             <h3>Front-end</h3>
             <div className='skills_graph entry_meter front-end'/>
+          </div>
+          <div className='skills_graph entry'>
             <h3>Back-end</h3>
             <div className='skills_graph entry_meter back-end'/>
+          </div>
+          <div className='skills_graph entry'>
+            <div className='skills_graph entry header'>
+              <h3>ReactJS</h3>
+              <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313722/icons/icons8-react-native_muuptm.svg'/>
+            </div>
+            <div className='skills_graph entry_meter react'/>
+          </div>
+          <div className='skills_graph entry'>
+            <div className='skills_graph entry header'>
+              <h3>NodeJS</h3>
+              <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313787/icons/icons8-node-js_atum9p.svg'/>
+            </div>
+            <div className='skills_graph entry_meter node'/>
+          </div>
+          <div className='skills_graph entry'>
+            <div className='skills_graph entry header'>
+              <h3>PostgreSQL</h3>
+              <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313754/icons/icons8-postgresql_sjrwkg.svg'/>
+            </div>
+            <div className='skills_graph entry_meter postgres'/>
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@
   width: 90vw;
 
   &.dark {
-    background-color: #000000;
+    background-color: #181818;
     color: #ffffff
   }
 
@@ -32,6 +32,16 @@
   height: 100vh;
 }
 
+.skills_text {
+  margin: 1em;
+}
+
+.skills_text h1{
+  font-size: 7vh;
+  font-weight: 400;
+  color: #9eb0c7;
+}
+
 .skills_graph {
   width: 90%;
   height: 30vh;
@@ -40,11 +50,30 @@
 .skills_graph.entry{
   display: flex;
   flex-direction: column;
-  margin: 1em
+  margin: 1em;
+  height: fit-content;
+
+  &.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: fit-content;
+
+    & * {
+      margin-left: 5px
+    }
+
+    & img {
+      height: 1.5em;
+      width: 1.5em;
+     }
+
+  }
 }
 
 .skills_graph.entry_meter {
-  height: .5em;
+  height: .25em;
   margin: 5px;
 
   &.front-end {
@@ -56,4 +85,21 @@
     background-color: #2962cb;
     border: 0
    }
+
+   &.react {
+    background-color: #149ecc;
+    border: 0
+   }
+
+   &.node {
+    background-color: #008000;
+    border: 0
+   }
+
+   &.postgres {
+    background-color: #2176d6;
+    border: 0
+   }
+
 }
+

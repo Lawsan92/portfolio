@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import projects from '../../data/projects.js';
-import ProjectCard from './ProjectCard';
-import ProjectCol from './format/ProjectCol';
-import ProjectSlides from './format/ProjectSlides';
 import NavBar from './NavBar';
+import { useTheme } from '../ThemeContext.js';
 
 const Projects = ({ projectsRef }) => {
+
+  const darkTheme = useTheme();
 
   const [containerWidth, getWidth] = useState(Math.floor((window.innerWidth * .9) / 4));
   const [containerHeight, getHeight] = useState(Math.floor((window.innerHeight * .9) / 20));
@@ -109,7 +109,7 @@ const Projects = ({ projectsRef }) => {
   return (
     <section id='projects' ref={projectsRef}>
       <NavBar/>
-      <div className='projects_container'>
+      <div className={ darkTheme ? 'projects_container dark' : 'projects_container'}>
         {/* <div className='projects_header'>
           <div id='border'/>
           <h1>{'Projects'}</h1>
