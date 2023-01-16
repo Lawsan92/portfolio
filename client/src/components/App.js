@@ -1,23 +1,26 @@
 import React, { useState, useEffect, useCallback, useRef, createContext, useContext } from 'react';
 import Router from './Router.js';
-
-const styles = {
-  backgroundColor: 'white'
-}
-
-export const ThemeContext = createContext(styles);
+import  ThemeProvider from './ThemeContext.js';
 
 const App = () => {
 
-  console.log('ThemeContext:', useContext(ThemeContext));
+  // div refs for scrolling
+  const [contactRef, projectsRef, skillsRef, homeRef, experienceRef] = [useRef(), useRef(), useRef(), useRef(), useRef()];
 
-  const [theme, setTheme] = useState(false);
+  // email state
+  const [emailModal, isOpen] = useState(false);
+
+  const [emailAuth] = useState({
+    serviceID: '',
+    emailID: '',
+    apiKEY: ''
+  })
 
   return (
     <div id='app'>
-      <ThemeContext.Provider value={theme}>
+      <ThemeProvider>
         <Router/>
-      </ThemeContext.Provider>
+      </ThemeProvider>
     </div>
   )
 }
