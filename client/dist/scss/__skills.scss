@@ -1,0 +1,105 @@
+/*SKILLS*/
+
+#skills {
+  display: flex;
+  margin: 0;
+  display: flex;
+  align-items: center; /* y-axis/cross-axis*/
+  height: 100vh;
+  width: 100vw;
+}
+
+.skills_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 90vw;
+
+  &.dark {
+    background-color: #181818;
+    color: #ffffff
+  }
+
+}
+
+.skills_content {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 100vh;
+}
+
+.skills_text {
+  margin: 1em;
+}
+
+.skills_text h1{
+  font-size: 7vh;
+  font-weight: 400;
+  color: #9eb0c7;
+}
+
+.skills_graph {
+  width: 90%;
+  height: 30vh;
+}
+
+.skills_graph.entry{
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  height: fit-content;
+
+  &.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: fit-content;
+
+    & * {
+      margin-left: 5px
+    }
+
+    & img {
+      height: 1.5em;
+      width: 1.5em;
+     }
+
+  }
+}
+
+.skills_graph.entry_meter {
+  height: .25em;
+  margin: 5px;
+
+  &.front-end {
+    background-color: #ff0000;
+    border: 0
+   }
+
+   &.back-end {
+    background-color: #2962cb;
+    border: 0
+   }
+
+   &.react {
+    background-color: #149ecc;
+    border: 0
+   }
+
+   &.node {
+    background-color: #008000;
+    border: 0
+   }
+
+   &.postgres {
+    background-color: #2176d6;
+    border: 0
+   }
+
+}
+

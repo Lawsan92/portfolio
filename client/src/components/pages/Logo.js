@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import {Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, TextureLoader} from 'three';
+import {Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, TextureLoader, Color} from 'three';
+import { useTheme } from '../ThemeContext.js';
 
 const Logo = () => {
+
+  const darkTheme = useTheme();
 
   const [canvasSize, getSize] = useState({height: 160, width: 160})
 
@@ -26,8 +29,36 @@ const Logo = () => {
     }
   }
 
+  class Cube  {
+    constructor () {
+      this.scene = new Scene();
+      this.scene.background = new Color(0x000000);
+      this.camera = new PerspectiveCamera(30, canvasSize.height / canvasSize.width, 0.1, 1000);
+      this.camera.position.z = 5;
+      this.texture = new TextureLoader().load('https://res.cloudinary.com/darp0mj9i/image/upload/v1673782343/icons/Screen_Shot_2023-01-15_at_05.32.19_dl0qkv.jpg');
+      this.renderer = new WebGLRenderer({alpha: true });
+      this.renderer.setSize( canvasSize.height, canvasSize.width );
+      this.renderer.setPixelRatio(window.devicePixelRatio)
+      this.geometry = new BoxGeometry( 1, 1, 1 );
+      this.material = new MeshBasicMaterial( { map: this.texture } );
+      this.cube = new Mesh( this.geometry, this.material );
+      this.animate = function () {
+        requestAnimationFrame( this.animate )
+        this.cube.rotation.x += 0.01;
+        this.cube.rotation.y += 0.01;
+        this.cube.rotation.z += 0.01;
+        this.renderer.render(this.scene, this.camera)
+        this.scene.add( this.cube )
+        console.log('this.scene.add(this.cube):', this.scene.add(this.cube))
+      }
+    }
+  }
+
+  let cube1 = new Cube ();
+
+
   // TEXT
-  const texture = new TextureLoader().load('https://res.cloudinary.com/darp0mj9i/image/upload/v1673239781/icons/Screen_Shot_2023-01-08_at_22.49.37_zjlzwr.jpg');
+  const texture = new TextureLoader().load('https://res.cloudinary.com/darp0mj9i/image/upload/v1673782343/icons/Screen_Shot_2023-01-15_at_05.32.19_dl0qkv.jpg');
 
   // Scene
   const scene = new Scene();
@@ -39,7 +70,7 @@ const Logo = () => {
   camera.position.z = 5;
 
   // Renderer
-  const renderer = new WebGLRenderer({alpha:  true});
+  const renderer = new WebGLRenderer({alpha: true });
    // this sets the render size to the size of the window element
 
 
@@ -65,9 +96,14 @@ const Logo = () => {
     scene.add( cube ); // this will add our shape to the scene
   }
 
+  /*-----------------
+      DARK MODE CUBE
+  ------------------ */
+
+
   return (
     <div className='navbar_logo' style={styles.container} >
-      {animate()}
+      { animate()}
     </div>
   )
 }

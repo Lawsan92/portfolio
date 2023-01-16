@@ -1,50 +1,39 @@
 import React, { useContext } from 'react';
 import NavBar from './NavBar.js';
-import '../../../dist/css/styles.css';
+import '../../../dist/scss/styles.scss';
 import Textsphere from './Textsphere.js';
-import ThemeContext from './../App.js';
-
+import { useTheme } from '../ThemeContext.js';
 const Home = ({ homeRef }) => {
 
-  const theme = useContext(ThemeContext);
-  console.log('ThemeContext:', ThemeContext);
-  console.log('theme:', theme);
+  const darkTheme = useTheme();
+
+  const styles = {
+    height: '16vh',
+    width: '16vw',
+    backgroundColor: '#9eb0c7',
+    color: 'white',
+    fontSize: '10vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 
   return (
-    <section id='home'>
+    <section className='home_container'>
       <NavBar/>
-      <div className='home_container'>
-        <div className='home_content'>
-          <div className='home_text'>
-            <span className='home_text border_left' />
-            <span className='home_text border_bottom' />
-            <p>Hi,<br/>
-            I'm Lawrence Sanzogni, <br/>
-            Software Engineer</p>
-            <span className='home_text border_top' />
-            <span className='home_text border_right'/>
-          </div>
-          <Textsphere/>
+      <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
+        <Textsphere/>
+        <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
+          <p>Hi,<br/>
+          I'm Lawrence Sanzogni, <br/>
+          Software Engineer</p>
         </div>
       </div>
+
+      {/* <div style={styles}>LS</div> */}
+
     </section>
-  )
+  );
 }
 
 export default Home;
-
-      {/* <div className="home_header">
-        <div id='border'/>
-          <h1>{'Home'}</h1>
-        </div> */}
-
-{/* <img className='home_content portrait' src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667331066/icons/IMG_0041_rxkdai.jpg'/> */}
-
-
-      {/* <div style={{
-        fontSize: '20vh',
-        backgroundColor: '#white',
-        color: '#9eb0c7',
-        padding: '20px',
-        // fontFamily: 'Cedarville cursive',
-        }}>LS</div> */}

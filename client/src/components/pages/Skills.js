@@ -1,47 +1,20 @@
 import React from 'react';
 import icons from '../../data/icons.js'
 import NavBar from './NavBar.js';
+import { useTheme } from '../ThemeContext.js'
 
 const Skills = ({ skillsRef }) => {
 
-  const mapIcons = () => {
-    return icons.map((icon, index) => {
-      let mid = Math.floor(icons.length / 2);
-      while (index < mid) {
-        return (
-          <div id='icon' key={index}>
-            {icon.title === 'JS' ?
-                <div id='row'>
-                <h3>{icons[index].title}</h3>
-                <img id='js-icon' style={{margin: '10px', padding: '11.5px'}} src={icons[index].url}/>
-              </div>
-              :
-              <div id='row'>
-              <h3>{icons[index].title}</h3>
-              <img style={{margin: '10px'}} src={icons[index].url}/>
-            </div>
-            }
-            <div id='row'>
-              <h3>{icons[index + mid].title}</h3>
-              <img style={{margin: '10px'}} src={icons[index + mid].url}/>
-            </div>
-          </div>
-        );
-      }
-    })
-  };
+  const darkTheme = useTheme()
+  console.log('window.innerHeight:', window.innerHeight)
 
   return (
     <section id='skills' ref={skillsRef}>
       <NavBar/>
-      <div className='skills_container'>
-        {/* <div className='skills_header'>
-          <div id='border'/>
-          <h1>{'Skills'}</h1>
-        </div> */}
+      <div className={ darkTheme ? 'skills_container dark' : 'skills_container'}>
         <div className='skills_content'>
-          <div className='about_text'>
-            <h1 className='about_text header'>
+          <div className='skills_text'>
+            <h1 className='skills_text header'>
               About Me
             </h1>
             <p>
@@ -57,7 +30,37 @@ const Skills = ({ skillsRef }) => {
               I currently live in Austin but I'm originally from Rome and have spent time all over the United States, as well as a few years in France and Italy. My hobbies include: working on web applications, programming, playing guitar, singing, writing songsand running. Open to work.
             </p>
           </div>
-          {/* { mapIcons() } */}
+        </div>
+        <div className='skills_graph'>
+          <div className='skills_graph entry'>
+            <h3>Front-end</h3>
+            <div className='skills_graph entry_meter front-end'/>
+          </div>
+          <div className='skills_graph entry'>
+            <h3>Back-end</h3>
+            <div className='skills_graph entry_meter back-end'/>
+          </div>
+          <div className='skills_graph entry'>
+            <div className='skills_graph entry header'>
+              <h3>ReactJS</h3>
+              <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313722/icons/icons8-react-native_muuptm.svg'/>
+            </div>
+            <div className='skills_graph entry_meter react'/>
+          </div>
+          <div className='skills_graph entry'>
+            <div className='skills_graph entry header'>
+              <h3>NodeJS</h3>
+              <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313787/icons/icons8-node-js_atum9p.svg'/>
+            </div>
+            <div className='skills_graph entry_meter node'/>
+          </div>
+          <div className='skills_graph entry'>
+            <div className='skills_graph entry header'>
+              <h3>PostgreSQL</h3>
+              <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313754/icons/icons8-postgresql_sjrwkg.svg'/>
+            </div>
+            <div className='skills_graph entry_meter postgres'/>
+          </div>
         </div>
       </div>
     </section>

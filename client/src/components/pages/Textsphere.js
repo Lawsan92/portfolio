@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import icons from '../../data/icons.js';
 import { TagCloud } from "@frank-mayer/react-tag-cloud";
+import { useTheme } from '../ThemeContext.js'
 
 const Textsphere = () => {
+
+  const darkTheme = useTheme();
 
   const tags = [
     'JavaScript',
@@ -37,7 +40,7 @@ const Textsphere = () => {
     initSpeed: 'medium',
     direction: 135,
     keep: true,
-    useContainerInlineStyles: true
+    useContainerInlineStyles: true,
   }
 
 

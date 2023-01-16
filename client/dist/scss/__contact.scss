@@ -5,17 +5,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 30vh
 }
 
-#contact-icons {
-  display: flex;
-  margin: 20px;
-}
-
-#contact-icons img {
-  margin: 10px;
-  max-height: 50px;
-  cursor: pointer;
+#contact img {
+height: 10%;
+margin: .3vw;
+max-height: 30px;
+cursor: pointer;
 }
 
 #contact-icons svg:hover {

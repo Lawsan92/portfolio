@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import contacts from '../../data/contacts.js';
-import NavBar from './NavBar.js';
 
 const Contact = ({ contactRef, emailModal, isOpen }) => {
 
@@ -22,12 +21,7 @@ const Contact = ({ contactRef, emailModal, isOpen }) => {
 
   return (
     <section id='contact' ref={contactRef}>
-      <NavBar/>
-      <div id='border'/>
-      <h1>{'Contact'}</h1>
-      <div id='contact-icons'>
-        {renderContact()}
-      </div>
+      {renderContact()}
     </section>
   )
 }
