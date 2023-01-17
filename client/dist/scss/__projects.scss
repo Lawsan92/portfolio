@@ -14,8 +14,10 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
+  transition: background 1s;
 
   &.dark {
+    transition: background 1s;
     background-color: #181818;
   }
 }

@@ -23,6 +23,9 @@ const Home = ({ homeRef }) => {
       <NavBar/>
       <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
         <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
+          <div className='home_text subheader'>
+            <p>Hi, my name is</p>
+          </div>
           <div className='home_text header'>
             <p>
             Lawrence Sanzogni, <br/>
@@ -30,20 +33,18 @@ const Home = ({ homeRef }) => {
           </div>
           <div className='home_text content'>
             <p>
-              I'm a fullstack JavaScript engineer with a specialty in MERN and PERN tech stacks. I'm an avid problem solver and love creating new content.
-            </p>
-            <p>
-              My professional coding journey began after school when I decided to take on more hands-on experience by enrolling in Hack Reactor's 13 week immersive.
-            </p>
-            <p>
-              Now fully equipped with a skillset beyond the theoretical, I've continued my journey through freelancing work. Enabling me to refine my current skillset, add to it and accrue a professional work history. I'm now ready to take that next leap into becoming part of a team.
-            </p>
-            <p>
-              I currently live in Austin but I'm originally from Rome and have spent time all over the United States, as well as a few years in France and Italy. My hobbies include: working on web applications, programming, playing guitar, singing, writing songsand running. Open to work.
+              I'm a fullstack JavaScript engineer with a specialty in MERN and PERN tech stacks who's avid problem solver and loves creating new content.
+              Currently looking to join a team.
             </p>
           </div>
+          <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
         </div>
-        <Textsphere/>
+        {/* <Textsphere/> */}
+        <div className='home_assets'>
+          <div className={ darkTheme ? 'home_assets circ1 dark' : 'home_assets circ1'}></div>
+          <div className={ darkTheme ? 'home_assets circ2 dark' : 'home_assets circ2'}></div>
+          <div className={ darkTheme ? 'home_assets circ3 dark' : 'home_assets circ3'}></div>
+        </div>
       </div>
 
       {/* <div style={styles}>LS</div> */}

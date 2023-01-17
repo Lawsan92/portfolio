@@ -15,8 +15,10 @@
   align-items: center;
   height: 100vh;
   width: 90vw;
+  transition: background 1s;
 
   &.dark {
+    transition: background 1s;
     background-color: #181818;
     color: #ffffff
   }
@@ -34,12 +36,18 @@
 
 .skills_text {
   margin: 1em;
-}
+  // border: solid;
+  width: 40vw;
 
-.skills_text h1{
-  font-size: 7vh;
-  font-weight: 400;
-  color: #9eb0c7;
+  &.header {
+    font-size: 7vh;
+    font-weight: 800;
+    color: steelblue;
+  }
+
+  &.content {
+    color:rgb(178, 190, 181);
+  }
 }
 
 .skills_graph {
@@ -103,3 +111,15 @@
 
 }
 
+.tagcloud {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  color: steelblue
+}
+
+.tagcloud--item:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white
+}

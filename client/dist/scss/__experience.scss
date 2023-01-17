@@ -9,8 +9,10 @@
   display: flex;
   height: 100vh;
   width: 100vw;
+  transition: background 1s;
 
   &.dark {
+    transition: background 1s;
     background-color: #181818;
     color: #ffffff
   }
@@ -34,9 +36,11 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin: 2vh;
   padding: 2vh;
+  transition: background 1s;
 
   &.dark {
     box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+    transition: background 1s;
   }
 
 }

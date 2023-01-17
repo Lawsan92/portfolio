@@ -6,9 +6,13 @@
   flex-direction: column;
   align-items: center;
   background-color: #edf2f8;
+  transition: background 1s;
+  // background-image: linear-gradient(#ffffff, steelblue);
 
   &.dark{
+    transition: background 1s;
     background-color: #1d1d1d;
+    background-image: none;
   }
 }
 

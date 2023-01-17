@@ -35,7 +35,7 @@ const Textsphere = () => {
   ];
 
   const options = {
-    radius: 300,
+    radius: 400,
     maxSpeed: 'medium',
     initSpeed: 'medium',
     direction: 135,
