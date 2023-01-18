@@ -17,7 +17,10 @@ const About = ({ homeRef }) => {
               Now fully equipped with a skillset beyond the theoretical, I've continued my journey through freelancing work. Enabling me to refine my current skillset, add to it and accrue a professional work history. I'm now ready to take that next leap into becoming part of a team.
             </p>
             <p>
-              I currently live in Austin but I'm originally from Rome and have spent time all over the United States, as well as a few years in France and Italy. My hobbies include: working on web applications, programming, playing guitar, singing, writing songsand running. Open to work.
+              I currently live in Austin but I'm originally from Rome and have spent time all over the United States, as well as a few years in France and Italy. My hobbies include: working on web applications, programming, playing guitar, singing, writing songs and running. Open to work.
+            </p>
+            <p>
+              If you want to get in touch, feel free to visit my Linkedin profile or/if you want to see my codebases, take a look at my Github
             </p>
           </div>
       </div>

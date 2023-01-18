@@ -32,6 +32,14 @@ let projects = [
     githref: 'https://github.com/Team-Dagobah/SDC-Ratings-and-Reviews',
     techstack: 'NGINX NODEJS LOADER_IO POSTGRES',
     summary: 'Built a RESTful API service for a clothing website that can handle web scale traffic of up to 120 000 client requests per minute.'
+  },
+  {
+    name:'Studio D\'Arte',
+    url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1674061527/fabio/Screen_Shot_2023-01-18_at_11.04.04_mbykzw.jpg',
+    href: '',
+    githref: 'https://github.com/Lawsan92/studioDarte',
+    techstack: 'REACTJS REACT-ROUTER-DOM SASS NODEJS',
+    summary: 'Updated legacy website made from PHP using ReactJS, Nodejs, React-Router-DOM.'
   }
 ]
 

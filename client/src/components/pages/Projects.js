@@ -7,10 +7,8 @@ const Projects = ({ projectsRef }) => {
 
   const darkTheme = useTheme();
 
-  const [containerWidth, getWidth] = useState(Math.floor((window.innerWidth * .9) / 4));
+  const [containerWidth, getWidth] = useState(Math.floor((window.innerWidth * .9) / 5));
   const [containerHeight, getHeight] = useState(Math.floor((window.innerHeight * .9) / 20));
-
-  const [hover, setHover] = useState(false);
 
   useEffect(() => {
    window.addEventListener('resize', () => {
@@ -27,62 +25,12 @@ const Projects = ({ projectsRef }) => {
    });
   }, [])
 
-  const mapProjects = () => {
-    return projects.map((project, index) => {
-      return !hover ? (
-        <div
-          className='projects_grid card'
-          style={styles.card}
-          >
-          <img
-            src={project.url}
-            style={styles.img}
-            />
-          {/* <span
-            className='projects_grid card_shadow'
-            style={styles.shadow}
-            onClick={() => {setHover({...hover, [index]: true})}}
-            // onMouseLeave={() => {setHover({...hover, [index]: false})}}
-            >
-              <div className='projects_grid card_shadow text' style={styles.text}>
-                see more
-              </div>
-            </span> */}
-        </div>
-      ) : (
-        <div
-          className='projects_grid card'
-          style={styles.card}
-          >
-          <img
-            src={project.url}
-            style={styles.img}
-            onClick={() => {setHover({...hover, [index]: false})}}
-            // onMouseLeave={() => {setHover({...hover, [index]: false})}}
-            />
-        </div>
-      )
-    });
-  }
-
   const styles = {
     container: {
-      // border: 'solid',
-      display: 'grid',
-      width: '90vw',
-      height: '100vh',
       gridTemplateColumns: `repeat(auto-fill, ${containerWidth}px)`,
-      gridAutoRows: '10px'
     },
     card: {
-      // border: 'solid',
       gridRowEnd: `span ${containerHeight}`,
-      gridColumnEnd: 'span 1',
-      display: 'flex',
-      // opacity: 0.7
-    },
-    img: {
-      width: '100%'
     },
     shadow: {
       height: `${containerHeight * 10}px`,
@@ -94,26 +42,43 @@ const Projects = ({ projectsRef }) => {
       justifyContent: 'center',
       alignItems: 'center'
     },
-    text: {
-      height: '10vh',
-      width: '20vw',
-      backgroundColor: 'white',
-      color: 'black',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      fontSize: '5vh'
-    }
+  }
+
+  const mapProjects = () => {
+    return projects.map((project, index) => {
+      return (
+        <div className='projects_grid card' style={styles.card} >
+          <img className='projects_grid img' src={project.url} />
+            <div className='projects_grid text'>
+              <div className='projects_grid text title'>
+                {project.name}
+              </div>
+              <div className='projects_grid text summary'>
+                {project.summary}
+              </div>
+            </div>
+          {/* <span
+            className='projects_grid card_shadow'
+            style={styles.shadow}
+            onClick={() => {setHover({...hover, [index]: true})}}
+            // onMouseLeave={() => {setHover({...hover, [index]: false})}}
+            >
+              <div className='projects_grid card_shadow text' style={styles.text}>
+                see more
+              </div>
+            </span> */}
+        </div>
+      )
+    });
   }
 
   return (
     <section id='projects' ref={projectsRef}>
       <NavBar/>
       <div className={ darkTheme ? 'projects_container dark' : 'projects_container'}>
-        {/* <div className='projects_header'>
-          <div id='border'/>
-          <h1>{'Projects'}</h1>
-        </div> */}
+        <div className='projects_container header'>
+          Projects
+        </div>
         <div className='projects_grid container' style={styles.container} >
           {mapProjects()}
         </div>
@@ -123,6 +88,3 @@ const Projects = ({ projectsRef }) => {
 }
 
 export default Projects;
-
-   {/* <ProjectCol/> */}
-   {/* <ProjectSlides/> */}

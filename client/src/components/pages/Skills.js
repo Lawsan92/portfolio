@@ -8,7 +8,6 @@ const Skills = ({ skillsRef }) => {
 
   const darkTheme = useTheme()
   console.log('window.innerHeight:', window.innerHeight)
-
   return (
     <section id='skills' ref={skillsRef}>
       <NavBar/>
@@ -26,7 +25,10 @@ const Skills = ({ skillsRef }) => {
                 Now fully equipped with a skillset beyond the theoretical, I've continued my journey through freelancing work. Enabling me to refine my current skillset, add to it and accrue a professional work history. I'm now ready to take that next leap into becoming part of a team.
               </p>
               <p>
-                I currently live in Austin but I'm originally from Rome and have spent time all over the United States, as well as a few years in France and Italy. My hobbies include: working on web applications, programming, playing guitar, singing, writing songsand running. Open to work.
+                I currently live in Austin but I'm originally from Rome and have spent time all over the United States, as well as a few years in France and Italy. My hobbies include: working on web applications, programming, playing guitar, singing, writing songs and running. Open to work.
+              </p>
+              <p>
+              If you would like to get in touch feel free to visit my <a href='https://www.linkedin.com/in/lawrencesanzogni/' >Linkedin</a> profile and/or if you want to see my codebases take a look at my <a href='https://github.com/Lawsan92' >Github</a>
               </p>
             </div>
           </div>

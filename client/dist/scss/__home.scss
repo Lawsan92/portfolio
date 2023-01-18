@@ -17,6 +17,7 @@
   width: 90vw;
   height: 100vh;
   color: #9eb0c7;
+  background-color: #edf2f8;
   transition: background 1s;
 
   &.dark {
@@ -74,9 +75,10 @@
   }
 
   &.btn {
-    background-color: #fff;
+    background-color: #edf2f8;
     // color: #e0e5eb;
     color:steelblue;
+    margin-top: 1em;
     border: solid;
     height: 3em;
     width: 12em;
