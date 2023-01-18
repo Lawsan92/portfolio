@@ -17,5 +17,5 @@ export {
   NavBar,
   Footer,
   Email,
-  Experience
+  Experience,
 };

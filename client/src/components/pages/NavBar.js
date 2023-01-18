@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import Logo from './Logo.js';
 import { Link } from 'react-router-dom';
 import { useTheme, useThemeUpdate } from '../ThemeContext.js';
-import Contact from './Contact.js';
+import SVGicons from './SVGicons';
 
 const NavBar = ({ contactRef, homeRef, skillsRef, projectsRef, experienceRef }) => {
 
@@ -23,7 +23,7 @@ const NavBar = ({ contactRef, homeRef, skillsRef, projectsRef, experienceRef }) 
         {darkTheme ? <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766274/icons/dark-mode-6682_1_tluczz.svg'/> :
         <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766162/icons/dark-mode-6682_ncrhz2.svg'/>}
       </button>
-      {/* <Contact/> */}
+      <SVGicons/>
     </section>
   )
 }

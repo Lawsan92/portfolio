@@ -1,0 +1,22 @@
+.svg_icons {
+
+  &.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: auto;
+  }
+
+  &.entry {
+    border-top: solid 1px #ffffff;
+    width: 10vw;
+
+    &.dark {
+      border-top: solid 1px #9eb0c7;
+    }
+
+  }
+
+}

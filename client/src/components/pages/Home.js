@@ -1,9 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import NavBar from './NavBar.js';
 import '../../../dist/scss/styles.scss';
 import Textsphere from './Textsphere.js';
 import { useTheme } from '../ThemeContext.js';
+import icons from '../../data/icons.js';
+
 const Home = ({ homeRef }) => {
+
+  const [isClicked, setClick] = useState(false);
 
   const darkTheme = useTheme();
 
@@ -16,6 +20,10 @@ const Home = ({ homeRef }) => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
+  }
+
+  const toggleClick = () => {
+    setClick(prevState => !isClicked)
   }
 
   return (
@@ -41,7 +49,21 @@ const Home = ({ homeRef }) => {
         </div>
         {/* <Textsphere/> */}
         <div className='home_assets'>
-          <div className={ darkTheme ? 'home_assets circ1 dark' : 'home_assets circ1'}></div>
+      { !isClicked  ?
+          <div className={ darkTheme ? 'home_assets circ1 dark' : 'home_assets circ1'} onClick={() => {toggleClick()}}></div>
+        :
+          <div className='small'>
+            <div className='small circ1' onClick={() => {toggleClick()}}>
+              <img className='small img1' src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667314229/icons/javascript-seeklogo.com_jplqiw.svg'/>
+            </div>
+            <div className='small circ2' onClick={() => {toggleClick()}}>
+              <img className='small img2' src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667314518/icons/icons8-html-5_ydkc4r.svg'/>
+            </div>
+            <div className='small circ3' onClick={() => {toggleClick()}}>
+              <img className='small img3' src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667312947/icons/icons8-css3-color/icons8-css3-240_nc7v0r.svg'/>
+            </div>
+          </div>
+      }
           <div className={ darkTheme ? 'home_assets circ2 dark' : 'home_assets circ2'}></div>
           <div className={ darkTheme ? 'home_assets circ3 dark' : 'home_assets circ3'}></div>
         </div>
