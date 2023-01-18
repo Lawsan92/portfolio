@@ -10,6 +10,12 @@ const Projects = ({ projectsRef }) => {
   const [containerWidth, getWidth] = useState(Math.floor((window.innerWidth * .9) / 5));
   const [containerHeight, getHeight] = useState(Math.floor((window.innerHeight * .9) / 20));
 
+  const [isHover, setHover] = useState(false);
+
+  const toggleHover = (index) => {
+    setHover({...isHover, [index]: !isHover })
+  }
+
   useEffect(() => {
    window.addEventListener('resize', () => {
 
@@ -25,6 +31,7 @@ const Projects = ({ projectsRef }) => {
    });
   }, [])
 
+
   const styles = {
     container: {
       gridTemplateColumns: `repeat(auto-fill, ${containerWidth}px)`,
@@ -33,8 +40,8 @@ const Projects = ({ projectsRef }) => {
       gridRowEnd: `span ${containerHeight}`,
     },
     shadow: {
-      height: `${containerHeight * 10}px`,
-      width: `${containerWidth * 2}px`,
+      height: '95%',
+      width: '90%',
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
       zIndex: 3,
       position: 'fixed',
@@ -46,38 +53,65 @@ const Projects = ({ projectsRef }) => {
 
   const mapProjects = () => {
     return projects.map((project, index) => {
-      return (
-        <div className='projects_grid card' style={styles.card} >
-          <img className='projects_grid img' src={project.url} />
-            <div className='projects_grid text'>
-              <div className='projects_grid text title'>
-                {project.name}
+      // if (!isHover) {
+        return (
+          <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}>
+            <img className='projects_grid img' src={project.url} />
+              <div className='projects_grid text'>
+                <div className='projects_grid text title'>
+                  {project.name}
+                </div>
+                <div className='projects_grid text summary'>
+                  {project.summary}
+                </div>
               </div>
-              <div className='projects_grid text summary'>
-                {project.summary}
-              </div>
-            </div>
-          {/* <span
-            className='projects_grid card_shadow'
-            style={styles.shadow}
-            onClick={() => {setHover({...hover, [index]: true})}}
-            // onMouseLeave={() => {setHover({...hover, [index]: false})}}
-            >
-              <div className='projects_grid card_shadow text' style={styles.text}>
-                see more
-              </div>
-            </span> */}
-        </div>
-      )
+          </div>
+        );
+      // } else {
+      //   return (
+      //     <div className='projects_grid card' style={styles.card} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}>
+      //       {/* <span
+      //         className='projects_grid card_shadow'
+      //         style={styles.shadow}
+      //         onClick={() => {setHover({...hover, [index]: true})}}
+      //         // onMouseLeave={() => {setHover({...hover, [index]: false})}}
+      //         >
+      //         <div className='projects_grid card_shadow text' style={styles.text}>
+      //           see more
+      //         </div>
+      //         </span> */}
+      //       <img className='projects_grid img' src={project.url} />
+      //         <div className='projects_grid text'>
+      //           <div className='projects_grid text title'>
+      //             {project.name}
+      //           </div>
+      //           <div className='projects_grid text summary'>
+      //             {project.summary}
+      //           </div>
+      //         </div>
+      //     </div>
+      //   );
+      // }
+
     });
+  }
+
+  const mapCategories = () => {
+    let categories = ['Backend', 'FrontEnd', 'Mobile', 'ReactJS']
+    return categories.map((category) => {
+      return (<div className={ !darkTheme ? 'projects_categories card' : 'projects_categories card dark'}>{category}</div>)
+    })
   }
 
   return (
     <section id='projects' ref={projectsRef}>
       <NavBar/>
       <div className={ darkTheme ? 'projects_container dark' : 'projects_container'}>
-        <div className='projects_container header'>
-          Projects
+        <div className={ !darkTheme ? 'projects_container header' : 'projects_container header dark' }>
+          <h1>Projects</h1>
+        </div>
+        <div className='projects_categories'>
+          {mapCategories()}
         </div>
         <div className='projects_grid container' style={styles.container} >
           {mapProjects()}

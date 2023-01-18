@@ -29,21 +29,22 @@ const Contact = () => {
     <div className={ !darkTheme ? 'contact_container' : 'contact_container dark' }>
       <NavBar/>
       <div className='contact_content'>
-        <section id='contact_email background'>
-        <form ref={form} onSubmit={sendEmail} id='contact_email body'>
-          <div id='contact_email header'>
-            <div id='contact_email close'>
-              <button onClick={() => {isOpen(false)}}>X</button>
+        <div className='contact_content header'>
+        <h1>Contact Me</h1>
+        </div>
+        <section className='contact_email background'>
+        <form ref={form} onSubmit={sendEmail} className='contact_email body'>
+          <div className='contact_email header'>
+            <div className='contact_email close'>
             </div>
-            <h2>Contact Me</h2>
           </div>
-          <input type='text' name='user_name' placeholder='Full Name'></input>
-          <input type='email' name='user_email' placeholder='Email'></input>
-          <input type='text' name='subject' placeholder='Subject'></input>
-          <textarea name='message'></textarea>
-          <div id='contact_email send'>
-          <input type='submit' value ='Send'></input>
+          <div className='contact_email section1'>
+            <input className={ !darkTheme ? 'contact_email body input' : 'contact_email body input dark'} type='text' name='user_name' placeholder='Full Name'></input>
+            <input className={ !darkTheme ? 'contact_email body input' : 'contact_email body input dark'} type='email' name='user_email' placeholder='Email'></input>
           </div>
+          <input className={ !darkTheme ? 'contact_email body input' : 'contact_email body input dark'} type='text' name='subject' placeholder='Subject'></input>
+          <textarea className={ !darkTheme ? 'contact_email body input textarea' : 'contact_email body input textarea dark'} name='message'></textarea>
+          <input className={ !darkTheme ? 'contact_email body btn' : 'contact_email body btn dark'} type='submit' value ='Send'></input>
         </form>
       </section>
       </div>
