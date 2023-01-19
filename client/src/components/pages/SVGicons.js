@@ -2,6 +2,55 @@ import React, { useState } from 'react';
 import NavBar from './NavBar.js';
 import { useTheme } from '../ThemeContext.js';
 
+
+export const EmailSVG = () => {
+
+  const darkTheme = useTheme();
+
+  const [isHover, setHover] = useState(false);
+
+  return (
+    <svg
+    title='email'
+    className={ !darkTheme ?'contact_svg entry' : 'contact_svg entry dark' }
+    width="40"
+    height="40"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24">
+      <g data-name="Layer 2">
+        <path d="M19 4H5a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-.67 2L12 10.75 5.67 6zM19 18H5a1 1 0 0 1-1-1V7.25l7.4 5.55a1 1 0 0 0 .6.2 1 1 0 0 0 .6-.2L20 7.25V17a1 1 0 0 1-1 1z" data-name="email" fill="grey"/>
+      </g>
+    </svg>
+  );
+}
+
+export const IphoneSVG = () => {
+
+  const darkTheme = useTheme();
+
+  const [isHover, setHover] = useState(false);
+
+  return (
+    <svg
+    title='iphone'
+    className={ !darkTheme ?'contact_svg entry' : 'contact_svg entry dark' }
+    width="40"
+    height="40"
+    xmlns="http://www.w3.org/2000/svg"
+    id="Layer_1"
+    x="0"
+    y="0"
+    version="1.1"
+    viewBox="0 0 29 29">
+      <path d="M19.5 2h-10a2 2 0 0 0-2 2v21a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-5 24a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm5-3h-10V6h10v17z" fill="grey"/>
+    </svg>
+  );
+}
+
+
+
+
+
 const SVGicons = ({ emailModal, isOpen }) => {
 
   const darkTheme = useTheme();
