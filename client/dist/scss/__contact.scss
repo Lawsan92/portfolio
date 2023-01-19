@@ -15,10 +15,8 @@
 }
 
 .contact_content {
-  height: 100vh;
   width: 90vw;
   display: flex;
-  flex-direction: column;
   transition: background 1s ease;
 
   &.dark {
@@ -40,9 +38,14 @@
     }
   }
 
-
 }
 
+.map_container {
+  height: 100vh;
+  width: 40vw;
+  border-radius: 1em;
+  margin: 0;
+}
 
 .contact_directory {
   height: 9vh;
@@ -71,12 +74,16 @@
   }
 }
 
+.contact_left {
+  width: 50vw;
+}
+
 /*EMAIL*/
 
 .contact_email {
 
   &.body {
-    width: 33%;
+    width: 30vw;
     height: 60%;
     display: flex;
     flex-direction: column;
@@ -153,8 +160,6 @@
     width: 112%;
   }
 
-
-
   &.close{
     display: flex;
     justify-content: flex-start;
@@ -162,10 +167,6 @@
   }
 
 }
-
-
-
-
 
 
 
