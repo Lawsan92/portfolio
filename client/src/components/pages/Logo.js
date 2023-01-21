@@ -6,7 +6,9 @@ const Logo = () => {
 
   const darkTheme = useTheme();
 
-  const [canvasSize, getSize] = useState({height: 160, width: 160})
+  const [canvasSize, getSize] = useState({height: 160, width: 160});
+
+  const [canvasContainer, getMeasure] = useState({height: 160, width: 160});
 
   // Appends renderer to DOM element
   useEffect(() => {
@@ -15,7 +17,12 @@ const Logo = () => {
     window.addEventListener('resize', () => {
       let canvasHeight = window.getComputedStyle(document.querySelector(".navbar_logo")).height;
       let canvasWidth = window.getComputedStyle(document.querySelector(".navbar_logo")).width;
-      console.log('canvasHeight:', canvasHeight, 'canvasWidth:', canvasWidth);
+      let navbarHeight = window.getComputedStyle(document.querySelector(".navbar")).height;
+      let navbarWidth = window.getComputedStyle(document.querySelector(".navbar")).width;
+
+      (Math.floor(window.innerWidth / 10) < 120) && getMeasure({...canvasContainer, height: navbarWidth, width: navbarWidth }), getSize({...canvasSize, height: navbarWidth, width: navbarWidth })
+
+      console.log('navbarWidth:', navbarWidth, 'navbarHeight:', navbarHeight);
     })
   }, [])
 
@@ -23,8 +30,8 @@ const Logo = () => {
     container: {
       display: 'flex',
       justifyContent: 'center',
-      height: '10em',
-      width: '10em',
+      height: `${canvasContainer.height}px`,
+      width: `${canvasContainer.width}px`,
       // backgroundColor: 'white'
     }
   }

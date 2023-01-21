@@ -43,7 +43,6 @@
 .map_container {
   height: 100vh;
   width: 40vw;
-  border-radius: 1em;
   margin: 0;
 }
 
@@ -99,6 +98,7 @@
       height: 1vh;
       transition: all 1s ease;
       border-radius: 1em;
+      color: grey;
 
       &.dark{
         background-color: #1d1d1d;
@@ -108,6 +108,7 @@
       &.textarea {
         height: 8vh;
         transition: all 1s ease;
+        color: grey;
 
         &.dark{
           background-color: #1d1d1d;
@@ -167,6 +168,3 @@
   }
 
 }
-
-
-

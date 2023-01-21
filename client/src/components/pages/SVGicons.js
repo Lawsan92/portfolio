@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import NavBar from './NavBar.js';
 import { useTheme } from '../ThemeContext.js';
 
-
 export const EmailSVG = () => {
 
   const darkTheme = useTheme();
@@ -46,10 +45,6 @@ export const IphoneSVG = () => {
     </svg>
   );
 }
-
-
-
-
 
 const SVGicons = ({ emailModal, isOpen }) => {
 

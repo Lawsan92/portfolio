@@ -24,7 +24,6 @@ const Email = () =>  {
   const darkTheme = useTheme();
 
   return (
-    <section className='contact_email background'>
     <form ref={form} onSubmit={sendEmail} className='contact_email body'>
       <div className='contact_email header'>
         <div className='contact_email close'>
@@ -38,8 +37,7 @@ const Email = () =>  {
       <textarea className={ !darkTheme ? 'contact_email body input textarea' : 'contact_email body input textarea dark'} name='message'></textarea>
       <input className={ !darkTheme ? 'contact_email body btn' : 'contact_email body btn dark'} type='submit' value ='Send Message'></input>
     </form>
-  </section>
-  )
+  );
 }
 
 export default Email;
