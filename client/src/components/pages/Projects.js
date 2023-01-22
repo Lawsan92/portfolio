@@ -41,14 +41,16 @@ const Projects = ({ projectsRef }) => {
       gridRowEnd: `span ${containerHeight}`,
     },
     shadow: {
-      height: '95%',
+      marginTop: '5%',
+      height: '65%',
       width: '90%',
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
       zIndex: 3,
       position: 'fixed',
       display: 'flex',
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+      borderRadius: '6%'
     },
   }
 
