@@ -122,7 +122,6 @@
         background-color: #36454F;
       }
     }
-
   }
 
   &.img{
@@ -152,6 +151,13 @@
       width: 80%
     }
   }
+
+  &.card_shadow {
+    &.icon {
+      margin: 1em
+    }
+  }
+
 }
 
 @media screen and (max-width: 1000px) {

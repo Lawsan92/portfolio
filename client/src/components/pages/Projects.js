@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import projects from '../../data/projects.js';
 import NavBar from './NavBar';
 import { useTheme } from '../ThemeContext.js';
+import { GithubSVG, CameraSVG } from './SVGicons.js';
 
 const Projects = ({ projectsRef }) => {
 
@@ -50,12 +51,34 @@ const Projects = ({ projectsRef }) => {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      borderRadius: '6%'
+      borderRadius: '6%',
+      color: '#ffffff'
     },
+    text: {
+      alignSelf: 'end'
+    }
   }
 
   const mapProjects = () => {
     return projects.map((project, index) => {
+
+      const CardShadow = () => {
+        return (
+          <span
+          className='projects_grid card_shadow'
+          style={styles.shadow}
+          onClick={() => {setHover({...hover, [index]: true})}}
+          onMouseLeave={() => {setHover({...hover, [index]: false})}}
+          >
+            <GithubSVG/>
+            <div className='projects_grid card_shadow text' style={styles.text}>
+            see more
+            </div>
+            <CameraSVG/>
+          </span>
+        );
+      }
+
       if (!isHover[index]) {
         return (
           <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} >
@@ -73,16 +96,7 @@ const Projects = ({ projectsRef }) => {
       } else {
         return (
           <div className='projects_grid card' style={styles.card} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}>
-            <span
-              className='projects_grid card_shadow'
-              style={styles.shadow}
-              onClick={() => {setHover({...hover, [index]: true})}}
-              onMouseLeave={() => {setHover({...hover, [index]: false})}}
-              >
-              <div className='projects_grid card_shadow text' style={styles.text}>
-                see more
-              </div>
-              </span>
+            <CardShadow/>
             <img className='projects_grid img' src={project.url} />
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
