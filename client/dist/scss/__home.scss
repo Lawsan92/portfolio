@@ -270,3 +270,42 @@
   }
 
 }
+
+
+@media screen and (max-width: 1000px) {
+
+  .home_container {
+    flex-direction: column;
+  }
+
+  .home_content {
+    width: 100vw;
+  }
+
+  .home_content {
+    flex-direction: column-reverse;
+  }
+
+  .home_text {
+    justify-content: center;
+    align-items: center;
+
+    &.content {
+      margin: 1em;
+    }
+
+    &.subheader {
+      align-items: flex-start;
+    }
+
+    &.header {
+      font-size: 4vh;
+    }
+  }
+
+  .home_assets {
+    align-items: center;
+    justify-content: center;
+  }
+
+}

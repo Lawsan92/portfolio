@@ -17,7 +17,7 @@
   }
 }
 
-#nav-buttons a {
+.nav-buttons a {
   text-decoration: none;
 }
 
@@ -28,20 +28,20 @@
   margin: 15px;
 }
 
-#nav-buttons {
+.nav-buttons {
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
 }
 
-#nav-buttons h3 {
+.nav-buttons h3 {
   color: #9eb0c7;
   margin: 10px;
   cursor: pointer;
 }
 
-#nav-buttons h3:hover {
+.nav-buttons h3:hover {
   background-color: rgba(137, 196, 244, 0.35);
   box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
   color: white;
@@ -68,17 +68,31 @@
 
 
 /*special conditions to resize elements based on screen size*/
+
 @media screen and (max-width: 700px) {
 
-  #nav-buttons {
+  .nav-buttons {
     display: flex;
     align-items: center;
     margin-left: auto;
   }
 
-  #nav-buttons h3 {
+  .nav-buttons h3 {
     margin: 5px;
     font-size: 15px;
   }
 
+}
+
+
+@media (max-width: 1000px) {
+
+  .navbar {
+    flex-direction: row;
+    width: 100vw
+  }
+
+  .nav-buttons {
+    flex-direction: row;
+  }
 }

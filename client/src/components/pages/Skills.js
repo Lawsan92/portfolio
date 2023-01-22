@@ -9,7 +9,7 @@ const Skills = ({ skillsRef }) => {
   const darkTheme = useTheme()
   console.log('window.innerHeight:', window.innerHeight)
   return (
-    <section id='skills' ref={skillsRef}>
+    <section className='skills' ref={skillsRef}>
       <NavBar/>
       <div className={ darkTheme ? 'skills_container dark' : 'skills_container'}>
         <div className='skills_content'>

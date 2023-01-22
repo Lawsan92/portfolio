@@ -13,14 +13,14 @@ const Projects = ({ projectsRef }) => {
   const [isHover, setHover] = useState(false);
 
   const toggleHover = (index) => {
-    setHover({...isHover, [index]: !isHover })
+    setHover((prevState) => ({...isHover, [index]: !prevState[index] }))
   }
 
   useEffect(() => {
    window.addEventListener('resize', () => {
 
     let width = window.getComputedStyle(document.querySelector('.projects_grid.container')).width;
-    width = Math.floor(Number(width.split('').slice(0, width.length - 2).join('')) /4 )
+    width = Math.floor(Number(width.split('').slice(0, width.length - 2).join('')) / 5 )
     getWidth(width);
 
     let height = window.getComputedStyle(document.querySelector('.projects_grid.container')).height;
@@ -37,6 +37,7 @@ const Projects = ({ projectsRef }) => {
       gridTemplateColumns: `repeat(auto-fill, ${containerWidth}px)`,
     },
     card: {
+      // gridRowEnd: `span ${containerHeight}`,
       gridRowEnd: `span ${containerHeight}`,
     },
     shadow: {
@@ -53,9 +54,9 @@ const Projects = ({ projectsRef }) => {
 
   const mapProjects = () => {
     return projects.map((project, index) => {
-      // if (!isHover) {
+      if (!isHover[index]) {
         return (
-          <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}>
+          <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} >
             <img className='projects_grid img' src={project.url} />
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
@@ -67,31 +68,31 @@ const Projects = ({ projectsRef }) => {
               </div>
           </div>
         );
-      // } else {
-      //   return (
-      //     <div className='projects_grid card' style={styles.card} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}>
-      //       {/* <span
-      //         className='projects_grid card_shadow'
-      //         style={styles.shadow}
-      //         onClick={() => {setHover({...hover, [index]: true})}}
-      //         // onMouseLeave={() => {setHover({...hover, [index]: false})}}
-      //         >
-      //         <div className='projects_grid card_shadow text' style={styles.text}>
-      //           see more
-      //         </div>
-      //         </span> */}
-      //       <img className='projects_grid img' src={project.url} />
-      //         <div className='projects_grid text'>
-      //           <div className='projects_grid text title'>
-      //             {project.name}
-      //           </div>
-      //           <div className='projects_grid text summary'>
-      //             {project.summary}
-      //           </div>
-      //         </div>
-      //     </div>
-      //   );
-      // }
+      } else {
+        return (
+          <div className='projects_grid card' style={styles.card} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}>
+            <span
+              className='projects_grid card_shadow'
+              style={styles.shadow}
+              onClick={() => {setHover({...hover, [index]: true})}}
+              onMouseLeave={() => {setHover({...hover, [index]: false})}}
+              >
+              <div className='projects_grid card_shadow text' style={styles.text}>
+                see more
+              </div>
+              </span>
+            <img className='projects_grid img' src={project.url} />
+              <div className='projects_grid text'>
+                <div className='projects_grid text title'>
+                  {project.name}
+                </div>
+                <div className='projects_grid text summary'>
+                  {project.summary}
+                </div>
+              </div>
+          </div>
+        );
+      }
 
     });
   }
@@ -104,7 +105,7 @@ const Projects = ({ projectsRef }) => {
   }
 
   return (
-    <section id='projects' ref={projectsRef}>
+    <section className='projects' ref={projectsRef}>
       <NavBar/>
       <div className={ darkTheme ? 'projects_container dark' : 'projects_container'}>
         <div className={ !darkTheme ? 'projects_container header' : 'projects_container header dark' }>

@@ -1,6 +1,6 @@
 /*SKILLS*/
 
-#skills {
+.skills {
   display: flex;
   margin: 0;
   display: flex;
@@ -148,4 +148,22 @@
 .tagcloud--item:hover {
   background-color: rgba(0, 0, 0, 0.3);
   color: white
+}
+
+
+@media (max-width: 1000px) {
+
+  .skills{
+    flex-direction: column;
+  }
+
+  .skills_text {
+    margin: 0%;
+  }
+
+  .skills_container{
+    flex-direction: column-reverse;
+    width: 100vw;
+  }
+
 }
