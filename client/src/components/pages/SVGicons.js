@@ -47,12 +47,12 @@ export const IphoneSVG = () => {
 }
 
 
-export const GithubSVG = () => {
+export const GithubSVG = ({ href }) => {
 
   const darkTheme = useTheme();
 
   return (
-    <a href='https://github.com/Lawsan92'>
+    <a href={href}>
     <svg
     className='projects_grid card_shadow icon'
     title='Github'
@@ -68,9 +68,10 @@ export const GithubSVG = () => {
 }
 
 
-export const CameraSVG = () => {
+export const CameraSVG = ({ toggleModal, isOpen }) => {
   return (
     <svg
+    onClick={() => {toggleModal()}}
     className='projects_grid card_shadow icon'
     title='Camera'
     width="60"

@@ -5,7 +5,6 @@ import {
   Skills,
   Projects,
   NavBar,
-  Footer,
   Email,
   Contact,
   Experience,

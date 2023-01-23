@@ -3,34 +3,53 @@ import projects from '../../data/projects.js';
 import NavBar from './NavBar';
 import { useTheme } from '../ThemeContext.js';
 import { GithubSVG, CameraSVG } from './SVGicons.js';
+import GalleryModal from './GalleryModal.js';
+
 
 const Projects = ({ projectsRef }) => {
 
+  // dark mode context
   const darkTheme = useTheme();
 
+  // container resizing state & methods
   const [containerWidth, getWidth] = useState(Math.floor((window.innerWidth * .9) / 5));
   const [containerHeight, getHeight] = useState(Math.floor((window.innerHeight * .9) / 20));
 
+  // card hover state & methods
   const [isHover, setHover] = useState(false);
 
   const toggleHover = (index) => {
     setHover((prevState) => ({...isHover, [index]: !prevState[index] }))
   }
 
+  // gallery modal state & methods
+  const [isOpen, setModal] = useState(false);
+
+  const toggleModal = () => {
+    setModal(prevState => !isOpen)
+  }
+
   useEffect(() => {
    window.addEventListener('resize', () => {
 
-    let width = window.getComputedStyle(document.querySelector('.projects_grid.container')).width;
-    width = Math.floor(Number(width.split('').slice(0, width.length - 2).join('')) / 5 )
-    getWidth(width);
+    console.log('window.innerWidth:', window.innerWidth);
 
+    let width = window.getComputedStyle(document.querySelector('.projects_grid.container')).width;
+
+    if (window.innerWidth < 1000) {
+      width = Math.floor(Number(width.split('').slice(0, width.length - 2).join('')) / 2 );
+    } else {
+      width = Math.floor(Number(width.split('').slice(0, width.length - 2).join('')) / 5 );
+    }
+
+    getWidth(width);
     let height = window.getComputedStyle(document.querySelector('.projects_grid.container')).height;
     height = Math.floor(Number(height.split('').slice(0, height.length - 2).join('')) / 20 )
     getHeight(height);
 
 
    });
-  }, [])
+  }, []);
 
 
   const styles = {
@@ -67,14 +86,14 @@ const Projects = ({ projectsRef }) => {
           <span
           className='projects_grid card_shadow'
           style={styles.shadow}
-          onClick={() => {setHover({...hover, [index]: true})}}
-          onMouseLeave={() => {setHover({...hover, [index]: false})}}
+          // onClick={() => {setHover({...isHover, [index]: true})}}
+          // onMouseLeave={() => {setHover({...isHover, [index]: false})}}
           >
-            <GithubSVG/>
+            <GithubSVG href={projects[index].githref} />
             <div className='projects_grid card_shadow text' style={styles.text}>
             see more
             </div>
-            <CameraSVG/>
+            <CameraSVG toggleModal={toggleModal} isOpen={isOpen} />
           </span>
         );
       }
@@ -109,7 +128,6 @@ const Projects = ({ projectsRef }) => {
           </div>
         );
       }
-
     });
   }
 
@@ -134,8 +152,9 @@ const Projects = ({ projectsRef }) => {
           {mapProjects()}
         </div>
       </div>
+      {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} /> }
     </section>
-  )
+  );
 }
 
 export default Projects;
