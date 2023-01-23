@@ -15,11 +15,27 @@
     background-color: #1d1d1d;
     background-image: none;
   }
+
+  &.mobile {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    transition: background 1s;
+
+    &.dark{
+      transition: background 1s;
+      background-color: #1d1d1d;
+      background-image: none;
+    }
+
+  }
+
 }
 
-.nav-buttons a {
-  text-decoration: none;
-}
 
 #name {
   justify-self: start;
@@ -33,6 +49,21 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
+
+  a {
+    text-decoration: none;
+  }
+
+  &.mobile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+
+    &.entry {
+      border-top: solid 1px #edf2f8;
+    }
+  }
 }
 
 .nav-buttons h3 {

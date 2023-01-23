@@ -7,6 +7,13 @@
     justify-content: center;
     width: 100%;
     margin-top: auto;
+
+    &.mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+    }
   }
 
   &.entry {
@@ -23,6 +30,21 @@
       border-top: solid 1px #9eb0c7;
     }
 
+
+    &.mobile {
+      transition: 1s ease;
+      border: none;
+
+      &:hover {
+        transform: scale(1.2);
+        transition: 1s ease;
+      }
+
+      &.dark {
+        border: none;
+      }
+
+    }
   }
 
 }
