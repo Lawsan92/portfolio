@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useTheme, useThemeUpdate } from '../ThemeContext.js';
 import SVGicons, { MobileSVGicons } from './SVGicons';
 
-export const MobileNavbar = () => {
+export const MobileNavbar = ({ toggleMobileNavbar }) => {
 
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
@@ -34,6 +34,9 @@ export const MobileNavbar = () => {
         <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766162/icons/dark-mode-6682_ncrhz2.svg'/>}
       </button>
       <MobileSVGicons/>
+      <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
+        X
+      </div>
     </section>
   )
 }
