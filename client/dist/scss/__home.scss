@@ -309,3 +309,38 @@
   }
 
 }
+
+@media screen and (max-width: 450px) {
+
+  .home_text {
+    width: 90vw;
+
+    &.content {
+      width: 100%;
+    }
+  }
+
+  .home_assets {
+    height: auto;
+    width: 60vw;
+
+    &.circ1 {
+      height: 15vw;
+      width: 15vw;
+      border-radius: 7.5vw;
+    }
+
+    &.circ2 {
+      height: 22.5vw;
+      width: 22.5vw;
+      border-radius: 11.25vw;
+    }
+
+    &.circ3 {
+      height: 30vw;
+      width: 30vw;
+      border-radius: 15vw;
+    }
+  }
+
+}
