@@ -5,13 +5,13 @@ import Textsphere from './Textsphere.js';
 import { useTheme } from '../ThemeContext.js';
 import icons from '../../data/icons.js';
 
-const Home = ({ homeRef }) => {
+const Home = () => {
 
   const [isClicked, setClick] = useState(false);
 
   const darkTheme = useTheme();
 
-  const [windowWith, getWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, getWindowWidth] = useState(window.innerWidth);
 
   // mobile navbar state & methods
   const [openMobileNavbar, setMobileNavbar] = useState(false);
@@ -41,14 +41,14 @@ const Home = ({ homeRef }) => {
     })
   }, [])
 
-  if (windowWith < 450) {
+  if (windowWidth < 450) {
     if (!openMobileNavbar) {
       return (
-        <section className='home_container' onClick={() => {toggleMobileNavbar()}}>
-          <div className='navbar_pulldown'>
-            <div className='navbar_pulldown bar1'/>
-            <div className='navbar_pulldown bar2'/>
-            <div className='navbar_pulldown bar3'/>
+        <section className='home_container'>
+          <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
+            <div className='navbar_pulldown_bar'/>
+            <div className='navbar_pulldown_bar'/>
+            <div className='navbar_pulldown_bar'/>
           </div>
           <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
             <div className={ darkTheme ? 'home_text dark' : 'home_text'} >

@@ -44,6 +44,11 @@
   height: 100vh;
   width: 40vw;
   margin: 0;
+
+  @media screen and (max-width: 450px) {
+    height: 50vh;
+    width: 100vw;
+  }
 }
 
 .contact_directory {
@@ -177,6 +182,64 @@
 
   .contact_content {
     width: 100vw;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+  .contact_container {
+    height: fit-content;
+  }
+
+  .contact_content {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+
+    &.header {
+      font-size: 2.5vh;
+      align-items: start;
+    }
+  }
+
+  .contact_left {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact_directory {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+
+    &.entry {
+      width: 100vw;
+      margin: 1%;
+    }
+  }
+
+  .contact_email {
+
+    &.body {
+      width: 100vw;
+
+      &.input {
+        width: 100vw
+      }
+
+    }
+
+    &.section1 {
+      flex-direction: column;
+    }
+
   }
 
 }

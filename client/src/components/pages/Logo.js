@@ -6,7 +6,7 @@ const Logo = () => {
 
   const darkTheme = useTheme();
 
-  const [canvasSize, getSize] = useState({height: 160, width: 160});
+  const [canvasSize, getSize] = useState({height: (window.innerWidth < 450) ? 260 : 160, width: (window.innerWidth < 450) ? 260 : 160});
 
   const [canvasContainer, getMeasure] = useState({height: 160, width: 160});
 

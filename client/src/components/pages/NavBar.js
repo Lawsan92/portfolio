@@ -11,6 +11,9 @@ export const MobileNavbar = ({ toggleMobileNavbar }) => {
 
   return (
     <section className={darkTheme ? 'navbar mobile dark' : 'navbar mobile'}>
+      <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
+        X
+      </div>
       <Logo/>
       <div className='nav-buttons mobile'>
         <Link to='/'>
@@ -34,27 +37,24 @@ export const MobileNavbar = ({ toggleMobileNavbar }) => {
         <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766162/icons/dark-mode-6682_ncrhz2.svg'/>}
       </button>
       <MobileSVGicons/>
-      <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
-        X
-      </div>
     </section>
   )
 }
 
-const NavBar = ({ contactRef, homeRef, skillsRef, projectsRef, experienceRef }) => {
+const NavBar = () => {
 
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
   return (
-    <section className={darkTheme ? 'navbar dark' : 'navbar'} ref={homeRef}>
+    <section className={darkTheme ? 'navbar dark' : 'navbar'}>
       <Logo/>
       <div className='nav-buttons'>
-        <Link to='/' ><h3 onClick={() => {homeRef.current.scrollIntoView({behavior: 'smooth'})}}>Home</h3></Link>
-        <Link to='/skills' ><h3 onClick={() => {skillsRef.current.scrollIntoView({behavior: 'smooth'})}} >Skills</h3></Link>
-        <Link to='/projects'><h3 onClick={() => {projectsRef.current.scrollIntoView({behavior: 'smooth'})}}>Projects</h3></Link>
-        <Link to='/experience'><h3 onClick={() => {experienceRef.current.scrollIntoView({behavior: 'smooth'})}}>Experience</h3></Link>
-        <Link to='/contact'><h3 onClick={() => {experienceRef.current.scrollIntoView({behavior: 'smooth'})}}>Contact</h3></Link>
+        <Link to='/'><h3>Home</h3></Link>
+        <Link to='/skills'><h3>Skills</h3></Link>
+        <Link to='/projects'><h3>Projects</h3></Link>
+        <Link to='/experience'><h3>Experience</h3></Link>
+        <Link to='/contact'><h3>Contact</h3></Link>
       </div>
       <button className={ darkTheme ? 'navbar_themebutton dark' : 'navbar_themebutton'} onClick={() => {toggleTheme()}} >
         {darkTheme ? <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766274/icons/dark-mode-6682_1_tluczz.svg'/> :

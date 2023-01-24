@@ -194,3 +194,35 @@
   }
 
 }
+
+
+@media screen and (max-width: 450px) {
+
+  .projects {
+    height: auto;
+  }
+  .projects_container {
+    height: auto;
+
+    &.header {
+      width: 90vw;
+      height: 18vh;
+      display: flex;
+      align-items: center;
+      color:steelblue;
+      font-weight: 800;
+      font-size: 5.5vh;
+    }
+  }
+
+  .projects_categories {
+    width: 70vw;
+  }
+
+  .projects_grid {
+    &.container {
+      height: auto
+    }
+
+  }
+}
