@@ -200,6 +200,8 @@
 
   .projects {
     height: auto;
+    justify-content: initial;
+    align-items: initial;
   }
   .projects_container {
     height: auto;
@@ -221,7 +223,7 @@
 
   .projects_grid {
     &.container {
-      height: auto
+      height: auto;
     }
 
   }

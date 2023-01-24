@@ -150,7 +150,7 @@ const Projects = ({ projectsRef }) => {
   if (windowWidth < 450) {
     if (!openMobileNavbar) {
       return (
-        <section className='projects' ref={projectsRef}>
+        <section className='projects'>
           <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
             <div className='navbar_pulldown_bar'/>
             <div className='navbar_pulldown_bar'/>
@@ -172,7 +172,7 @@ const Projects = ({ projectsRef }) => {
       );
     } else {
       return (
-        <section className='projects' ref={projectsRef}>
+        <section className='projects'>
           <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />
           <div className={ darkTheme ? 'projects_container dark' : 'projects_container'}>
             <div className={ !darkTheme ? 'projects_container header' : 'projects_container header dark' }>
