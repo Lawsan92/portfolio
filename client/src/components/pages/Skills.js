@@ -24,7 +24,7 @@ const Skills = ({ skillsRef }) => {
     if (windowWidth < 450) {
       if (!openMobileNavbar) {
         return (
-          <section className='skills'>
+          <section className={ darkTheme ? 'skills dark' : 'skills'}>
             <div className={ darkTheme ? 'skills_container dark' : 'skills_container'}>
               <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
                 <div className='navbar_pulldown_bar'/>
