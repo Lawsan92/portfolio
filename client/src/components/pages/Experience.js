@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NavBar, { MobileNavbar } from './NavBar.js';
 import { useTheme } from '../ThemeContext.js';
+import { FrontEndSVG, BackEndSVG } from './SVGicons.js';
 
 const Experience = ({ experienceRef }) => {
 
@@ -56,6 +57,7 @@ const Experience = ({ experienceRef }) => {
               <div className='skills_graph entry'>
                 <div className='skills_graph entry header'>
                   <h3>Front-end</h3>
+                  <FrontEndSVG/>
                 </div>
                 <div className='skills_graph entry_meter container'>
                   <div className='skills_graph entry_meter front-end' style={{zIndex: openMobileNavbar && 0}}/>
@@ -65,6 +67,7 @@ const Experience = ({ experienceRef }) => {
               <div className='skills_graph entry'>
                 <div className='skills_graph entry header'>
                   <h3>Back-end</h3>
+                  <BackEndSVG/>
                 </div>
                 <div className='skills_graph entry_meter container'>
                   <div className='skills_graph entry_meter back-end' style={{zIndex: openMobileNavbar && 0}}/>
@@ -220,6 +223,7 @@ const Experience = ({ experienceRef }) => {
               <div className='skills_graph entry'>
                 <div className='skills_graph entry header'>
                   <h3>Front-end</h3>
+                  <FrontEndSVG/>
                 </div>
                 <div className='skills_graph entry_meter container'>
                   <div className='skills_graph entry_meter front-end' style={{zIndex: openMobileNavbar && 0}}/>
@@ -229,6 +233,7 @@ const Experience = ({ experienceRef }) => {
               <div className='skills_graph entry'>
                 <div className='skills_graph entry header'>
                   <h3>Back-end</h3>
+                  <BackEndSVG/>
                 </div>
                 <div className='skills_graph entry_meter container'>
                   <div className='skills_graph entry_meter back-end' style={{zIndex: openMobileNavbar && 0}}/>

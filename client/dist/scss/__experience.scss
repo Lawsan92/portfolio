@@ -121,10 +121,8 @@
 .skills_graph.entry{
   display: flex;
   flex-direction: column;
-  margin: 1em;
   height: fit-content;
   align-items: baseline;
-  // border: solid 1px red;
 
   &.header {
     display: flex;
