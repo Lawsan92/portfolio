@@ -147,10 +147,10 @@ export const GithubSVG = ({ href }) => {
 }
 
 
-export const CameraSVG = ({ toggleModal, isOpen }) => {
+export const CameraSVG = ({ toggleModal, isOpen, index, toggleHover, getIndex }) => {
   return (
     <svg
-    onClick={() => {toggleModal()}}
+    onClick={() => {toggleModal(); toggleHover(index); getIndex(index)}}
     className='projects_grid card_shadow icon'
     title='Camera'
     width="60"

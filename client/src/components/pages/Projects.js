@@ -29,6 +29,8 @@ const Projects = ({ projectsRef }) => {
     setModal(prevState => !isOpen)
   }
 
+  const [projectIndex, getIndex] = useState(-1);
+
   const [windowWidth, getWindowWidth] = useState(window.innerWidth);
 
   // mobile navbar state & methods
@@ -89,7 +91,7 @@ const Projects = ({ projectsRef }) => {
   const mapProjects = () => {
     return projects.map((project, index) => {
 
-      const CardShadow = () => {
+      const CardShadow = ({toggleHover}) => {
         return (
           <span
           className='projects_grid card_shadow'
@@ -101,7 +103,7 @@ const Projects = ({ projectsRef }) => {
             <div className='projects_grid card_shadow text' style={styles.text}>
             see more
             </div>
-            <CameraSVG toggleModal={toggleModal} isOpen={isOpen} />
+            <CameraSVG toggleModal={toggleModal} isOpen={isOpen} index={index} toggleHover={toggleHover} projectIndex={projectIndex} getIndex={getIndex}/>
           </span>
         );
       }
@@ -123,7 +125,7 @@ const Projects = ({ projectsRef }) => {
       } else {
         return (
           <div className='projects_grid card' style={styles.card} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}>
-            <CardShadow/>
+            <CardShadow index={index} toggleHover={toggleHover}/>
             <img className='projects_grid img' src={project.url} />
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
@@ -167,7 +169,7 @@ const Projects = ({ projectsRef }) => {
               {mapProjects()}
             </div>
           </div>
-          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} /> }
+          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex}/> }
         </section>
       );
     } else {
@@ -185,7 +187,7 @@ const Projects = ({ projectsRef }) => {
               {mapProjects()}
             </div>
           </div>
-          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} /> }
+          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex}/> }
         </section>
       );
     }
@@ -205,7 +207,7 @@ const Projects = ({ projectsRef }) => {
           {mapProjects()}
         </div>
       </div>
-      {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} /> }
+      {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex}/> }
     </section>
   );
 }

@@ -74,6 +74,7 @@
 
     &.text{
       background-color: rgba(0, 0, 0, 0);
+      font-size: .7vw;
     }
   }
 }
@@ -223,7 +224,13 @@
     &.entry {
       width: 95vw;
       margin: 1%;
+
+      &.text {
+        font-size: 1em;
+      }
+
     }
+
   }
 
   .contact_email {

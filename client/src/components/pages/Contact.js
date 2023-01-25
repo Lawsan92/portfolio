@@ -96,7 +96,7 @@ const Contact = () => {
           <div className='contact_directory'>
             <div className={ !darkTheme ? 'contact_directory entry' : 'contact_directory entry dark'}>
               <EmailSVG/>
-              <h3 className='contact_directory entry text'>lawrencesanzogni@gmail.com</h3>
+              <h3 className='contact_directory entry text' >lawrencesanzogni@gmail.com</h3>
             </div>
             <div className={ !darkTheme ? 'contact_directory entry' : 'contact_directory entry dark'}>
               <IphoneSVG/>

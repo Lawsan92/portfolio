@@ -7,7 +7,8 @@ let projects = [
     href: 'http://18.223.155.77',
     githref: 'https://github.com/Lawsan92/MVP_planets',
     techstack: 'REACT NODEJS THREEJS POSTGRES',
-    summary: 'Built a web application that allows users to interact with and create custom 3D models of planets.'
+    summary: 'Built a web application that allows users to interact with and create custom 3D models of planets.',
+    gallery: []
   },
   {
     name:'Guitune',
@@ -15,7 +16,8 @@ let projects = [
     href: '',
     githref: 'https://github.com/Lawsan92/guiTune',
     techstack: 'REACT-NATIVE EXPO EXPO-AV',
-    summary: 'Designed a mobile guitar tuner application for musicians that converts audio data to a single pitch value.'
+    summary: 'Designed a mobile guitar tuner application for musicians that converts audio data to a single pitch value.',
+    gallery: []
   },
   {
     name:'Project Atelier',
@@ -23,7 +25,8 @@ let projects = [
     href: '',
     githref: 'https://github.com/RFC2205-FEC-Io/FEC-Team-Io',
     techstack: 'REACT NODEJS BOOTSTRAP MONGODB',
-    summary: 'Architected various UI components using ReactJS to update and improve the visual presentation of an e-commerce web application.'
+    summary: 'Architected various UI components using ReactJS to update and improve the visual presentation of an e-commerce web application.',
+    gallery: []
   },
   {
     name:'System PERN Aggregator',
@@ -31,7 +34,8 @@ let projects = [
     href: '',
     githref: 'https://github.com/Team-Dagobah/SDC-Ratings-and-Reviews',
     techstack: 'NGINX NODEJS LOADER_IO POSTGRES',
-    summary: 'Built a RESTful API service for a clothing website that can handle web scale traffic of up to 120 000 client requests per minute.'
+    summary: 'Built a RESTful API service for a clothing website that can handle web scale traffic of up to 120 000 client requests per minute.',
+    gallery: []
   },
   {
     name:'Studio D\'Arte',
@@ -39,7 +43,8 @@ let projects = [
     href: '',
     githref: 'https://github.com/Lawsan92/studioDarte',
     techstack: 'REACTJS REACT-ROUTER-DOM SASS NODEJS',
-    summary: 'Updated legacy website made from PHP using ReactJS, Nodejs, React-Router-DOM.'
+    summary: 'Updated legacy website made from PHP using ReactJS, Nodejs, React-Router-DOM.',
+    gallery: ['https://res.cloudinary.com/darp0mj9i/image/upload/v1674434341/projects%20gallery/Screen_Shot_2023-01-22_at_18.38.58_b3f2s2.jpg', 'https://res.cloudinary.com/darp0mj9i/image/upload/v1674434362/projects%20gallery/Screen_Shot_2023-01-22_at_18.39.19_dqbkj9.jpg', 'https://res.cloudinary.com/darp0mj9i/image/upload/v1674434381/projects%20gallery/Screen_Shot_2023-01-22_at_18.39.38_rvcczj.jpg', 'https://res.cloudinary.com/darp0mj9i/image/upload/v1674434399/projects%20gallery/Screen_Shot_2023-01-22_at_18.39.53_ilfpk0.jpg']
   }
 ]
 
