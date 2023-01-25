@@ -5,6 +5,16 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
 
   const [count, setCount] = useState(0);
 
+  const closeModal = (e) => {
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggleModal();
+      }
+    })
+  };
+
+closeModal();
+
   const mapProjectGallery = () => {
     console.log('projectIndex:', projectIndex);
     const gallery = projects[projectIndex].gallery;
@@ -17,12 +27,12 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
 
   return (
     <div className='projects_gallery-modal' >
-      <div className='projects_gallery-modal background'>
-      <button style={{height: '1em', width: '1em', marginRight: 'auto'}} onClick={() => {setCount(count - 1)}}>-</button>
+      <div className='projects_gallery-modal background' /*onClick={() => {toggleModal()}}*/>
+      <button style={{height: '1em', width: '1em', marginRight: 'auto', zIndex: 5, cursor: 'pointer'}} onClick={() => {setCount(count - 1)}}>-</button>
         <div className='projects_gallery-modal card'>
           {mapProjectGallery()}
         </div>
-        <button style={{height: '1em', width: '1em',  marginLeft: 'auto'}} onClick={() => {setCount(count + 1)}}>+</button>
+        <button style={{height: '1em', width: '1em',  marginLeft: 'auto', zIndex: 5, cursor: 'pointer'}} onClick={() => {setCount(count + 1)}}>+</button>
       </div>
     </div>
   );
