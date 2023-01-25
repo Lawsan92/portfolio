@@ -20,13 +20,13 @@ export const MobileNavbar = ({ toggleMobileNavbar }) => {
           <h3 className='nav-buttons mobile entry'>Home</h3>
         </Link>
         <Link to='/skills'>
-          <h3 className='nav-buttons mobile entry'>Skills</h3>
+          <h3 className='nav-buttons mobile entry'>About</h3>
         </Link>
         <Link to='/projects'>
           <h3 className='nav-buttons mobile entry'>Projects</h3>
         </Link>
         <Link to='/experience'>
-          <h3 className='nav-buttons mobile entry'>Experience</h3>
+          <h3 className='nav-buttons mobile entry'>Skills</h3>
         </Link>
         <Link to='/contact'>
           <h3 className='nav-buttons mobile entry'>Contact</h3>
@@ -51,9 +51,9 @@ const NavBar = () => {
       <Logo/>
       <div className='nav-buttons'>
         <Link to='/'><h3>Home</h3></Link>
-        <Link to='/skills'><h3>Skills</h3></Link>
+        <Link to='/skills'><h3>About</h3></Link>
         <Link to='/projects'><h3>Projects</h3></Link>
-        <Link to='/experience'><h3>Experience</h3></Link>
+        <Link to='/experience'><h3>Skills</h3></Link>
         <Link to='/contact'><h3>Contact</h3></Link>
       </div>
       <button className={ darkTheme ? 'navbar_themebutton dark' : 'navbar_themebutton'} onClick={() => {toggleTheme()}} >

@@ -46,7 +46,7 @@ const Textsphere = () => {
     'Bootstrap',
     'Loader.io',
     'Data Structures',
-    'Algorithms'
+    'Algorithms',
   ];
 
   const options = {
@@ -62,6 +62,7 @@ const Textsphere = () => {
   return (
     <TagCloud options={options} style={ {fontSize: `${fontSize}px`, zIndex: 1 } }>
       {tags}
+      {/* <img src="https://res.cloudinary.com/darp0mj9i/image/upload/v1667313787/icons/icons8-node-js_atum9p.svg"/> */}
     </TagCloud>
   );
 };

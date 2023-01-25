@@ -1,12 +1,14 @@
 /*EXPERIENCE*/
-#experience {
+
+.experience {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 .experience_container {
   display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
   background-color: #edf2f8;
@@ -20,28 +22,182 @@
 }
 
 .experience_header {
+  width: 40vw;
+  height: 18vh;
   display: flex;
   align-items: center;
-  width: 90vw;
-  height: 10vh;
+  color:steelblue;
+  font-weight: 800;
+  font-size: 5.5vh;
+  transition: 1s;
+
+  &:hover {
+    transform: scale(1.1);
+    color: #9eb0c7;
+    transition: 1s;
+    cursor: pointer;
+  }
 }
 
-.experience_data {
+.experience_body {
+  display: flex;
+}
+
+.experience_work {
   width: 90vw;
   height: fit-content;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
 .experience_entry {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin: 2vh;
   padding: 2vh;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
   transition: background 1s;
 
   &.dark {
-    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
     transition: background 1s;
+    background-color: #1d1d1d;
   }
 
+  &.role {
+    color: steelblue;
+    padding: 0;
+    margin: .33em;
+
+    &.dark {
+      color: #ffffff;
+      background-color: #1d1d1d;
+     }
+
+  }
+
+  &.company {
+    padding: 0;
+    margin: .33em;
+
+    &.dark {
+      color: #ffffff;
+      background-color: #1d1d1d;
+     }
+
+  }
+
+  &.timeline {
+    padding: 0;
+    margin: .33em;
+
+    &.dark {
+      color: #ffffff;
+      background-color: #1d1d1d;
+     }
+
+  }
+
+  &.summary {
+    padding: 0;
+    margin: .33em;
+    color:#6b7688;
+
+    &.dark {
+      color: #ffffff;
+      background-color: #1d1d1d;
+     }
+
+  }
+}
+
+.skills_graph {
+  width: 90%;
+  height: 30vh;
+}
+
+.skills_graph.entry{
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  height: fit-content;
+
+  &.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: fit-content;
+
+    & * {
+      margin-left: 5px
+    }
+
+    & img {
+      height: 1.5em;
+      width: 1.5em;
+     }
+
+  }
+}
+
+.skills_graph.entry_meter {
+  height: .25em;
+  margin: 5px;
+
+  &.front-end {
+    background-color: #ff0000;
+    border: 0
+   }
+
+   &.back-end {
+    background-color: #2962cb;
+    border: 0
+   }
+
+   &.react {
+    background-color: #149ecc;
+    border: 0
+   }
+
+   &.node {
+    background-color: #008000;
+    border: 0
+   }
+
+   &.postgres {
+    background-color: #2176d6;
+    border: 0
+   }
+
+}
+
+@media screen and (max-width: 450px) {
+  .experience {
+   flex-direction: column;
+   height: fit-content;
+  }
+
+  .experience_container {
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .experience_header {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4.5vh;
+  }
+
+  .experience_body {
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .skills_graph {
+    height: fit-content;
+  }
 }
