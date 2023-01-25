@@ -52,37 +52,56 @@ const Experience = ({ experienceRef }) => {
                     </p>
                   </div>
                 </div>
-                    <div className='skills_graph'>
-                    <div className='skills_graph entry'>
-                      <h3>Front-end</h3>
-                      <div className='skills_graph entry_meter front-end'/>
-                    </div>
-                    <div className='skills_graph entry'>
-                      <h3>Back-end</h3>
-                      <div className='skills_graph entry_meter back-end'/>
-                    </div>
-                    <div className='skills_graph entry'>
-                      <div className='skills_graph entry header'>
-                        <h3>ReactJS</h3>
-                        <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313722/icons/icons8-react-native_muuptm.svg'/>
-                      </div>
-                      <div className='skills_graph entry_meter react'/>
-                    </div>
-                    <div className='skills_graph entry'>
-                      <div className='skills_graph entry header'>
-                        <h3>NodeJS</h3>
-                        <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313787/icons/icons8-node-js_atum9p.svg'/>
-                      </div>
-                      <div className='skills_graph entry_meter node'/>
-                    </div>
-                    <div className='skills_graph entry'>
-                      <div className='skills_graph entry header'>
-                        <h3>PostgreSQL</h3>
-                        <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313754/icons/icons8-postgresql_sjrwkg.svg'/>
-                      </div>
-                      <div className='skills_graph entry_meter postgres'/>
-                    </div>
-                  </div>
+                <div className='skills_graph'>
+              <div className='skills_graph entry'>
+                <div className='skills_graph entry header'>
+                  <h3>Front-end</h3>
+                </div>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter front-end' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
+              </div>
+              <div className='skills_graph entry'>
+                <div className='skills_graph entry header'>
+                  <h3>Back-end</h3>
+                </div>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter back-end' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
+              </div>
+              <div className='skills_graph entry'>
+                <div className='skills_graph entry header'>
+                  <h3>ReactJS</h3>
+                  <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313722/icons/icons8-react-native_muuptm.svg'/>
+                </div>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter react' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
+              </div>
+              <div className='skills_graph entry'>
+                <div className='skills_graph entry header'>
+                  <h3>NodeJS</h3>
+                  <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313787/icons/icons8-node-js_atum9p.svg'/>
+                </div>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter node' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
+              </div>
+              <div className='skills_graph entry'>
+                <div className='skills_graph entry header'>
+                  <h3>PostgreSQL</h3>
+                  <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313754/icons/icons8-postgresql_sjrwkg.svg'/>
+                </div>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter postgres' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
+              </div>
+            </div>
                 </div>
             </section>
           </div>
@@ -114,37 +133,56 @@ const Experience = ({ experienceRef }) => {
                     </p>
                   </div>
                 </div>
-                    <div className='skills_graph'>
-                    <div className='skills_graph entry'>
-                      <h3>Front-end</h3>
-                      <div className='skills_graph entry_meter front-end'/>
-                    </div>
-                    <div className='skills_graph entry'>
-                      <h3>Back-end</h3>
-                      <div className='skills_graph entry_meter back-end'/>
-                    </div>
-                    <div className='skills_graph entry'>
-                      <div className='skills_graph entry header'>
-                        <h3>ReactJS</h3>
-                        <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313722/icons/icons8-react-native_muuptm.svg'/>
-                      </div>
-                      <div className='skills_graph entry_meter react'/>
-                    </div>
-                    <div className='skills_graph entry'>
-                      <div className='skills_graph entry header'>
-                        <h3>NodeJS</h3>
-                        <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313787/icons/icons8-node-js_atum9p.svg'/>
-                      </div>
-                      <div className='skills_graph entry_meter node'/>
-                    </div>
-                    <div className='skills_graph entry'>
-                      <div className='skills_graph entry header'>
-                        <h3>PostgreSQL</h3>
-                        <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313754/icons/icons8-postgresql_sjrwkg.svg'/>
-                      </div>
-                      <div className='skills_graph entry_meter postgres'/>
-                    </div>
-                  </div>
+                <div className='skills_graph'>
+              <div className='skills_graph entry'>
+                <div className='skills_graph entry header'>
+                  <h3>Front-end</h3>
+                </div>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter front-end' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
+              </div>
+              <div className='skills_graph entry'>
+                <div className='skills_graph entry header'>
+                  <h3>Back-end</h3>
+                </div>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter back-end' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
+              </div>
+              <div className='skills_graph entry'>
+                <div className='skills_graph entry header'>
+                  <h3>ReactJS</h3>
+                  <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313722/icons/icons8-react-native_muuptm.svg'/>
+                </div>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter react' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
+              </div>
+              <div className='skills_graph entry'>
+                <div className='skills_graph entry header'>
+                  <h3>NodeJS</h3>
+                  <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313787/icons/icons8-node-js_atum9p.svg'/>
+                </div>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter node' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
+              </div>
+              <div className='skills_graph entry'>
+                <div className='skills_graph entry header'>
+                  <h3>PostgreSQL</h3>
+                  <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313754/icons/icons8-postgresql_sjrwkg.svg'/>
+                </div>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter postgres' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
+              </div>
+            </div>
                 </div>
             </section>
           </div>
@@ -178,35 +216,54 @@ const Experience = ({ experienceRef }) => {
               </p>
             </div>
           </div>
-              <div className='skills_graph'>
+            <div className='skills_graph'>
               <div className='skills_graph entry'>
-                <h3>Front-end</h3>
-                <div className='skills_graph entry_meter front-end'/>
+                <div className='skills_graph entry header'>
+                  <h3>Front-end</h3>
+                </div>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter front-end' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
               </div>
               <div className='skills_graph entry'>
-                <h3>Back-end</h3>
-                <div className='skills_graph entry_meter back-end'/>
+                <div className='skills_graph entry header'>
+                  <h3>Back-end</h3>
+                </div>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter back-end' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
               </div>
               <div className='skills_graph entry'>
                 <div className='skills_graph entry header'>
                   <h3>ReactJS</h3>
                   <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313722/icons/icons8-react-native_muuptm.svg'/>
                 </div>
-                <div className='skills_graph entry_meter react'/>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter react' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
               </div>
               <div className='skills_graph entry'>
                 <div className='skills_graph entry header'>
                   <h3>NodeJS</h3>
                   <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313787/icons/icons8-node-js_atum9p.svg'/>
                 </div>
-                <div className='skills_graph entry_meter node'/>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter node' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
               </div>
               <div className='skills_graph entry'>
                 <div className='skills_graph entry header'>
                   <h3>PostgreSQL</h3>
                   <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667313754/icons/icons8-postgresql_sjrwkg.svg'/>
                 </div>
-                <div className='skills_graph entry_meter postgres'/>
+                <div className='skills_graph entry_meter container'>
+                  <div className='skills_graph entry_meter postgres' style={{zIndex: openMobileNavbar && 0}}/>
+                  <div className='skills_graph entry_meter background'/>
+                </div>
               </div>
             </div>
           </div>

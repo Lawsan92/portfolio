@@ -41,6 +41,7 @@
 
 .experience_body {
   display: flex;
+  width: 90vw;
 }
 
 .experience_work {
@@ -71,7 +72,6 @@
     margin: .33em;
 
     &.dark {
-      color: #ffffff;
       background-color: #1d1d1d;
      }
 
@@ -105,7 +105,6 @@
     color:#6b7688;
 
     &.dark {
-      color: #ffffff;
       background-color: #1d1d1d;
      }
 
@@ -113,8 +112,10 @@
 }
 
 .skills_graph {
-  width: 90%;
-  height: 30vh;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .skills_graph.entry{
@@ -122,6 +123,8 @@
   flex-direction: column;
   margin: 1em;
   height: fit-content;
+  align-items: baseline;
+  // border: solid 1px red;
 
   &.header {
     display: flex;
@@ -138,7 +141,6 @@
       height: 1.5em;
       width: 1.5em;
      }
-
   }
 }
 
@@ -146,29 +148,63 @@
   height: .25em;
   margin: 5px;
 
+  &.container {
+    display: grid;
+    grid-template-columns: 100% 1fr;
+    grid-template-rows: 50px 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 30vw;
+    height: fit-content;
+  }
+
+  &.background {
+    background-color: lightgray;
+    border: 0;
+    width: 30vw;
+    position: absolute;
+    border-radius: 1em;
+  }
+
   &.front-end {
     background-color: #ff0000;
-    border: 0
+    width: 80%;
+    border: 0;
+    z-index: 3;
+    border-radius: 1em;
    }
 
    &.back-end {
     background-color: #2962cb;
-    border: 0
+    width: 90%;
+    border: 0;
+    z-index: 3;
+    border-radius: 1em;
    }
 
    &.react {
     background-color: #149ecc;
-    border: 0
+    width: 90%;
+    border: 0;
+    z-index: 3;
+    border-radius: 1em;
    }
 
    &.node {
     background-color: #008000;
-    border: 0
+    width: 80%;
+    border: 0;
+    z-index: 3;
+    border-radius: 1em;
    }
 
    &.postgres {
     background-color: #2176d6;
-    border: 0
+    width: 75%;
+    border: 0;
+    z-index: 3;
+    border-radius: 1em;
    }
 
 }
@@ -195,9 +231,19 @@
   .experience_body {
     flex-direction: column;
     height: fit-content;
+    width: 100vw;
+    align-items: center;
   }
 
-  .skills_graph {
-    height: fit-content;
+  .skills_graph.entry_meter {
+
+    &.container {
+      width: 85vw;
+    };
+
+    &.background {
+      width: 85vw;
+    }
   }
+
 }
