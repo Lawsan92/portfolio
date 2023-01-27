@@ -18,7 +18,11 @@ closeModal();
 
   const mapProjectGallery = () => {
     const gallery = projects[projectIndex].gallery;
-    return <img src={gallery[count]} className='projects_gallery-modal card img'/>;
+      if (gallery.length) {
+        return <img src={gallery[count]} className='projects_gallery-modal card img'/>;
+      } else {
+        return <p>COMING SOON...</p>
+      }
   }
 
   return (
