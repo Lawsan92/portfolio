@@ -101,7 +101,7 @@ const Projects = ({ projectsRef }) => {
           className='projects_grid card_shadow'
           style={styles.shadow}
           // onClick={() => {setHover({...isHover, [index]: true})}}
-          // onMouseLeave={() => {setHover({...isHover, [index]: false})}}
+          onMouseLeave={() => {setHover({...isHover, [index]: false})}}
           >
             <GithubSVG href={projects[index].githref} />
             <div className='projects_grid card_shadow text' style={styles.text}>
@@ -114,8 +114,8 @@ const Projects = ({ projectsRef }) => {
 
       if (!isHover[index]) {
         return (
-          <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} >
-            <img className='projects_grid img' src={project.url} />
+          <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card}>
+            <img className='projects_grid img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}/>
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
                   {project.name}
@@ -128,9 +128,9 @@ const Projects = ({ projectsRef }) => {
         );
       } else {
         return (
-          <div className='projects_grid card' style={styles.card} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}>
+          <div className='projects_grid card' style={styles.card}>
             <CardShadow index={index} toggleHover={toggleHover}/>
-            <img className='projects_grid img' src={project.url} />
+            <img className='projects_grid img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
                   {project.name}
@@ -208,12 +208,12 @@ const Projects = ({ projectsRef }) => {
   }
 
   return (
-       <motion.section
-        className='projects'
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        exit={{opacity: 0}}
-        >
+    <motion.section
+      className='projects'
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}}
+      >
       <NavBar/>
       <div className={ darkTheme ? 'projects_container dark' : 'projects_container'}>
         <div className={ !darkTheme ? 'projects_container header' : 'projects_container header dark' }>

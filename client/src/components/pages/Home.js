@@ -27,8 +27,8 @@ const Home = () => {
   const styles = {
     height: '16vh',
     width: '16vw',
-    backgroundColor: '#9eb0c7',
-    color: 'white',
+    backgroundColor: '#000000',
+    color: 'steelblue',
     fontSize: '10vh',
     display: 'flex',
     justifyContent: 'center',
