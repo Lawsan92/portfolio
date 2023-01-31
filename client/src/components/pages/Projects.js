@@ -4,6 +4,7 @@ import NavBar, { MobileNavbar } from './NavBar';
 import { useTheme } from '../ThemeContext.js';
 import { GithubSVG, CameraSVG } from './SVGicons.js';
 import GalleryModal from './GalleryModal.js';
+import { motion } from 'framer-motion';
 
 
 const Projects = ({ projectsRef }) => {
@@ -152,7 +153,12 @@ const Projects = ({ projectsRef }) => {
   if (windowWidth < 450) {
     if (!openMobileNavbar) {
       return (
-        <section className='projects'>
+        <motion.section
+        className='projects'
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+        >
           <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
             <div className='navbar_pulldown_bar'/>
             <div className='navbar_pulldown_bar'/>
@@ -170,11 +176,16 @@ const Projects = ({ projectsRef }) => {
             </div>
           </div>
           {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex}/> }
-        </section>
+        </motion.section>
       );
     } else {
       return (
-        <section className='projects'>
+           <motion.section
+        className='projects'
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+        >
           <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />
           <div className={ darkTheme ? 'projects_container dark' : 'projects_container'}>
             <div className={ !darkTheme ? 'projects_container header' : 'projects_container header dark' }>
@@ -188,13 +199,18 @@ const Projects = ({ projectsRef }) => {
             </div>
           </div>
           {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex}/> }
-        </section>
+        </motion.section>
       );
     }
   }
 
   return (
-    <section className='projects' ref={projectsRef}>
+       <motion.section
+        className='projects'
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+        >
       <NavBar/>
       <div className={ darkTheme ? 'projects_container dark' : 'projects_container'}>
         <div className={ !darkTheme ? 'projects_container header' : 'projects_container header dark' }>
@@ -208,7 +224,7 @@ const Projects = ({ projectsRef }) => {
         </div>
       </div>
       {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex}/> }
-    </section>
+    </motion.section>
   );
 }
 

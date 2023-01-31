@@ -4,6 +4,7 @@ import { useTheme } from '../ThemeContext.js';
 import Email from './Email.js';
 import { EmailSVG, IphoneSVG } from './SVGicons.js';
 import Map from './Map.js';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
 
@@ -29,7 +30,12 @@ const Contact = () => {
   if (windowWidth < 450) {
     if (!openMobileNavbar) {
       return (
-        <div className={ !darkTheme ? 'contact_container' : 'contact_container dark' }>
+        <motion.div
+        className={ !darkTheme ? 'contact_container' : 'contact_container dark' }
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+        >
           <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
             <div className='navbar_pulldown_bar'/>
             <div className='navbar_pulldown_bar'/>
@@ -54,11 +60,16 @@ const Contact = () => {
             </div>
             <Map/>
           </div>
-        </div>
+        </motion.div>
       )
     } else {
       return (
-        <div className={ !darkTheme ? 'contact_container' : 'contact_container dark' }>
+        <motion.div
+        className={ !darkTheme ? 'contact_container' : 'contact_container dark' }
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+        >
          <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />
           <div className='contact_content'>
             <div className= 'contact_left'>
@@ -79,14 +90,19 @@ const Contact = () => {
             </div>
             <Map/>
           </div>
-        </div>
+        </motion.div>
       )
     }
   }
 
 
   return (
-    <div className={ !darkTheme ? 'contact_container' : 'contact_container dark' }>
+    <motion.div
+    className={ !darkTheme ? 'contact_container' : 'contact_container dark' }
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
+    >
       <NavBar/>
       <div className='contact_content'>
         <div className= 'contact_left'>
@@ -107,7 +123,7 @@ const Contact = () => {
         </div>
         <Map/>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

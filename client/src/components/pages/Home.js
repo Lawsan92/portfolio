@@ -1,9 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 import NavBar, { MobileNavbar } from './NavBar.js';
-import '../../../dist/scss/styles.scss';
 import Textsphere from './Textsphere.js';
-import { useTheme } from '../ThemeContext.js';
+import '../../../dist/scss/styles.scss';
 import icons from '../../data/icons.js';
+import { useTheme } from '../ThemeContext.js';
+import { motion } from 'framer-motion';
 
 const Home = () => {
 
@@ -44,7 +45,12 @@ const Home = () => {
   if (windowWidth < 450) {
     if (!openMobileNavbar) {
       return (
-        <section className='home_container'>
+        <motion.section
+        className='home_container'
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+        >
           <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
             <div className='navbar_pulldown_bar'/>
             <div className='navbar_pulldown_bar'/>
@@ -88,11 +94,16 @@ const Home = () => {
               <div className={ darkTheme ? 'home_assets circ3 dark' : 'home_assets circ3'}></div>
             </div>
           </div>
-        </section>
+        </motion.section>
       );
     } else {
       return (
-        <section className='home_container'>
+        <motion.section
+        className='home_container'
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+        >
           <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />
           <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
             <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
@@ -132,13 +143,18 @@ const Home = () => {
               <div className={ darkTheme ? 'home_assets circ3 dark' : 'home_assets circ3'}></div>
             </div>
           </div>
-        </section>
+        </motion.section>
       );
     }
   }
 
   return (
-    <section className='home_container'>
+    <motion.section
+    className='home_container'
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
+    >
       <NavBar/>
       <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
         <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
@@ -181,7 +197,7 @@ const Home = () => {
 
       {/* <div style={styles}>LS</div> */}
 
-    </section>
+    </motion.section>
   );
 }
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar, { MobileNavbar } from './NavBar.js';
 import { useTheme } from '../ThemeContext.js';
 import { FrontEndSVG, BackEndSVG } from './SVGicons.js';
+import { motion } from 'framer-motion';
 
 const Experience = ({ experienceRef }) => {
 
@@ -24,7 +25,11 @@ const Experience = ({ experienceRef }) => {
     if (windowWidth < 450) {
       if (!openMobileNavbar) {
         return (
-          <div className='experience'>
+          <motion.div className='experience'
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          exit={{opacity: 0}}
+          >
             <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
               <div className='navbar_pulldown_bar'/>
               <div className='navbar_pulldown_bar'/>
@@ -107,11 +112,15 @@ const Experience = ({ experienceRef }) => {
             </div>
                 </div>
             </section>
-          </div>
+          </motion.div>
         );
       } else {
         return (
-          <div className='experience'>
+          <motion.div className='experience'
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          exit={{opacity: 0}}
+          >
             <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />
             <section className={ darkTheme ? 'experience_container dark' : 'experience_container'}>
               <div className='experience_header'>Skills & Experience</div>
@@ -188,13 +197,17 @@ const Experience = ({ experienceRef }) => {
             </div>
                 </div>
             </section>
-          </div>
+          </motion.div>
         );
       }
     }
 
   return (
-    <div className='experience'>
+    <motion.div className='experience'
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
+    >
       <NavBar/>
       <section className={ darkTheme ? 'experience_container dark' : 'experience_container'}>
         <div className='experience_header'>Skills & Experience</div>
@@ -273,7 +286,7 @@ const Experience = ({ experienceRef }) => {
             </div>
           </div>
       </section>
-    </div>
+    </motion.div>
   );
 }
 

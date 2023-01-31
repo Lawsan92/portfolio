@@ -3,6 +3,7 @@ import icons from '../../data/icons.js'
 import NavBar, { MobileNavbar } from './NavBar.js';
 import { useTheme } from '../ThemeContext.js'
 import Textsphere from './Textsphere.js';
+import { motion } from 'framer-motion';
 
 const Skills = ({ skillsRef }) => {
 
@@ -24,7 +25,12 @@ const Skills = ({ skillsRef }) => {
     if (windowWidth < 450) {
       if (!openMobileNavbar) {
         return (
-          <section className={ darkTheme ? 'skills dark' : 'skills'}>
+          <motion.section
+          className={ darkTheme ? 'skills dark' : 'skills'}
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          exit={{opacity: 0}}
+          >
             <div className={ darkTheme ? 'skills_container dark' : 'skills_container'}>
               <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
                 <div className='navbar_pulldown_bar'/>
@@ -54,11 +60,16 @@ const Skills = ({ skillsRef }) => {
             </div>
           <Textsphere/>
         </div>
-      </section>
+      </motion.section>
         );
       } else {
         return (
-          <section className='skills'>
+          <motion.section
+          className='skills'
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          exit={{opacity: 0}}
+          >
              <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />
             <div className={ darkTheme ? 'skills_container dark' : 'skills_container'}>
               <div className='skills_content'>
@@ -84,13 +95,18 @@ const Skills = ({ skillsRef }) => {
               </div>
               <Textsphere/>
           </div>
-        </section>
+        </motion.section>
         );
       }
     }
 
   return (
-    <section className='skills'>
+    <motion.section
+    className='skills'
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
+    >
       <NavBar/>
       <div className={ darkTheme ? 'skills_container dark' : 'skills_container'}>
         <div className='skills_content'>
@@ -116,7 +132,7 @@ const Skills = ({ skillsRef }) => {
         </div>
         <Textsphere/>
       </div>
-    </section>
+    </motion.section>
   )
 }
 
