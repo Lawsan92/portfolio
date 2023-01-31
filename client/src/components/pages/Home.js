@@ -21,6 +21,9 @@ const Home = () => {
     setMobileNavbar(prevState => !openMobileNavbar)
   }
 
+  const body = document.querySelector('body');
+  darkTheme ? body.style.backgroundColor = '#1d1d1d' : body.style.backgroundColor = '';
+
   const styles = {
     height: '16vh',
     width: '16vw',

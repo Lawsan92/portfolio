@@ -10,6 +10,9 @@ const Contact = () => {
 
   const darkTheme = useTheme();
 
+  const body = document.querySelector('body');
+  darkTheme ? body.style.backgroundColor = '#1d1d1d' : body.style.backgroundColor = '';
+
   const [windowWidth, getWindowWidth] = useState(window.innerWidth);
 
   // mobile navbar state & methods

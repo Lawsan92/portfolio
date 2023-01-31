@@ -12,6 +12,9 @@ const Projects = ({ projectsRef }) => {
   // dark mode context
   const darkTheme = useTheme();
 
+  const body = document.querySelector('body');
+  darkTheme ? body.style.backgroundColor = '#1d1d1d' : body.style.backgroundColor = '';
+
   // container resizing state & methods
   const [containerWidth, getWidth] = useState((window.innerWidth < 450) ? Math.floor((window.innerWidth * .9)) : Math.floor((window.innerWidth * .9) / 5));
   const [containerHeight, getHeight] = useState(Math.floor((window.innerHeight * .9) / 20));

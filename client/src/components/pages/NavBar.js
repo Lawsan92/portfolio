@@ -3,6 +3,7 @@ import Logo from './Logo.js';
 import { Link } from 'react-router-dom';
 import { useTheme, useThemeUpdate } from '../ThemeContext.js';
 import SVGicons, { MobileSVGicons } from './SVGicons';
+import { motion } from 'framer-motion';
 
 export const MobileNavbar = ({ toggleMobileNavbar }) => {
 
@@ -65,7 +66,7 @@ const NavBar = () => {
   // })
 
   return (
-    <section className={darkTheme ? 'navbar dark' : 'navbar'} /*style={{transform: `translateY(-${Yposition}px)`}}*/>
+    <section className={darkTheme ? 'navbar dark' : 'navbar'}>
       <Logo/>
       <div className='nav-buttons'>
         <Link to='/'><h3>Home</h3></Link>
