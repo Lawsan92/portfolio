@@ -208,6 +208,12 @@
 
 }
 
+@media screen and (max-width: 1000px) {
+  .experience {
+    flex-direction: column;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .experience {
    flex-direction: column;

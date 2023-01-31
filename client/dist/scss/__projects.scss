@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .projects_container {
@@ -92,7 +93,8 @@
     display: grid;
     width: 90vw;
     height: 100vh;
-    grid-auto-rows: 10px
+    grid-auto-rows: 10px;
+    // height: fit-content;
   }
 
   &.card {
@@ -193,13 +195,29 @@
 
 }
 
+@media screen and (max-width: 1200px) {
+
+  .projetcs {
+    height: fit-content
+  }
+  .projects_grid {
+
+    &.container {
+      height: fit-content;
+      justify-content: center;
+    }
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .projects {
     flex-direction: column;
+    height: fit-content;
   }
 
   .projects_container {
     width: 100vw;
+    height: fit-content;
   }
 
 }

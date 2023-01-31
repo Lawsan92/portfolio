@@ -22,7 +22,7 @@ const Logo = () => {
 
       (Math.floor(window.innerWidth / 10) < 120) && getMeasure({...canvasContainer, height: navbarWidth, width: navbarWidth }), getSize({...canvasSize, height: navbarWidth, width: navbarWidth })
 
-      console.log('navbarWidth:', navbarWidth, 'navbarHeight:', navbarHeight);
+      // console.log('navbarWidth:', navbarWidth, 'navbarHeight:', navbarHeight);
     })
   }, [])
 
@@ -69,7 +69,7 @@ const Logo = () => {
 
   // Scene
   const scene = new Scene();
-  // scene.background = new Color(0xadd8e6)
+  // scene.background = new Color(0xffffff)
 
   // Camera
   const camera = new PerspectiveCamera(30, canvasSize.height / canvasSize.width, 0.1, 1000);

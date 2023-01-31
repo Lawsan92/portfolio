@@ -52,6 +52,7 @@
     // color:#e0e5eb;
     color:steelblue;
     font-weight: 800;
+    // font-size: 3.41vw;
     font-size: 7vh;
     // text-shadow: rgba(0, 0, 0, 0.35) 0px 2.5px 7.5px;
     height: 18vh;
@@ -276,6 +277,7 @@
 
   .home_container {
     flex-direction: column;
+    height: fit-content;
   }
 
   .home_content {

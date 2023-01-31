@@ -3,7 +3,7 @@ import { useTheme } from '../ThemeContext.js';
 
 const Email = () =>  {
 
-  console.log(process.env.EMAIL_JS_SERVICE_ID, process.env.EMAIL_JS_TEMPLATE_ID,  process.env.EMAIL_JS_PUBLIC_KEY);
+  // console.log(process.env.EMAIL_JS_SERVICE_ID, process.env.EMAIL_JS_TEMPLATE_ID,  process.env.EMAIL_JS_PUBLIC_KEY);
 
   const form = useRef();
 
@@ -25,17 +25,11 @@ const Email = () =>  {
 
   return (
     <form ref={form} onSubmit={sendEmail} className='contact_email body'>
-      <div className='contact_email header'>
-        <div className='contact_email close'>
-        </div>
-      </div>
-      <div className='contact_email section1'>
-        <input className={ !darkTheme ? 'contact_email body input' : 'contact_email body input dark'} type='text' name='user_name' placeholder='Full Name'></input>
-        <input className={ !darkTheme ? 'contact_email body input' : 'contact_email body input dark'} type='email' name='user_email' placeholder='Email'></input>
-      </div>
-      <input className={ !darkTheme ? 'contact_email body input' : 'contact_email body input dark'} type='text' name='subject' placeholder='Subject'></input>
-      <textarea className={ !darkTheme ? 'contact_email body input textarea' : 'contact_email body input textarea dark'} name='message'></textarea>
-      <input className={ !darkTheme ? 'contact_email body btn' : 'contact_email body btn dark'} type='submit' value ='Send Message'></input>
+      <input className={ !darkTheme ? 'contact_email input' : 'contact_email input dark'} type='text' name='user_name' placeholder='Full Name'></input>
+      <input className={ !darkTheme ? 'contact_email input' : 'contact_email input dark'} type='email' name='user_email' placeholder='Email'></input>
+      <input className={ !darkTheme ? 'contact_email input subject' : 'contact_email input subject dark'} type='text' name='subject' placeholder='Subject'></input>
+      <textarea className={ !darkTheme ? 'contact_email input textarea' : 'contact_email input textarea dark'}  name='message'></textarea>
+      <input className={ !darkTheme ? 'contact_email btn' : 'contact_email btn dark'} type='submit' value ='Send Message'></input>
     </form>
   );
 }

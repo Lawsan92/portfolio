@@ -21,7 +21,7 @@ closeModal();
       if (gallery.length) {
         return <img src={gallery[count]} className='projects_gallery-modal card img'/>;
       } else {
-        return <p>COMING SOON...</p>
+        return <p>COMING SOON...</p>;
       }
   }
 
@@ -29,12 +29,10 @@ closeModal();
     <div className='projects_gallery-modal' >
       <div className='projects_gallery-modal background' /*onClick={() => {toggleModal()}}*/>
         <LeftArrowSVG setCount={setCount} count={count}/>
-      {/* <button style={{height: '1em', width: '1em', marginRight: 'auto', zIndex: 5, cursor: 'pointer'}} onClick={() => {setCount(count - 1)}}>-</button> */}
         <div className='projects_gallery-modal card'>
           {mapProjectGallery()}
         </div>
         <RightArrowSVG setCount={setCount} count={count}/>
-        {/* <button style={{height: '1em', width: '1em',  marginLeft: 'auto', zIndex: 5, cursor: 'pointer'}} onClick={() => {setCount(count + 1)}}>+</button> */}
       </div>
     </div>
   );

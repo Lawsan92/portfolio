@@ -52,35 +52,42 @@
 }
 
 .contact_directory {
-  height: 9vh;
-  width: 40vw;
+  // height: 9vh;
+  width: 34vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 17vw);
+  grid-auto-rows: 10px;
+  margin: 1em;
+}
+
+.contact_directory_entry {
+  background-color: #ffffff;
+  // height: fit-content;
   display: flex;
+  align-items: center;
+  margin: 1em;
 
-  &.entry {
-    background-color: #ffffff;
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    margin-left: 1em;
-    width: 15.75vw;
-    border-radius: .75em;
-    color: grey;
+  grid-column-end: span 1;
+  grid-row-end: span 8;
+  border-radius: .75em;
+  color: grey;
+  transition: all 1s ease;
+
+  &.dark{
+    background-color: #1d1d1d;
     transition: all 1s ease;
+  }
 
-    &.dark{
-      background-color: #1d1d1d;
-      transition: all 1s ease;
-    }
-
-    &.text{
-      background-color: rgba(0, 0, 0, 0);
-      font-size: .7vw;
-    }
+  &.text{
+    background-color: rgba(0, 0, 0, 0);
+    font-size: .7vw;
   }
 }
 
 .contact_left {
   width: 50vw;
+  display: flex;
+  flex-direction: column;
 }
 
 /*EMAIL*/
@@ -88,20 +95,39 @@
 .contact_email {
 
   &.body {
-    width: 30vw;
+    width: 34vw;
     height: 60%;
-    display: flex;
-    flex-direction: column;
-    padding: 25px;
-    justify-content: start;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 17vw);
+    grid-auto-rows: 10px;
+    // padding: 25px;
     margin: 1em;
+  }
 
-    &.input {
+  &.input {
+    margin: 1em;
+    border: none;
+    grid-row-end: span 8;
+    grid-column-end: span 1;
+    transition: all 1s ease;
+    border-radius: 1em;
+    color: grey;
+    padding: 1em;
+
+    &::placeholder {
+      text-align: left;
+    }
+
+    &.dark{
+      background-color: #1d1d1d;
+      transition: all 1s ease;
+    }
+
+    &.subject {
       margin: 1em;
       border: none;
-      width: 100%;
-      height: 1vh;
+      grid-row-end: span 8;
+      grid-column-end: span 2;
       transition: all 1s ease;
       border-radius: 1em;
       color: grey;
@@ -110,61 +136,61 @@
         background-color: #1d1d1d;
         transition: all 1s ease;
       }
-
-      &.textarea {
-        height: 8vh;
-        transition: all 1s ease;
-        color: grey;
-
-        &.dark{
-          background-color: #1d1d1d;
-          transition: all 1s ease;
-        }
-
-      }
     }
 
-    &.btn {
-      background-color: #edf2f8;
-      // color: #e0e5eb;
-      color:steelblue;
-      margin-top: 1em;
-      border: solid;
-      height: 3em;
-      width: 12em;
-      border-radius: .5em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    &.textarea {
+      // height: 8vh;
+      grid-column-end: span 2;
+      grid-row-end: span 20;
+      transition: all 1s ease;
+      color: grey;
+      border: none;
+
+      &.dark{
+        background-color: #1d1d1d;
+        transition: all 1s ease;
+      }
+
+    }
+  }
+
+
+  &.btn {
+    background-color: #edf2f8;
+    color:steelblue;
+    margin-top: 1em;
+    border: solid;
+    height: 3em;
+    width: 12em;
+    border-radius: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 1s;
+    align-self: flex-end;
+    position: absolute;
+    justify-self: flex-end;
+    margin-right: 2em;
+    margin-bottom: 16em;
+    grid-row-end: span 5;
+
+    &:hover {
+      background-color: steelblue;
+      color: white;
+      transition: 1s;
+    }
+
+    &.dark {
       transition: background 1s;
-      align-self: flex-end;
+      background-color: #181818;
+      transition: 1s;
 
       &:hover {
-        background-color: steelblue;
         color: white;
         transition: 1s;
       }
 
-      &.dark {
-        transition: background 1s;
-        background-color: #181818;
-        transition: 1s;
-
-        &:hover {
-          color: white;
-          transition: 1s;
-        }
-
-      }
     }
-
-  }
-
-  &.section1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 112%;
   }
 
   &.close{
@@ -183,6 +209,50 @@
 
   .contact_content {
     width: 100vw;
+
+    &.header {
+      width: 100vw;
+      justify-content: center;
+    }
+  }
+
+  .contact_left {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact_directory{
+    width: 49vw;
+    grid-template-columns: repeat(auto-fill, 49vw);
+  }
+
+  .contact_email{
+
+    &.body {
+      width: 49vw;
+      grid-template-columns: repeat(auto-fill, 49vw);
+    }
+
+    &.input {
+
+      &.subject {
+        grid-column-end: span 1;
+      }
+
+      &.textarea {
+        grid-column-end: span 1;
+      }
+    }
+
+    &.btn {
+      margin-bottom: 0;
+    }
+
+  }
+
+  .map_container {
+    width: 50vw;
+    height: 90vh;
   }
 
 }
@@ -193,12 +263,9 @@
   }
 
   .contact_content {
-    height: fit-content;
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
 
     &.header {
       font-size: 2.5vh;
@@ -210,51 +277,58 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-    flex-direction: column;
     align-items: center;
   }
 
   .contact_directory {
+    display: grid;
     width: 100vw;
-    height: fit-content;
+    grid-template-columns: repeat(auto-fill, 100vw);
+    grid-auto-rows: 10px;
+  }
+
+  .contact_directory_entry {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    grid-row-end: span 13;
 
-    &.entry {
-      width: 95vw;
-      margin: 1%;
-
-      &.text {
-        font-size: 1em;
-      }
-
+    &.text {
+      font-size: 4vw;
+      margin: 0;
     }
-
   }
 
   .contact_email {
 
     &.body {
       width: 100vw;
-      align-items: center;
-
-      &.input {
-        width: 85vw;
-      }
-
-      &.btn {
-        align-self: inherit;
-      }
-
+      grid-template-columns: repeat(auto-fill, 100vw);
     }
 
-    &.section1 {
-      flex-direction: column;
-      width: 90vw;
-      align-items: center;
+    &.textarea {
+      grid-column-end: span 1;
     }
 
+    &.btn {
+     margin: 0;
+     position: relative;
+     background-color: #edf2f8;
+     color:steelblue;
+     margin: 1em;
+     border: solid;
+     height: inherit;
+     width: auto;
+     align-self: inherit;
+     justify-self: inherit;
+     border-radius: .5em;
+     grid-column-end: span 1;
+     grid-row-end: span 5;
+    }
+  }
+
+  .map_container {
+    width: 100vw;
+    height: 100vh;
   }
 
 }

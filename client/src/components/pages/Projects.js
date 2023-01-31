@@ -47,7 +47,7 @@ const Projects = ({ projectsRef }) => {
 
     getWindowWidth(window.innerWidth);
 
-    console.log('window.innerWidth:', window.innerWidth);
+    // console.log('window.innerWidth:', window.innerWidth);
 
     let width = window.getComputedStyle(document.querySelector('.projects_grid.container')).width;
 
@@ -63,7 +63,7 @@ const Projects = ({ projectsRef }) => {
 
   const styles = {
     container: {
-      gridTemplateColumns: `repeat(auto-fill, ${containerWidth}px)`,
+      gridTemplateColumns: `repeat(auto-fill, 360px)`,
     },
     card: {
       // gridRowEnd: `span ${containerHeight}`,

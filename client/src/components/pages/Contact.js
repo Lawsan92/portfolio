@@ -41,13 +41,13 @@ const Contact = () => {
                 <h1>Contact Me</h1>
               </div>
               <div className='contact_directory'>
-                <div className={ !darkTheme ? 'contact_directory entry' : 'contact_directory entry dark'}>
+                <div className={ !darkTheme ? 'contact_directory_entry' : 'contact_directory_entry dark'}>
                   <EmailSVG/>
-                  <h3 className='contact_directory entry text'>lawrencesanzogni@gmail.com</h3>
+                  <h3 className='contact_directory_entry text'>lawrencesanzogni@gmail.com</h3>
                 </div>
-                <div className={ !darkTheme ? 'contact_directory entry' : 'contact_directory entry dark'}>
+                <div className={ !darkTheme ? 'contact_directory_entry' : 'contact_directory_entry dark'}>
                   <IphoneSVG/>
-                  <h3 className='contact_directory entry text'>561-870-6098</h3>
+                  <h3 className='contact_directory_entry text'>561-870-6098</h3>
                 </div>
               </div>
               <Email/>
@@ -66,13 +66,13 @@ const Contact = () => {
                 <h1>Contact Me</h1>
               </div>
               <div className='contact_directory'>
-                <div className={ !darkTheme ? 'contact_directory entry' : 'contact_directory entry dark'}>
+                <div className={ !darkTheme ? 'contact_directory_entry' : 'contact_directory_entry dark'}>
                   <EmailSVG/>
-                  <h3 className='contact_directory entry text'>lawrencesanzogni@gmail.com</h3>
+                  <h3 className='contact_directory_entry text'>lawrencesanzogni@gmail.com</h3>
                 </div>
-                <div className={ !darkTheme ? 'contact_directory entry' : 'contact_directory entry dark'}>
+                <div className={ !darkTheme ? 'contact_directory_entry' : 'contact_directory_entry dark'}>
                   <IphoneSVG/>
-                  <h3 className='contact_directory entry text'>561-870-6098</h3>
+                  <h3 className='contact_directory_entry text'>561-870-6098</h3>
                 </div>
               </div>
               <Email/>
@@ -94,13 +94,13 @@ const Contact = () => {
             <h1>Contact Me</h1>
           </div>
           <div className='contact_directory'>
-            <div className={ !darkTheme ? 'contact_directory entry' : 'contact_directory entry dark'}>
+            <div className={ !darkTheme ? 'contact_directory_entry' : 'contact_directory_entry dark'}>
               <EmailSVG/>
-              <h3 className='contact_directory entry text' >lawrencesanzogni@gmail.com</h3>
+              <h3 className='contact_directory_entry text'>lawrencesanzogni@gmail.com</h3>
             </div>
-            <div className={ !darkTheme ? 'contact_directory entry' : 'contact_directory entry dark'}>
+            <div className={ !darkTheme ? 'contact_directory_entry' : 'contact_directory_entry dark'}>
               <IphoneSVG/>
-              <h3 className='contact_directory entry text'>561-870-6098</h3>
+              <h3 className='contact_directory_entry text'>561-870-6098</h3>
             </div>
           </div>
           <Email/>

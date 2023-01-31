@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Logo from './Logo.js';
 import { Link } from 'react-router-dom';
 import { useTheme, useThemeUpdate } from '../ThemeContext.js';
@@ -46,8 +46,26 @@ const NavBar = () => {
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
+  // const [Yposition, getPosition] = useState(0);
+
+  // useEffect(() => {
+
+  //   let windowHeight = window.innerHeight;
+  //   let gridHeight = window.getComputedStyle(document.querySelector(".projects_container")).height;
+  //   let realGridHeight = Number(gridHeight.split('').slice(0, -2).join(''));
+  //   console.log('gridHeight:', gridHeight);
+  //   console.log('realGridHeight:',realGridHeight);
+
+
+  //   window.addEventListener('resize', () => {
+  //     getPosition(Math.floor((realGridHeight - windowHeight )) / 2);
+  //   })
+
+
+  // })
+
   return (
-    <section className={darkTheme ? 'navbar dark' : 'navbar'}>
+    <section className={darkTheme ? 'navbar dark' : 'navbar'} /*style={{transform: `translateY(-${Yposition}px)`}}*/>
       <Logo/>
       <div className='nav-buttons'>
         <Link to='/'><h3>Home</h3></Link>
