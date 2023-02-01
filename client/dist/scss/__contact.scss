@@ -332,3 +332,11 @@
   }
 
 }
+
+@media screen and (max-height: 860px) {
+  .contact_email {
+    &.btn {
+      margin-bottom: 8em;
+    }
+  }
+}

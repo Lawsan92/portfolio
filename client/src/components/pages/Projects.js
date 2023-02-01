@@ -31,6 +31,7 @@ const Projects = ({ projectsRef }) => {
 
   const toggleModal = () => {
     setModal(prevState => !isOpen)
+
   }
 
   const [projectIndex, getIndex] = useState(-1);

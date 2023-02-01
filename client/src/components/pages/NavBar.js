@@ -16,7 +16,7 @@ export const MobileNavbar = ({ toggleMobileNavbar }) => {
         X
       </div>
       <Logo/>
-      <div className='nav-buttons mobile'>
+      <div className={ !darkTheme ? 'nav-buttons mobile' : 'nav-buttons mobile dark'}>
         <Link to='/'>
           <h3 className='nav-buttons mobile entry'>Home</h3>
         </Link>
@@ -47,6 +47,17 @@ const NavBar = () => {
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
+  const [gridHeight, getHeight] = useState(null);
+
+  useEffect(() => {
+    if (document.querySelector('.projects_grid.container')) {
+      getHeight(Number(window.getComputedStyle(document.querySelector('.projects_grid.container')).height.split('').slice(0 , -2).join('')));
+      window.addEventListener('resize', () => {
+      getHeight(Number(window.getComputedStyle(document.querySelector('.projects_grid.container')).height.split('').slice(0 , -2).join('')));
+      })
+    }
+  }, [])
+
   // const [Yposition, getPosition] = useState(0);
 
   // useEffect(() => {
@@ -66,9 +77,9 @@ const NavBar = () => {
   // })
 
   return (
-    <section className={darkTheme ? 'navbar dark' : 'navbar'}>
+    <section className={darkTheme ? 'navbar dark' : 'navbar'} style={{height: (gridHeight > window.innerHeight) && gridHeight }}>
       <Logo/>
-      <div className='nav-buttons'>
+      <div className={ !darkTheme ? 'nav-buttons' : 'nav-buttons dark'}>
         <Link to='/'><h3>Home</h3></Link>
         <Link to='/skills'><h3>About</h3></Link>
         <Link to='/projects'><h3>Projects</h3></Link>
