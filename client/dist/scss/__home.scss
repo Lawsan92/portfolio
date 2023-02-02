@@ -158,6 +158,11 @@
     box-shadow: 5px 10px 8px #888888;
     transition: box-shadow 1s;
 
+    &:hover {
+      cursor: pointer;
+      background-image: linear-gradient(#ffffff, #edf2f8);
+    }
+
     &.dark {
       transition: box-shadow 1s;
       box-shadow: none;
@@ -177,6 +182,11 @@
     box-shadow: 5px 10px 8px #888888;
     transition: box-shadow 1s;
 
+    &:hover {
+      cursor: pointer;
+      background-image: linear-gradient(#ffffff, #edf2f8);
+    }
+
     &.dark {
       box-shadow: none;
       transition: box-shadow 1s;
@@ -193,7 +203,7 @@
 
     &.circ1 {
       height: 4vh;
-      width: 2vw;
+      width: 4vw;
       border-radius: 2vh;
       background-image: linear-gradient(#ffffff, #edf2f8);
       align-self: flex-end;
@@ -218,7 +228,7 @@
 
     &.circ2 {
       height: 6vh;
-      width: 3vw;
+      width: 6vw;
       border-radius: 3vh;
       background-image: linear-gradient(#ffffff, #edf2f8);
       align-self: flex-start;
@@ -244,7 +254,7 @@
 
     &.circ3 {
       height: 8vh;
-      width: 4vw;
+      width: 8vw;
       border-radius: 4vh;
       background-image: linear-gradient(#ffffff, #edf2f8);
       align-self: flex-end;
@@ -267,7 +277,178 @@
       align-self: center;
       justify-self: center;
     }
+  }
 
+  .small2 {
+    height: 20vh;
+    width: 7.5vw;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+
+    &.circ1 {
+      height: 10vh;
+      width: 10vw;
+      border-radius: 5vh;
+      background-image: linear-gradient(#ffffff, #edf2f8);
+      align-self: flex-end;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 1.25px 2.5px 2px #888888;
+
+      &:hover{
+        transform: scale(1.3);
+        transition: 1s;
+      }
+
+    }
+
+    &.img1 {
+      height: 5.5vh;
+      width: 4.25vw;
+      align-self: center;
+      justify-self: center;
+    }
+
+    &.circ2 {
+      height: 12vh;
+      width: 12vw;
+      border-radius: 6vh;
+      background-image: linear-gradient(#ffffff, #edf2f8);
+      align-self: flex-start;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 1.25px 2.5px 2px #888888;
+
+      &:hover{
+        transform: scale(1.3);
+        transition: 1s;
+      }
+
+    }
+
+    &.img2 {
+      height: 6.5vh;
+      width: 5.25vw;
+      align-self: center;
+      justify-self: center;
+    }
+
+    &.circ3 {
+      height: 12vh;
+      width: 12vw;
+      border-radius: 6vh;
+      background-image: linear-gradient(#ffffff, #edf2f8);
+      align-self: flex-end;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 1.25px 2.5px 2px #888888;
+
+      &:hover{
+        transform: scale(1.3);
+        transition: 1s;
+      }
+
+    }
+
+    &.img3 {
+      height: 7.5vh;
+      width: 6.25vw;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+
+  .small3 {
+    height: 20vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+
+    &.circ1 {
+      height: 14vh;
+      width: 14vw;
+      border-radius: 7vh;
+      background-image: linear-gradient(#ffffff, #edf2f8);
+      align-self: flex-end;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 1.25px 2.5px 2px #888888;
+
+      &:hover{
+        transform: scale(1.3);
+        transition: 1s;
+      }
+
+    }
+
+    &.img1 {
+      height: 8.5vh;
+      width: 7.25vw;
+      align-self: center;
+      justify-self: center;
+    }
+
+    &.circ2 {
+      height: 16vh;
+      width: 16vw;
+      border-radius: 8vh;
+      background-image: linear-gradient(#ffffff, #edf2f8);
+      align-self: flex-start;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 1.25px 2.5px 2px #888888;
+
+      &:hover{
+        transform: scale(1.3);
+        transition: 1s;
+      }
+
+    }
+
+    &.img2 {
+      height: 8.5vh;
+      width: 7.25vw;
+      align-self: center;
+      justify-self: center;
+    }
+
+    &.circ3{
+      height: 10vh;
+      width: 10vw;
+      border-radius: 5vh;
+      background-image: linear-gradient(#ffffff, #edf2f8);
+      align-self: flex-end;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 1.25px 2.5px 2px #888888;
+
+      &:hover{
+        transform: scale(1.3);
+        transition: 1s;
+      }
+
+    }
+
+    &.img3 {
+      height: 8.5vh;
+      width: 7.25vw;
+      align-self: center;
+      justify-self: center;
+    }
   }
 
 }

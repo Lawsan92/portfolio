@@ -34,6 +34,7 @@ const Projects = ({ projectsRef }) => {
 
   }
 
+  // state for project gallery
   const [projectIndex, getIndex] = useState(-1);
 
   const [windowWidth, getWindowWidth] = useState(window.innerWidth);
@@ -44,7 +45,6 @@ const Projects = ({ projectsRef }) => {
   const toggleMobileNavbar = () => {
     setMobileNavbar(prevState => !openMobileNavbar)
   }
-
 
   useEffect(() => {
 
@@ -95,7 +95,6 @@ const Projects = ({ projectsRef }) => {
 
   const mapProjects = () => {
     return projects.map((project, index) => {
-
       const CardShadow = ({toggleHover}) => {
         return (
           <span
@@ -179,7 +178,7 @@ const Projects = ({ projectsRef }) => {
               {mapProjects()}
             </div>
           </div>
-          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex}/> }
+          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex} /> }
         </motion.section>
       );
     } else {
@@ -202,7 +201,7 @@ const Projects = ({ projectsRef }) => {
               {mapProjects()}
             </div>
           </div>
-          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex}/> }
+          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex} /> }
         </motion.section>
       );
     }
@@ -227,7 +226,7 @@ const Projects = ({ projectsRef }) => {
           {mapProjects()}
         </div>
       </div>
-      {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex}/> }
+      {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex} /> }
     </motion.section>
   );
 }

@@ -3,7 +3,7 @@ import NavBar from './NavBar.js';
 import { useTheme } from '../ThemeContext.js';
 
 
-export const LeftArrowSVG = ({ count, setCount }) => {
+export const LeftArrowSVG = ({ count, handleCount }) => {
 
   const [isHover, setHover] = useState(false);
 
@@ -15,7 +15,8 @@ export const LeftArrowSVG = ({ count, setCount }) => {
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     style={{ marginRight: 'auto', zIndex: 5, cursor: 'pointer'}}
-    onClick={() => {setCount(count - 1)}}
+    className='left-arrow'
+    onClick={(e) => {console.log('e.target:', e.currentTarget.className.baseVal); handleCount(e.currentTarget.className.baseVal)}}
     onMouseEnter={() => {setHover(true)}}
     onMouseLeave={() => {setHover(false)}}
     >
@@ -24,7 +25,7 @@ export const LeftArrowSVG = ({ count, setCount }) => {
   );
 }
 
-export const RightArrowSVG = ({ count, setCount }) => {
+export const RightArrowSVG = ({ count, handleCount }) => {
 
   const [isHover, setHover] = useState(false);
 
@@ -36,7 +37,8 @@ export const RightArrowSVG = ({ count, setCount }) => {
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     style={{ marginLeft: 'auto', zIndex: 5, cursor: 'pointer'}}
-    onClick={() => {setCount(count + 1)}}
+    className='right-arrow'
+    onClick={(e) => {console.log('e.target:', e.currentTarget.className.baseVal); handleCount(e.currentTarget.className.baseVal)}}
     onMouseEnter={() => {setHover(true)}}
     onMouseLeave={() => {setHover(false)}}
     >
