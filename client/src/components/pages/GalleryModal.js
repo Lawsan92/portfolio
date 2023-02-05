@@ -35,7 +35,19 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
     })
   };
 
-closeModal();
+  closeModal();
+
+  const handleArrowKeys = (e) => {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 37) {
+        handleCount('left-arrow');
+      } else if (e.keyCode === 39) {
+        handleCount('right-arrow');
+      }
+    });
+  }
+
+  handleArrowKeys();
 
   const mapProjectGallery = () => {
     const gallery = projects[projectIndex].gallery;
