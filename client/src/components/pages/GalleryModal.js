@@ -1,13 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import projects from '../../data/projects.js';
 import { LeftArrowSVG, RightArrowSVG } from './SVGicons.js';
 
 const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
 
-  // state for gallery carousel
+  // STATE & HANDLERS: modal scroll
+  const [docPosition, getPosition] = useState(document.documentElement.scrollTop);
+
+  const handlePosition = () => {
+    window.addEventListener('scroll', () => {
+      getPosition(document.documentElement.scrollTop);
+    })
+  };
+
+  useEffect(() => {
+    handlePosition();
+  }, [])
+
+  // STATE & HANDLERS: image slider
   const [count, setCount] = useState(0);
+
   const handleCount = (className) => {
-    console.log(projects[projectIndex].gallery);
     if (className === 'right-arrow') {
       if (projects[projectIndex].gallery.length - 1 === count) {
         setCount(0);
@@ -22,7 +35,20 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
       }
     }
   }
+  // image scroll: arrow keys
+  const handleArrowKeys = (e) => {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 37) {
+        handleCount('left-arrow');
+      } else if (e.keyCode === 39) {
+        handleCount('right-arrow');
+      }
+    });
+  }
 
+  handleArrowKeys();
+
+  // STATE & HANDLERS: modal
   const handleClick = (e) => {
     e.currentTarget === e.target && toggleModal();
   };
@@ -37,18 +63,6 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
 
   closeModal();
 
-  const handleArrowKeys = (e) => {
-    window.addEventListener('keydown', (e) => {
-      if (e.keyCode === 37) {
-        handleCount('left-arrow');
-      } else if (e.keyCode === 39) {
-        handleCount('right-arrow');
-      }
-    });
-  }
-
-  handleArrowKeys();
-
   const mapProjectGallery = () => {
     const gallery = projects[projectIndex].gallery;
       if (gallery.length) {
@@ -56,10 +70,10 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
       } else {
         return <p>COMING SOON...</p>;
       }
-  }
+  };
 
   return (
-    <div className='projects_gallery-modal' >
+    <div className='projects_gallery-modal' style={{top: docPosition}}>
       <div className='projects_gallery-modal_background' onClick={(e) => {handleClick(e)}}>
         <LeftArrowSVG handleCount={handleCount} count={count}/>
         <div className='projects_gallery-modal_card'>

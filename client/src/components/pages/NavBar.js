@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 
 export const MobileNavbar = ({ toggleMobileNavbar }) => {
 
+  // const bodyHeight = window.getComputedStyle(document.querySelector('body')).height;
+
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
@@ -44,40 +46,26 @@ export const MobileNavbar = ({ toggleMobileNavbar }) => {
 
 const NavBar = () => {
 
+  // const bodyHeight = window.getComputedStyle(document.querySelector('body')).height;
+
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
-  const [gridHeight, getHeight] = useState(null);
+  // STATE & HANDLERS: modal scroll
+  const [docPosition, getPosition] = useState(document.documentElement.scrollTop);
+
+  const handlePosition = () => {
+    window.addEventListener('scroll', () => {
+      getPosition(document.documentElement.scrollTop);
+    })
+  };
 
   useEffect(() => {
-    if (document.querySelector('.projects_grid.container')) {
-      getHeight(Number(window.getComputedStyle(document.querySelector('.projects_grid.container')).height.split('').slice(0 , -2).join('')));
-      window.addEventListener('resize', () => {
-      getHeight(Number(window.getComputedStyle(document.querySelector('.projects_grid.container')).height.split('').slice(0 , -2).join('')));
-      })
-    }
+    handlePosition();
   }, [])
 
-  // const [Yposition, getPosition] = useState(0);
-
-  // useEffect(() => {
-
-  //   let windowHeight = window.innerHeight;
-  //   let gridHeight = window.getComputedStyle(document.querySelector(".projects_container")).height;
-  //   let realGridHeight = Number(gridHeight.split('').slice(0, -2).join(''));
-  //   console.log('gridHeight:', gridHeight);
-  //   console.log('realGridHeight:',realGridHeight);
-
-
-  //   window.addEventListener('resize', () => {
-  //     getPosition(Math.floor((realGridHeight - windowHeight )) / 2);
-  //   })
-
-
-  // })
-
   return (
-    <section className={darkTheme ? 'navbar dark' : 'navbar'} style={{height: (gridHeight > window.innerHeight) && gridHeight }}>
+    <section className={darkTheme ? 'navbar dark' : 'navbar'} /*style={{top: docPosition}}*/>
       <Logo/>
       <div className={ !darkTheme ? 'nav-buttons' : 'nav-buttons dark'}>
         <Link to='/'><h3>Home</h3></Link>
