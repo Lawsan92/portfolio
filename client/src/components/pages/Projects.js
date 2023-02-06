@@ -100,7 +100,6 @@ const Projects = ({ projectsRef }) => {
           <span
           className='projects_grid card_shadow'
           style={styles.shadow}
-          // onClick={() => {setHover({...isHover, [index]: true})}}
           onMouseLeave={() => {setHover({...isHover, [index]: false})}}
           >
             <GithubSVG href={projects[index].githref} />
@@ -115,7 +114,10 @@ const Projects = ({ projectsRef }) => {
       if (!isHover[index]) {
         return (
           <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card}>
-            <img className='projects_grid img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}/>
+            <div className='projects_grid img_container'>
+              <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+              <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
+            </div>
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
                   {project.name}
@@ -130,7 +132,10 @@ const Projects = ({ projectsRef }) => {
         return (
           <div className='projects_grid card' style={styles.card}>
             <CardShadow index={index} toggleHover={toggleHover}/>
-            <img className='projects_grid img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+            <div className='projects_grid img_container'>
+              <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+              <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
+            </div>
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
                   {project.name}
@@ -146,7 +151,7 @@ const Projects = ({ projectsRef }) => {
   }
 
   const mapCategories = () => {
-    let categories = ['Backend', 'FrontEnd', 'Mobile', 'ReactJS']
+    let categories = ['Backend', 'FrontEnd', 'Mobile', 'ReactJS', 'Web Dev']
     return categories.map((category) => {
       return (<div className={ !darkTheme ? 'projects_categories card' : 'projects_categories card dark'}>{category}</div>)
     })
