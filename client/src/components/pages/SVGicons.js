@@ -11,8 +11,8 @@ export const LeftArrowSVG = ({ count, handleCount }) => {
 
   return (
     <svg
-    width={ windowWidth < 450 ? '15vh' : "5vw"}
-    height={ windowWidth < 450 ? '15vh' : "5vw"}
+    width={ windowWidth < 450 ? '10vh' : "5vw"}
+    height={ windowWidth < 450 ? '10vh' : "5vw"}
     viewBox="0 0 250 250"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -35,12 +35,12 @@ export const RightArrowSVG = ({ count, handleCount }) => {
 
   return (
     <svg
-    width={ windowWidth < 450 ? '15vh' : "5vw"}
-    height={ windowWidth < 450 ? '15vh' : "5vw"}
+    width={ windowWidth < 450 ? '10vh' : "5vw"}
+    height={ windowWidth < 450 ? '10vh' : "5vw"}
     viewBox="0 0 250 250"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    style={{ marginRight: windowWidth > 450 && 'auto', zIndex: 5, cursor: 'pointer', transform: windowWidth < 450 && 'rotate(90deg)'}}
+    style={{ marginLeft: windowWidth > 450 && 'auto', zIndex: 5, cursor: 'pointer', transform: windowWidth < 450 && 'rotate(90deg)'}}
     className='right-arrow'
     onClick={(e) => {console.log('e.target:', e.currentTarget.className.baseVal); handleCount(e.currentTarget.className.baseVal)}}
     onMouseEnter={() => {setHover(true)}}

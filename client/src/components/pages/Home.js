@@ -237,7 +237,7 @@ const Home = () => {
           { !isClicked[1]  ?
               <div className={ darkTheme ? 'home_assets circ1 dark' : 'home_assets circ1'} onClick={() => {toggleClick(1)}}></div>
             :
-              <div className='small'>
+              <div className='small' style={{marginTop: '2em'}}>
                 <div className='small circ1' onClick={() => {toggleClick(1)}}>
                   <img className='small img1' src='https://res.cloudinary.com/darp0mj9i/image/upload/v1667314229/icons/javascript-seeklogo.com_jplqiw.svg'/>
                 </div>
