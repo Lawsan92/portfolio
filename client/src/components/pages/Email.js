@@ -1,17 +1,18 @@
 import React, { useState, useRef } from 'react';
 import { useTheme } from '../ThemeContext.js';
-
+import emailjs from '@emailjs/browser';
 const Email = () =>  {
 
-  // console.log(process.env.EMAIL_JS_SERVICE_ID, process.env.EMAIL_JS_TEMPLATE_ID,  process.env.EMAIL_JS_PUBLIC_KEY);
+  console.log(process.env.EMAIL_JS_SERVICE_ID, process.env.EMAIL_JS_TEMPLATE_ID,  process.env.EMAIL_JS_PUBLIC_KEY);
 
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(process.env.EMAIL_JS_SERVICE_ID, process.env.EMAIL_JS_TEMPLATE_ID, form.current, process.env.PUBLIC_KEY)
+    emailjs.sendForm(process.env.EMAIL_JS_SERVICE_ID, process.env.EMAIL_JS_TEMPLATE_ID, form.current, process.env.EMAIL_JS_PUBLIC_KEY)
       .then((result) => {
+        alert('email sent!');
         console.log('result:', result.text);
       })
       .catch((err) => {

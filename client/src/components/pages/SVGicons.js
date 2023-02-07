@@ -3,19 +3,22 @@ import NavBar from './NavBar.js';
 import { useTheme } from '../ThemeContext.js';
 
 
-export const LeftArrowSVG = ({ count, setCount }) => {
+export const LeftArrowSVG = ({ count, handleCount }) => {
+
+  const windowWidth = window.innerWidth;
 
   const [isHover, setHover] = useState(false);
 
   return (
     <svg
-    width="5vw"
-    height="5vw"
+    width={ windowWidth < 450 ? '10vh' : "5vw"}
+    height={ windowWidth < 450 ? '10vh' : "5vw"}
     viewBox="0 0 250 250"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    style={{ marginRight: 'auto', zIndex: 5, cursor: 'pointer'}}
-    onClick={() => {setCount(count - 1)}}
+    style={{ marginRight: windowWidth > 450 && 'auto', zIndex: 5, cursor: 'pointer', transform: windowWidth < 450 && 'rotate(90deg)'}}
+    className='left-arrow'
+    onClick={(e) => {console.log('e.target:', e.currentTarget.className.baseVal); handleCount(e.currentTarget.className.baseVal)}}
     onMouseEnter={() => {setHover(true)}}
     onMouseLeave={() => {setHover(false)}}
     >
@@ -24,19 +27,22 @@ export const LeftArrowSVG = ({ count, setCount }) => {
   );
 }
 
-export const RightArrowSVG = ({ count, setCount }) => {
+export const RightArrowSVG = ({ count, handleCount }) => {
+
+  const windowWidth = window.innerWidth;
 
   const [isHover, setHover] = useState(false);
 
   return (
     <svg
-    width="5vw"
-    height="5vw"
+    width={ windowWidth < 450 ? '10vh' : "5vw"}
+    height={ windowWidth < 450 ? '10vh' : "5vw"}
     viewBox="0 0 250 250"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    style={{ marginLeft: 'auto', zIndex: 5, cursor: 'pointer'}}
-    onClick={() => {setCount(count + 1)}}
+    style={{ marginLeft: windowWidth > 450 && 'auto', zIndex: 5, cursor: 'pointer', transform: windowWidth < 450 && 'rotate(90deg)'}}
+    className='right-arrow'
+    onClick={(e) => {console.log('e.target:', e.currentTarget.className.baseVal); handleCount(e.currentTarget.className.baseVal)}}
     onMouseEnter={() => {setHover(true)}}
     onMouseLeave={() => {setHover(false)}}
     >

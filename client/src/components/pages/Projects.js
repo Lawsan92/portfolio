@@ -34,6 +34,7 @@ const Projects = ({ projectsRef }) => {
 
   }
 
+  // state for project gallery
   const [projectIndex, getIndex] = useState(-1);
 
   const [windowWidth, getWindowWidth] = useState(window.innerWidth);
@@ -45,14 +46,11 @@ const Projects = ({ projectsRef }) => {
     setMobileNavbar(prevState => !openMobileNavbar)
   }
 
-
   useEffect(() => {
 
    window.addEventListener('resize', () => {
 
     getWindowWidth(window.innerWidth);
-
-    // console.log('window.innerWidth:', window.innerWidth);
 
     let width = window.getComputedStyle(document.querySelector('.projects_grid.container')).width;
 
@@ -93,15 +91,14 @@ const Projects = ({ projectsRef }) => {
     }
   }
 
+
   const mapProjects = () => {
     return projects.map((project, index) => {
-
       const CardShadow = ({toggleHover}) => {
         return (
           <span
           className='projects_grid card_shadow'
           style={styles.shadow}
-          // onClick={() => {setHover({...isHover, [index]: true})}}
           onMouseLeave={() => {setHover({...isHover, [index]: false})}}
           >
             <GithubSVG href={projects[index].githref} />
@@ -116,7 +113,10 @@ const Projects = ({ projectsRef }) => {
       if (!isHover[index]) {
         return (
           <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card}>
-            <img className='projects_grid img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}/>
+            <div className='projects_grid img_container'>
+              <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+              <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
+            </div>
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
                   {project.name}
@@ -131,7 +131,10 @@ const Projects = ({ projectsRef }) => {
         return (
           <div className='projects_grid card' style={styles.card}>
             <CardShadow index={index} toggleHover={toggleHover}/>
-            <img className='projects_grid img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+            <div className='projects_grid img_container'>
+              <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+              <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
+            </div>
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
                   {project.name}
@@ -147,11 +150,84 @@ const Projects = ({ projectsRef }) => {
   }
 
   const mapCategories = () => {
-    let categories = ['Backend', 'FrontEnd', 'Mobile', 'ReactJS']
+    let categories = ['BackEnd', 'FrontEnd', 'Mobile', 'ReactJS', 'Web Dev']
     return categories.map((category) => {
-      return (<div className={ !darkTheme ? 'projects_categories card' : 'projects_categories card dark'}>{category}</div>)
+      return (
+      <div className={ !darkTheme ? 'projects_categories card' : 'projects_categories card dark'} onClick={(e) => {handleFilter(); getFilter(e.target.innerText)}}>{category}</div>
+      );
     })
-  }
+  };
+
+  // function to filter projects based on their tech stack
+
+  const [cardFilter, getFilter] = useState('');
+
+  const [isFiltered, setFilter] = useState(false);
+
+  const handleFilter = () => {
+    setFilter(prevState => !prevState)
+  };
+
+  const filterProjects = (e) => {
+    console.log('e:', e);
+    return projects.map((project, index) => {
+      if (project.techstack === e) {
+        console.log('project.techstack === e:', project.techstack === e);
+        const CardShadow = ({toggleHover}) => {
+          return (
+            <span
+            className='projects_grid card_shadow'
+            style={styles.shadow}
+            onMouseLeave={() => {setHover({...isHover, [index]: false})}}
+            >
+              <GithubSVG href={projects[index].githref} />
+              <div className='projects_grid card_shadow text' style={styles.text}>
+              see more
+              </div>
+              <CameraSVG toggleModal={toggleModal} isOpen={isOpen} index={index} toggleHover={toggleHover} projectIndex={projectIndex} getIndex={getIndex}/>
+            </span>
+          );
+        };
+
+        if (!isHover[index]) {
+          return (
+            <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card}>
+              <div className='projects_grid img_container'>
+                <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+                <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
+              </div>
+                <div className='projects_grid text'>
+                  <div className='projects_grid text title'>
+                    {project.name}
+                  </div>
+                  <div className='projects_grid text summary'>
+                    {project.summary}
+                  </div>
+                </div>
+            </div>
+          );
+        } else {
+          return (
+            <div className='projects_grid card' style={styles.card}>
+              <CardShadow index={index} toggleHover={toggleHover}/>
+              <div className='projects_grid img_container'>
+                <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+                <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
+              </div>
+                <div className='projects_grid text'>
+                  <div className='projects_grid text title'>
+                    {project.name}
+                  </div>
+                  <div className='projects_grid text summary'>
+                    {project.summary}
+                  </div>
+                </div>
+            </div>
+          );
+        }
+      }
+    })
+  };
 
 
   if (windowWidth < 450) {
@@ -176,15 +252,15 @@ const Projects = ({ projectsRef }) => {
               {mapCategories()}
             </div>
             <div className='projects_grid container' style={styles.container} >
-              {mapProjects()}
+              {!isFiltered ? mapProjects() : filterProjects(cardFilter)}
             </div>
           </div>
-          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex}/> }
+          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex} /> }
         </motion.section>
       );
     } else {
       return (
-           <motion.section
+        <motion.section
         className='projects'
         initial={{opacity: 0}}
         animate={{opacity: 1}}
@@ -199,14 +275,14 @@ const Projects = ({ projectsRef }) => {
               {mapCategories()}
             </div>
             <div className='projects_grid container' style={styles.container} >
-              {mapProjects()}
+              {!isFiltered ? mapProjects() : filterProjects(cardFilter)}
             </div>
           </div>
-          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex}/> }
+          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex} /> }
         </motion.section>
       );
     }
-  }
+  };
 
   return (
     <motion.section
@@ -224,10 +300,10 @@ const Projects = ({ projectsRef }) => {
           {mapCategories()}
         </div>
         <div className='projects_grid container' style={styles.container} >
-          {mapProjects()}
+          {!isFiltered ? mapProjects() : filterProjects(cardFilter)}
         </div>
       </div>
-      {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex}/> }
+      {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex} /> }
     </motion.section>
   );
 }

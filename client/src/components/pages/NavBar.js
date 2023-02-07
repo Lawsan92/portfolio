@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 import { useTheme, useThemeUpdate } from '../ThemeContext.js';
 import SVGicons, { MobileSVGicons } from './SVGicons';
 import { motion } from 'framer-motion';
+import resume from '../../../dist/assets/resume.pdf';
 
 export const MobileNavbar = ({ toggleMobileNavbar }) => {
+
+  // const bodyHeight = window.getComputedStyle(document.querySelector('body')).height;
 
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
@@ -33,6 +36,9 @@ export const MobileNavbar = ({ toggleMobileNavbar }) => {
           <h3 className='nav-buttons mobile entry'>Contact</h3>
         </Link>
       </div>
+      <a href={resume} download='resume'>
+        <button style={{cursor: 'pointer'}}>RESUME</button>
+        </a>
       <button className={ darkTheme ? 'navbar_themebutton dark' : 'navbar_themebutton'} onClick={() => {toggleTheme()}} >
         {darkTheme ? <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766274/icons/dark-mode-6682_1_tluczz.svg'/> :
         <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766162/icons/dark-mode-6682_ncrhz2.svg'/>}
@@ -44,40 +50,26 @@ export const MobileNavbar = ({ toggleMobileNavbar }) => {
 
 const NavBar = () => {
 
+  // const bodyHeight = window.getComputedStyle(document.querySelector('body')).height;
+
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
-  const [gridHeight, getHeight] = useState(null);
+  // STATE & HANDLERS: modal scroll
+  const [docPosition, getPosition] = useState(document.documentElement.scrollTop);
+
+  const handlePosition = () => {
+    window.addEventListener('scroll', () => {
+      getPosition(document.documentElement.scrollTop);
+    })
+  };
 
   useEffect(() => {
-    if (document.querySelector('.projects_grid.container')) {
-      getHeight(Number(window.getComputedStyle(document.querySelector('.projects_grid.container')).height.split('').slice(0 , -2).join('')));
-      window.addEventListener('resize', () => {
-      getHeight(Number(window.getComputedStyle(document.querySelector('.projects_grid.container')).height.split('').slice(0 , -2).join('')));
-      })
-    }
+    handlePosition();
   }, [])
 
-  // const [Yposition, getPosition] = useState(0);
-
-  // useEffect(() => {
-
-  //   let windowHeight = window.innerHeight;
-  //   let gridHeight = window.getComputedStyle(document.querySelector(".projects_container")).height;
-  //   let realGridHeight = Number(gridHeight.split('').slice(0, -2).join(''));
-  //   console.log('gridHeight:', gridHeight);
-  //   console.log('realGridHeight:',realGridHeight);
-
-
-  //   window.addEventListener('resize', () => {
-  //     getPosition(Math.floor((realGridHeight - windowHeight )) / 2);
-  //   })
-
-
-  // })
-
   return (
-    <section className={darkTheme ? 'navbar dark' : 'navbar'} style={{height: (gridHeight > window.innerHeight) && gridHeight }}>
+    <section className={darkTheme ? 'navbar dark' : 'navbar'} /*style={{top: docPosition}}*/>
       <Logo/>
       <div className={ !darkTheme ? 'nav-buttons' : 'nav-buttons dark'}>
         <Link to='/'><h3>Home</h3></Link>
@@ -86,6 +78,9 @@ const NavBar = () => {
         <Link to='/experience'><h3>Skills</h3></Link>
         <Link to='/contact'><h3>Contact</h3></Link>
       </div>
+      <a href={resume} download='resume'>
+        <button style={{cursor: 'pointer'}}>RESUME</button>
+        </a>
       <button className={ darkTheme ? 'navbar_themebutton dark' : 'navbar_themebutton'} onClick={() => {toggleTheme()}} >
         {darkTheme ? <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766274/icons/dark-mode-6682_1_tluczz.svg'/> :
         <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766162/icons/dark-mode-6682_ncrhz2.svg'/>}

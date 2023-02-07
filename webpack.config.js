@@ -23,6 +23,10 @@ const clientConfig = {
       {
         test: /\.(css|scss)$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(png|pdf)$/,
+        loader: 'file-loader'
       }
     ]
   },
