@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useTheme, useThemeUpdate } from '../ThemeContext.js';
 import SVGicons, { MobileSVGicons } from './SVGicons';
 import { motion } from 'framer-motion';
+import resume from '../../../dist/assets/resume.pdf';
 
 export const MobileNavbar = ({ toggleMobileNavbar }) => {
 
@@ -35,6 +36,9 @@ export const MobileNavbar = ({ toggleMobileNavbar }) => {
           <h3 className='nav-buttons mobile entry'>Contact</h3>
         </Link>
       </div>
+      <a href={resume} download='resume'>
+        <button style={{cursor: 'pointer'}}>RESUME</button>
+        </a>
       <button className={ darkTheme ? 'navbar_themebutton dark' : 'navbar_themebutton'} onClick={() => {toggleTheme()}} >
         {darkTheme ? <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766274/icons/dark-mode-6682_1_tluczz.svg'/> :
         <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766162/icons/dark-mode-6682_ncrhz2.svg'/>}
@@ -74,6 +78,9 @@ const NavBar = () => {
         <Link to='/experience'><h3>Skills</h3></Link>
         <Link to='/contact'><h3>Contact</h3></Link>
       </div>
+      <a href={resume} download='resume'>
+        <button style={{cursor: 'pointer'}}>RESUME</button>
+        </a>
       <button className={ darkTheme ? 'navbar_themebutton dark' : 'navbar_themebutton'} onClick={() => {toggleTheme()}} >
         {darkTheme ? <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766274/icons/dark-mode-6682_1_tluczz.svg'/> :
         <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766162/icons/dark-mode-6682_ncrhz2.svg'/>}
