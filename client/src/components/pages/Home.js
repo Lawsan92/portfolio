@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import NavBar, { MobileNavbar } from './NavBar.js';
+import { Link } from 'react-router-dom';
 import Textsphere from './Textsphere.js';
 import '../../../dist/scss/styles.scss';
 import icons from '../../data/icons.js';
@@ -75,7 +76,9 @@ const Home = () => {
                   Currently looking to join a team.
                 </p>
               </div>
+                <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
                 <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
+                </Link>
               </div>
             <div className='home_assets'>
               { !isClicked[1]  ?
@@ -152,7 +155,9 @@ const Home = () => {
                   Currently looking to join a team.
                 </p>
               </div>
+              <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
                 <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
+              </Link>
               </div>
             <div className='home_assets'>
               { !isClicked[1]  ?
@@ -231,7 +236,9 @@ const Home = () => {
               Currently looking to join a team.
             </p>
           </div>
-            <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
+            <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
+                <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
+            </Link>
           </div>
         <div className='home_assets'>
           { !isClicked[1]  ?
