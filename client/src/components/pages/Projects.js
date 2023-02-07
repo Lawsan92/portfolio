@@ -150,7 +150,7 @@ const Projects = ({ projectsRef }) => {
   }
 
   const mapCategories = () => {
-    let categories = ['Backend', 'FrontEnd', 'Mobile', 'ReactJS', 'Web Dev']
+    let categories = ['BackEnd', 'FrontEnd', 'Mobile', 'ReactJS', 'Web Dev']
     return categories.map((category) => {
       return (
       <div className={ !darkTheme ? 'projects_categories card' : 'projects_categories card dark'} onClick={(e) => {handleFilter(); getFilter(e.target.innerText)}}>{category}</div>

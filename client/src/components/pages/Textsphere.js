@@ -28,6 +28,7 @@ const Textsphere = () => {
     'HTML',
     'React',
     'Redux',
+    'Sass',
     'React-Router-Dom',
     'Git',
     'Node.js',
