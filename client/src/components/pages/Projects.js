@@ -65,9 +65,6 @@ const Projects = ({ projectsRef }) => {
 
 
   const styles = {
-    container: {
-      gridTemplateColumns: `repeat(auto-fill, 360px)`,
-    },
     card: {
       // gridRowEnd: `span ${containerHeight}`,
       gridRowEnd: `span ${containerHeight}`,
@@ -251,7 +248,7 @@ const Projects = ({ projectsRef }) => {
             <div className='projects_categories'>
               {mapCategories()}
             </div>
-            <div className='projects_grid container' style={styles.container} >
+            <div className='projects_grid container' >
               {!isFiltered ? mapProjects() : filterProjects(cardFilter)}
             </div>
           </div>
@@ -274,7 +271,7 @@ const Projects = ({ projectsRef }) => {
             <div className='projects_categories'>
               {mapCategories()}
             </div>
-            <div className='projects_grid container' style={styles.container} >
+            <div className='projects_grid container' >
               {!isFiltered ? mapProjects() : filterProjects(cardFilter)}
             </div>
           </div>
@@ -299,7 +296,7 @@ const Projects = ({ projectsRef }) => {
         <div className='projects_categories'>
           {mapCategories()}
         </div>
-        <div className='projects_grid container' style={styles.container} >
+        <div className='projects_grid container' >
           {!isFiltered ? mapProjects() : filterProjects(cardFilter)}
         </div>
       </div>

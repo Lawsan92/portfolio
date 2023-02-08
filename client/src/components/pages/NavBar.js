@@ -37,7 +37,7 @@ export const MobileNavbar = ({ toggleMobileNavbar }) => {
         </Link>
       </div>
       <a href={resume} download='resume'>
-        <button style={{cursor: 'pointer'}}>RESUME</button>
+        <button className={ !darkTheme ? 'navbar_resume' : 'navbar_resume dark'}>Resume</button>
         </a>
       <button className={ darkTheme ? 'navbar_themebutton dark' : 'navbar_themebutton'} onClick={() => {toggleTheme()}} >
         {darkTheme ? <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766274/icons/dark-mode-6682_1_tluczz.svg'/> :
@@ -79,7 +79,7 @@ const NavBar = () => {
         <Link to='/contact'><h3>Contact</h3></Link>
       </div>
       <a href={resume} download='resume'>
-        <button style={{cursor: 'pointer'}}>RESUME</button>
+        <button className={ !darkTheme ? 'navbar_resume' : 'navbar_resume dark'}>Resume</button>
         </a>
       <button className={ darkTheme ? 'navbar_themebutton dark' : 'navbar_themebutton'} onClick={() => {toggleTheme()}} >
         {darkTheme ? <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766274/icons/dark-mode-6682_1_tluczz.svg'/> :

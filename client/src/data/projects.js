@@ -45,6 +45,31 @@ let projects = [
     techstack: 'Web Dev',
     summary: 'Updated legacy website made from PHP using ReactJS, Nodejs, React-Router-DOM.',
     gallery: ['https://res.cloudinary.com/darp0mj9i/image/upload/v1674434341/projects%20gallery/Screen_Shot_2023-01-22_at_18.38.58_b3f2s2.jpg', 'https://res.cloudinary.com/darp0mj9i/image/upload/v1674434362/projects%20gallery/Screen_Shot_2023-01-22_at_18.39.19_dqbkj9.jpg', 'https://res.cloudinary.com/darp0mj9i/image/upload/v1674434381/projects%20gallery/Screen_Shot_2023-01-22_at_18.39.38_rvcczj.jpg', 'https://res.cloudinary.com/darp0mj9i/image/upload/v1674434399/projects%20gallery/Screen_Shot_2023-01-22_at_18.39.53_ilfpk0.jpg']
+  },
+  {
+    name:'Template',
+    gallery: [],
+    githref: '',
+  },
+  {
+    name:'Template',
+    gallery: [],
+    githref: '',
+  },
+  {
+    name:'Template',
+    gallery: [],
+    githref: '',
+  },
+  {
+    name:'Template',
+    gallery: [],
+    githref: '',
+  },
+  {
+    name:'Template',
+    gallery: [],
+    githref: '',
   }
 ]
 

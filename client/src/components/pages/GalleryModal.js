@@ -21,6 +21,7 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
   const [count, setCount] = useState(0);
 
   const handleCount = (className) => {
+    console.log('className:', className);
     if (className === 'right-arrow') {
       if (projects[projectIndex].gallery.length - 1 === count) {
         setCount(0);
@@ -38,9 +39,13 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
   // image scroll: arrow keys
   const handleArrowKeys = (e) => {
     window.addEventListener('keydown', (e) => {
+      console.log('e.repeat:', e.repeat, 'e.keyCode:', e.keyCode)
+      if (e.repeat) {return};
       if (e.keyCode === 37) {
+        console.log('e.keyCode2:', e.keyCode);
         handleCount('left-arrow');
       } else if (e.keyCode === 39) {
+        console.log('e.keyCode2:', e.keyCode);
         handleCount('right-arrow');
       }
     });

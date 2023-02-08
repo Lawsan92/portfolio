@@ -105,6 +105,21 @@
 
 }
 
+.navbar_resume {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  color: steelblue;
+  border: solid steelblue;
+  border-radius: 0.25em;
+  transition: 1s;
+  margin: .5em;
+
+  &:hover {
+    background-color: steelblue;
+    color: #ffffff;
+    transition: 1s;
+  }
+}
 
 .navbar_themebutton {
   height: 2.5em;
@@ -113,6 +128,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: .5;
+  margin: 0.5;
+
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
 }
 
 .navbar_themebutton img {
