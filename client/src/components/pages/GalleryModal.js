@@ -68,17 +68,17 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
 
   closeModal();
 
-const handleKeys = (e) => {
-  window.addEventListener('keydown', (e) => {
-    if (e.keyCode === 37) {
-      setCount(count - 1);
-    } else if (e.keyCode === 39) {
-      setCount(count + 1);
-    }
-  })
-};
+// const handleKeys = (e) => {
+//   window.addEventListener('keydown', (e) => {
+//     if (e.keyCode === 37) {
+//       setCount(count - 1);
+//     } else if (e.keyCode === 39) {
+//       setCount(count + 1);
+//     }
+//   })
+// };
 
-handleKeys();
+// handleKeys();
 
   const mapProjectGallery = () => {
     const gallery = projects[projectIndex].gallery;
@@ -100,7 +100,8 @@ handleKeys();
       </div>
     </div>
   );
-
 }
 
 export default GalleryModal;
+
+
