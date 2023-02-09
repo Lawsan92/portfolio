@@ -22,11 +22,14 @@ const Contact = () => {
     setMobileNavbar(prevState => !openMobileNavbar)
   }
 
-
-  useEffect(() => {
+  const handleResize = () => {
     window.addEventListener('resize', () => {
       getWindowWidth(window.innerWidth);
-    })
+    });
+  };
+
+  useEffect(() => {
+    handleResize();
   }, [])
 
 

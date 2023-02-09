@@ -23,7 +23,18 @@ const Home = () => {
   }
 
   const body = document.querySelector('body');
-  darkTheme ? body.style.backgroundColor = '#1d1d1d' : body.style.backgroundColor = '';
+
+  // styling for empty html space on mobile screens
+  if (darkTheme && !openMobileNavbar) {
+    body.style.backgroundColor = '#181818'
+  } else if (darkTheme && openMobileNavbar) {
+    body.style.backgroundColor = '#1d1d1d'
+  } else if (!darkTheme && openMobileNavbar) {
+    body.style.backgroundColor = '#ffffff'
+  } else {
+    body.style.backgroundColor = ''
+  }
+
 
   const styles = {
     height: '16vh',
@@ -34,16 +45,20 @@ const Home = () => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
-  }
+  };
 
   const toggleClick = (i) => {
     setClick((prevState) => ({...isClicked, [i]: !prevState[i]}))
-  }
+  };
 
-  useEffect(() => {
+  const handleResize = () => {
     window.addEventListener('resize', () => {
       getWindowWidth(window.innerWidth);
-    })
+    });
+  };
+
+  useEffect(() => {
+    handleResize();
   }, [])
 
   if (windowWidth < 450) {

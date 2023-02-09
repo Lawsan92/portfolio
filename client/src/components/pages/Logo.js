@@ -20,10 +20,14 @@ const Box = () => {
     ref.current.rotation.z += 0.01;
   });
 
-  useEffect(() => {
+  const handleResize = () => {
     window.addEventListener('resize', () => {
       getWidth(windowWidth.innerWidth);
-    })
+    });
+  }
+
+  useEffect(() => {
+    handleResize();
   }, [])
 
   return (
@@ -52,17 +56,26 @@ const Logo = () => {
         }
       }
 
-  useEffect(() => {
+  const handleLogoResize = () => {
     window.addEventListener('resize', () => {
       let canvasHeight = window.getComputedStyle(document.querySelector(".navbar_logo")).height;
       let canvasWidth = window.getComputedStyle(document.querySelector(".navbar_logo")).width;
       let navbarHeight = window.getComputedStyle(document.querySelector(".navbar")).height;
       let navbarWidth = window.getComputedStyle(document.querySelector(".navbar")).width;
 
-      (Math.floor(window.innerWidth / 10) < 120) && getMeasure({...canvasContainer, height: navbarWidth, width: navbarWidth }), getSize({...canvasSize, height: navbarWidth, width: navbarWidth })
+      const CanvasLargerThanNavbar = Math.floor(window.innerWidth / 10) < 120;
 
-      console.log('navbarWidth:', navbarWidth, 'navbarHeight:', navbarHeight);
-    })
+      if (CanvasLargerThanNavbar) {
+        getMeasure({...canvasContainer, height: navbarWidth, width: navbarWidth });
+        getSize({...canvasSize, height: navbarWidth, width: navbarWidth });
+      }
+
+      // console.log('navbarWidth:', navbarWidth, 'navbarHeight:', navbarHeight);
+    });
+  }
+
+  useEffect(() => {
+    handleLogoResize();
   }, [])
 
 

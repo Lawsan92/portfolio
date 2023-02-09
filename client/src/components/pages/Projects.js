@@ -46,21 +46,23 @@ const Projects = ({ projectsRef }) => {
     setMobileNavbar(prevState => !openMobileNavbar)
   }
 
+  const handleMobileRender = () => {
+    window.addEventListener('resize', () => {
+
+      getWindowWidth(window.innerWidth);
+
+      let width = window.getComputedStyle(document.querySelector('.projects_grid.container')).width;
+
+      getWidth(width);
+      let height = window.getComputedStyle(document.querySelector('.projects_grid.container')).height;
+      height = Math.floor(Number(height.split('').slice(0, height.length - 2).join('')) / 20 )
+      getHeight(height);
+
+     });
+  }
+
   useEffect(() => {
-
-   window.addEventListener('resize', () => {
-
-    getWindowWidth(window.innerWidth);
-
-    let width = window.getComputedStyle(document.querySelector('.projects_grid.container')).width;
-
-    getWidth(width);
-    let height = window.getComputedStyle(document.querySelector('.projects_grid.container')).height;
-    height = Math.floor(Number(height.split('').slice(0, height.length - 2).join('')) / 20 )
-    getHeight(height);
-
-
-   });
+    handleMobileRender();
   }, []);
 
 
@@ -97,6 +99,7 @@ const Projects = ({ projectsRef }) => {
           className='projects_grid card_shadow'
           style={styles.shadow}
           onMouseLeave={() => {setHover({...isHover, [index]: false})}}
+          key={`card_shadow ${index}`}
           >
             <GithubSVG href={projects[index].githref} />
             <div className='projects_grid card_shadow text' style={styles.text}>
@@ -109,7 +112,7 @@ const Projects = ({ projectsRef }) => {
 
       if (!isHover[index]) {
         return (
-          <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card}>
+          <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
             <div className='projects_grid img_container'>
               <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
               <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
@@ -126,7 +129,7 @@ const Projects = ({ projectsRef }) => {
         );
       } else {
         return (
-          <div className='projects_grid card' style={styles.card}>
+          <div className='projects_grid card' style={styles.card} key={`card ${index}`}>
             <CardShadow index={index} toggleHover={toggleHover}/>
             <div className='projects_grid img_container'>
               <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
@@ -176,6 +179,7 @@ const Projects = ({ projectsRef }) => {
             className='projects_grid card_shadow'
             style={styles.shadow}
             onMouseLeave={() => {setHover({...isHover, [index]: false})}}
+            key={`card ${index}`}
             >
               <GithubSVG href={projects[index].githref} />
               <div className='projects_grid card_shadow text' style={styles.text}>
@@ -188,7 +192,7 @@ const Projects = ({ projectsRef }) => {
 
         if (!isHover[index]) {
           return (
-            <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card}>
+            <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
               <div className='projects_grid img_container'>
                 <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
                 <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
@@ -205,7 +209,7 @@ const Projects = ({ projectsRef }) => {
           );
         } else {
           return (
-            <div className='projects_grid card' style={styles.card}>
+            <div className='projects_grid card' style={styles.card} key={`card ${index}`}>
               <CardShadow index={index} toggleHover={toggleHover}/>
               <div className='projects_grid img_container'>
                 <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
@@ -227,7 +231,9 @@ const Projects = ({ projectsRef }) => {
   };
 
 
-  if (windowWidth < 450) {
+  const mobileScreen = windowWidth < 450;
+
+  if (mobileScreen) {
     if (!openMobileNavbar) {
       return (
         <motion.section

@@ -18,11 +18,15 @@ const Experience = ({ experienceRef }) => {
     setMobileNavbar(prevState => !openMobileNavbar)
   }
 
-    useEffect(() => {
-      window.addEventListener('resize', () => {
-        getWindowWidth(window.innerWidth);
-      })
-    }, [])
+  const handleResize = () => {
+    window.addEventListener('resize', () => {
+      getWindowWidth(window.innerWidth);
+    });
+  };
+
+  useEffect(() => {
+    handleResize();
+  }, [])
 
 
     if (windowWidth < 450) {

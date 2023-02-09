@@ -54,7 +54,7 @@
     color:steelblue;
     font-weight: 800;
     // font-size: 3.41vw;
-    font-size: 7vh;
+    font-size: 3vw;
     // text-shadow: rgba(0, 0, 0, 0.35) 0px 2.5px 7.5px;
     height: 18vh;
     font-family:'SF Pro Display', sans-serif;
@@ -480,6 +480,7 @@
 
     &.content {
       margin: 1em;
+      width: 70vw;
     }
 
     &.subheader {
@@ -488,6 +489,12 @@
 
     &.header {
       font-size: 4vh;
+      width: 50vw;
+      height: 22vh;
+    }
+
+    &.btn {
+      margin-bottom: 1em;
     }
   }
 
@@ -502,6 +509,11 @@
 
   .home_text {
     width: 90vw;
+
+    &.header {
+      width: 85vw;
+      height: 18vh;
+    }
 
     &.content {
       width: 100%;
