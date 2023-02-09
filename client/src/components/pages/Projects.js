@@ -169,7 +169,6 @@ const Projects = ({ projectsRef }) => {
   };
 
   const filterProjects = (e) => {
-    console.log('e:', e);
     return projects.map((project, index) => {
       if (project.techstack === e) {
         console.log('project.techstack === e:', project.techstack === e);

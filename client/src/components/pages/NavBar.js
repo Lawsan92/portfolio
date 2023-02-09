@@ -1,10 +1,11 @@
-import React, { useRef, useState, useEffect } from 'react';
-import Logo from './Logo.js';
+import React, { useRef, useState, useEffect, lazy, Suspense } from 'react';
+// import Logo from './Logo.js';
 import { Link } from 'react-router-dom';
 import { useTheme, useThemeUpdate } from '../ThemeContext.js';
 import SVGicons, { MobileSVGicons } from './SVGicons';
 import { motion } from 'framer-motion';
 import resume from '../../../dist/assets/resume.pdf';
+const Logo = lazy(() => import ('./Logo.js'))
 
 export const MobileNavbar = ({ toggleMobileNavbar }) => {
 
@@ -74,7 +75,9 @@ const NavBar = () => {
 
   return (
     <section className={darkTheme ? 'navbar dark' : 'navbar'} style={{top: windowWidth > 1000 ? docPosition : ''}}>
-      <Logo/>
+      <Suspense fallback={<div>loading...</div>}>
+        <Logo/>
+      </Suspense>
       <div className={ !darkTheme ? 'nav-buttons' : 'nav-buttons dark'}>
         <Link to='/'><h3>Home</h3></Link>
         <Link to='/skills'><h3>About</h3></Link>
