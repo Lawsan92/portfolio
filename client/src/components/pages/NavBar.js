@@ -1,11 +1,10 @@
 import React, { useRef, useState, useEffect, lazy, Suspense } from 'react';
-// import Logo from './Logo.js';
 import { Link } from 'react-router-dom';
 import { useTheme, useThemeUpdate } from '../ThemeContext.js';
 import SVGicons, { MobileSVGicons } from './SVGicons';
 import { motion } from 'framer-motion';
 import resume from '../../../dist/assets/resume.pdf';
-const Logo = lazy(() => import ('./Logo.js'))
+const Logo = lazy(() => import ('./Logo.js'));
 
 export const MobileNavbar = ({ toggleMobileNavbar }) => {
 
