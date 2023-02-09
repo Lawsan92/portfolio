@@ -10,6 +10,7 @@
   background-color: #ffffff;
   transition: background 1s;
   // background-image: linear-gradient(#ffffff, steelblue);
+  align-self: flex-start;
 
   &.dark{
     transition: background 1s;

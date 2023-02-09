@@ -8,8 +8,6 @@ import resume from '../../../dist/assets/resume.pdf';
 
 export const MobileNavbar = ({ toggleMobileNavbar }) => {
 
-  // const bodyHeight = window.getComputedStyle(document.querySelector('body')).height;
-
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
@@ -50,13 +48,12 @@ export const MobileNavbar = ({ toggleMobileNavbar }) => {
 
 const NavBar = () => {
 
-  // const bodyHeight = window.getComputedStyle(document.querySelector('body')).height;
-
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
 
   // STATE & HANDLERS: modal scroll
   const [docPosition, getPosition] = useState(document.documentElement.scrollTop);
+  const [windowWidth, getWidth] = useState(window.innerWidth);
 
   const handlePosition = () => {
     window.addEventListener('scroll', () => {
@@ -64,12 +61,19 @@ const NavBar = () => {
     })
   };
 
+  const handleWidth = () => {
+    window.addEventListener('scroll', () => {
+      getWidth(window.innerWidth);
+    })
+  }
+
   useEffect(() => {
     handlePosition();
-  }, [])
+    handleWidth();
+  }, [docPosition, windowWidth])
 
   return (
-    <section className={darkTheme ? 'navbar dark' : 'navbar'} /*style={{top: docPosition}}*/>
+    <section className={darkTheme ? 'navbar dark' : 'navbar'} style={{top: windowWidth > 1000 ? docPosition : ''}}>
       <Logo/>
       <div className={ !darkTheme ? 'nav-buttons' : 'nav-buttons dark'}>
         <Link to='/'><h3>Home</h3></Link>
