@@ -158,7 +158,7 @@
   &.btn {
     background-color: #edf2f8;
     color:steelblue;
-    margin-top: 1em;
+    margin: 1em 2em 0 auto;
     border: solid;
     height: 3em;
     width: 12em;
@@ -167,12 +167,8 @@
     justify-content: center;
     align-items: center;
     transition: background 1s;
-    align-self: flex-end;
-    position: absolute;
-    justify-self: flex-end;
-    margin-right: 2em;
-    margin-bottom: 16em;
     grid-row-end: span 5;
+    grid-column-end: span 1;
 
     &:hover {
       background-color: steelblue;

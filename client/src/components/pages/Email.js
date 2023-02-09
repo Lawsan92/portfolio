@@ -30,6 +30,7 @@ const Email = () =>  {
       <input className={ !darkTheme ? 'contact_email input' : 'contact_email input dark'} type='email' name='user_email' placeholder='Email'></input>
       <input className={ !darkTheme ? 'contact_email input subject' : 'contact_email input subject dark'} type='text' name='subject' placeholder='Subject'></input>
       <textarea className={ !darkTheme ? 'contact_email input textarea' : 'contact_email input textarea dark'}  name='message'></textarea>
+      <div style={{opacity: 0}}></div>
       <input className={ !darkTheme ? 'contact_email btn' : 'contact_email btn dark'} type='submit' value ='Send Message'></input>
     </form>
   );
