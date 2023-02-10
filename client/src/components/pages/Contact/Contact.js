@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import NavBar, { MobileNavbar } from './NavBar.js';
-import { useTheme } from '../ThemeContext.js';
+import NavBar, { MobileNavbar } from '../NavBar/NavBar.js';
+import { useTheme } from '../../ThemeContext.js';
 import Email from './Email.js';
-import { EmailSVG, IphoneSVG } from './SVGicons.js';
+import { EmailSVG, IphoneSVG } from './../SVGicons.js';
 import Map from './Map.js';
 import { motion } from 'framer-motion';
 

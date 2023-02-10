@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NavBar from './NavBar.js';
+import NavBar, { MobileNavbar } from './NavBar/NavBar.js';
 import { useTheme } from '../ThemeContext.js';
 
 

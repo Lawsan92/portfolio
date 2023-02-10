@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import projects from '../../data/projects.js';
-import NavBar, { MobileNavbar } from './NavBar';
-import { useTheme } from '../ThemeContext.js';
-import { GithubSVG, CameraSVG } from './SVGicons.js';
+import projects from '../../../data/projects.js';
+import NavBar, { MobileNavbar } from '../NavBar/NavBar.js';
+import { useTheme } from '../../ThemeContext.js';
+import { GithubSVG, CameraSVG } from './../SVGicons.js';
 import GalleryModal from './GalleryModal.js';
 import { motion } from 'framer-motion';
+// import ProjectGrid from './ProjectGrid.js';
 
 
 const Projects = ({ projectsRef }) => {

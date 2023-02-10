@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
-import { useTheme } from '../ThemeContext.js';
+import { useTheme } from '../../ThemeContext.js';
 import mapStyles from './MapStyles.js';
 
 const Map = () => {

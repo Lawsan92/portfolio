@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import projects from '../../data/projects.js';
-import { LeftArrowSVG, RightArrowSVG } from './SVGicons.js';
+import projects from '../../../data/projects.js';
+import { LeftArrowSVG, RightArrowSVG } from './../SVGicons.js';
 
 const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
 

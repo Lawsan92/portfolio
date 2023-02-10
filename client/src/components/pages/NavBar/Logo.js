@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three';
-import { useTheme } from '../ThemeContext.js';
+import { useTheme } from '../../ThemeContext.js';
 
 const Box = () => {
 

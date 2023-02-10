@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { useTheme } from '../ThemeContext.js';
+import { useTheme } from '../../ThemeContext.js';
 import emailjs from '@emailjs/browser';
 const Email = () =>  {
 

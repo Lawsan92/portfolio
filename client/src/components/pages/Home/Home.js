@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, lazy, Suspense } from 'react';
-import NavBar, { MobileNavbar } from './../NavBar.js';
+import NavBar, { MobileNavbar } from '../NavBar/NavBar.js';
 import { Link } from 'react-router-dom';
 import '../../../../dist/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';

@@ -1,5 +1,6 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const CompressionPlugin = require("compression-webpack-plugin");
 
 const clientConfig = {
   mode: 'development',
@@ -31,7 +32,13 @@ const clientConfig = {
     ]
   },
   plugins: [
-    new Dotenv({systemvars: true})
+    new Dotenv({systemvars: true}),
+    // new CompressionPlugin({
+    //   test: /\.js(\?.*)?$/i,
+    //   filename: path.join(__dirname, './client/dist'),
+    //   algorithm: "gzip",
+    //   deleteOriginalAssets: false,
+    // })
   ]
 }
 

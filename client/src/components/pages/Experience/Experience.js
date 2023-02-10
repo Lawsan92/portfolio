@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import NavBar, { MobileNavbar } from './NavBar.js';
-import { useTheme } from '../ThemeContext.js';
-import { FrontEndSVG, BackEndSVG } from './SVGicons.js';
+import NavBar, { MobileNavbar } from '../NavBar/NavBar.js';
+import { useTheme } from '../../ThemeContext.js';
+import { FrontEndSVG, BackEndSVG } from '../SVGicons.js';
 import { motion } from 'framer-motion';
 
 const Experience = ({ experienceRef }) => {

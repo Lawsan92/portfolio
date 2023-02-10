@@ -1,7 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import icons from '../../data/icons.js'
-import NavBar, { MobileNavbar } from './NavBar.js';
-import { useTheme } from '../ThemeContext.js'
+import icons from '../../../data/icons.js'
+import NavBar, { MobileNavbar } from '../NavBar/NavBar.js';
+import { useTheme } from '../../ThemeContext.js'
 import { motion } from 'framer-motion';
 const Textsphere = lazy(() => import('./Textsphere.js'));
 
