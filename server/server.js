@@ -19,16 +19,16 @@ const shouldCompress = (req, res) => {
 app.use(express.json());
 app.use(compression({filter: shouldCompress}));
 app.use(express.static(path.join(__dirname, '../client/dist')));
-// app.use(expressStaticGzip());
+
 
 // route handlers
-
 app.get('/test', (req, res) => {
   res.sendStatus(200);
 })
 
 app.get('/*', (req, res) => {
-  res.set('content-encoding', 'gzip');
+  // res.set('content-encoding', 'gzip');
+  // res.set('content-type', 'text/javascript');
   res.sendFile(path.join(__dirname, '../client/dist/index.html'), (err) => {
     err && alert('err:', err);
   })

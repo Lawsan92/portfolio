@@ -7,11 +7,13 @@ const clientConfig = {
   mode: 'production',
   entry: {
     path: path.join(__dirname, './client/src/index.js')
+    // path: './app.js'
   },
   output: {
     path: path.join(__dirname, './client/dist'),
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js'
+    // filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
+    filename: 'bundle.js',
   },
   devServer: {
     historyApiFallback: true
@@ -40,7 +42,7 @@ const clientConfig = {
     //   algorithm: "gzip",
     //   filename: "'bundle.js.gz"
     // }),
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin()
   ]
 }
 
