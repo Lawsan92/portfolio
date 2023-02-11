@@ -5,6 +5,7 @@ import SVGicons, { MobileSVGicons } from '../SVGicons';
 import { motion } from 'framer-motion';
 import resume from '../../../../dist/assets/resume.pdf';
 const Logo = lazy(() => import ('./Logo.js'));
+// import Logo from './Logo.js';
 
 export const MobileNavbar = ({ toggleMobileNavbar }) => {
 

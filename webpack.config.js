@@ -1,15 +1,17 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
-const CompressionPlugin = require("compression-webpack-plugin");
+// const CompressionPlugin = require("compression-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const clientConfig = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     path: path.join(__dirname, './client/src/index.js')
   },
   output: {
     path: path.join(__dirname, './client/dist'),
-    filename: 'bundle.js'
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js'
   },
   devServer: {
     historyApiFallback: true
@@ -34,11 +36,11 @@ const clientConfig = {
   plugins: [
     new Dotenv({systemvars: true}),
     // new CompressionPlugin({
-    //   test: /\.js(\?.*)?$/i,
-    //   filename: path.join(__dirname, './client/dist'),
+    //   test: /\.(js|jsx|css|html|svg)$/,
     //   algorithm: "gzip",
-    //   deleteOriginalAssets: false,
-    // })
+    //   filename: "'bundle.js.gz"
+    // }),
+    new BundleAnalyzerPlugin()
   ]
 }
 

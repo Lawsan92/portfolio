@@ -5,6 +5,7 @@ import '../../../../dist/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 const Bubbles = lazy(() => import('./Bubbles.js'));
+// import Bubbles from './Bubbles.js';
 
 const Home = () => {
 
