@@ -5,19 +5,25 @@ import SVGicons, { MobileSVGicons } from '../SVGicons';
 import { motion } from 'framer-motion';
 import resume from '../../../../dist/assets/resume.pdf';
 const Logo = lazy(() => import ('./Logo.js'));
-// import Logo from './Logo.js';
 
 export const MobileNavbar = ({ toggleMobileNavbar }) => {
 
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
+  // const currentPage = window.location.href.split('').slice(window.location.href.indexOf('/')).join('');
+  const currentPage = window.location.href.split('').slice(window.location.href.indexOf('0/') + 2)[0];
+  console.log('currentPage:', currentPage);
 
   return (
     <section className={darkTheme ? 'navbar mobile dark' : 'navbar mobile'}>
       <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
         X
       </div>
-      <Logo/>
+      <Suspense fallback={<div>loading...</div>}>
+        <Link to='/'>
+          <Logo/>
+        </Link>
+      </Suspense>
       <div className={ !darkTheme ? 'nav-buttons mobile' : 'nav-buttons mobile dark'}>
         <Link to='/'>
           <h3 className='nav-buttons mobile entry'>Home</h3>

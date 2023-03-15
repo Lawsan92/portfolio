@@ -59,7 +59,7 @@ const ProjectGrid = ({isOpen, setModal, toggleModal, projectIndex, getIndex}) =>
         return (
           <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
             <div className='projects_grid img_container'>
-              <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+              <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
               <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
             </div>
               <div className='projects_grid text'>
@@ -77,7 +77,7 @@ const ProjectGrid = ({isOpen, setModal, toggleModal, projectIndex, getIndex}) =>
           <div className='projects_grid card' style={styles.card} key={`card ${index}`}>
             <CardShadow index={index} toggleHover={toggleHover}/>
             <div className='projects_grid img_container'>
-              <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+              <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
               <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
             </div>
               <div className='projects_grid text'>
@@ -124,7 +124,7 @@ const ProjectGrid = ({isOpen, setModal, toggleModal, projectIndex, getIndex}) =>
           return (
             <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
               <div className='projects_grid img_container'>
-                <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+                <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
                 <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
               </div>
                 <div className='projects_grid text'>
@@ -142,7 +142,7 @@ const ProjectGrid = ({isOpen, setModal, toggleModal, projectIndex, getIndex}) =>
             <div className='projects_grid card' style={styles.card} key={`card ${index}`}>
               <CardShadow index={index} toggleHover={toggleHover}/>
               <div className='projects_grid img_container'>
-                <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+                <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
                 <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
               </div>
                 <div className='projects_grid text'>

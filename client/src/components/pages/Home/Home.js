@@ -5,7 +5,6 @@ import '../../../../dist/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 const Bubbles = lazy(() => import('./Bubbles.js'));
-// import Bubbles from './Bubbles.js';
 
 const Home = () => {
 
@@ -32,6 +31,14 @@ const Home = () => {
   } else {
     body.style.backgroundColor = ''
   }
+  console.group()
+    console.log('darkTheme && !openMobileNavbar')
+    console.log(darkTheme && !openMobileNavbar)
+    console.log('darkTheme && openMobileNavbar')
+    console.log(darkTheme && openMobileNavbar)
+    console.log('!darkTheme && !openMobileNavbar')
+    console.log(!darkTheme && !openMobileNavbar)
+  console.groupEnd();
 
   const handleResize = () => {
     window.addEventListener('resize', () => {
@@ -43,6 +50,7 @@ const Home = () => {
     handleResize();
   }, [])
 
+  // mobile rendering
   if (windowWidth < 450) {
     if (!openMobileNavbar) {
       return (
@@ -59,23 +67,18 @@ const Home = () => {
           </div>
           <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
             <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
-              <div className='home_text subheader'>
-                <p>Hi, my name is</p>
-              </div>
               <div className='home_text header'>
-                <p>
-                Lawrence Sanzogni, <br/>
-                Software Engineer</p>
+                <p>Lawrence Sanzogni, <br/>Software Engineer</p>
               </div>
               <div className='home_text content'>
                 <p>
-                  I'm a fullstack JavaScript engineer with a specialty in MERN and PERN tech stacks who's avid problem solver and loves creating new content.
-                  Currently looking to join a team.
+                  I'm a fullstack Software Engineer with a specialty in MERN and PERN tech stacks. I freelance as a web developer and love creating new content for growing businesses.
+                  I'm currently looking for new full time opportunities and to make an impact.
                 </p>
               </div>
-                <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
-                <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
-                </Link>
+              <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
+              <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
+              </Link>
               </div>
               <Suspense fallback={<div>loading...</div>}>
                 <Bubbles/>
@@ -94,18 +97,13 @@ const Home = () => {
           <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />
           <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
             <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
-              <div className='home_text subheader'>
-                <p>Hi, my name is</p>
-              </div>
               <div className='home_text header'>
-                <p>
-                Lawrence Sanzogni, <br/>
-                Software Engineer</p>
+                <p>Lawrence Sanzogni,<br/>Software Engineer</p>
               </div>
               <div className='home_text content'>
                 <p>
-                  I'm a fullstack JavaScript engineer with a specialty in MERN and PERN tech stacks who's avid problem solver and loves creating new content.
-                  Currently looking to join a team.
+                I'm a fullstack Software Engineer with a specialty in MERN and PERN tech stacks. I freelance as a web developer and love creating new content for growing businesses.
+                I'm currently looking for new full time opportunities and to make an impact.
                 </p>
               </div>
               <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
@@ -131,9 +129,6 @@ const Home = () => {
       <NavBar/>
         <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
           <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
-            <div className='home_text subheader'>
-              <p>Hi, my name is</p>
-            </div>
             <div className='home_text header'>
               <p>
               Lawrence Sanzogni, <br/>
@@ -141,8 +136,8 @@ const Home = () => {
             </div>
             <div className='home_text content'>
               <p>
-                I'm a fullstack JavaScript engineer with a specialty in MERN and PERN tech stacks who's avid problem solver and loves creating new content.
-                Currently looking to join a team.
+                I'm a fullstack Software Engineer with a specialty in MERN and PERN tech stacks. I freelance as a web developer and love creating new content for growing businesses.
+                I'm currently looking for new full time opportunities and to make an impact.
               </p>
             </div>
             <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>

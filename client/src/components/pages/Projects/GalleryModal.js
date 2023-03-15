@@ -71,7 +71,8 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
   const mapProjectGallery = () => {
     const gallery = projects[projectIndex].gallery;
       if (gallery.length) {
-        return <img src={gallery[count]} className='projects_gallery-modal_card img' onClick={() => {handleCount('right-arrow')}}/>;
+        console.log('gallery[count].url:', gallery[count].url, 'gallery[count].meta:', gallery[count].meta);
+        return <img src={gallery[count].url} alt={gallery[count].meta} className='projects_gallery-modal_card img' onClick={() => {handleCount('right-arrow')}}/>;
       } else {
         return <p>COMING SOON...</p>;
       }

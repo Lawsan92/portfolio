@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef, Suspense } from 'react';
+import { Link } from 'react-router-dom';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three';
 import { useTheme } from '../../ThemeContext.js';
@@ -82,13 +83,15 @@ const Logo = () => {
   return (
     <div className='navbar_logo' style={styles.container}>
       <Suspense fallback={<div>loading...</div>}>
-        <Canvas style={{height: `${canvasContainer.height}px`, width: `${canvasContainer.width}px`}}>
-          <ambientLight intensity={1} />
-          <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-          <pointLight position={[-10, -10, -10]} />
-          <Box position={[-1.2, 0, 0]} />
-          <Box position={[1.2, 0, 0]} />
-        </Canvas>
+        <Link to='/'>
+          <Canvas style={{height: `${canvasContainer.height}px`, width: `${canvasContainer.width}px`}}>
+            <ambientLight intensity={1} />
+            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+            <pointLight position={[-10, -10, -10]} />
+            <Box position={[-1.2, 0, 0]} />
+            <Box position={[1.2, 0, 0]} />
+          </Canvas>
+        </Link>
       </Suspense>
     </div>
   );

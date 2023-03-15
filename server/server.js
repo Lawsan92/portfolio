@@ -2,6 +2,7 @@ require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const fs = require('fs');
+const cors = require('cors');
 const expressStaticGzip = require('express-static-gzip');
 const port = process.env.PORT;
 const compression = require('compression');
@@ -15,8 +16,14 @@ const shouldCompress = (req, res) => {
   return compression.filter(req, res);
 }
 
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200
+}
+
 // Middleware
 app.use(express.json());
+app.use(cors(corsOptions));
 app.use(compression({filter: shouldCompress}));
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
