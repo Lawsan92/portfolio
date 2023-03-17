@@ -3,8 +3,6 @@ import { useTheme } from '../../ThemeContext.js';
 import emailjs from '@emailjs/browser';
 const Email = () =>  {
 
-  console.log(process.env.EMAIL_JS_SERVICE_ID, process.env.EMAIL_JS_TEMPLATE_ID,  process.env.EMAIL_JS_PUBLIC_KEY);
-
   const form = useRef();
 
   const sendEmail = (e) => {

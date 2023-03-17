@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTheme, useThemeUpdate } from '../../ThemeContext.js';
 import SVGicons, { MobileSVGicons } from '../SVGicons';
 import { motion } from 'framer-motion';
-import resume from '../../../../dist/assets/resume.pdf';
+import resume from '../../../../dist/assets/Lawrence_Sanzogni.pdf';
 const Logo = lazy(() => import ('./Logo.js'));
 
 export const MobileNavbar = ({ toggleMobileNavbar }) => {
@@ -82,7 +82,9 @@ const NavBar = () => {
   return (
     <section className={darkTheme ? 'navbar dark' : 'navbar'} style={{top: windowWidth > 1000 ? docPosition : ''}}>
       <Suspense fallback={<div>loading...</div>}>
-        <Logo/>
+        <Link to='/'>
+          <Logo/>
+        </Link>
       </Suspense>
       <div className={ !darkTheme ? 'nav-buttons' : 'nav-buttons dark'}>
         <Link to='/'><h3>Home</h3></Link>
