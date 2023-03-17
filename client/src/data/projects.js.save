@@ -38,7 +38,7 @@ let projects = [
     url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1678901338/projects%20gallery/Guitune/Screen_Shot_2023-03-15_at_12.26.12_ogyrog.jpg',
     meta: 'white guitar headstock logo',
     href: '',
-    githref: 'https://github.com/Lawsan92/guitarTuner',
+    githref: '',
     techstack: 'Mobile',
     summary: 'Designed a mobile guitar tuner application for musicians that converts audio data to a single pitch value.',
     gallery: [
