@@ -10,6 +10,9 @@ export const MobileNavbar = ({ toggleMobileNavbar }) => {
 
   const darkTheme = useTheme();
   const toggleTheme = useThemeUpdate();
+  // const currentPage = window.location.href.split('').slice(window.location.href.indexOf('/')).join('');
+  const currentPage = window.location.href.split('').slice(window.location.href.indexOf('0/') + 2)[0];
+  console.log('currentPage:', currentPage);
 
   return (
     <section className={darkTheme ? 'navbar mobile dark' : 'navbar mobile'}>

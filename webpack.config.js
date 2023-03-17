@@ -4,7 +4,7 @@ const Dotenv = require('dotenv-webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const clientConfig = {
-  mode: 'production',
+  mode: 'development',
   entry: {
     path: path.join(__dirname, './client/src/index.js')
     // path: './app.js'

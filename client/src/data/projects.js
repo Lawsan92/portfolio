@@ -35,13 +35,43 @@ let projects = [
   },
   {
     name:'Guitune',
+<<<<<<< HEAD
     url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1673252362/samples/Screen_Shot_2022-11-02_at_14238_PM_x1mwkq-transformed_lommbv.png',
     meta: 'blue guitar headstock logo',
+=======
+    url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1678901338/projects%20gallery/Guitune/Screen_Shot_2023-03-15_at_12.26.12_ogyrog.jpg',
+    meta: 'white guitar headstock logo',
+>>>>>>> f06792e89a28cc84fb42a1df829f30556a2b3a56
     href: '',
     githref: 'https://github.com/Lawsan92/guiTune',
     techstack: 'Mobile',
     summary: 'Designed a mobile guitar tuner application for musicians that converts audio data to a single pitch value.',
-    gallery: []
+    gallery: [
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1678899776/projects%20gallery/Guitune/Screen_Shot_2023-03-15_at_12.00.38_arnpnq.jpg',
+        meta: 'landing page, guitar icon'
+      },
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1678899926/projects%20gallery/Guitune/Screen_Shot_2023-03-15_at_12.03.47_z4ypol.jpg',
+        meta: 'tuning page, dash'
+      },
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1678899927/projects%20gallery/Guitune/Screen_Shot_2023-03-15_at_12.04.04_uvlrt9.jpg',
+        meta: 'tuning page w/navbar open'
+      },
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1678901336/projects%20gallery/Guitune/Screen_Shot_2023-03-15_at_12.18.35_3_nen0tk.jpg',
+        meta: 'tuning page, active tuner, flat, red icon'
+      },
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1678901205/projects%20gallery/Guitune/Screen_Shot_2023-03-15_at_12.16.52_3_co05rz.jpg',
+        meta: 'tuning page, active tuner, sharp, red icon'
+      },
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1678901329/projects%20gallery/Guitune/Screen_Shot_2023-03-15_at_12.17.59_3_pjsg0e.jpg',
+        meta: 'tuning page, active tuner, green icon'
+      }
+    ]
   },
   {
     name:'Project Atelier',
