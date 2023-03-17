@@ -5,8 +5,6 @@ import { useTheme } from '../../ThemeContext.js';
 import { GithubSVG, CameraSVG } from './../SVGicons.js';
 import GalleryModal from './GalleryModal.js';
 import { motion } from 'framer-motion';
-// import ProjectGrid from './ProjectGrid.js';
-
 
 const Projects = ({ projectsRef }) => {
 
@@ -44,7 +42,7 @@ const Projects = ({ projectsRef }) => {
   const [openMobileNavbar, setMobileNavbar] = useState(false);
 
   const toggleMobileNavbar = () => {
-    setMobileNavbar(prevState => !openMobileNavbar)
+    setMobileNavbar(prevState => !openMobileNavbar);
   }
 
   const handleMobileRender = () => {
@@ -115,7 +113,7 @@ const Projects = ({ projectsRef }) => {
         return (
           <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
             <div className='projects_grid img_container'>
-              <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+              <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
               <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
             </div>
               <div className='projects_grid text'>
@@ -133,7 +131,7 @@ const Projects = ({ projectsRef }) => {
           <div className='projects_grid card' style={styles.card} key={`card ${index}`}>
             <CardShadow index={index} toggleHover={toggleHover}/>
             <div className='projects_grid img_container'>
-              <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+              <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
               <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
             </div>
               <div className='projects_grid text'>
@@ -194,7 +192,7 @@ const Projects = ({ projectsRef }) => {
           return (
             <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
               <div className='projects_grid img_container'>
-                <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+                <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
                 <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
               </div>
                 <div className='projects_grid text'>
@@ -212,7 +210,7 @@ const Projects = ({ projectsRef }) => {
             <div className='projects_grid card' style={styles.card} key={`card ${index}`}>
               <CardShadow index={index} toggleHover={toggleHover}/>
               <div className='projects_grid img_container'>
-                <img className='projects_grid img_container img' src={project.url} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+                <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
                 <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
               </div>
                 <div className='projects_grid text'>

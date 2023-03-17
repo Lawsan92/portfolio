@@ -5,7 +5,6 @@ import '../../../../dist/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 const Bubbles = lazy(() => import('./Bubbles.js'));
-// import Bubbles from './Bubbles.js';
 
 const Home = () => {
 
@@ -43,6 +42,7 @@ const Home = () => {
     handleResize();
   }, [])
 
+  // mobile rendering
   if (windowWidth < 450) {
     if (!openMobileNavbar) {
       return (
@@ -63,9 +63,7 @@ const Home = () => {
                 <p>Hi, my name is</p>
               </div>
               <div className='home_text header'>
-                <p>
-                Lawrence Sanzogni, <br/>
-                Software Engineer</p>
+                <p>Lawrence Sanzogni, <br/>Software Engineer</p>
               </div>
               <div className='home_text content'>
                 <p>
@@ -73,9 +71,9 @@ const Home = () => {
                   Currently looking to join a team.
                 </p>
               </div>
-                <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
-                <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
-                </Link>
+              <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
+              <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
+              </Link>
               </div>
               <Suspense fallback={<div>loading...</div>}>
                 <Bubbles/>
@@ -98,9 +96,7 @@ const Home = () => {
                 <p>Hi, my name is</p>
               </div>
               <div className='home_text header'>
-                <p>
-                Lawrence Sanzogni, <br/>
-                Software Engineer</p>
+                <p>Lawrence Sanzogni,<br/>Software Engineer</p>
               </div>
               <div className='home_text content'>
                 <p>

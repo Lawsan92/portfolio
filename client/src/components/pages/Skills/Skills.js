@@ -4,7 +4,6 @@ import NavBar, { MobileNavbar } from '../NavBar/NavBar.js';
 import { useTheme } from '../../ThemeContext.js'
 import { motion } from 'framer-motion';
 const Textsphere = lazy(() => import('./Textsphere.js'));
-// import Textsphere from './Textsphere.js';
 
 const Skills = ({ skillsRef }) => {
 
