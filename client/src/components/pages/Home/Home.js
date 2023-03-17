@@ -31,14 +31,14 @@ const Home = () => {
   } else {
     body.style.backgroundColor = ''
   }
-  console.group()
-    console.log('darkTheme && !openMobileNavbar')
-    console.log(darkTheme && !openMobileNavbar)
-    console.log('darkTheme && openMobileNavbar')
-    console.log(darkTheme && openMobileNavbar)
-    console.log('!darkTheme && !openMobileNavbar')
-    console.log(!darkTheme && !openMobileNavbar)
-  console.groupEnd();
+  // console.group()
+  //   console.log('darkTheme && !openMobileNavbar')
+  //   console.log(darkTheme && !openMobileNavbar)
+  //   console.log('darkTheme && openMobileNavbar')
+  //   console.log(darkTheme && openMobileNavbar)
+  //   console.log('!darkTheme && !openMobileNavbar')
+  //   console.log(!darkTheme && !openMobileNavbar)
+  // console.groupEnd();
 
   const handleResize = () => {
     window.addEventListener('resize', () => {

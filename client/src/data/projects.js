@@ -35,13 +35,8 @@ let projects = [
   },
   {
     name:'Guitune',
-<<<<<<< HEAD
-    url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1673252362/samples/Screen_Shot_2022-11-02_at_14238_PM_x1mwkq-transformed_lommbv.png',
-    meta: 'blue guitar headstock logo',
-=======
     url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1678901338/projects%20gallery/Guitune/Screen_Shot_2023-03-15_at_12.26.12_ogyrog.jpg',
     meta: 'white guitar headstock logo',
->>>>>>> f06792e89a28cc84fb42a1df829f30556a2b3a56
     href: '',
     githref: 'https://github.com/Lawsan92/guiTune',
     techstack: 'Mobile',
