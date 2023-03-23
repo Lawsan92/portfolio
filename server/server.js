@@ -1,11 +1,13 @@
 require('dotenv').config();
 const express = require('express');
 const compression = require('compression');
-const crypto = require('crypto');
 const path = require('path');
 const port = process.env.PORT;
 // Server instance
 const app = express();
+const https = require('https');
+const { readFileSync } = require('fs');
+const crypto = require('crypto')
 const shouldCompress = (req, res) => {
   if(req.headers['x-no-compression']) {
     return false;
@@ -26,6 +28,16 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 
 // route handlers
+
+https
+  .createServer({
+    key: readFileSync('pem/key.pem'),
+    cert: readFileSync('pem/cert.pem')
+  }, app)
+  .listen(port || 3000, () => {
+    console.log(`listening to localhost: ${port}`);
+  })
+
 app.get('/test', (req, res) => {
   res.sendStatus(200);
 })
@@ -36,10 +48,10 @@ app.get('/*', (req, res) => {
   })
 });
 
-app.listen(port || 3000, () => {
-  console.log(`listening to localhost: ${port}`);
-})
 
-const one  = 1;
+
+
+
+
 
 
