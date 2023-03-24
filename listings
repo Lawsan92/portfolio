@@ -1,0 +1,21 @@
+total 764
+drwxrwxr-x   7 ubuntu ubuntu   4096 Mar 23 08:57 .
+drwxr-x---   7 ubuntu ubuntu   4096 Mar 15 18:02 ..
+-rw-rw-r--   1 ubuntu ubuntu   6148 Mar 17 16:22 .DS_Store
+-rw-rw-r--   1 ubuntu ubuntu     73 Mar 15 18:02 .babelrc
+-rw-rw-r--   1 ubuntu ubuntu    208 Mar 23 08:42 .env
+drwxrwxr-x   8 ubuntu ubuntu   4096 Mar 23 08:08 .git
+-rw-rw-r--   1 ubuntu ubuntu     38 Mar 23 08:07 .gitignore
+-rw-rw-r--   1 ubuntu ubuntu    218 Mar 15 18:02 app.js
+drwxrwxr-x   4 ubuntu ubuntu   4096 Mar 17 16:22 client
+-rw-rw-r--   1 ubuntu ubuntu    194 Mar 15 18:02 dependencies.txt
+-rw-rw-r--   1 ubuntu ubuntu    282 Mar 15 18:02 links.txt
+-rw-rw-r--   1 ubuntu ubuntu      0 Mar 23 08:57 listings
+drwxrwxr-x 412 ubuntu ubuntu  20480 Mar 17 16:25 node_modules
+-rw-rw-r--   1 ubuntu ubuntu 633390 Mar 17 16:25 package-lock.json
+-rw-rw-r--   1 ubuntu ubuntu   1291 Mar 17 16:22 package.json
+drwxrwxr-x   2 ubuntu ubuntu   4096 Mar 23 08:27 pem
+-rw-rw-r--   1 ubuntu ubuntu      0 Mar 15 18:02 readme.md
+drwxrwxr-x   2 ubuntu ubuntu   4096 Mar 23 08:07 server
+-rw-rw-r--   1 ubuntu ubuntu    933 Mar 17 16:22 webpack.config.js
+-rw-rw-r--   1 ubuntu ubuntu  55109 Mar 15 18:02 wireframe.excalidraw
