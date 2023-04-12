@@ -49,6 +49,7 @@ app.get('/*', (req, res) => {
 });
 
 
+<<<<<<< HEAD
 
 app.listen(8080, (req, res) => {
   console.log('listening to port 8080...');
@@ -58,5 +59,10 @@ app.listen(8080, (req, res) => {
 app.get('/test8080', (req, res) => {
   res.send(200);
 })
+=======
+app.listen(3000, (req, res) => {
+ console.log('listening to port 3000...');
+});
+>>>>>>> 181988c17d16f2060beff21485d9fea5ebf18ec1
 
 
