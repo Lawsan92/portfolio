@@ -153,11 +153,37 @@ let projects = [
       }
     ]
   },
-  // {
-  //   name:'Template',
-  //   gallery: [],
-  //   githref: '',
-  // },
+  {
+    name:'DocuScraper',
+    url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1681265313/Screen_Shot_2023-04-11_at_21.08.26_litouv.jpg',
+    meta: 'logo of file',
+    href: '',
+    githref: 'https://github.com/Lawsan92/docscraper',
+    techstack: 'ReactJS',
+    summary: 'Programmed a document scraper using built in Regex node methods.',
+    gallery: [
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1681252199/projects%20gallery/Docuscraper/Screen_Shot_2023-04-11_at_17.29.48_fsogak.jpg',
+        meta: 'landing page, logo'
+      },
+      {
+      url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1681253492/projects%20gallery/Docuscraper/Screen_Shot_2023-04-11_at_17.50.42_ufefwh.jpg',
+      meta: 'main page, grep options'
+      },
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1681253496/projects%20gallery/Docuscraper/Screen_Shot_2023-04-11_at_17.51.03_vpxmd3.jpg',
+        meta: 'main page, grep email'
+      },
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1681253498/projects%20gallery/Docuscraper/Screen_Shot_2023-04-11_at_17.51.20_zcw7w5.jpg',
+        meta: 'main page, grep phone numbers'
+      },
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1681253598/projects%20gallery/Docuscraper/Screen_Shot_2023-04-11_at_17.53.12_q1l9er.jpg',
+        meta: 'main page, grep ip address'
+      },
+    ],
+  },
   // {
   //   name:'Template',
   //   gallery: [],

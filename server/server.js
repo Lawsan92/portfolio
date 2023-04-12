@@ -38,7 +38,7 @@ https
     console.log(`listening to localhost: ${port}`);
   })
 
-app.get('/test', (req, res) => {
+app.get('/test3000', (req, res) => {
   res.sendStatus(200);
 })
 
@@ -50,8 +50,13 @@ app.get('/*', (req, res) => {
 
 
 
+app.listen(8080, (req, res) => {
+  console.log('listening to port 8080...');
+})
 
 
-
+app.get('/test8080', (req, res) => {
+  res.send(200);
+})
 
 
