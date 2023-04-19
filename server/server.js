@@ -38,7 +38,7 @@ https
     console.log(`listening to localhost: ${port}`);
   })
 
-app.get('/test', (req, res) => {
+app.get('/test3000', (req, res) => {
   res.sendStatus(200);
 })
 
@@ -48,6 +48,7 @@ app.get('/*', (req, res) => {
   })
 });
 
+<<<<<<< HEAD
 app.listen(3000, (req, res) => {
   console.log('listening to port 3000...');
 })
@@ -55,10 +56,23 @@ app.listen(3000, (req, res) => {
 
 app.get('/test8080', (req, res) => {
   res.send(200);
+=======
+
+<<<<<<< HEAD
+
+app.listen(8080, (req, res) => {
+  console.log('listening to port 8080...');
+>>>>>>> 1de62080f51d573b8b9599a8c899f4068fe48d91
 })
 
 
-
-
+app.get('/test8080', (req, res) => {
+  res.send(200);
+})
+=======
+app.listen(3000, (req, res) => {
+ console.log('listening to port 3000...');
+});
+>>>>>>> 181988c17d16f2060beff21485d9fea5ebf18ec1
 
 
