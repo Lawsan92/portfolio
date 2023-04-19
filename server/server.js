@@ -1,10 +1,11 @@
 require('dotenv').config();
 const express = require('express');
+const app = express();
+const visits = require('./routes/visits.js');
 const compression = require('compression');
 const path = require('path');
 const port = process.env.PORT;
 // Server instance
-const app = express();
 const https = require('https');
 const { readFileSync } = require('fs');
 const crypto = require('crypto')
@@ -15,7 +16,8 @@ const shouldCompress = (req, res) => {
   return compression.filter(req, res);
 }
 
-// Middleware
+
+//--------------------MIDDLEWARE--------------------*/
 app.use((req, res, next) => {
   const nonce = crypto.randomUUID();
   const csp = `default-src 'self' https://maps.googleapis.com; object-src 'self'; script-src 'self' 'unsafe-eval' https://maps.googleapis.com/ 'nonce-${nonce}' 'unsafe-inline'; style-src 'self' 'unsafe-inline' 'strict-dynamic' https://fonts.googleapis.com/ https://fonts.cdnfonts.com/ http://fonts.gstatic.com; img-src 'self' https://res.cloudinary.com/ https://maps.gstatic.com https://maps.googleapis.com data: w3.org/svg/2000; font-src 'self' https://fonts.googleapis.com/ https://fonts.cdnfonts.com/ http://fonts.gstatic.com; base-uri 'self';`;
@@ -27,7 +29,7 @@ app.use(compression({filter: shouldCompress}));
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 
-// route handlers
+//--------------------ROUTES--------------------*/
 
 https
   .createServer({
@@ -41,6 +43,8 @@ https
 app.get('/test3000', (req, res) => {
   res.sendStatus(200);
 })
+
+app.use('/visits', visits);
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'), (err) => {
@@ -56,3 +60,4 @@ app.listen(3000, (req, res) => {
 app.get('/test8080', (req, res) => {
   res.send(200);
 });
+

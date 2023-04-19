@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import '../../../../dist/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
+const axios = require('axios');
+
 const Bubbles = lazy(() => import('./Bubbles.js'));
 
 const Home = () => {
@@ -11,7 +13,20 @@ const Home = () => {
   const darkTheme = useTheme();
 
   const [windowWidth, getWindowWidth] = useState(window.innerWidth);
+  const [views, updateViews] = useState();
 
+
+  const handleViews = () => {
+
+    window.addEventListener('load', () => {
+      updateViews(1);
+    })
+    // axios.post('/views')
+    //   .then((response) => {console.log('data:', response.data)})
+    //   .catch((err) => {console.log('post err:', err)});
+  }
+
+  handleViews();
   // mobile navbar state & methods
   const [openMobileNavbar, setMobileNavbar] = useState(false);
 
