@@ -34,7 +34,7 @@ https
     key: readFileSync('pem/key.pem'),
     cert: readFileSync('pem/cert.pem')
   }, app)
-  .listen(port || 3000, () => {
+  .listen(port || 8080, () => {
     console.log(`listening to localhost: ${port}`);
   })
 
@@ -48,7 +48,14 @@ app.get('/*', (req, res) => {
   })
 });
 
+app.listen(3000, (req, res) => {
+  console.log('listening to port 3000...');
+})
 
+
+app.get('/test8080', (req, res) => {
+  res.send(200);
+})
 
 
 
