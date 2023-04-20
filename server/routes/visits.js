@@ -14,6 +14,6 @@ router.use((req, res, next) => {
 router
   .route('/')
   .post((req, res) => { updateVisits() })
-  .get((req, res) => {res.send({data: getVisits()})})
+  .get((req, res) => {getVisits().then((data) => {res.send({visits: data})});})
 
 module.exports = router;
