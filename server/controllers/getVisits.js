@@ -9,6 +9,4 @@ const getVisits = (visit) => {
   .catch((err) => {console.log('err:', err.stack)});
 }
 
-getVisits().then((data) => {console.log('data:', data)});
-
 module.exports = getVisits;

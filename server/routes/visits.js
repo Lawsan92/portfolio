@@ -13,7 +13,7 @@ router.use((req, res, next) => {
 //--------------------ROUTES--------------------*/
 router
   .route('/')
-  .post((req, res) => { updateVisits() })
+  .put((req, res) => { updateVisits() })
   .get((req, res) => {getVisits().then((data) => {res.send({visits: data})});})
 
 module.exports = router;

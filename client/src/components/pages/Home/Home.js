@@ -13,17 +13,14 @@ const Home = () => {
   const darkTheme = useTheme();
 
   const [windowWidth, getWindowWidth] = useState(window.innerWidth);
-  const [views, updateViews] = useState();
-
 
   const handleViews = () => {
 
     window.addEventListener('load', () => {
-      updateViews(1);
+      axios({method: 'put', url: '/visits', data: true})
+        .then((response) => {console.log('UPDATED!!')})
+        .catch((err) => {throw err})
     })
-    // axios.post('/views')
-    //   .then((response) => {console.log('data:', response.data)})
-    //   .catch((err) => {console.log('post err:', err)});
   }
 
   handleViews();
