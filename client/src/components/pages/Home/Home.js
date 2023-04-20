@@ -4,13 +4,31 @@ import { Link } from 'react-router-dom';
 import '../../../../dist/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
+const axios = require('axios');
+
 const Bubbles = lazy(() => import('./Bubbles.js'));
+
+export const Counter = ({ visits }) => {
+  return (<div className='home_views'>{visits}</div>);
+}
 
 const Home = () => {
 
   const darkTheme = useTheme();
 
   const [windowWidth, getWindowWidth] = useState(window.innerWidth);
+  const [visits, setVisits] = useState(0);
+
+
+  const handleViews = () => {
+    window.addEventListener('load', async () => {
+      await Promise.all([
+        axios({method: 'put', url: '/visits', data: true}),
+        axios({method: 'get', url: '/visits'})
+          .then((res) => {console.log('res.data:', res.data); setVisits(res.data.visits)})
+      ]);
+    })
+  }
 
   // mobile navbar state & methods
   const [openMobileNavbar, setMobileNavbar] = useState(false);
@@ -48,6 +66,7 @@ const Home = () => {
 
   useEffect(() => {
     handleResize();
+    handleViews();
   }, [])
 
   // mobile rendering
@@ -147,6 +166,7 @@ const Home = () => {
           <Suspense fallback={<div>loading...</div>}>
             <Bubbles/>
           </Suspense>
+          <Counter visits={visits}/>
       </div>
     </motion.section>
   );
