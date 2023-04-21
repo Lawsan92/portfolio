@@ -23,9 +23,10 @@ const Home = () => {
   const handleViews = () => {
     window.addEventListener('load', async () => {
       await Promise.all([
-        axios({method: 'put', url: '/visits', data: true}),
+        axios({method: 'put', url: '/visits', data: {}}),
         axios({method: 'get', url: '/visits'})
-          .then((res) => {console.log('res.data:', res.data); setVisits(res.data.visits)})
+          .then((res) => {console.log('res.data:', res.data); setVisits(res.data.visits)}),
+        axios({method: 'post', url: '/visitRecords', data: {}})
       ]);
     })
   }
