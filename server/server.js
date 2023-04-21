@@ -28,14 +28,8 @@ app.use(express.json());
 app.use(compression({filter: shouldCompress}));
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-
-<<<<<<< HEAD
-// route handlers
-/*
-=======
 //--------------------ROUTES--------------------*/
-
->>>>>>> refs/remotes/origin/main
+/*
 https
   .createServer({
     key: readFileSync('pem/key.pem'),
@@ -61,12 +55,6 @@ app.listen(3000, (req, res) => {
   console.log('listening to port 3000...');
 })
 
-
 app.get('/test8080', (req, res) => {
   res.send(200);
-<<<<<<< HEAD
-})
-=======
 });
-
->>>>>>> refs/remotes/origin/main
