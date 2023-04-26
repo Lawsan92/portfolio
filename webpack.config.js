@@ -43,7 +43,7 @@ const config = (env) => {
       ]
     },
     plugins: [
-      new Dotenv({systemvars: true})
+      new Dotenv({systemvars: true}), env['--analyze'] ? new BundleAnalyzerPlugin() : null
     ]
   }
 }

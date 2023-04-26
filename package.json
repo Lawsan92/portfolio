@@ -8,7 +8,10 @@
     "server": "nodemon server/server.js",
     "start": "npx webpack --watch --env --mode=development",
     "build": "webpack --env --mode=production",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "analyze": "webpack --env --analyze=true",
+    "findBundles": "find ./client/dist -name \"*.bundle.js\" -type f",
+    "reset": "npm_package_config_reset"
   },
   "keywords": [],
   "author": "",
@@ -49,5 +52,8 @@
     "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.13.3"
+  },
+  "config": {
+    "reset": "rm -r /node_modules package-lock.json && find ./client/dist -name \"*.bundle.js\" -type f -delete ** npm install"
   }
 }
