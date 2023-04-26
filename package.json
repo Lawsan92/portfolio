@@ -54,6 +54,6 @@
     "webpack-dev-server": "^4.13.3"
   },
   "config": {
-    "reset": "rm -r /node_modules package-lock.json && find ./client/dist -name \"*.bundle.js\" -type f -delete ** npm install"
+    "reset": "rm -r /node_modules package-lock.json && find ./client/dist -name \"*.bundle.js\" -type f -delete && npm install"
   }
 }
