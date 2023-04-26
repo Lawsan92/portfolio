@@ -4,6 +4,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 const config = (env) => {
   console.log('env:', env);
+  const analyzer = env['--analyze'] ? new BundleAnalyzerPlugin() : () => {console.log("ANALYZER INACTIVE")};
   return {
     mode: env['--mode'] || 'development',
     entry: {
@@ -20,9 +21,7 @@ const config = (env) => {
       historyApiFallback: true,
       static: path.join(__dirname, './client/dist'),
       proxy: {
-        '/': 'http://localhost:3000',
-        '/visits': 'http://localhost:3000',
-        '/visitRecords': 'http://localhost:3000'
+        '/': 'http://localhost:3000'
       }
     },
     module: {
@@ -43,7 +42,7 @@ const config = (env) => {
       ]
     },
     plugins: [
-      new Dotenv({systemvars: true}), env['--analyze'] ? new BundleAnalyzerPlugin() : null
+      new Dotenv({systemvars: true}), analyzer
     ]
   }
 }
