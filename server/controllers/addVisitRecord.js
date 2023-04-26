@@ -7,5 +7,4 @@ const addVisitRecord = (time = new Date + "") => {
     .query(query, values)
 }
 
-addVisitRecord()
 module.exports = addVisitRecord;
