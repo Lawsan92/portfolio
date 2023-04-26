@@ -11,7 +11,7 @@
     "dev": "webpack-dev-server",
     "analyze": "webpack --env --analyze=true",
     "findBundles": "find ./client/dist -type f -name \"*.bundle.js\" -o -name \"*.LICENSE.txt\"",
-    "reset": "npm_package_config_reset"
+    "reset":  "find ./client/dist/ -type f \\( -name \"*.bundle.js\" -o -name \"*.LICENSE.txt\" \\) -delete && rm -r node_modules package-lock.json && npm install"
   },
   "keywords": [],
   "author": "",
@@ -52,8 +52,5 @@
     "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.13.3"
-  },
-  "config": {
-    "reset": "rm -r /node_modules package-lock.json && find ./client/dist -type f -name \"*.bundle.js\" -o -name \"*.LICENSE.txt -delete && npm install"
   }
 }
