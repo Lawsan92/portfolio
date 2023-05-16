@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server/server.js",
-    "client": "npx webpack --watch"
+    "start": "webpack --watch --mode=development",
+    "build": "webpack --mode=production "
   },
   "keywords": [],
   "author": "",
