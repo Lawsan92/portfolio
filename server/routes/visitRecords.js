@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const updateVisits = require('../controllers/updateVisits.js');
-const getVisits = require('../controllers/getVisits.js');
+const addVisitRecord = require('../controllers/addVisitRecord.js');
+const getVisitRecords = require('../controllers/getVisitRecords.js');
 
 //--------------------MIDDLEWARE--------------------*/
 router.use((req, res, next) => {
@@ -13,7 +13,7 @@ router.use((req, res, next) => {
 //--------------------ROUTES--------------------*/
 router
   .route('/')
-  .put((req, res) => { updateVisits() })
-  .get((req, res) => {getVisits().then((data) => {res.send({visits: data})});})
+  .post((req, res) => { addVisitRecord(); res.send('RECORDS UPDATED!!!') })
+  .get((req, res) => {getVisitRecords().then((data) => {res.send({records: data})});})
 
 module.exports = router;

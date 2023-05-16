@@ -8,25 +8,29 @@ const axios = require('axios');
 
 const Bubbles = lazy(() => import('./Bubbles.js'));
 
+export const Counter = ({ visits }) => {
+  return (<div className='home_views'>{visits}</div>);
+}
+
 const Home = () => {
 
   const darkTheme = useTheme();
 
   const [windowWidth, getWindowWidth] = useState(window.innerWidth);
-  const [views, updateViews] = useState();
+  const [visits, setVisits] = useState(0);
 
 
   const handleViews = () => {
-
-    window.addEventListener('load', () => {
-      updateViews(1);
+    window.addEventListener('load', async () => {
+      await Promise.all([
+        axios({method: 'put', url: '/visits', data: {}}),
+        axios({method: 'get', url: '/visits'})
+          .then((res) => {console.log('res.data:', res.data); setVisits(res.data.visits)}),
+        axios({method: 'post', url: '/visitRecords', data: {}})
+      ]);
     })
-    // axios.post('/views')
-    //   .then((response) => {console.log('data:', response.data)})
-    //   .catch((err) => {console.log('post err:', err)});
   }
 
-  handleViews();
   // mobile navbar state & methods
   const [openMobileNavbar, setMobileNavbar] = useState(false);
 
@@ -63,6 +67,7 @@ const Home = () => {
 
   useEffect(() => {
     handleResize();
+    handleViews();
   }, [])
 
   // mobile rendering
@@ -162,6 +167,7 @@ const Home = () => {
           <Suspense fallback={<div>loading...</div>}>
             <Bubbles/>
           </Suspense>
+          <Counter visits={visits}/>
       </div>
     </motion.section>
   );
