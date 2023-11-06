@@ -3,6 +3,7 @@ import NavBar, { MobileNavbar } from '../NavBar/NavBar.js';
 import { useTheme } from '../../ThemeContext.js';
 import { FrontEndSVG, BackEndSVG } from '../SVGicons.js';
 import { motion } from 'framer-motion';
+import { workExperience } from '../../../data/workExperience.js';
 
 const Experience = ({ experienceRef }) => {
 
@@ -28,7 +29,29 @@ const Experience = ({ experienceRef }) => {
     handleResize();
   }, [])
 
+  // MAPPING FUNCTIONS
 
+  const mapExperience = () => {
+    return workExperience.map((item) => {
+      console.log('item:', item);
+      return (
+        <div className={`experience_entry ${setDarkTheme()}`}>
+          <h3 className={`experience_entry role ${setDarkTheme()}`}>{item.title}</h3>
+          <h3 className={`experience_entry company ${setDarkTheme()}`}>{item.company}</h3>
+          <p className={`experience_entry timeline ${setDarkTheme()}`}>{item.timeline}</p>
+          <p className={`experience_entry summary ${setDarkTheme()}`}> {item.summary}</p>
+      </div>
+      )
+    })
+  };
+
+  // FUNCTION TO SET DARK THEME
+
+  const setDarkTheme = () => {
+    return darkTheme ? 'dark' : '';
+  };
+
+/*------ MOBILE ------*/
     if (windowWidth < 450) {
       if (!openMobileNavbar) {
         return (
@@ -133,24 +156,7 @@ const Experience = ({ experienceRef }) => {
               <div className='experience_header'>Skills & Experience</div>
               <div className='experience_body'>
                 <div className='experience_work'>
-                  <div className={ darkTheme ? 'experience_entry dark' : 'experience_entry'}>
-                    <h3 className={ darkTheme ? 'experience_entry role dark' : 'experience_entry role'}>Fullstack Engineer</h3>
-                    <h3 className={ !darkTheme ? 'experience_entry company' : 'experience_entry company dark'}>Freelance</h3>
-                    <p className={ !darkTheme ? 'experience_entry timeline' : 'experience_entry timeline dark'}>August 2022 - present</p>
-                    <p className={ !darkTheme ? 'experience_entry summary' : 'experience_entry summary dark'}>
-                      I independently engage in software development lifecycle practices to ensure timely completion of deliverables for clientele.
-                      Among my practices are drawing low and high fidelity wireframes, implementation of testing libraries for CI and CD in order to
-                      avoid backtracking and deployment of products using web services such as AWS and godaddy.
-                    </p>
-                  </div>
-                  <div className={ darkTheme ? 'experience_entry dark' : 'experience_entry'}>
-                    <h3 className={ darkTheme ? 'experience_entry role dark' : 'experience_entry role'}>Engineering Student</h3>
-                    <h3 className={ !darkTheme ? 'experience_entry company' : 'experience_entry company dark'}>Hack Reactor</h3>
-                    <p className={ !darkTheme ? 'experience_entry timeline' : 'experience_entry timeline dark'}>Novemeber 2021 - Ausgust 2022</p>
-                    <p className={ !darkTheme ? 'experience_entry summary' : 'experience_entry summary dark'}>
-                    Completed software engineering immersive program which comprised of over 1000 hours of both letcure and lab courses. Among the course content was: data structures, RESTful api development, HTML, CSS, Javascipt, SQL & noSQL databses and languages, cyber security, testing, deployment and more. We also engaged in workshops where the cohort was divided into teams of engineers for a mock work assignment where each team was given a business reirement document.
-                    </p>
-                  </div>
+           {mapExperience()}
                 </div>
                 <div className='skills_graph'>
               <div className='skills_graph entry'>
@@ -209,6 +215,7 @@ const Experience = ({ experienceRef }) => {
       }
     }
 
+  /*------ DESKTOP ------*/
   return (
     <motion.div className='experience'
     initial={{opacity: 0}}
@@ -220,24 +227,7 @@ const Experience = ({ experienceRef }) => {
         <div className='experience_header'>Skills & Experience</div>
         <div className='experience_body'>
           <div className='experience_work'>
-            <div className={ darkTheme ? 'experience_entry dark' : 'experience_entry'}>
-              <h3 className={ darkTheme ? 'experience_entry role dark' : 'experience_entry role'}>Fullstack Engineer</h3>
-              <h3 className={ !darkTheme ? 'experience_entry company' : 'experience_entry company dark'}>Freelance</h3>
-              <p className={ !darkTheme ? 'experience_entry timeline' : 'experience_entry timeline dark'}>August 2022 - present</p>
-              <p className={ !darkTheme ? 'experience_entry summary' : 'experience_entry summary dark'}>
-                I independently engage in software development lifecycle practices to ensure timely completion of deliverables for clientele.
-                Among my practices are drawing low and high fidelity wireframes, implementation of testing libraries for CI and CD in order to
-                avoid backtracking and deployment of products using web services such as AWS and godaddy.
-              </p>
-            </div>
-            <div className={ darkTheme ? 'experience_entry dark' : 'experience_entry'}>
-              <h3 className={ darkTheme ? 'experience_entry role dark' : 'experience_entry role'}>Engineering Student</h3>
-              <h3 className={ !darkTheme ? 'experience_entry company' : 'experience_entry company dark'}>Hack Reactor</h3>
-              <p className={ !darkTheme ? 'experience_entry timeline' : 'experience_entry timeline dark'}>Novemeber 2021 - Ausgust 2022</p>
-              <p className={ !darkTheme ? 'experience_entry summary' : 'experience_entry summary dark'}>
-              Completed software engineering immersive program which comprised of over 1000 hours of both letcure and lab courses. Among the course content was: data structures, RESTful api development, HTML, CSS, Javascipt, SQL & noSQL databses and languages, cyber security, testing, deployment and more. We also engaged in workshops where the cohort was divided into teams of engineers for a mock work assignment where each team was given a business reirement document.
-              </p>
-            </div>
+          {mapExperience()}
           </div>
             <div className='skills_graph'>
               <div className='skills_graph entry'>

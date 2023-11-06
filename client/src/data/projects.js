@@ -184,6 +184,45 @@ let projects = [
       },
     ],
   },
+  {
+    name:'FabiosArts',
+    url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459794/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.23.00_wjdx6y.jpg',
+    meta: 'landing page',
+    href: '',
+    githref: 'https://github.com/Lawsan92/fabiosarts',
+    techstack: 'ReactJS',
+    summary: 'Programmed a desktop and mobile versions of artist website.',
+    gallery: [
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459794/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.23.00_wjdx6y.jpg',
+        meta: 'landing page, logo'
+      },
+      {
+      url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459844/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.23.47_aihjvu.jpg',
+      meta: 'main page, grep options'
+      },
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459871/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.24.25_ea62t3.jpg',
+        meta: 'main page, grep email'
+      },
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459901/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.24.57_uzg4qr.jpg',
+        meta: 'main page, grep phone numbers'
+      },
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459914/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.25.11_z6lsyi.jpg',
+        meta: 'main page, grep ip address'
+      },
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459937/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.25.33_py3brc.jpg',
+        meta: 'main page, grep ip address'
+      },
+      {
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459979/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.26.16_kifsqu.jpg',
+        meta: 'main page, grep ip address'
+      },
+    ],
+  }
   // {
   //   name:'Template',
   //   gallery: [],

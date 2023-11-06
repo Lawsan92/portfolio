@@ -21,7 +21,15 @@ const shouldCompress = (req, res) => {
 //--------------------MIDDLEWARE--------------------*/
 app.use((req, res, next) => {
   const nonce = crypto.randomUUID();
-  const csp = `default-src 'self' https://maps.googleapis.com; object-src 'self'; script-src 'self' 'unsafe-eval' https://maps.googleapis.com/ 'nonce-${nonce}' 'unsafe-inline'; style-src 'self' 'unsafe-inline' 'strict-dynamic' https://fonts.googleapis.com/ https://fonts.cdnfonts.com/ http://fonts.gstatic.com; img-src 'self' https://res.cloudinary.com/ https://maps.gstatic.com https://maps.googleapis.com data: w3.org/svg/2000; font-src 'self' https://fonts.googleapis.com/ https://fonts.cdnfonts.com/ http://fonts.gstatic.com; base-uri 'self';`;
+  const whitelist = {
+    default: 'https://maps.googleapis.com',
+    script: 'https://maps.googleapis.com/ https://*.letsencrypt.org/ */.well-known/acme-challenge/*',
+    style: 'https://fonts.googleapis.com/ https://fonts.cdnfonts.com/ http://fonts.gstatic.com',
+    img: 'https://res.cloudinary.com/ https://maps.gstatic.com https://maps.googleapis.com data: w3.org/svg/2000',
+    font: 'https://fonts.googleapis.com/ https://fonts.cdnfonts.com/ http://fonts.gstatic.com'
+  }
+  const csp = `default-src 'self' ${whitelist.defaut}; object-src 'self'; script-src 'self' 'unsafe-eval' 'nonce-${nonce}' 'unsafe-inline' ${whitelist.script}; style-src 'self' 'unsafe-inline' 'strict-dynamic' ${whitelist.style}; img-src 'self' ${whitelist.img}; font-src 'self' ${whitelist.font}; base-uri 'self';`;
+  console.log('csp:', csp);
   res.setHeader('Content-Security-Policy', csp);
   return next();
 });
@@ -29,6 +37,16 @@ app.use(express.json());
 app.use(compression({filter: shouldCompress}));
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
+const nonce = crypto.randomUUID();
+const whitelist = {
+  default: 'https://maps.googleapis.com',
+  script: 'https://maps.googleapis.com/ https://*.letsencrypt.org/ */.well-known/acme-challenge/*',
+  style: 'https://fonts.googleapis.com/ https://fonts.cdnfonts.com/ http://fonts.gstatic.com',
+  img: 'https://res.cloudinary.com/ https://maps.gstatic.com https://maps.googleapis.com data: w3.org/svg/2000',
+  font: 'https://fonts.googleapis.com/ https://fonts.cdnfonts.com/ http://fonts.gstatic.com'
+}
+const csp = `default-src 'self' ${whitelist.defaut}; object-src 'self'; script-src 'self' 'unsafe-eval' 'nonce-${nonce}' 'unsafe-inline' ${whitelist.script}; style-src 'self' 'unsafe-inline' 'strict-dynamic' ${whitelist.style}; img-src 'self' ${whitelist.img}; font-src 'self' ${whitelist.font}; base-uri 'self';`;
+console.log('csp:', csp);
 
 //--------------------ROUTES--------------------*/
 
@@ -37,7 +55,7 @@ https
     key: readFileSync('pem/key.pem'),
     cert: readFileSync('pem/cert.pem')
   }, app)
-  .listen(8080, () => {
+  .listen(8443, () => {
     console.log(`listening to localhost: ${port}`);
   })
 
@@ -57,7 +75,6 @@ app.get('/*', (req, res) => {
 app.listen(port || 3000, (req, res) => {
   console.log('listening to port 3000...');
 })
-
 
 app.get('/test8080', (req, res) => {
   res.send(200);

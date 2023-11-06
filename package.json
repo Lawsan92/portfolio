@@ -11,7 +11,9 @@
     "dev": "webpack-dev-server",
     "analyze": "webpack --env --analyze=true",
     "findBundles": "find ./client/dist -type f -name \"*.bundle.js\" -o -name \"*.LICENSE.txt\"",
-    "reset":  "find ./client/dist/ -type f \\( -name \"*.bundle.js\" -o -name \"*.LICENSE.txt\" \\) -delete && rm -r node_modules package-lock.json && npm install"
+    "reset":  "find ./client/dist/ -type f \\( -name \"*.bundle.js\" -o -name \"*.LICENSE.txt\" \\) -delete && rm -r node_modules package-lock.json && npm install",
+    "printDir": "tree ./ -C -I node_modules",
+    "testRoute": "curl -GET http://lawrence-sanzogni.com/visits"
   },
   "keywords": [],
   "author": "",
