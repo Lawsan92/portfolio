@@ -3,9 +3,9 @@ import NavBar, { MobileNavbar } from '../NavBar/NavBar.js';
 import { useTheme } from '../../ThemeContext.js';
 import { FrontEndSVG, BackEndSVG } from '../SVGicons.js';
 import { motion } from 'framer-motion';
-import { workExperience_data } from '../../../data/workExperience_data.js';
 import WorkExperience from './workExperience/workExperience.js';
-import { skills } from '../../../data/skills.js';
+import SkillEntry from './SkillEntry/SkillEntry.js';
+
 
 const Experience = ({ experienceRef }) => {
 
@@ -30,25 +30,6 @@ const Experience = ({ experienceRef }) => {
   useEffect(() => {
     handleResize();
   }, [])
-
-  // MAPPING FUNCTIONS
-
-  const mapSkills = () => {
-    return skills.map((item) => {
-      return (
-        <div className='skills_graph entry'>
-          <div className='skills_graph entry header'>
-            <h3>{item.header}</h3>
-            <img src={item.img}/>
-          </div>
-          <div className='skills_graph entry_meter container'>
-            <div className={`skills_graph entry_meter ${item.className}`} style={{zIndex: openMobileNavbar && 0}}/>
-            <div className='skills_graph entry_meter background'/>
-          </div>
-        </div>
-      );
-    })
-  }
 
 /*------ MOBILE ------*/
     if (windowWidth < 450) {
@@ -89,7 +70,7 @@ const Experience = ({ experienceRef }) => {
                   <div className='skills_graph entry_meter background'/>
                 </div>
               </div>
-              {mapSkills()}
+              <SkillEntry openMobileNavbar={openMobileNavbar}/>
             </div>
                 </div>
             </section>
@@ -126,7 +107,7 @@ const Experience = ({ experienceRef }) => {
                   <div className='skills_graph entry_meter background'/>
                 </div>
               </div>
-              {mapSkills()}
+              <SkillEntry openMobileNavbar={openMobileNavbar}/>
             </div>
                 </div>
             </section>
@@ -168,7 +149,7 @@ const Experience = ({ experienceRef }) => {
                   <div className='skills_graph entry_meter background'/>
                 </div>
               </div>
-              {mapSkills()}
+              <SkillEntry openMobileNavbar={openMobileNavbar}/>
             </div>
           </div>
       </section>

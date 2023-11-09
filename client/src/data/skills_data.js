@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const skills = [
+export const skills_data = [
   // {
   //   header: `Front-End`,
   //   className: `front-end`
