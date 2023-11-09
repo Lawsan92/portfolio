@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const workExperience = [
+export const workExperience_data = [
   {
     title: 'Fullstack Engineer',
     company: 'Freelance',
