@@ -11,7 +11,7 @@ const SkillEntry = ({ openMobileNavbar }) => {
         <div className='skills_graph entry'>
           <div className='skills_graph entry header'>
             <h3>{item.header}</h3>
-            <img src={item.img}/>
+            {item.img ? <img src={item.img}/> : item.svg()}
           </div>
           <div className='skills_graph entry_meter container'>
             <div className={`skills_graph entry_meter ${item.className}`} style={{zIndex: openMobileNavbar && 0}}/>

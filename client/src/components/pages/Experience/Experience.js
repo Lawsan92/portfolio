@@ -50,26 +50,6 @@ const Experience = ({ experienceRef }) => {
               <div className='experience_body'>
                 <WorkExperience/>
                 <div className='skills_graph'>
-              <div className='skills_graph entry'>
-                <div className='skills_graph entry header'>
-                  <h3>Front-end</h3>
-                  <FrontEndSVG/>
-                </div>
-                <div className='skills_graph entry_meter container'>
-                  <div className='skills_graph entry_meter front-end' style={{zIndex: openMobileNavbar && 0}}/>
-                  <div className='skills_graph entry_meter background'/>
-                </div>
-              </div>
-              <div className='skills_graph entry'>
-                <div className='skills_graph entry header'>
-                  <h3>Back-end</h3>
-                  <BackEndSVG/>
-                </div>
-                <div className='skills_graph entry_meter container'>
-                  <div className='skills_graph entry_meter back-end' style={{zIndex: openMobileNavbar && 0}}/>
-                  <div className='skills_graph entry_meter background'/>
-                </div>
-              </div>
               <SkillEntry openMobileNavbar={openMobileNavbar}/>
             </div>
                 </div>
@@ -89,26 +69,8 @@ const Experience = ({ experienceRef }) => {
               <div className='experience_body'>
               <WorkExperience/>
                 <div className='skills_graph'>
-              <div className='skills_graph entry'>
-                <div className='skills_graph entry header'>
-                  <h3>Front-end</h3>
-                </div>
-                <div className='skills_graph entry_meter container'>
-                  <div className='skills_graph entry_meter front-end' style={{zIndex: openMobileNavbar && 0}}/>
-                  <div className='skills_graph entry_meter background'/>
-                </div>
-              </div>
-              <div className='skills_graph entry'>
-                <div className='skills_graph entry header'>
-                  <h3>Back-end</h3>
-                </div>
-                <div className='skills_graph entry_meter container'>
-                  <div className='skills_graph entry_meter back-end' style={{zIndex: openMobileNavbar && 0}}/>
-                  <div className='skills_graph entry_meter background'/>
-                </div>
-              </div>
               <SkillEntry openMobileNavbar={openMobileNavbar}/>
-            </div>
+              </div>
                 </div>
             </section>
           </motion.div>
@@ -128,29 +90,9 @@ const Experience = ({ experienceRef }) => {
         <div className='experience_header'>Skills & Experience</div>
         <div className='experience_body'>
           <WorkExperience/>
-            <div className='skills_graph'>
-              <div className='skills_graph entry'>
-                <div className='skills_graph entry header'>
-                  <h3>Front-end</h3>
-                  <FrontEndSVG/>
-                </div>
-                <div className='skills_graph entry_meter container'>
-                  <div className='skills_graph entry_meter front-end' style={{zIndex: openMobileNavbar && 0}}/>
-                  <div className='skills_graph entry_meter background'/>
-                </div>
-              </div>
-              <div className='skills_graph entry'>
-                <div className='skills_graph entry header'>
-                  <h3>Back-end</h3>
-                  <BackEndSVG/>
-                </div>
-                <div className='skills_graph entry_meter container'>
-                  <div className='skills_graph entry_meter back-end' style={{zIndex: openMobileNavbar && 0}}/>
-                  <div className='skills_graph entry_meter background'/>
-                </div>
-              </div>
-              <SkillEntry openMobileNavbar={openMobileNavbar}/>
-            </div>
+          <div className='skills_graph'>
+            <SkillEntry openMobileNavbar={openMobileNavbar}/>
+          </div>
           </div>
       </section>
     </motion.div>
