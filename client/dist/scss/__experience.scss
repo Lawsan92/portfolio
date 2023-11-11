@@ -113,6 +113,87 @@
   }
 }
 
+/*------ EDUCATION ------*/
+.education_container {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  width: 100vw;
+  background-color: #edf2f8;
+  transition: background 1s;
+
+  &.dark {
+    transition: background 1s;
+    background-color: #181818;
+    color: #ffffff
+  }
+}
+
+.education_entry {
+  margin: 2vh;
+  padding: 2vh;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  transition: background 1s;
+
+  &.dark {
+    transition: background 1s;
+    background-color: #1d1d1d;
+  }
+
+  &.degree {
+    color: steelblue;
+    padding: 0;
+    margin: .33em;
+
+    &.dark {
+      background-color: #1d1d1d;
+     }
+
+  }
+
+  &.school {
+    padding: 0;
+    margin: .33em;
+
+    &.dark {
+      color: #ffffff;
+      background-color: #1d1d1d;
+     }
+
+  }
+
+  &.timeline {
+    padding: 0;
+    margin: .33em;
+
+    &.dark {
+      color: #ffffff;
+      background-color: #1d1d1d;
+     }
+
+  }
+
+  &.summary {
+    padding: 0;
+    margin: .33em;
+    color:#6b7688;
+    font-size: large;
+
+    &.dark {
+      background-color: #1d1d1d;
+     }
+
+  }
+}
+
+
+/*---------------------------*/
+
+
+/*----------SKILLS----------*/
 .skills_graph {
   height: fit-content;
   display: flex;

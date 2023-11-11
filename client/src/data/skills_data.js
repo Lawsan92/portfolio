@@ -1,5 +1,5 @@
 import React from 'react';
-import { FrontEndSVG, BackEndSVG, NodeSVG, ReactSVG, PostgresSVG } from '../components/pages/SVGicons.js';
+import { FrontEndSVG, BackEndSVG, NodeSVG, ReactSVG, PostgresSVG, LinuxSVG } from '../components/pages/SVGicons.js';
 
 export const skills_data = [
   {
@@ -26,5 +26,10 @@ export const skills_data = [
     header: 'PostgreSQL',
     className: 'postgres',
     svg: () => {return <PostgresSVG/>}
+  },
+  {
+    header: 'Linux',
+    className: 'linux',
+    svg: () => {return <LinuxSVG/>}
   },
 ]

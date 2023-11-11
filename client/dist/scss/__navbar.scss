@@ -66,6 +66,9 @@
 
     &.entry {
       border-top: solid 1px #edf2f8;
+      &.dark {
+        border-top: solid 1px #343434;
+      }
     }
   }
 }

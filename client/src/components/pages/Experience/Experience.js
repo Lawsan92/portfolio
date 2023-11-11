@@ -4,6 +4,7 @@ import { useTheme } from '../../ThemeContext.js';
 import { FrontEndSVG, BackEndSVG } from '../SVGicons.js';
 import { motion } from 'framer-motion';
 import WorkExperience from './workExperience/workExperience.js';
+import EducationEntry from './EducationEntry/EducationEntry.js';
 import SkillEntry from './SkillEntry/SkillEntry.js';
 
 
@@ -46,9 +47,10 @@ const Experience = ({ experienceRef }) => {
               <div className='navbar_pulldown_bar'/>
             </div>
             <section className={ darkTheme ? 'experience_container dark' : 'experience_container'}>
-              <div className='experience_header'>Skills & Experience</div>
+              <div className='experience_header'>Experience & Education</div>
               <div className='experience_body'>
                 <WorkExperience/>
+                <EducationEntry/>
                 <div className='skills_graph'>
               <SkillEntry openMobileNavbar={openMobileNavbar}/>
             </div>
@@ -65,9 +67,10 @@ const Experience = ({ experienceRef }) => {
           >
             <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />
             <section className={ darkTheme ? 'experience_container dark' : 'experience_container'}>
-              <div className='experience_header'>Skills & Experience</div>
+              <div className='experience_header'>Experience & Education</div>
               <div className='experience_body'>
               <WorkExperience/>
+              <EducationEntry/>
                 <div className='skills_graph'>
               <SkillEntry openMobileNavbar={openMobileNavbar}/>
               </div>
@@ -86,10 +89,14 @@ const Experience = ({ experienceRef }) => {
     exit={{opacity: 0}}
     >
       <NavBar/>
+      <section className = {darkTheme ? 'education_container dark' : 'education_container'}>
+
+      </section>
       <section className={ darkTheme ? 'experience_container dark' : 'experience_container'}>
-        <div className='experience_header'>Skills & Experience</div>
+        <div className='experience_header'>Experience & Education</div>
         <div className='experience_body'>
           <WorkExperience/>
+          <EducationEntry/>
           <div className='skills_graph'>
             <SkillEntry openMobileNavbar={openMobileNavbar}/>
           </div>

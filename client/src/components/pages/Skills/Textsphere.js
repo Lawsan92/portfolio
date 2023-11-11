@@ -45,7 +45,7 @@ const Textsphere = () => {
     'AWS',
     'npm',
     'nano',
-    'vim',
+    'Linux',
     'K6',
     'Bootstrap',
     'Loader.io',

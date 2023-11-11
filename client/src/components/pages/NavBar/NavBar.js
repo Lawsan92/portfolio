@@ -14,6 +14,22 @@ export const MobileNavbar = ({ toggleMobileNavbar }) => {
   const currentPage = window.location.href.split('').slice(window.location.href.indexOf('0/') + 2)[0];
   console.log('currentPage:', currentPage);
 
+  const setDarkTheme = () => {
+    return darkTheme ? 'dark' : '';
+  };
+
+  const mapNavbarButtons = () => {
+    const buttons = [ { text: 'Home', link: '/' }, { text: 'About', link: '/skills' }, { text: 'Projects', link: '/projects' }, { text: 'Skills', link: '/experience' }, { text: 'Contact', link: '/contact' }, ];
+
+    return buttons.map((item) => {
+      return (
+        <Link to={item.link}>
+        <h3 className={`nav-buttons mobile entry ${setDarkTheme()}`}>{item.text}</h3>
+      </Link>
+      )
+    })
+  }
+
   return (
     <section className={darkTheme ? 'navbar mobile dark' : 'navbar mobile'}>
       <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
@@ -25,21 +41,7 @@ export const MobileNavbar = ({ toggleMobileNavbar }) => {
         </Link>
       </Suspense>
       <div className={ !darkTheme ? 'nav-buttons mobile' : 'nav-buttons mobile dark'}>
-        <Link to='/'>
-          <h3 className='nav-buttons mobile entry'>Home</h3>
-        </Link>
-        <Link to='/skills'>
-          <h3 className='nav-buttons mobile entry'>About</h3>
-        </Link>
-        <Link to='/projects'>
-          <h3 className='nav-buttons mobile entry'>Projects</h3>
-        </Link>
-        <Link to='/experience'>
-          <h3 className='nav-buttons mobile entry'>Skills</h3>
-        </Link>
-        <Link to='/contact'>
-          <h3 className='nav-buttons mobile entry'>Contact</h3>
-        </Link>
+        {mapNavbarButtons()}
       </div>
       <a href={resume} download='resume'>
         <button className={ !darkTheme ? 'navbar_resume' : 'navbar_resume dark'}>Resume</button>
