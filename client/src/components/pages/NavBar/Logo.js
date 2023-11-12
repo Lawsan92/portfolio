@@ -59,10 +59,17 @@ const Logo = () => {
 
   const handleLogoResize = () => {
     window.addEventListener('resize', () => {
-      let canvasHeight = window.getComputedStyle(document.querySelector(".navbar_logo")).height;
-      let canvasWidth = window.getComputedStyle(document.querySelector(".navbar_logo")).width;
-      let navbarHeight = window.getComputedStyle(document.querySelector(".navbar")).height;
-      let navbarWidth = window.getComputedStyle(document.querySelector(".navbar")).width;
+
+      const cubeLogo = document.querySelector(".navbar_logo");
+
+      if (!cubeLogo) { return };
+
+      let [canvasHeight, canvasWidth, navbarHeight, navbarWidth ] = [
+        window.getComputedStyle(cubeLogo).height,
+        window.getComputedStyle(cubeLogo).width,
+        window.getComputedStyle(document.querySelector(".navbar")).height,
+        window.getComputedStyle(document.querySelector(".navbar")).width
+      ];
 
       const CanvasLargerThanNavbar = Math.floor(window.innerWidth / 10) < 120;
 
@@ -71,7 +78,6 @@ const Logo = () => {
         getSize({...canvasSize, height: navbarWidth, width: navbarWidth });
       }
 
-      // console.log('navbarWidth:', navbarWidth, 'navbarHeight:', navbarHeight);
     });
   }
 
