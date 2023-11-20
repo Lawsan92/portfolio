@@ -5,3 +5,5 @@
 
 
 https://lawrence-sanzogni.com/
+
+sudo cp /etc/letsencrypt/live/lawrence-sanzogni.com/key.pem /home/ubuntu/lawrence-sanzogni/auth/privateKey.pem && sudo cp /etc/letsencrypt/live/lawrence-sanzogni.com/fullchain.pem /home/ubuntu/lawrence-sanzogni/auth/cert.pem
