@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import projects from '../../../data/projects.js';
 import { LeftArrowSVG, RightArrowSVG } from './../SVGicons.js';
 
@@ -15,7 +15,10 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
 
   useEffect(() => {
     handlePosition();
+    handleArrowKeys();
   }, [])
+
+  const countRef = useRef(0);
 
   // STATE & HANDLERS: image slider
   const [count, setCount] = useState(0);
@@ -35,10 +38,12 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
         setCount( count - 1);
       }
     }
-  }
+  };
+
   // image scroll: arrow keys
   const handleArrowKeys = (e) => {
     window.addEventListener('keydown', (e) => {
+      e.preventDefault();
       console.log('e.repeat:', e.repeat, 'e.keyCode:', e.keyCode)
       if (e.repeat) {return};
       if (e.keyCode === 37) {
@@ -51,7 +56,7 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
     });
   }
 
-  handleArrowKeys();
+  // handleArrowKeys();
 
   // STATE & HANDLERS: modal
   const handleClick = (e) => {
@@ -69,10 +74,32 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
   closeModal();
 
   const mapProjectGallery = () => {
+
+    const mobileStyles = {
+      img: {
+        height: '70vh',
+        width: 'fit-content',
+      },
+      card: {
+        height: '70vh',
+        width: 'fit-content',
+      }
+    };
+
     const gallery = projects[projectIndex].gallery;
       if (gallery.length) {
+        let isMobile = gallery[count].mobile;
         console.log('gallery[count].url:', gallery[count].url, 'gallery[count].meta:', gallery[count].meta);
-        return <img src={gallery[count].url} alt={gallery[count].meta} className='projects_gallery-modal_card img' onClick={() => {handleCount('right-arrow')}}/>;
+        return (
+          <div className='projects_gallery-modal_card' style={isMobile && { ...mobileStyles.card}}>
+            <img
+            src={gallery[count].url}
+            alt={gallery[count].meta}
+            className='projects_gallery-modal_card img'
+            style={isMobile && { ...mobileStyles.img}}
+            onClick={() => {handleCount('right-arrow')}}/>
+          </div>
+        );
       } else {
         return <p>COMING SOON...</p>;
       }
@@ -82,9 +109,7 @@ const GalleryModal = ({ isOpen, toggleModal, projectIndex }) => {
     <div className='projects_gallery-modal' style={{top: docPosition}}>
       <div className='projects_gallery-modal_background' onClick={(e) => {handleClick(e)}}>
         <LeftArrowSVG handleCount={handleCount} count={count}/>
-        <div className='projects_gallery-modal_card'>
-          {mapProjectGallery()}
-        </div>
+        {mapProjectGallery()}
         <RightArrowSVG handleCount={handleCount} count={count}/>
       </div>
     </div>

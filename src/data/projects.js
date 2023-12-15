@@ -186,7 +186,7 @@ let projects = [
   },
   {
     name:'FabiosArts',
-    url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459794/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.23.00_wjdx6y.jpg',
+    url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1702350516/Screenshot_2023-12-11_at_21.03.16_htxgyz.jpg',
     meta: 'landing page',
     href: '',
     githref: 'https://github.com/Lawsan92/fabiosarts',
@@ -194,32 +194,36 @@ let projects = [
     summary: 'Programmed a desktop and mobile versions of artist website.',
     gallery: [
       {
-        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459794/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.23.00_wjdx6y.jpg',
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1702350516/Screenshot_2023-12-11_at_21.03.16_htxgyz.jpg',
         meta: 'landing page, logo'
       },
       {
-      url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459844/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.23.47_aihjvu.jpg',
-      meta: 'main page, grep options'
+      url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1702350516/Screenshot_2023-12-11_at_21.03.49_f7yuur.jpg',
+      meta: 'gallery'
       },
       {
-        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459871/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.24.25_ea62t3.jpg',
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1702350773/Screenshot_2023-12-11_at_21.12.30_xoui3s.jpg',
         meta: 'main page, grep email'
       },
       {
-        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459901/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.24.57_uzg4qr.jpg',
-        meta: 'main page, grep phone numbers'
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1702350516/Screenshot_2023-12-11_at_21.04.40_vqpovo.jpg',
+        meta: 'mobile_home',
+        mobile: true
       },
       {
-        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459914/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.25.11_z6lsyi.jpg',
-        meta: 'main page, grep ip address'
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1702350516/Screenshot_2023-12-11_at_21.04.53_epucg0.jpg',
+        meta: 'mobile_list',
+        mobile: true
       },
       {
-        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459937/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.25.33_py3brc.jpg',
-        meta: 'main page, grep ip address'
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1702350515/Screenshot_2023-12-11_at_21.05.37_sxr9vq.jpg',
+        meta: 'mobile_gallery',
+        mobile: true
       },
       {
-        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1689459979/projects%20gallery/Fabios%20Arts/Screen_Shot_2023-07-15_at_17.26.16_kifsqu.jpg',
-        meta: 'main page, grep ip address'
+        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1702350515/Screenshot_2023-12-11_at_21.05.45_r971lb.jpg',
+        meta: 'mobile_select',
+        mobile: true
       },
     ],
   }

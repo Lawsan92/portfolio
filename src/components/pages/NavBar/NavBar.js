@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTheme, useThemeUpdate } from '../../ThemeContext.js';
 import SVGicons, { MobileSVGicons } from '../SVGicons';
 import { motion } from 'framer-motion';
-import resume from '../../../../dist/assets/Lawrence_Sanzogni.pdf';
+import resume from '../../../../public/assets/Lawrence_Sanzogni.pdf';
 const Logo = lazy(() => import ('./Logo.js'));
 
 export const MobileNavbar = ({ toggleMobileNavbar }) => {

@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, lazy, Suspense } from 'react';
 import NavBar, { MobileNavbar } from '../NavBar/NavBar.js';
 import { Link } from 'react-router-dom';
-import '../../../../dist/scss/styles.scss';
+import '/Users/lawrence/portfolio/public/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 const axios = require('axios');

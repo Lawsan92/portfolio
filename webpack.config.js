@@ -8,18 +8,17 @@ const config = (env) => {
   return {
     mode: env['--mode'] || 'development',
     entry: {
-      path: path.join(__dirname, './client/src/index.js'),
-      // path: './app.js'
+      path: path.join(__dirname, './src/index.js'),
     },
     output: {
-      path: path.join(__dirname, './client/dist'),
-      // filename: '[name].bundle.js',
+      path: path.join(__dirname, 'public'),
+      filename: '[name].bundle.js',
       chunkFilename: '[name].bundle.js',
       filename: 'bundle.js',
     },
     devServer: {
       historyApiFallback: true,
-      static: path.join(__dirname, './client/dist'),
+      static: path.join(__dirname, 'public'),
       proxy: {
         '/': 'http://localhost:3000'
       }
