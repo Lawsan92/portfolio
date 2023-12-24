@@ -19,7 +19,7 @@ export const MobileNavbar = ({ toggleMobileNavbar }) => {
   };
 
   const mapNavbarButtons = () => {
-    const buttons = [ { text: 'Home', link: '/' }, { text: 'About', link: '/skills' }, { text: 'Projects', link: '/projects' }, { text: 'Skills', link: '/experience' }, { text: 'Contact', link: '/contact' }, ];
+    const buttons = [ { text: 'Home', link: '/' }, { text: 'About', link: '/about' }, { text: 'Projects', link: '/projects' }, { text: 'About', link: '/experience' }, { text: 'Contact', link: '/contact' }, ];
 
     return buttons.map((item) => {
       return (

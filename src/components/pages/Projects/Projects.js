@@ -5,6 +5,7 @@ import { useTheme } from '../../ThemeContext.js';
 import { GithubSVG, CameraSVG } from './../SVGicons.js';
 import GalleryModal from './GalleryModal.js';
 import { motion } from 'framer-motion';
+import Mobile_Projects from './Mobile_Projects.js';
 
 const Projects = ({ projectsRef }) => {
 
@@ -232,57 +233,7 @@ const Projects = ({ projectsRef }) => {
   const mobileScreen = windowWidth < 450;
 
   if (mobileScreen) {
-    if (!openMobileNavbar) {
-      return (
-        <motion.section
-        className='projects'
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        exit={{opacity: 0}}
-        >
-          <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
-            <div className='navbar_pulldown_bar'/>
-            <div className='navbar_pulldown_bar'/>
-            <div className='navbar_pulldown_bar'/>
-          </div>
-          <div className={ darkTheme ? 'projects_container dark' : 'projects_container'}>
-            <div className={ !darkTheme ? 'projects_container header' : 'projects_container header dark' }>
-              <h1>Projects</h1>
-            </div>
-            <div className='projects_categories'>
-              {mapCategories()}
-            </div>
-            <div className='projects_grid container' >
-              {!isFiltered ? mapProjects() : filterProjects(cardFilter)}
-            </div>
-          </div>
-          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex} /> }
-        </motion.section>
-      );
-    } else {
-      return (
-        <motion.section
-        className='projects'
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        exit={{opacity: 0}}
-        >
-          <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />
-          <div className={ darkTheme ? 'projects_container dark' : 'projects_container'}>
-            <div className={ !darkTheme ? 'projects_container header' : 'projects_container header dark' }>
-              <h1>Projects</h1>
-            </div>
-            <div className='projects_categories'>
-              {mapCategories()}
-            </div>
-            <div className='projects_grid container' >
-              {!isFiltered ? mapProjects() : filterProjects(cardFilter)}
-            </div>
-          </div>
-          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex} /> }
-        </motion.section>
-      );
-    }
+    return <Mobile_Projects/>;
   };
 
   return (
