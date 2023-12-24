@@ -3,12 +3,14 @@
 
 @import './__home.scss';
 @import './__navbar.scss';
-@import './__skills.scss';
+@import './__about.scss';
 @import './__projects.scss';
 @import './__email.scss';
 @import './__contact.scss';
 @import './__experience.scss';
 @import'./__svgicons.scss';
+
+@import'./mobile/mobile_styles.scss';
 
 html {
   background-color: #edf2f8;

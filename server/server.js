@@ -19,34 +19,24 @@ const shouldCompress = (req, res) => {
 
 
 //--------------------MIDDLEWARE--------------------*/
-app.use((req, res, next) => {
-  const nonce = crypto.randomUUID();
-  const whitelist = {
-    default: 'https://maps.googleapis.com',
-    script: 'https://maps.googleapis.com/ https://*.letsencrypt.org/ */.well-known/acme-challenge/* https://*.googletagmanager.com/',
-    style: 'https://fonts.googleapis.com/ https://fonts.cdnfonts.com/ http://fonts.gstatic.com',
-    img: 'https://res.cloudinary.com/ https://maps.gstatic.com https://maps.googleapis.com data: w3.org/svg/2000',
-    font: 'https://fonts.googleapis.com/ https://fonts.cdnfonts.com/ http://fonts.gstatic.com'
-  }
-  const csp = `default-src 'self' ${whitelist.defaut}; object-src 'self'; script-src 'self' 'unsafe-eval' 'nonce-${nonce}' 'unsafe-inline' ${whitelist.script}; style-src 'self' 'unsafe-inline' 'strict-dynamic' ${whitelist.style}; img-src 'self' ${whitelist.img}; font-src 'self' ${whitelist.font}; base-uri 'self';`;
-  // console.log('csp:', csp);
-  res.setHeader('Content-Security-Policy', csp);
-  return next();
-});
+// app.use((req, res, next) => {
+//   const nonce = crypto.randomUUID();
+//   const whitelist = {
+//     default: 'https://maps.googleapis.com',
+//     script: 'https://maps.googleapis.com/ https://*.letsencrypt.org/ */.well-known/acme-challenge/* https://*.googletagmanager.com/',
+//     style: 'https://fonts.googleapis.com/ https://fonts.cdnfonts.com/ http://fonts.gstatic.com',
+//     img: 'https://res.cloudinary.com/ https://maps.gstatic.com https://maps.googleapis.com data: w3.org/svg/2000',
+//     font: 'https://fonts.googleapis.com/ https://fonts.cdnfonts.com/ http://fonts.gstatic.com'
+//   }
+//   const csp = `default-src 'self' ${whitelist.defaut}; object-src 'self'; script-src 'self' 'unsafe-eval' 'nonce-${nonce}' 'unsafe-inline' ${whitelist.script}; style-src 'self' 'unsafe-inline' 'strict-dynamic' ${whitelist.style}; img-src 'self' ${whitelist.img}; font-src 'self' ${whitelist.font}; base-uri 'self';`;
+//   // console.log('csp:', csp);
+//   res.setHeader('Content-Security-Policy', csp);
+//   return next();
+// });
 app.use(express.json());
 app.use(compression({filter: shouldCompress}));
 app.use(express.static(path.join(__dirname, '../public')));
 
-// const nonce = crypto.randomUUID();
-// const whitelist = {
-//   default: 'https://maps.googleapis.com',
-//   script: 'https://maps.googleapis.com/ https://*.letsencrypt.org/ */.well-known/acme-challenge/*',
-//   style: 'https://fonts.googleapis.com/ https://fonts.cdnfonts.com/ http://fonts.gstatic.com',
-//   img: 'https://res.cloudinary.com/ https://maps.gstatic.com https://maps.googleapis.com data: w3.org/svg/2000',
-//   font: 'https://fonts.googleapis.com/ https://fonts.cdnfonts.com/ http://fonts.gstatic.com'
-// }
-// const csp = `default-src 'self' ${whitelist.defaut}; object-src 'self'; script-src 'self' 'unsafe-eval' 'nonce-${nonce}' 'unsafe-inline' ${whitelist.script}; style-src 'self' 'unsafe-inline' 'strict-dynamic' ${whitelist.style}; img-src 'self' ${whitelist.img}; font-src 'self' ${whitelist.font}; base-uri 'self';`;
-// console.log('csp:', csp);
 
 //--------------------ROUTES--------------------*/
 

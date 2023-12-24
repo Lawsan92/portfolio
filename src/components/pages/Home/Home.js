@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, lazy, Suspense } from 'react';
-import NavBar, { MobileNavbar } from '../NavBar/NavBar.js';
+import NavBar from '../NavBar/NavBar.js';
 import { Link } from 'react-router-dom';
 import '/Users/lawrence/portfolio/public/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
@@ -7,6 +7,10 @@ import { motion } from 'framer-motion';
 const axios = require('axios');
 
 const Bubbles = lazy(() => import('./Bubbles.js'));
+const Laptop = lazy(() => import('./Laptop.js'));
+const Laptop_2 = lazy(() => import('./Laptop_2.js'));
+
+import Mobile_Home from './Mobile_Home.js';
 
 export const Counter = ({ visits }) => {
   return (<div className='home_views'>{visits}</div>);
@@ -72,71 +76,7 @@ const Home = () => {
 
   // mobile rendering
   if (windowWidth < 450) {
-    if (!openMobileNavbar) {
-      return (
-        <motion.section
-        className='home_container'
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        exit={{opacity: 0}}
-        >
-          <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
-            <div className='navbar_pulldown_bar'/>
-            <div className='navbar_pulldown_bar'/>
-            <div className='navbar_pulldown_bar'/>
-          </div>
-          <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
-            <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
-              <div className='home_text header'>
-                <p>Lawrence Sanzogni, <br/>Software Engineer</p>
-              </div>
-              <div className='home_text content'>
-                <p>
-                  I'm a fullstack Software Engineer with a specialty in MERN and PERN tech stacks. I freelance as a web developer and love creating new content for growing businesses.
-                  I'm currently looking for new full time opportunities and to make an impact.
-                </p>
-              </div>
-              <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
-              <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
-              </Link>
-              </div>
-              <Suspense fallback={<div>loading...</div>}>
-                <Bubbles/>
-              </Suspense>
-          </div>
-        </motion.section>
-      );
-    } else {
-      return (
-        <motion.section
-        className='home_container'
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        exit={{opacity: 0}}
-        >
-          <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />
-          <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
-            <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
-              <div className='home_text header'>
-                <p>Lawrence Sanzogni,<br/>Software Engineer</p>
-              </div>
-              <div className='home_text content'>
-                <p>
-                I'm a fullstack Software Engineer with a specialty in MERN and PERN tech stacks. I freelance as a web developer and love creating new content for growing businesses.
-                I'm currently looking for new full time opportunities and to make an impact.
-                </p>
-              </div>
-              <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
-                <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
-              </Link>
-              </div>
-              <Suspense fallback={<div>loading...</div>}>
-                <Bubbles/>
-              </Suspense>
-          </div>
-        </motion.section>
-      );
-    }
+    return <Mobile_Home/>
   }
 
   return (
@@ -148,7 +88,7 @@ const Home = () => {
     >
       <NavBar/>
         <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
-          <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
+          {/* <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
             <div className='home_text header'>
               <p>
               Lawrence Sanzogni, <br/>
@@ -163,11 +103,17 @@ const Home = () => {
             <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
                 <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
             </Link>
-          </div>
+          </div> */}
+          <div className='home_laptop' style={{width: '100vw', height: '100vh'}}>
           <Suspense fallback={<div>loading...</div>}>
+            {/* <Laptop/> */}
+            <Laptop_2/>
+          </Suspense>
+          </div>
+          {/* <Suspense fallback={<div>loading...</div>}>
             <Bubbles/>
           </Suspense>
-          <Counter visits={visits}/>
+          <Counter visits={visits}/> */}
       </div>
     </motion.section>
   );
