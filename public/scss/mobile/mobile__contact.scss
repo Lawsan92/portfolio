@@ -1,0 +1,266 @@
+/*CONTACT*/
+
+.mobile_contact_container {
+  height: fit-content;
+  width: 100vw;
+  display: flex;
+  background-color: #edf2f8;
+  transition: background 1s ease;
+
+  &.dark {
+    background-color: #181818;
+    transition: background 1s ease;
+  }
+
+}
+
+.mobile_contact_content {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  transition: background 1s ease;
+
+  &.dark {
+    background-color: #181818;
+    transition: background 1s ease;
+  }
+
+  &.header {
+    width: 90vw;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    color:steelblue;
+    font-weight: 800;
+    font-size: 2.5vh;
+
+    & h1 {
+      margin-left: 3%;
+    }
+  }
+
+}
+
+.map_container {
+  height: 100vh;
+  width: 40vw;
+  margin: 0;
+
+  @media screen and (max-width: 450px) {
+    height: 50vh;
+    width: 100vw;
+  }
+}
+
+.mobile_contact_directory {
+  display: grid;
+  width: 100vw;
+  grid-template-columns: repeat(auto-fill, 100vw);
+  grid-auto-rows: 10px;
+  margin: 1em;
+}
+
+.mobile_contact_directory_entry {
+  background-color: #ffffff;
+  align-items: center;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  grid-row-end: span 13;
+  grid-column-end: span 1;
+  border-radius: .75em;
+  color: grey;
+  transition: all 1s ease;
+
+  &.dark{
+    background-color: #1d1d1d;
+    transition: all 1s ease;
+  }
+
+  &.text{
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 4vw;
+    margin: 0;
+  }
+}
+
+.mobile_contact_left {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+
+/*EMAIL*/
+
+.mobile_contact_email {
+
+  &.body {
+    height: 60%;
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(auto-fill, 100vw);
+    grid-auto-rows: 10px;
+    // padding: 25px;
+    margin: 1em;
+  }
+
+  &.input {
+    margin: 1em;
+    border: none;
+    grid-row-end: span 8;
+    grid-column-end: span 1;
+    transition: all 1s ease;
+    border-radius: 1em;
+    color: grey;
+    padding: 1em;
+
+    &::placeholder {
+      text-align: left;
+    }
+
+    &.dark{
+      background-color: #1d1d1d;
+      transition: all 1s ease;
+    }
+
+    &.subject {
+      margin: 1em;
+      border: none;
+      grid-row-end: span 8;
+      grid-column-end: span 2;
+      transition: all 1s ease;
+      border-radius: 1em;
+      color: grey;
+
+      &.dark{
+        background-color: #1d1d1d;
+        transition: all 1s ease;
+      }
+    }
+
+    &.textarea {
+      margin: 0;
+      grid-column-end: span 2;
+      grid-row-end: span 20;
+      transition: all 1s ease;
+      color: grey;
+      border: none;
+
+      &.dark{
+        background-color: #1d1d1d;
+        transition: all 1s ease;
+      }
+
+    }
+  }
+
+
+  &.btn {
+    position: relative;
+    background-color: #edf2f8;
+    color:steelblue;
+    margin: 1em;
+    height: inherit;
+    width: auto;
+    align-self: inherit;
+    justify-self: inherit;
+    border-radius: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 1s;
+    grid-row-end: span 5;
+    grid-column-end: span 1;
+
+    &:hover {
+      background-color: steelblue;
+      color: white;
+      transition: 1s;
+      cursor: pointer;
+    }
+
+    &.dark {
+      transition: background 1s;
+      background-color: #181818;
+      transition: 1s;
+
+      &:hover {
+        color: white;
+        transition: 1s;
+      }
+
+    }
+  }
+
+  &.close{
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+  }
+
+}
+
+
+@media screen and (max-width: 1000px) {
+  .mobile_contact_container {
+    flex-direction: column;
+  }
+
+  .mobile_contact_content {
+    width: 100vw;
+
+    &.header {
+      width: 100vw;
+      justify-content: center;
+    }
+  }
+
+  .mobile_contact_left {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile_contact_directory{
+    width: 100vw;
+    grid-template-columns: repeat(auto-fill, 100vw);
+  }
+
+  .mobile_contact_email{
+
+    &.body {
+      width: 100vw;
+      grid-template-columns: repeat(auto-fill, 100vw);
+    }
+
+    &.input {
+
+      &.subject {
+        grid-column-end: span 1;
+      }
+
+      &.textarea {
+        grid-column-end: span 1;
+      }
+    }
+
+    &.btn {
+      margin-bottom: 0;
+    }
+
+  }
+
+  .map_container {
+    width: 100vw;
+    height: 100vh;
+  }
+
+}
+
+@media screen and (max-height: 860px) {
+  .mobile_contact_email {
+    &.btn {
+      margin-bottom: 8em;
+    }
+  }
+}

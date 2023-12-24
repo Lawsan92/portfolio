@@ -90,7 +90,7 @@ const NavBar = () => {
       </Suspense>
       <div className={ !darkTheme ? 'nav-buttons' : 'nav-buttons dark'}>
         <Link to='/'><h3>Home</h3></Link>
-        <Link to='/skills'><h3>About</h3></Link>
+        <Link to='/about'><h3>About</h3></Link>
         <Link to='/projects'><h3>Projects</h3></Link>
         <Link to='/experience'><h3>Skills</h3></Link>
         <Link to='/contact'><h3>Contact</h3></Link>
