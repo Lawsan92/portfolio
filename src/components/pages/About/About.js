@@ -5,26 +5,23 @@ import { useTheme } from '../../ThemeContext.js'
 import { motion } from 'framer-motion';
 const Textsphere = lazy(() => import('./Textsphere.js'));
 import Mobile_About from './Mobile_About.js';
+import useResize from '../../../hooks/useResize.js';
 
 const About = ({ skillsRef }) => {
 
   const darkTheme = useTheme();
+  const { windowWidth } = useResize();
+
 
   const body = document.querySelector('body');
   darkTheme ? body.style.backgroundColor = '#1d1d1d' : body.style.backgroundColor = '';
 
-  const [windowWidth, getWindowWidth] = useState(window.innerWidth);
   const [openMobileNavbar, setMobileNavbar] = useState(false);
 
   const toggleMobileNavbar = () => {
     setMobileNavbar(prevState => !openMobileNavbar)
   }
 
-    useEffect(() => {
-      window.addEventListener('resize', () => {
-        getWindowWidth(window.innerWidth);
-      })
-    }, [])
 
     if (windowWidth < 450) {
       return <Mobile_About/>;

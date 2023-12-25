@@ -6,15 +6,15 @@ import { EmailSVG, IphoneSVG } from './../SVGicons.js';
 import Map from './Map.js';
 import { motion } from 'framer-motion';
 import Mobile_Contact from './Mobile_Contact.js';
+import useResize from '../../../hooks/useResize.js';
 
 const Contact = () => {
 
   const darkTheme = useTheme();
+  const { windowWidth } = useResize();
 
   const body = document.querySelector('body');
   darkTheme ? body.style.backgroundColor = '#1d1d1d' : body.style.backgroundColor = '';
-
-  const [windowWidth, getWindowWidth] = useState(window.innerWidth);
 
   // mobile navbar state & methods
   const [openMobileNavbar, setMobileNavbar] = useState(false);
@@ -23,21 +23,9 @@ const Contact = () => {
     setMobileNavbar(prevState => !openMobileNavbar)
   }
 
-  const handleResize = () => {
-    window.addEventListener('resize', () => {
-      getWindowWidth(window.innerWidth);
-    });
-  };
-
-  useEffect(() => {
-    handleResize();
-  }, [])
-
-
   if (windowWidth < 450) {
     return <Mobile_Contact/>
   }
-
 
   return (
     <motion.div

@@ -1,30 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import NavBar from '../NavBar/NavBar.js';
-import MobileNavbar from '../NavBar/Mobile_Navbar.js';
+import NavBar, { MobileNavbar } from '../NavBar/NavBar.js';
 import { useTheme } from '../../ThemeContext.js';
 import { FrontEndSVG, BackEndSVG } from '../SVGicons.js';
 import { motion } from 'framer-motion';
 import WorkExperience from './workExperience/workExperience.js';
 import EducationEntry from './EducationEntry/EducationEntry.js';
 import SkillEntry from './SkillEntry/SkillEntry.js';
-import useResize from '../../../hooks/useResize.js';
 
-const Experience = ({ experienceRef }) => {
+
+const Mobile_Experience = () => {
 
   const darkTheme = useTheme();
-  const { windowWidth } = useResize();
 
   const body = document.querySelector('body');
   darkTheme ? body.style.backgroundColor = '#1d1d1d' : body.style.backgroundColor = '';
 
+  const [windowWidth, getWindowWidth] = useState(window.innerWidth);
   const [openMobileNavbar, setMobileNavbar] = useState(false);
 
   const toggleMobileNavbar = () => {
     setMobileNavbar(prevState => !openMobileNavbar)
   }
 
-/*------ MOBILE ------*/
-    if (windowWidth < 450) {
+  const handleResize = () => {
+    window.addEventListener('resize', () => {
+      getWindowWidth(window.innerWidth);
+    });
+  };
+
+  useEffect(() => {
+    handleResize();
+  }, [])
+
       if (!openMobileNavbar) {
         return (
           <motion.div className='experience'
@@ -70,31 +77,7 @@ const Experience = ({ experienceRef }) => {
           </motion.div>
         );
       }
-    }
 
-  /*------ DESKTOP ------*/
-  return (
-    <motion.div className='experience'
-    initial={{opacity: 0}}
-    animate={{opacity: 1}}
-    exit={{opacity: 0}}
-    >
-      <NavBar/>
-      <section className = {darkTheme ? 'education_container dark' : 'education_container'}>
-
-      </section>
-      <section className={ darkTheme ? 'experience_container dark' : 'experience_container'}>
-        <div className='experience_header'>Experience & Education</div>
-        <div className='experience_body'>
-          <WorkExperience/>
-          <EducationEntry/>
-          <div className='skills_graph'>
-            <SkillEntry openMobileNavbar={openMobileNavbar}/>
-          </div>
-          </div>
-      </section>
-    </motion.div>
-  );
 }
 
-export default Experience;
+export default Mobile_Experience;

@@ -6,17 +6,19 @@ import { GithubSVG, CameraSVG } from './../SVGicons.js';
 import GalleryModal from './GalleryModal.js';
 import { motion } from 'framer-motion';
 import Mobile_Projects from './Mobile_Projects.js';
+import useResize from '../../../hooks/useResize.js';
 
 const Projects = ({ projectsRef }) => {
 
   // dark mode context
   const darkTheme = useTheme();
+  const { windowWidth } = useResize();
 
   const body = document.querySelector('body');
   darkTheme ? body.style.backgroundColor = '#1d1d1d' : body.style.backgroundColor = '';
 
   // container resizing state & methods
-  const [containerWidth, getWidth] = useState((window.innerWidth < 450) ? Math.floor((window.innerWidth * .9)) : Math.floor((window.innerWidth * .9) / 5));
+  const [containerWidth, getWidth] = useState((windowWidth < 450) ? Math.floor((windowWidth * .9)) : Math.floor((windowWidth * .9) / 5));
   const [containerHeight, getHeight] = useState(Math.floor((window.innerHeight * .9) / 20));
 
   // card hover state & methods
@@ -37,8 +39,6 @@ const Projects = ({ projectsRef }) => {
   // state for project gallery
   const [projectIndex, getIndex] = useState(-1);
 
-  const [windowWidth, getWindowWidth] = useState(window.innerWidth);
-
   // mobile navbar state & methods
   const [openMobileNavbar, setMobileNavbar] = useState(false);
 
@@ -49,7 +49,6 @@ const Projects = ({ projectsRef }) => {
   const handleMobileRender = () => {
     window.addEventListener('resize', () => {
 
-      getWindowWidth(window.innerWidth);
 
       let width = window.getComputedStyle(document.querySelector('.projects_grid.container')).width;
 

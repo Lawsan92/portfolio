@@ -1,7 +1,7 @@
 .mobile_about {
-  display: flex;
   margin: 0;
   display: flex;
+  justify-content: center;
   align-items: center; /* y-axis/cross-axis*/
   height: 100vh;
   width: 100vw;
@@ -15,6 +15,27 @@
   }
 }
 
+.mobile_about_background {
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  position: absolute;
+  background-color: #EDF2F8;
+  opacity: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.dark {
+    background-color: #1d1d1d;
+  }
+}
+
+.mobile_about_background_img{
+  height: 67vh;
+  transform: translate(0, -150px);
+  position: absolute;
+}
+
 .mobile_about_container {
   display: flex;
   justify-content: center;
@@ -22,12 +43,11 @@
   height: fit-content;
   width: 100vw;
   flex-direction: column-reverse;
-  background-color: #edf2f8;
   transition: background 1s;
+  z-index: 3;
 
   &.dark {
     transition: background 1s;
-    background-color: #181818;
     color: #ffffff
   }
 
@@ -57,7 +77,6 @@
 }
 
 .mobile_about_text {
-  margin: 0%;
   width: 85vw;
 
   &.header {
@@ -79,8 +98,15 @@
   &.content {
     color:rgb(178, 190, 181);
     font-size: large;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: #fffb;
+    padding: 0 10px;
+    &.dark {
+      background: #000b;
+    }
   }
 }
 

@@ -550,3 +550,14 @@
   }
 
 }
+
+.home_background_stripe {
+  background-color: steelblue;
+  height: 33vh;
+  width: 57vw;
+  z-index: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotate(142deg) translate(-120px, -200px);
+}

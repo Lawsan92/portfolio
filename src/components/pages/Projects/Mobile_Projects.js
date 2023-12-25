@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import projects from '../../../data/projects.js';
-import NavBar, { MobileNavbar } from '../NavBar/NavBar.js';
+import MobileNavbar from '../NavBar/Mobile_Navbar.js';;
 import { useTheme } from '../../ThemeContext.js';
 import { GithubSVG, CameraSVG } from './../SVGicons.js';
 import GalleryModal from './GalleryModal.js';

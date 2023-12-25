@@ -40,18 +40,18 @@ const Mobile_Home = () => {
     setMobileNavbar(prevState => !openMobileNavbar)
   }
 
-  const body = document.querySelector('body');
+  // const body = document.querySelector('body');
 
   // styling for empty html space on mobile screens
-  if (darkTheme && !openMobileNavbar) {
-    body.style.backgroundColor = '#181818'
-  } else if (darkTheme && openMobileNavbar) {
-    body.style.backgroundColor = '#1d1d1d'
-  } else if (!darkTheme && openMobileNavbar) {
-    body.style.backgroundColor = '#ffffff'
-  } else {
-    body.style.backgroundColor = ''
-  }
+  // if (darkTheme && !openMobileNavbar) {
+  //   body.style.backgroundColor = '#181818'
+  // } else if (darkTheme && openMobileNavbar) {
+  //   body.style.backgroundColor = '#1d1d1d'
+  // } else if (!darkTheme && openMobileNavbar) {
+  //   body.style.backgroundColor = '#ffffff'
+  // } else {
+  //   body.style.backgroundColor = ''
+  // }
 
   const handleResize = () => {
     window.addEventListener('resize', () => {
@@ -83,7 +83,7 @@ const Mobile_Home = () => {
               <div className='mobile_home_text header'>
                 <p>Lawrence Sanzogni, <br/>Software Engineer</p>
               </div>
-              <div className='mobile_home_text content'>
+              <div className='mobile_home_text content' style={{background: darkTheme && '#000c'}}>
                 <p>
                   I'm a fullstack Software Engineer with a specialty in MERN and PERN tech stacks. I freelance as a web developer and love creating new content for growing businesses.
                   I'm currently looking for new full time opportunities and to make an impact.
@@ -93,12 +93,9 @@ const Mobile_Home = () => {
               <button className={ darkTheme ? 'mobile_home_text btn dark' : 'mobile_home_text btn'}>Contact Me</button>
               </Link>
               </div>
-              <Suspense fallback={<div>loading...</div>}>
-                <Bubbles/>
-              </Suspense>
-              {/* <div className='mobile_home_background'>
-                <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1703377916/Screenshot_2023-12-23_at_18.26.37_swfw9k.jpg' className='mobile_home_background_laptop'/>
-              </div> */}
+              <div className={darkTheme ? 'mobile_home_background dark' : 'mobile_home_background'}>
+                <img src={ darkTheme ? 'https://res.cloudinary.com/ducqdbpaw/image/upload/v1703393775/Screenshot_2023-12-23_at_22.55-PhotoRoom_fjxp7w.png' :'https://res.cloudinary.com/ducqdbpaw/image/upload/v1703393575/Screenshot_2023-12-23_at_18.26-PhotoRoom_w6bkvp.png'} className='mobile_home_background_img'/>
+              </div>
           </div>
         </motion.section>
       );

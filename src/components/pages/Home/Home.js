@@ -76,7 +76,7 @@ const Home = () => {
 
   // mobile rendering
   if (windowWidth < 450) {
-    return <Mobile_Home/>
+    return <Mobile_Home/>;
   }
 
   return (
@@ -109,6 +109,7 @@ const Home = () => {
             {/* <Laptop/> */}
             <Laptop_2/>
           </Suspense>
+          <div className='home_background_stripe'></div>
           </div>
           {/* <Suspense fallback={<div>loading...</div>}>
             <Bubbles/>

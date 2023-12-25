@@ -17,10 +17,12 @@
   position: absolute;
   background-color: #EDF2F8;
   opacity: 35%;
-  border: solid;
   display: flex;
   align-items: center;
   justify-content: center;
+  &.dark {
+    background-color: #1d1d1d;
+  }
 }
 
 .mobile_home_content {
@@ -48,8 +50,8 @@
   width: 90vw;
   justify-content: center;
   align-items: center;
+  z-index: 3;
   transition: background 1s;
-
 
   &.dark {
     transition: background 1s;
@@ -78,11 +80,12 @@
     color:rgb(178, 190, 181);
     margin: 1em;
     width: 100%;
+    background: #fffc;
+    padding: 0 10px;
   }
 
   &.btn {
     background-color: #edf2f8;
-    // color: #e0e5eb;
     color:steelblue;
     margin-top: 1em;
     margin-bottom: 1em;
