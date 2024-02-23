@@ -45,8 +45,8 @@ const Laptop_2 = ()  => {
 
   const { nodes, materials } = useGLTF("/assets/laptop.gltf");
   return (
-    <animated.div style={spring} >
-    <Canvas camera={{fov: 45, position: [-6, 3, 10]}} shadows className='home_laptop_canvas' style={{...spring, height: '100vh', width: '90vw'}}>
+    <animated.div style={spring} className='home_laptop_wrapper'>
+    <Canvas camera={{fov: 45, position: [-6, 3, 10]}} shadows className='home_laptop_canvas' style={{...spring }}>
       <Suspense fallback={null}>
       <ambientLight intensity={2}/>
       <pointLight/>

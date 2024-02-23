@@ -5,3 +5,30 @@
 
 
 https://lawrence-sanzogni.com/
+[
+  {
+    complex_name: "The Vista on Brodie",
+    apt_name: "Sage",
+    sqft: 1158,
+    move_in: "now",
+    rent: 1681,
+    url: https://www.apartments.com/the-vista-on-brodie-austin-tx/53hyprp/
+  },
+  {
+    complex_name: "Trails at the Park",
+    apt_name: "2BR/2BA",
+    sqft: 1000,
+    move_in: "soon",
+    rent: $984 – $1,335,
+    url: https://www.apartments.com/trails-at-the-park-austin-tx/n6cqhpq/
+  }
+]
+
+  {
+    complex_name: "",
+    apt_name: "",
+    sqft: ,
+    move_in: "",
+    rent: ,
+    url:
+  }

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import '/Users/lawrence/portfolio/public/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
-const axios = require('axios');
 
 const Bubbles = lazy(() => import('./Bubbles.js'));
 const Laptop = lazy(() => import('./Laptop.js'));
@@ -16,24 +15,11 @@ export const Counter = ({ visits }) => {
   return (<div className='home_views'>{visits}</div>);
 }
 
-const Home = () => {
+const Home = ({ visits }) => {
 
   const darkTheme = useTheme();
 
   const [windowWidth, getWindowWidth] = useState(window.innerWidth);
-  const [visits, setVisits] = useState(0);
-
-
-  const handleViews = () => {
-    window.addEventListener('load', async () => {
-      await Promise.all([
-        axios({method: 'put', url: '/visits', data: {}}),
-        axios({method: 'get', url: '/visits'})
-          .then((res) => {console.log('res.data:', res.data); setVisits(res.data.visits)}),
-        axios({method: 'post', url: '/visitRecords', data: {}})
-      ]);
-    })
-  }
 
   // mobile navbar state & methods
   const [openMobileNavbar, setMobileNavbar] = useState(false);
@@ -46,16 +32,24 @@ const Home = () => {
 
   // styling for empty html space on mobile screens
   if (darkTheme && !openMobileNavbar) {
-    body.style.backgroundColor = '#181818'
+    console.log('darkTheme && !openMobileNavbar <body/>:', body);
+    body.style.backgroundColor = '#181818';
+    console.log('darkTheme && !openMobileNavbar .backgroundColor', body.style.backgroundColor);
   } else if (darkTheme && openMobileNavbar) {
-    body.style.backgroundColor = '#1d1d1d'
+    console.log('darkTheme && openMobileNavbar <body/>:', body);
+    body.style.backgroundColor = '#1d1d1d';
+    console.log('darkTheme && openMobileNavbar .backgroundColor:', body.style.backgroundColor);
   } else if (!darkTheme && openMobileNavbar) {
-    body.style.backgroundColor = '#ffffff'
+    console.log('!darkTheme && openMobileNavbar <body/>:', body);
+    body.style.backgroundColor = '#ffffff';
+    console.log('!darkTheme && openMobileNavbar .backgroundColor:', body.style.backgroundColor);
   } else {
-    body.style.backgroundColor = ''
+    console.log('!darkTheme && !openMobileNavbar <body/>:', body);
+    body.style.backgroundColor = '';
+    console.log('!darkTheme && !openMobileNavbar .backgroundColor', body.style.backgroundColor);
   }
   // console.group()
-  //   console.log('darkTheme && !openMobileNavbar')
+  //   console.log('darkTheme && !openMobileNavbar');
   //   console.log(darkTheme && !openMobileNavbar)
   //   console.log('darkTheme && openMobileNavbar')
   //   console.log(darkTheme && openMobileNavbar)
@@ -71,7 +65,6 @@ const Home = () => {
 
   useEffect(() => {
     handleResize();
-    handleViews();
   }, [])
 
   // mobile rendering
@@ -88,7 +81,7 @@ const Home = () => {
     >
       <NavBar/>
         <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
-          {/* <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
+          <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
             <div className='home_text header'>
               <p>
               Lawrence Sanzogni, <br/>
@@ -103,7 +96,7 @@ const Home = () => {
             <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
                 <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
             </Link>
-          </div> */}
+          </div>
           <div className='home_laptop' style={{width: '100vw', height: '100vh'}}>
           <Suspense fallback={<div>loading...</div>}>
             {/* <Laptop/> */}

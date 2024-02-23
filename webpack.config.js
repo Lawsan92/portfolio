@@ -15,6 +15,7 @@ const config = (env) => {
       filename: '[name].bundle.js',
       chunkFilename: '[name].bundle.js',
       filename: 'bundle.js',
+      clean: true
     },
     devServer: {
       historyApiFallback: true,
