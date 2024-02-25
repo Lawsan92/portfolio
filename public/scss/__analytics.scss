@@ -1,0 +1,65 @@
+.analytics{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background-color: #edf2f8;
+  position: relative;
+}
+
+.analytics_visits{
+  height: 25vh;
+  width: 25vw;
+  background-color: #fffa;
+  border-radius: 5px;
+  position: relative;
+  margin: 5px;
+}
+
+.analytics_visits_bargraph_y-axis{
+  width: 1px;
+  height: inherit;
+  position: absolute;
+  left: 0;
+  background-color: #000;
+  margin-left: 1px;
+}
+
+.analytics_visits_bargraph_bar {
+  width: 30px;
+  background-color: #61c8ef80;
+  bottom: 0;
+  margin-left: 50px;
+  position: absolute;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.analytics_visits_bargraph_y-axis_values {
+  height: inherit;
+  position: absolute;
+  left: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+.analytics_visits_bargraph_y-axis_values_point {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.point {
+  height: 1px;
+  width: 5px;
+  background-color: #000;
+  margin-right: 1px;
+}
+
+.analytics_visits_bargraph_x-axis{
+  height: 1px;
+  width: inherit;
+  position: absolute;
+  bottom: 0;
+  background-color: #000;
+  margin-left: 1px;
+}

@@ -8,6 +8,7 @@ const axios = require('axios');
 const App = () => {
 
   const [visits, setVisits] = useState(0);
+  const [analytics, getAnalytics] = useState({region: '', visit: ''});
 
   const handleViews = () => {
     window.addEventListener('load', async () => {
@@ -24,7 +25,7 @@ const App = () => {
 
   useEffect(() => {
     handleViews();
-    useGeoApify();
+    getAnalytics(useGeoApify());
     console.log('location.pathname:', location.pathname, 'location.search:', location.search);
   }, [location]);
 
