@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const visits = require('./routes/visits.js');
+const locations = require('./routes/locations.js');
 const visitRecords = require('./routes/visitRecords.js');
 const compression = require('compression');
 const path = require('path');
@@ -54,6 +55,7 @@ app.get('/test3000', (req, res) => {
 })
 
 app.use('/visits', visits);
+app.use('/locations', locations);
 app.use('/visitRecords', visitRecords);
 
 app.get('/*', (req, res) => {
@@ -65,7 +67,7 @@ app.get('/*', (req, res) => {
 app.listen(port || 3000, (req, res) => {
   console.log('listening to port 3000...');
 
-})
+});
 
 app.get('/test8080', (req, res) => {
   res.send(200);

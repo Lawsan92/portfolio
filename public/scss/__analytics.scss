@@ -7,8 +7,8 @@
 }
 
 .analytics_visits{
-  height: 25vh;
-  width: 25vw;
+  height: 50vh;
+  width: 50vw;
   background-color: #fffa;
   border-radius: 5px;
   position: relative;
@@ -62,4 +62,13 @@
   bottom: 0;
   background-color: #000;
   margin-left: 1px;
+}
+
+.analytics_location{
+  height: 50vh;
+  width: 50vw;
+  background-color: #fffa;
+  border-radius: 5px;
+  position: relative;
+  margin: 5px;
 }

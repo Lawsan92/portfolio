@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const Analytics = ({ visits }) => {
   return (
@@ -15,6 +15,9 @@ const Analytics = ({ visits }) => {
         </div>
         <div className='analytics_visits_bargraph_bar' style={{height: `${visits * 2}px`}}>{visits}</div>
         <div className='analytics_visits_bargraph_x-axis'></div>
+      </div>
+      <div className='analytics_location'>
+        <img style={{height: 'inherit', width: 'inherit'}} src="https://res.cloudinary.com/darp0mj9i/image/upload/v1708827730/world_1_uxeoh2.svg"/>
       </div>
     </div>
   );
