@@ -1,16 +1,20 @@
 const client = require('../database/Postgres.database.js');
 
-const updateVisits = (location) => {
-
-const text = 'INSERT INTO locations (country, email) VALUES($1, $2) RETURNING *'
-const values = ['brianc', 'brian.m.carlson@gmail.com']
+const updateLocations = (location) => {
 
 
-  client
-    .query(`update locations set visits = visits + 1`)
+console.log('location:', location);
+
+  if (location) {
+      const query = `update visits set locations = locations || CONCAT('{"${location}":', COALESCE(locations->>'${location}')::int+1,'}')::jsonb;`;
+      const paramter = [location, location];
+
+      client
+        .query(query)
+  }
 }
 
-module.exports = updateVisits;
+module.exports = updateLocations;
 
 /*
 

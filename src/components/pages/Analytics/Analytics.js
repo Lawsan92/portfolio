@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 
-const Analytics = ({ visits }) => {
+const Analytics = ({ visits, analytics }) => {
+
+  const mapLocations = () => {
+    let arr = Object.keys(analytics).map((key) => [key, analytics[key]]);
+    console.log('arr:', arr);
+    return <div style={{height: '5px', width: '5px', borderRadius: '50%', background: '#00a6ff'}}></div>
+  }
+
+  mapLocations()
+
   return (
     <div className='analytics'>
       <div className='analytics_visits'>
@@ -18,6 +27,7 @@ const Analytics = ({ visits }) => {
       </div>
       <div className='analytics_location'>
         <img style={{height: 'inherit', width: 'inherit'}} src="https://res.cloudinary.com/darp0mj9i/image/upload/v1708827730/world_1_uxeoh2.svg"/>
+        {mapLocations()}
       </div>
     </div>
   );

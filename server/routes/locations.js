@@ -7,13 +7,14 @@ const getLocations = require('../controllers/getLocations.js');
 router.use((req, res, next) => {
   req.method === 'POST' && console.log('-POST /locations', '@', new Date);
   req.method === 'GET' && console.log('-GET /locations', '@', new Date);
+  req.method === 'PUT' && console.log('-GET /locations', '@', new Date);
   next();
 });
 
 //--------------------ROUTES--------------------*/
 router
   .route('/')
-  .put((req, res) => { updateLocations() })
+  .put((req, res) => { updateLocations(req.body.location) })
   .get((req, res) => {getLocations().then((data) => {res.send({visits: data})});})
 
 module.exports = router;
