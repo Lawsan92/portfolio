@@ -6,11 +6,25 @@ const updateLocations = (location) => {
 console.log('location:', location);
 
   if (location) {
-      const query = `update visits set locations = locations || CONCAT('{"${location}":', COALESCE(locations->>'${location}')::int+1,'}')::jsonb;`;
-      const paramter = [location, location];
 
-      client
-        .query(query)
+      const parameter1 = [location];
+      const parameter2 = [`{${location}}`];
+      client.query(`SELECT locations->$1 FROM visits`, parameter1)
+            .then((data) => {
+            console.log('data:', data.rows[0]['?column?']);
+            if (data.rows[0]['?column?']) {
+                  const query = `update visits set locations = locations || CONCAT('{"${location}":', COALESCE(locations->>$1)::int+1,'}')::jsonb;`;
+                  client
+                    .query(query, parameter1)
+            } else {
+                  const query = `update visits set locations = jsonb_set(locations, $1, '1', true)`;
+                  client
+                    .query(query, parameter2)
+            }
+      })
+            .catch((err) => {
+                  console.log('err:', err);
+            })
   }
 }
 
