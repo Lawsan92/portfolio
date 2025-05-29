@@ -39,10 +39,10 @@ const NavBar = () => {
         <Link to='/projects'><h3>/ Projects</h3></Link>
         <Link to='/experience'><h3>/ Skills</h3></Link>
         <Link to='/contact'><h3>/ Contact</h3></Link>
-      </div>
-      <a href={resume} download='resume'>
-        <button className={ !darkTheme ? 'navbar_resume' : 'navbar_resume dark'}>Resume</button>
+        <a href={resume} download='resume'>
+          <h3>/ Resume</h3>
         </a>
+      </div>
       <button className={ darkTheme ? 'navbar_themebutton dark' : 'navbar_themebutton'} onClick={() => {toggleTheme()}} >
         {darkTheme ? <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766274/icons/dark-mode-6682_1_tluczz.svg' alt='crescent moon icon for dark mode'/> :
         <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766162/icons/dark-mode-6682_ncrhz2.svg' alt='crescent moon icon for dark mode'/>}

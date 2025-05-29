@@ -7,10 +7,10 @@
   position: relative;
   transition: background 1s;
   align-self: flex-start;
+  z-index: 4;
 
   &.dark{
     transition: background 1s;
-    background-color: #1d1d1d;
     background-image: none;
   }
 
@@ -60,9 +60,8 @@
     font-size: 3vh;
 
     &.entry {
-      border-top: solid 1px #edf2f8;
       &.dark {
-        border-top: solid 1px #343434;
+
       }
     }
   }
@@ -72,7 +71,6 @@
 
   &.dark {
     & h3 {
-     border-top: solid 1px #ffffff;
      height: 3em;
      margin: 0;
 
@@ -88,7 +86,6 @@
     color: steelblue;
     height: 3em;
     margin: 0;
-    border-top: solid 1px #edf2f8; ;
     cursor: pointer;
     width: 10vw;
     justify-content: center;

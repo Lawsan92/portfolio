@@ -80,18 +80,19 @@ const Home = ({ visits }) => {
     animate={{opacity: 1}}
     exit={{opacity: 0}}
     >
-      <NavBar/>
         <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
+           <NavBar/>
           <div className='home_laptop'>
           <Suspense fallback={<div>loading...</div>}>
-            {/* <Laptop/> */}
             <Laptop_2/>
           </Suspense>
           </div>
+        <SVGicons/>
       </div>
-      <SVGicons/>
     </motion.section>
   );
 }
 
 export default Home;
+
+// {/* <Laptop/> */}
