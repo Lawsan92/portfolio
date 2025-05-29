@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect, lazy, Suspense } from 'react';
+import SVGicons, { MobileSVGicons } from '../SVGicons';
 import NavBar from '../NavBar/NavBar.js';
 import { Link } from 'react-router-dom';
 import '/Users/lawrence/portfolio/public/scss/styles.scss';
@@ -81,34 +82,14 @@ const Home = ({ visits }) => {
     >
       <NavBar/>
         <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
-          <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
-            <div className='home_text header'>
-              <p>
-              Lawrence Sanzogni, <br/>
-              Software Engineer</p>
-            </div>
-            <div className='home_text content'>
-              <p>
-                I'm a fullstack Software Engineer with a specialty in MERN and PERN tech stacks. I freelance as a web developer and love creating new content for growing businesses.
-                I'm currently looking for new full time opportunities and to make an impact.
-              </p>
-            </div>
-            <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
-                <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
-            </Link>
-          </div>
-          <div className='home_laptop' style={{width: '100vw', height: '100vh'}}>
+          <div className='home_laptop'>
           <Suspense fallback={<div>loading...</div>}>
             {/* <Laptop/> */}
             <Laptop_2/>
           </Suspense>
-          <div className='home_background_stripe'></div>
           </div>
-          {/* <Suspense fallback={<div>loading...</div>}>
-            <Bubbles/>
-          </Suspense>
-          <Counter visits={visits}/> */}
       </div>
+      <SVGicons/>
     </motion.section>
   );
 }
