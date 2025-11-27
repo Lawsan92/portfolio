@@ -1,7 +1,12 @@
 import React from 'react';
 
 let projects = [
-
+  {
+    name:'SiteScan',
+    url: 'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764277932/portfolio/sitescan/home_page_tui6o7.jpg',
+    gallery: [],
+    githref: 'https://github.com/Lawsan92/SiteScan',
+  },
   {
     name:'System PERN Aggregator',
     url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1667429336/icons/Screen_Shot_2022-08-08_at_10.56.02_pyaaun.jpg',
