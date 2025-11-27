@@ -21,8 +21,6 @@ const Router = ({ visits, analytics }) => {
         <Route path='/' element={<Home visits={ visits }/>}></Route>
         <Route path='/about' element={<About/>}></Route>
         <Route path='/projects' element={<Projects/>}></Route>
-        <Route path='/experience' element={<Experience/>}></Route>
-        <Route path='/contact' element={<Contact/>}></Route>
         <Route path='/analytics' element={<Analytics visits={ visits } analytics={ analytics }/>}></Route>
       </Routes>
     </AnimatePresence>

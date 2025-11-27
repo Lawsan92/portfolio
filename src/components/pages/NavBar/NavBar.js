@@ -37,8 +37,6 @@ const NavBar = () => {
         <Link to='/'><h3>/ Home</h3></Link>
         <Link to='/about'><h3>/ About</h3></Link>
         <Link to='/projects'><h3>/ Projects</h3></Link>
-        <Link to='/experience'><h3>/ Skills</h3></Link>
-        <Link to='/contact'><h3>/ Contact</h3></Link>
         <a href={resume} download='resume'>
           <h3>/ Resume</h3>
         </a>
