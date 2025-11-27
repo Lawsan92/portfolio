@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import projects from '../../../data/projects.js';
 import MobileNavbar from '../NavBar/Mobile_Navbar.js';;
 import { useTheme } from '../../ThemeContext.js';
-import { GithubSVG, CameraSVG } from './../SVGicons.js';
-import GalleryModal from './GalleryModal.js';
+import { GithubSVG } from './../SVGicons.js';
 import { motion } from 'framer-motion';
 
 const Mobile_Projects = ({ projectsRef }) => {
@@ -104,7 +103,6 @@ const Mobile_Projects = ({ projectsRef }) => {
             <div className='mobile_projects_grid card_shadow text' style={styles.text}>
             see more
             </div>
-            <CameraSVG toggleModal={toggleModal} isOpen={isOpen} index={index} toggleHover={toggleHover} projectIndex={projectIndex} getIndex={getIndex}/>
           </span>
         );
       }
@@ -183,7 +181,6 @@ const Mobile_Projects = ({ projectsRef }) => {
               <div className='mobile_projects_grid card_shadow text' style={styles.text}>
               see more
               </div>
-              <CameraSVG toggleModal={toggleModal} isOpen={isOpen} index={index} toggleHover={toggleHover} projectIndex={projectIndex} getIndex={getIndex}/>
             </span>
           );
         };
@@ -252,7 +249,6 @@ const Mobile_Projects = ({ projectsRef }) => {
               {!isFiltered ? mapProjects() : filterProjects(cardFilter)}
             </div>
           </div>
-          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex} /> }
         </motion.section>
       );
     } else {
@@ -275,7 +271,6 @@ const Mobile_Projects = ({ projectsRef }) => {
               {!isFiltered ? mapProjects() : filterProjects(cardFilter)}
             </div>
           </div>
-          {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex} /> }
         </motion.section>
       );
     }

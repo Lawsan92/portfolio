@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import projects from '../../../data/projects.js';
 import NavBar, { MobileNavbar } from '../NavBar/NavBar.js';
 import { useTheme } from '../../ThemeContext.js';
-import { GithubSVG, CameraSVG } from './../SVGicons.js';
-import GalleryModal from './GalleryModal.js';
+import { GithubSVG } from './../SVGicons.js';
 import { motion } from 'framer-motion';
 import Mobile_Projects from './Mobile_Projects.js';
 import useResize from '../../../hooks/useResize.js';
@@ -104,7 +103,6 @@ const Projects = ({ projectsRef }) => {
             <div className='projects_grid card_shadow text' style={styles.text}>
             see more
             </div>
-            <CameraSVG toggleModal={toggleModal} isOpen={isOpen} index={index} toggleHover={toggleHover} projectIndex={projectIndex} getIndex={getIndex}/>
           </span>
         );
       }
@@ -254,7 +252,6 @@ const Projects = ({ projectsRef }) => {
           {!isFiltered ? mapProjects() : filterProjects(cardFilter)}
         </div>
       </div>
-      {isOpen && <GalleryModal isOpen={isOpen} toggleModal={toggleModal} projectIndex={projectIndex} /> }
     </motion.section>
   );
 }
