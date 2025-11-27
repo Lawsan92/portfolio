@@ -57,9 +57,9 @@ const About = ({ skillsRef }) => {
             </div>
           </div>
         </div>
-        <Suspense fallback={<div>loading...</div>}>
+        {/* <Suspense fallback={<div>loading...</div>}>
           <Textsphere/>
-        </Suspense>
+        </Suspense> */}
       </div>
     </motion.section>
   )

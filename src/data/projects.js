@@ -38,33 +38,6 @@ let projects = [
     ]
   },
   {
-    name:'Studio D\'Arte',
-    url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1674061527/fabio/Screen_Shot_2023-01-18_at_11.04.04_mbykzw.jpg',
-    meta: 'landing page of artist site',
-    href: '',
-    githref: 'https://github.com/Lawsan92/studioDarte',
-    techstack: 'Web Dev',
-    summary: 'Updated legacy website made from PHP using ReactJS, Nodejs, React-Router-DOM.',
-    gallery: [
-      {
-        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1674434341/projects%20gallery/Screen_Shot_2023-01-22_at_18.38.58_b3f2s2.jpg',
-        meta: 'landing page and logo'
-      },
-      {
-        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1674434362/projects%20gallery/Screen_Shot_2023-01-22_at_18.39.19_dqbkj9.jpg',
-        meta: 'gallery page with paintings'
-      },
-      {
-        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1674434381/projects%20gallery/Screen_Shot_2023-01-22_at_18.39.38_rvcczj.jpg',
-        meta: 'painting modal page'
-      },
-      {
-        url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1674434399/projects%20gallery/Screen_Shot_2023-01-22_at_18.39.53_ilfpk0.jpg',
-        meta: 'contact page'
-      }
-    ]
-  },
-  {
     name:'DocuScraper',
     url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1681265313/Screen_Shot_2023-04-11_at_21.08.26_litouv.jpg',
     meta: 'logo of file',

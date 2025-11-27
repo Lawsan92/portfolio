@@ -87,7 +87,7 @@ const Home = ({ visits }) => {
            </div> */}
           <div className='home_laptop'>
           <Suspense fallback={<div>loading...</div>}>
-            {/* <Laptop_2/> */}
+            <Laptop_2/>
           </Suspense>
           </div>
         <SVGicons/>
