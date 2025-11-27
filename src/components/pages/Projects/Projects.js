@@ -235,13 +235,12 @@ const Projects = ({ projectsRef }) => {
 
   return (
     <motion.section
-      className='projects'
+      className={ darkTheme ? 'projects_container dark' : 'projects_container'}
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       exit={{opacity: 0}}
       >
       <NavBar/>
-      <div className={ darkTheme ? 'projects_container dark' : 'projects_container'}>
         <div className={ !darkTheme ? 'projects_container header' : 'projects_container header dark' }>
           <h4>Projects</h4>
           <h5>Programming</h5>
@@ -252,7 +251,6 @@ const Projects = ({ projectsRef }) => {
         <div className='projects_grid container' >
           {!isFiltered ? mapProjects() : filterProjects(cardFilter)}
         </div>
-      </div>
     </motion.section>
   );
 }
