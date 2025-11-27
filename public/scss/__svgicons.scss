@@ -2,11 +2,11 @@
 
   &.container {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: auto;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 10vh;
+    z-index: 4;
 
     &.mobile {
       display: flex;
@@ -17,8 +17,7 @@
   }
 
   &.entry {
-    border-top: solid 1px #edf2f8;
-    width: 10vw;
+    width: 5vw;
     transition: 1s ease;
 
     &:hover {
@@ -27,7 +26,7 @@
     }
 
     &.dark {
-      border-top: solid 1px #9eb0c7;
+
     }
 
 

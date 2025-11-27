@@ -1,8 +1,12 @@
+.home_laptop {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 2;
+}
 .home_laptop_wrapper {
   height: 100vh;
-  width: 50vw;
-  position: absolute;
-  z-index: 3;
+  width: 100vw;
   right: 0;
 
 }

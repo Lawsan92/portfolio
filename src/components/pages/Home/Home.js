@@ -1,11 +1,11 @@
 import React, { useContext, useState, useEffect, lazy, Suspense } from 'react';
+import SVGicons, { MobileSVGicons } from '../SVGicons';
 import NavBar from '../NavBar/NavBar.js';
 import { Link } from 'react-router-dom';
 import '/Users/lawrence/portfolio/public/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 
-const Bubbles = lazy(() => import('./Bubbles.js'));
 const Laptop = lazy(() => import('./Laptop.js'));
 const Laptop_2 = lazy(() => import('./Laptop_2.js'));
 
@@ -74,43 +74,22 @@ const Home = ({ visits }) => {
 
   return (
     <motion.section
-    className='home_container'
+    className={ darkTheme ? 'home_container dark' : 'home_container'}
     initial={{opacity: 0}}
     animate={{opacity: 1}}
     exit={{opacity: 0}}
     >
       <NavBar/>
-        <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
-          <div className={ darkTheme ? 'home_text dark' : 'home_text'} >
-            <div className='home_text header'>
-              <p>
-              Lawrence Sanzogni, <br/>
-              Software Engineer</p>
-            </div>
-            <div className='home_text content'>
-              <p>
-                I'm a fullstack Software Engineer with a specialty in MERN and PERN tech stacks. I freelance as a web developer and love creating new content for growing businesses.
-                I'm currently looking for new full time opportunities and to make an impact.
-              </p>
-            </div>
-            <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
-                <button className={ darkTheme ? 'home_text btn dark' : 'home_text btn'}>Contact Me</button>
-            </Link>
-          </div>
-          <div className='home_laptop' style={{width: '100vw', height: '100vh'}}>
-          <Suspense fallback={<div>loading...</div>}>
-            {/* <Laptop/> */}
-            <Laptop_2/>
-          </Suspense>
-          <div className='home_background_stripe'></div>
-          </div>
-          {/* <Suspense fallback={<div>loading...</div>}>
-            <Bubbles/>
-          </Suspense>
-          <Counter visits={visits}/> */}
+      <div className='home_laptop'>
+        <Suspense fallback={<div>loading gltf asset...</div>}>
+          <Laptop_2/>
+        </Suspense>
       </div>
+      <SVGicons/>
     </motion.section>
   );
 }
 
 export default Home;
+
+// {/* <Laptop/> */}

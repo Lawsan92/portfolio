@@ -1,10 +1,27 @@
-.about_container {
+/*SKILLS*/
+
+.skills {
   display: flex;
-  flex-direction: column;
+  margin: 0;
+  display: flex;
+  align-items: center; /* y-axis/cross-axis*/
+  height: 100vh;
+  width: 100vw;
+  background-color: #edf2f8;
+  transition: background 1s;
+
+  &.dark {
+    background-color: #181818;
+    transition: background 1s;
+  }
+}
+
+.skills_container {
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  width: 90vw;
   background-color: #edf2f8;
   transition: background 1s;
 
@@ -16,7 +33,7 @@
 
 }
 
-.about_content {
+.skills_content {
   display: flex;
   width: fit-content;
   justify-content: center;
@@ -39,7 +56,7 @@
   }
 }
 
-.about_text {
+.skills_text {
   margin: 1em;
   // border: solid;
   width: 40vw;
@@ -83,15 +100,15 @@
 
 @media (max-width: 1000px) {
 
-  .about{
+  .skills{
     flex-direction: column;
   }
 
-  .about_text {
+  .skills_text {
     margin: 0%;
   }
 
-  .about_container{
+  .skills_container{
     flex-direction: column-reverse;
     width: 100vw;
   }
@@ -100,10 +117,10 @@
 
 @media screen and (max-width: 450px) {
 
-  .about {
+  .skills {
     height: 100vh;
   }
-  .about_container {
+  .skills_container {
     height: fit-content;
     width: 100vw;
     &.dark {
@@ -111,14 +128,14 @@
     }
   }
 
-  .about_content {
+  .skills_content {
     height: fit-content;
     width: 100vw;
 
 
   }
 
-  .about_text {
+  .skills_text {
     width: 85vw;
 
     &.header {

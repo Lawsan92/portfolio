@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import projects from '../../../data/projects.js';
-import { GithubSVG, CameraSVG } from './../SVGicons.js';
+import { GithubSVG } from './../SVGicons.js';
 import { useTheme } from '../../ThemeContext.js';
 
 const ProjectGrid = ({isOpen, setModal, toggleModal, projectIndex, getIndex}) => {
@@ -50,7 +50,6 @@ const ProjectGrid = ({isOpen, setModal, toggleModal, projectIndex, getIndex}) =>
             <div className='projects_grid card_shadow text' style={styles.text}>
               see more
             </div>
-            <CameraSVG toggleModal={toggleModal} isOpen={isOpen} index={index} toggleHover={toggleHover} projectIndex={projectIndex} getIndex={getIndex}/>
           </span>
         );
       }

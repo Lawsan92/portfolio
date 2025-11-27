@@ -36,11 +36,9 @@ const App = () => {
   }
 
   return (
-    <div id='app'>
-      <ThemeProvider>
-        <Router visits={ visits } analytics={ analytics }/>
-      </ThemeProvider>
-    </div>
+    <ThemeProvider>
+      <Router visits={ visits } analytics={ analytics }/>
+    </ThemeProvider>
   );
 }
 

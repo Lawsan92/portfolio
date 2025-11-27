@@ -6,7 +6,6 @@ import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 const axios = require('axios');
 
-const Bubbles = lazy(() => import('./Bubbles.js'));
 const Laptop = lazy(() => import('./Laptop.js'));
 const Laptop_2 = lazy(() => import('./Laptop_2.js'));
 

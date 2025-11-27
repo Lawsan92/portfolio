@@ -4,19 +4,11 @@
 /*HOME*/
 .home_container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  justify-content: space-between;
+  flex-direction: column;
   width: 100vw;
-}
-
-.home_content {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 90vw;
   height: 100vh;
-  color: #9eb0c7;
+  color: steelblue;
   background-color: #edf2f8;
   font-size: large;
   transition: background 1s;
@@ -26,6 +18,7 @@
     background-color: #181818;
     color: #ffffff;
   }
+
 }
 
 .home_text {
@@ -549,15 +542,4 @@
     }
   }
 
-}
-
-.home_background_stripe {
-  background-color: steelblue;
-  height: 33vh;
-  width: 57vw;
-  z-index: 0;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transform: rotate(142deg) translate(-120px, -200px);
 }

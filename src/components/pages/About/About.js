@@ -29,13 +29,12 @@ const About = ({ skillsRef }) => {
 
   return (
     <motion.section
-    className='about'
+    className={ darkTheme ? 'about_container dark' : 'about_container'}
     initial={{opacity: 0}}
     animate={{opacity: 1}}
     exit={{opacity: 0}}
     >
       <NavBar/>
-      <div className={ darkTheme ? 'about_container dark' : 'about_container'}>
         <div className='about_content'>
           <div className='about_text'>
             <h1 className='about_text header'>
@@ -57,10 +56,9 @@ const About = ({ skillsRef }) => {
             </div>
           </div>
         </div>
-        <Suspense fallback={<div>loading...</div>}>
+        {/* <Suspense fallback={<div>loading...</div>}>
           <Textsphere/>
-        </Suspense>
-      </div>
+        </Suspense> */}
     </motion.section>
   )
 }

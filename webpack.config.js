@@ -15,13 +15,12 @@ const config = (env) => {
       filename: '[name].bundle.js',
       chunkFilename: '[name].bundle.js',
       filename: 'bundle.js',
-      clean: true
     },
     devServer: {
       historyApiFallback: true,
       static: path.join(__dirname, 'public'),
       proxy: {
-        '/': 'http://localhost:3000'
+        '/': 'http://127.0.0.1:3000'
       }
     },
     module: {
