@@ -6,7 +6,6 @@ import '/Users/lawrence/portfolio/public/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 
-const Bubbles = lazy(() => import('./Bubbles.js'));
 const Laptop = lazy(() => import('./Laptop.js'));
 const Laptop_2 = lazy(() => import('./Laptop_2.js'));
 
@@ -75,23 +74,18 @@ const Home = ({ visits }) => {
 
   return (
     <motion.section
-    className='home_container'
+    className={ darkTheme ? 'home_container dark' : 'home_container'}
     initial={{opacity: 0}}
     animate={{opacity: 1}}
     exit={{opacity: 0}}
     >
-        <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
-           <NavBar/>
-           {/* <div className='terminal'>
-              <input type="text" className='terminal_text'></input>
-           </div> */}
-          <div className='home_laptop'>
-          <Suspense fallback={<div>loading...</div>}>
-            <Laptop_2/>
-          </Suspense>
-          </div>
-        <SVGicons/>
+      <NavBar/>
+      <div className='home_laptop'>
+        <Suspense fallback={<div>loading gltf asset...</div>}>
+          <Laptop_2/>
+        </Suspense>
       </div>
+      <SVGicons/>
     </motion.section>
   );
 }

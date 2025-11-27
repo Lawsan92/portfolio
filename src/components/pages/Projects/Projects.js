@@ -243,7 +243,8 @@ const Projects = ({ projectsRef }) => {
       <NavBar/>
       <div className={ darkTheme ? 'projects_container dark' : 'projects_container'}>
         <div className={ !darkTheme ? 'projects_container header' : 'projects_container header dark' }>
-          <h1>Projects</h1>
+          <h4>Projects</h4>
+          <h5>Programming</h5>
         </div>
         <div className='projects_categories'>
           {mapCategories()}

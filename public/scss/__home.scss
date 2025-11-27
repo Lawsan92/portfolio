@@ -4,12 +4,6 @@
 /*HOME*/
 .home_container {
   display: flex;
-  height: 100vh;
-  width: 100vw;
-}
-
-.home_content {
-  display: flex;
   justify-content: space-between;
   flex-direction: column;
   width: 100vw;
@@ -24,6 +18,7 @@
     background-color: #181818;
     color: #ffffff;
   }
+
 }
 
 .home_text {
