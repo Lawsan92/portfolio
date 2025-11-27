@@ -1,6 +1,6 @@
 import React, { Suspense , useState, useEffect, useRef} from 'react';
 import { animated, useSpring } from '@react-spring/web';
-import { useLoader, Canvas, ambientLight, pointLight, MeshPhongMaterial } from '@react-three/fiber';
+import { useLoader, Canvas, ambientLight, pointLight, MeshPhongMaterial, useThree } from '@react-three/fiber';
 import { OrbitControls, Text,  useGLTF, Circle, meshStandardMaterial, Html } from "@react-three/drei";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useTheme } from '../../ThemeContext.js';
@@ -46,11 +46,12 @@ const Laptop_2 = ()  => {
   const { nodes, materials } = useGLTF("/assets/laptop.gltf");
   return (
     <animated.div style={spring} className='home_laptop_wrapper'>
-    <Canvas camera={{fov: 35, position: [-6, 3, 10]}} shadows className='home_laptop_canvas' style={{...spring }}>
+    <Canvas camera={{fov: 37, position: [-7, 3, 10]}} shadows className='home_laptop_canvas' style={{...spring }}>
+      <AdjustCameraY y={2.5}/>
       <Suspense fallback={null}>
       <ambientLight intensity={2}/>
       <pointLight/>
-      <OrbitControls/>
+      {/* <OrbitControls/> */}
       <group>
         <Text color='steelblue'
         scale={[0.25, 0.25, 0.25]}
@@ -176,5 +177,14 @@ const Laptop_2 = ()  => {
 };
 
 useGLTF.preload("/laptop.gltf");
+
+export const AdjustCameraY = ({ y }) => {
+    const { camera } = useThree();
+    useEffect(() => {
+      camera.position.y = y;
+    }, [y])
+    return;
+  }
+
 
 export default Laptop_2;

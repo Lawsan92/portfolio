@@ -82,6 +82,9 @@ const Home = ({ visits }) => {
     >
         <div className={ darkTheme ? 'home_content dark' : 'home_content'}>
            <NavBar/>
+           {/* <div className='terminal'>
+              <input type="text" className='terminal_text'></input>
+           </div> */}
           <div className='home_laptop'>
           <Suspense fallback={<div>loading...</div>}>
             <Laptop_2/>
