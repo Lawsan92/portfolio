@@ -37,7 +37,6 @@
 
 }
 
-
 #name {
   justify-self: start;
   display: flex;
@@ -134,14 +133,14 @@
 
 .navbar_themebutton {
   border: none;
-  height: 2.5em;
-  width: 2.5em;
-  border-radius: 1.25em;
+  height: 5em;
+  width: 5em;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: .5;
   margin: 0.5;
+  background: none;
 
     &:hover {
       opacity: 1;
