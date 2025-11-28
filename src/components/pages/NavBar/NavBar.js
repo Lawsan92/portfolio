@@ -41,8 +41,8 @@ const NavBar = () => {
           <h3>/ Resume</h3>
         </a>
       <button className={ darkTheme ? 'navbar_themebutton dark' : 'navbar_themebutton'} onClick={() => {toggleTheme()}} >
-        {darkTheme ? <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1764274796/_toggle_light__gu2iz8.svg' alt='crescent moon icon for dark mode'/> :
-        <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1764275687/_toggle_light__1_dbaspj.svg' alt='crescent moon icon for dark mode'/>}
+        {darkTheme ? <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1764274796/portfolio/_toggle_light__gu2iz8.svg' alt='crescent moon icon for dark mode'/> :
+        <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1764275687/portfolio/_toggle_light__1_dbaspj.svg' alt='crescent moon icon for dark mode'/>}
       </button>
       </div>
     </section>
