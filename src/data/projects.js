@@ -1,7 +1,5 @@
 import React from 'react';
 
-import c951_task1 from '../../public/assets/pdfs/C951_Task_l.pdf';
-
 let projects = [
   {
     name:'SiteScan',
@@ -63,7 +61,7 @@ let projects = [
     name:'Chatbot documentation (WGU C951)',
     url:'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764343820/portfolio/C951_-_Task_l_oruazg.jpg',
     gallery: [],
-    href: c951_task1,
+    href: 'assets/pdfs/C951_Task_l.pdf',
     type:'documentation'
   },
     {
