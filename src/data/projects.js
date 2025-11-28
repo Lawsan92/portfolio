@@ -1,5 +1,7 @@
 import React from 'react';
 
+import c951_task1 from '../../public/assets/pdfs/C951_Task_l.pdf';
+
 let projects = [
   {
     name:'SiteScan',
@@ -61,14 +63,14 @@ let projects = [
     name:'Chatbot documentation (WGU C951)',
     url:'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764343820/portfolio/C951_-_Task_l_oruazg.jpg',
     gallery: [],
-    githref: '',
+    href: c951_task1,
     type:'documentation'
   },
     {
     name:'Data reducer documentation (WGU D326)',
     url:'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764344211/portfolio/D326_Performance_Assessment_yn1yop.jpg',
     gallery: [],
-    githref: '',
+    href: '',
     type:'documentation'
   }
   /*

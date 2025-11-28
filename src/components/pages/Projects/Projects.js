@@ -90,7 +90,7 @@ const Projects = ({ projectsRef }) => {
           key={`card_shadow ${index}`}
           >
 
-            {project.type == 'programming' ? <GithubSVG href={projects[index].githref} /> : <DownloadSVG/>}
+            {project.type == 'programming' ? <GithubSVG href={projects[index].githref} /> : <a href={project.href} download={project.name}><DownloadSVG/> </a>}
             <div className='projects_grid card_shadow text' style={styles.text}>
             see more
             </div>
