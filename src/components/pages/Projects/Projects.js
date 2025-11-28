@@ -102,7 +102,6 @@ const Projects = ({ projectsRef }) => {
           <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
             <div className='projects_grid img_container'>
               <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
-              <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
             </div>
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
@@ -110,6 +109,11 @@ const Projects = ({ projectsRef }) => {
                 </div>
                 <div className='projects_grid text summary'>
                   {project.summary}
+                </div>
+                <div className='projects_grid tech_stack'>
+                    {project.techstack.map((img_src, index) => {
+                    return <img src={img_src} className='projects_grid tech_stack img'/>;
+                    })}
                 </div>
               </div>
           </div>
@@ -120,7 +124,11 @@ const Projects = ({ projectsRef }) => {
             <CardShadow index={index} toggleHover={toggleHover}/>
             <div className='projects_grid img_container'>
               <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
-              <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
+                <div className='projects_grid tech_stack'>
+                    {project.techstack.map((img_src, index) => {
+                    return <img src={img_src} className='projects_grid tech_stack img'/>;
+                    })}
+                </div>
             </div>
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
@@ -189,7 +197,11 @@ const Projects = ({ projectsRef }) => {
             <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
               <div className='projects_grid img_container'>
                 <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
-                <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
+                <div className='projects_grid tech_stack'>
+                    {project.techstack.map((img_src, index) => {
+                    return <img src={img_src} className='projects_grid tech_stack img'/>;
+                    })}
+                </div>
               </div>
                 <div className='projects_grid text'>
                   <div className='projects_grid text title'>
@@ -207,7 +219,11 @@ const Projects = ({ projectsRef }) => {
               <CardShadow index={index} toggleHover={toggleHover}/>
               <div className='projects_grid img_container'>
                 <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
-                <span className={!darkTheme ? 'projects_grid img_container desc' : 'projects_grid img_container desc dark' }>{project.techstack}</span>
+                <div className='projects_grid tech_stack'>
+                    {project.techstack.map((img_src, index) => {
+                    return <img src={img_src} className='projects_grid tech_stack img'/>;
+                    })}
+                </div>
               </div>
                 <div className='projects_grid text'>
                   <div className='projects_grid text title'>

@@ -4,7 +4,7 @@ let projects = [
   {
     name:'SiteScan',
     url: 'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764277932/portfolio/sitescan/home_page_tui6o7.jpg',
-    gallery: [],
+    techstack: ['https://img.shields.io/badge/Python-yellow?logo=python', 'https://img.shields.io/badge/Django-green?logo=django'],
     githref: 'https://github.com/Lawsan92/SiteScan',
     type: 'programming',
   },
@@ -14,7 +14,7 @@ let projects = [
     meta: 'graphic of reports',
     href: '',
     githref: 'https://github.com/Team-Dagobah/SDC-Ratings-and-Reviews',
-    techstack: 'BackEnd',
+    techstack: [],
     type: 'programming',
     summary: 'Built a RESTful API service for a clothing website that can handle web scale traffic of up to 120 000 client requests per minute.',
     gallery: [
@@ -30,7 +30,7 @@ let projects = [
     meta: 'logo of file',
     href: '',
     githref: 'https://github.com/Lawsan92/docscraper',
-    techstack: 'ReactJS',
+    techstack: ['https://img.shields.io/badge/JavaScript%20-%23323330.svg?&style=flat-square&logo=javascript&logoColor=%23F7DF1E', 'https://img.shields.io/badge/NodeJS-white?logo=nodedotjs', 'https://img.shields.io/badge/React-white?logo=react'],
     type: 'programming',
     summary: 'Programmed a document scraper using built in Regex node methods.',
     gallery: [
@@ -46,7 +46,7 @@ let projects = [
     meta: 'landing page',
     href: '',
     githref: 'https://github.com/Lawsan92/fabiosarts',
-    techstack: 'ReactJS',
+    techstack: ['https://img.shields.io/badge/JavaScript%20-%23323330.svg?&style=flat-square&logo=javascript&logoColor=%23F7DF1E', 'https://img.shields.io/badge/NodeJS-white?logo=nodedotjs', 'https://img.shields.io/badge/React-white?logo=react'],
     type: 'programming',
     summary: 'Programmed a desktop and mobile versions of artist website.',
     gallery: [
@@ -62,28 +62,32 @@ let projects = [
     url:'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764343820/portfolio/C951_-_Task_l_oruazg.jpg',
     gallery: [],
     href: 'assets/pdfs/C951_Task_l.pdf',
-    type:'documentation'
+    type:'documentation',
+    techstack: ['https://img.shields.io/badge/docs-black?logo=googlesheets&logoColor=white'],
   },
   {
     name:'Data reducer documentation (WGU D326)',
     url:'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764344211/portfolio/D326_Performance_Assessment_yn1yop.jpg',
     gallery: [],
     href: 'assets/pdfs/D326.pdf',
-    type:'documentation'
+    type:'documentation',
+    techstack: ['https://img.shields.io/badge/docs-black?logo=googlesheets&logoColor=white'],
   },
   {
     name:'CoppeliaSim Robot documentation (WGU 951)',
     url:'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764357072/portfolio/C951_-_Task_ll_oqjaxk.jpg',
     gallery: [],
     href: 'assets/pdfs/C951_II.pdf',
-    type:'documentation'
+    type:'documentation',
+    techstack: ['https://img.shields.io/badge/docs-black?logo=googlesheets&logoColor=white'],
   },
   {
     name:'SiteScan documentation (WGU 951)',
     url:'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764357593/portfolio/SiteScan_Doc_xfmkct.jpg',
     gallery: [],
     href: 'assets/pdfs/SiteScan_Doc.pdf',
-    type:'documentation'
+    type:'documentation',
+    techstack: ['https://img.shields.io/badge/docs-black?logo=googlesheets&logoColor=white']
   }
   /*
   {
