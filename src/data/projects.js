@@ -54,28 +54,47 @@ let projects = [
         url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1702350516/Screenshot_2023-12-11_at_21.03.16_htxgyz.jpg',
         meta: 'landing page, logo'
       }
-    ],
+    ]
   }
-  // {
-  //   name:'Template',
-  //   gallery: [],
-  //   githref: '',
-  // },
-  // {
-  //   name:'Template',
-  //   gallery: [],
-  //   githref: '',
-  // },
-  // {
-  //   name:'Template',
-  //   gallery: [],
-  //   githref: '',
-  // },
-  // {
-  //   name:'Template',
-  //   gallery: [],
-  //   githref: '',
-  // }
+  ,
+  {
+    name:'Chatbot documentation (WGU C951)',
+    url:'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764343820/portfolio/C951_-_Task_l_oruazg.jpg',
+    gallery: [],
+    githref: '',
+    type:'documentation'
+  },
+    {
+    name:'Data reducer documentation (WGU D326)',
+    url:'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764344211/portfolio/D326_Performance_Assessment_yn1yop.jpg',
+    gallery: [],
+    githref: '',
+    type:'documentation'
+  }
+  /*
+  {
+    name:'Template',
+    url:'',
+    gallery: [],
+    githref: '',
+    type:''
+  },
+  {
+    name:'Template',
+    gallery: [],
+    githref: '',
+  },
+  {
+    name:'Template',
+    gallery: [],
+    githref: '',
+  },
+  {
+    name:'Template',
+    gallery: [],
+    githref: '',
+  }
+    */
 ]
 
 export default projects;

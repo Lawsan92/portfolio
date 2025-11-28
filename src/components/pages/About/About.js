@@ -34,7 +34,7 @@ const About = ({ skillsRef }) => {
       <h2>
         About Me
       </h2>
-      <div className = 'about_container bio'>
+      <div className ={ darkTheme ? 'about_container bio dark': 'about_container bio'}>
         <p>
         My journey as an engineer began 4 years ago with independant projects, and gradually evolved into freelance web development, before obtaining a Bachelor's of Science in Computer Science. I also have years of experience in technical support, which affords me a level of scrutiny regarding debugging and system design. I currently live in Austin but I'm originally from Rome and have lived in different parts the United States, as well as a few years in France and Italy. If you would like to get in touch feel free to visit my <a href='https://www.linkedin.com/in/lawrencesanzogni/' >Linkedin</a> profile and/or if you want to see my codebases take a look at my <a href='https://github.com/Lawsan92' >Github</a>
         </p>
