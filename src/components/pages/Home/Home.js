@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect, lazy, Suspense } from 'react';
 import SVGicons, { MobileSVGicons } from '../SVGicons';
 import NavBar from '../NavBar/NavBar.js';
 import { Link } from 'react-router-dom';
-import '/Users/lawrence/portfolio/public/scss/styles.scss';
+import '/public/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 

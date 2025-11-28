@@ -3,3 +3,5 @@ node_modules
 public/*.bundle.js
 pem*
 *.pem
+server*
+server.js
