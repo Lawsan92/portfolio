@@ -64,11 +64,25 @@ let projects = [
     href: 'assets/pdfs/C951_Task_l.pdf',
     type:'documentation'
   },
-    {
+  {
     name:'Data reducer documentation (WGU D326)',
     url:'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764344211/portfolio/D326_Performance_Assessment_yn1yop.jpg',
     gallery: [],
-    href: '',
+    href: 'assets/pdfs/D326.pdf',
+    type:'documentation'
+  },
+  {
+    name:'CoppeliaSim Robot documentation (WGU 951)',
+    url:'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764357072/portfolio/C951_-_Task_ll_oqjaxk.jpg',
+    gallery: [],
+    href: 'assets/pdfs/C951_II.pdf',
+    type:'documentation'
+  },
+  {
+    name:'SiteScan documentation (WGU 951)',
+    url:'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764357593/portfolio/SiteScan_Doc_xfmkct.jpg',
+    gallery: [],
+    href: 'assets/pdfs/SiteScan_Doc.pdf',
     type:'documentation'
   }
   /*
