@@ -14,7 +14,6 @@ const Projects = ({ projectsRef }) => {
   const { windowWidth } = useResize();
 
   const body = document.querySelector('body');
-  darkTheme ? body.style.backgroundColor = '#1d1d1d' : body.style.backgroundColor = '';
 
   // container resizing state & methods
   const [containerWidth, getWidth] = useState((windowWidth < 450) ? Math.floor((windowWidth * .9)) : Math.floor((windowWidth * .9) / 5));
@@ -26,17 +25,6 @@ const Projects = ({ projectsRef }) => {
   const toggleHover = (index) => {
     setHover((prevState) => ({...isHover, [index]: !prevState[index] }))
   }
-
-  // gallery modal state & methods
-  const [isOpen, setModal] = useState(false);
-
-  const toggleModal = () => {
-    setModal(prevState => !isOpen)
-
-  }
-
-  // state for project gallery
-  const [projectIndex, getIndex] = useState(-1);
 
   // mobile navbar state & methods
   const [openMobileNavbar, setMobileNavbar] = useState(false);
@@ -90,7 +78,9 @@ const Projects = ({ projectsRef }) => {
 
 
   const mapProjects = () => {
+
     return projects.map((project, index) => {
+
       const CardShadow = ({toggleHover}) => {
         return (
           <span
@@ -146,13 +136,20 @@ const Projects = ({ projectsRef }) => {
     });
   }
 
-  const mapCategories = () => {
-    let categories = ['BackEnd', 'FrontEnd', 'Mobile', 'ReactJS', 'Web Dev']
-    return categories.map((category) => {
+  const renderCategories = () => {
+
+    let categories = ['programming', 'documentation'];
+
+    let mapCategories = categories.map((category) => {
       return (
-      <div className={ !darkTheme ? 'projects_categories card' : 'projects_categories card dark'} onClick={(e) => {handleFilter(); getFilter(e.target.innerText)}}>{category}</div>
+        <div
+          className={ !darkTheme ? 'projects_categories card' : 'projects_categories card dark'}
+          onClick={(e) => {toggleFilter(); getFilter(e.target.innerText)}}
+        >{category}</div>
       );
-    })
+    });
+    return mapCategories;
+
   };
 
   // function to filter projects based on their tech stack
@@ -161,14 +158,16 @@ const Projects = ({ projectsRef }) => {
 
   const [isFiltered, setFilter] = useState(false);
 
-  const handleFilter = () => {
+  const toggleFilter = () => {
     setFilter(prevState => !prevState)
   };
 
-  const filterProjects = (e) => {
-    return projects.map((project, index) => {
-      if (project.techstack === e) {
-        console.log('project.techstack === e:', project.techstack === e);
+  const filterCards = (filter) => {
+
+    let mapProjects = projects.map((project, index) => {
+
+
+      if (project.type === filter) {
         const CardShadow = ({toggleHover}) => {
           return (
             <span
@@ -181,7 +180,6 @@ const Projects = ({ projectsRef }) => {
               <div className='projects_grid card_shadow text' style={styles.text}>
               see more
               </div>
-              <CameraSVG toggleModal={toggleModal} isOpen={isOpen} index={index} toggleHover={toggleHover} projectIndex={projectIndex} getIndex={getIndex}/>
             </span>
           );
         };
@@ -224,6 +222,8 @@ const Projects = ({ projectsRef }) => {
         }
       }
     })
+
+    return mapProjects
   };
 
 
@@ -241,15 +241,13 @@ const Projects = ({ projectsRef }) => {
       exit={{opacity: 0}}
       >
       <NavBar/>
-        <div className={ !darkTheme ? 'projects_container header' : 'projects_container header dark' }>
-          <h2>Projects</h2>
-        </div>
-        <div className='projects_categories'>
-          {mapCategories()}
-        </div>
-        <div className='projects_grid container' >
-          {!isFiltered ? mapProjects() : filterProjects(cardFilter)}
-        </div>
+      <h2>Projects</h2>
+      <div className='projects_categories'>
+        {renderCategories()}
+      </div>
+      <div className='projects_grid container' >
+        {!isFiltered ? mapProjects() : filterCards(cardFilter)}
+      </div>
     </motion.section>
   );
 }
