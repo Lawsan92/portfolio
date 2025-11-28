@@ -41,7 +41,8 @@ const ProjectGrid = ({isOpen, setModal, toggleModal, projectIndex, getIndex}) =>
       setHover((prevState) => ({...isHover, [index]: !prevState[index] }))
     }
 
-  const mapProjects = () => {
+  const renderCards = () => {
+
     return projects.map((project, index) => {
       const CardShadow = ({toggleHover}) => {
         return (
@@ -161,7 +162,7 @@ const ProjectGrid = ({isOpen, setModal, toggleModal, projectIndex, getIndex}) =>
 
   return (
     <div className='projects_grid container' >
-      {!isFiltered ? mapProjects() : filterProjects(cardFilter)}
+      {!isFiltered ? renderCards() : filterProjects(cardFilter)}
     </div>
   );
 };

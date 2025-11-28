@@ -6,6 +6,7 @@ let projects = [
     url: 'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764277932/portfolio/sitescan/home_page_tui6o7.jpg',
     gallery: [],
     githref: 'https://github.com/Lawsan92/SiteScan',
+    type: 'programming',
   },
   {
     name:'System PERN Aggregator',
@@ -14,6 +15,7 @@ let projects = [
     href: '',
     githref: 'https://github.com/Team-Dagobah/SDC-Ratings-and-Reviews',
     techstack: 'BackEnd',
+    type: 'programming',
     summary: 'Built a RESTful API service for a clothing website that can handle web scale traffic of up to 120 000 client requests per minute.',
     gallery: [
       {
@@ -29,6 +31,7 @@ let projects = [
     href: '',
     githref: 'https://github.com/Lawsan92/docscraper',
     techstack: 'ReactJS',
+    type: 'programming',
     summary: 'Programmed a document scraper using built in Regex node methods.',
     gallery: [
       {
@@ -44,6 +47,7 @@ let projects = [
     href: '',
     githref: 'https://github.com/Lawsan92/fabiosarts',
     techstack: 'ReactJS',
+    type: 'programming',
     summary: 'Programmed a desktop and mobile versions of artist website.',
     gallery: [
       {

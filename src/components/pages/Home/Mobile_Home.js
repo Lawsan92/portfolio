@@ -93,7 +93,7 @@ const Mobile_Home = () => {
               </Link>
               </div>
               <div className={darkTheme ? 'mobile_home_background dark' : 'mobile_home_background'}>
-                <img src={ darkTheme ? 'https://res.cloudinary.com/ducqdbpaw/image/upload/v1703393775/Screenshot_2023-12-23_at_22.55-PhotoRoom_fjxp7w.png' :'https://res.cloudinary.com/ducqdbpaw/image/upload/v1703393575/Screenshot_2023-12-23_at_18.26-PhotoRoom_w6bkvp.png'} className='mobile_home_background_img'/>
+                <img src={ darkTheme ? 'https://res.cloudinary.com/ducqdbpaw/image/upload/v1703393775/portfolio/Screenshot_2023-12-23_at_22.55-PhotoRoom_fjxp7w.png' :'https://res.cloudinary.com/ducqdbpaw/image/upload/v1703393575/portfolio/Screenshot_2023-12-23_at_18.26-PhotoRoom_w6bkvp.png'} className='mobile_home_background_img'/>
               </div>
           </div>
         </motion.section>
