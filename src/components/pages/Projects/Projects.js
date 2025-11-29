@@ -29,21 +29,18 @@ const Projects = ({ projectsRef }) => {
 
   const toggleMobileNavbar = () => {
     setMobileNavbar(prevState => !openMobileNavbar);
-  }
+  };
 
   const handleMobileRender = () => {
     window.addEventListener('resize', () => {
-
-
       let width = window.getComputedStyle(document.querySelector('.projects_grid.container')).width;
 
       getWidth(width);
       let height = window.getComputedStyle(document.querySelector('.projects_grid.container')).height;
       height = Math.floor(Number(height.split('').slice(0, height.length - 2).join('')) / 20 )
       getHeight(height);
-
      });
-  }
+  };
 
     // function to filter projects based on their tech stack
   const [cardFilter, getFilter] = useState('');
