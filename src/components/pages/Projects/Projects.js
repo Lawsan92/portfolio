@@ -97,23 +97,27 @@ const Projects = ({ projectsRef }) => {
         );
       }
 
+      const TechStack = () => {
+        return ( <div className='projects_grid tech_stack'>
+          {project.techstack.map((img_src, index) => {
+              return <img src={img_src} className='projects_grid tech_stack img'/>;
+                })}
+            </div>)
+        }
+
       if (!isHover[index]) {
         return (
           <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
             <div className='projects_grid img_container'>
               <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
             </div>
+            <TechStack/>
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
                   {project.name}
                 </div>
                 <div className='projects_grid text summary'>
                   {project.summary}
-                </div>
-                <div className='projects_grid tech_stack'>
-                    {project.techstack.map((img_src, index) => {
-                    return <img src={img_src} className='projects_grid tech_stack img'/>;
-                    })}
                 </div>
               </div>
           </div>
@@ -124,12 +128,8 @@ const Projects = ({ projectsRef }) => {
             <CardShadow index={index} toggleHover={toggleHover}/>
             <div className='projects_grid img_container'>
               <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
-                <div className='projects_grid tech_stack'>
-                    {project.techstack.map((img_src, index) => {
-                    return <img src={img_src} className='projects_grid tech_stack img'/>;
-                    })}
-                </div>
             </div>
+            <TechStack/>
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
                   {project.name}
@@ -176,6 +176,7 @@ const Projects = ({ projectsRef }) => {
 
 
       if (project.type === filter) {
+
         const CardShadow = ({toggleHover}) => {
           return (
             <span
@@ -192,17 +193,21 @@ const Projects = ({ projectsRef }) => {
           );
         };
 
+        const TechStack = () => {
+            return ( <div className='projects_grid tech_stack'>
+                {project.techstack.map((img_src, index) => {
+                    return <img src={img_src} className='projects_grid tech_stack img'/>;
+                    })}
+            </div>)
+        }
+
         if (!isHover[index]) {
           return (
             <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
               <div className='projects_grid img_container'>
                 <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
-                <div className='projects_grid tech_stack'>
-                    {project.techstack.map((img_src, index) => {
-                    return <img src={img_src} className='projects_grid tech_stack img'/>;
-                    })}
-                </div>
               </div>
+              <TechStack/>
                 <div className='projects_grid text'>
                   <div className='projects_grid text title'>
                     {project.name}
@@ -219,12 +224,8 @@ const Projects = ({ projectsRef }) => {
               <CardShadow index={index} toggleHover={toggleHover}/>
               <div className='projects_grid img_container'>
                 <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
-                <div className='projects_grid tech_stack'>
-                    {project.techstack.map((img_src, index) => {
-                    return <img src={img_src} className='projects_grid tech_stack img'/>;
-                    })}
-                </div>
               </div>
+              <TechStack/>
                 <div className='projects_grid text'>
                   <div className='projects_grid text title'>
                     {project.name}

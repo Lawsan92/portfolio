@@ -1,4 +1,4 @@
-# My portflio
+# My portfolio
 
 ### Visit my portfolio at <a href='https://lawrence-sanzogni.com'>lawrence-sanzogni.com</a>
 
