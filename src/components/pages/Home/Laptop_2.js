@@ -11,7 +11,7 @@ const Laptop_2 = ()  => {
   const darkTheme = useTheme();
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [text, delay, loop] = [`Lawrence Sanzogni,\n Software Engineer\n\n I'm a language agnostic software engineer who leverages both a technical support\n and web developer background to create software products and solutions\n that focus on achieving modern software design benchmarks such as\nscalability, simplicity, modularity, eﬃciency, and reliability.`, currentIndex < 38 ? 100 : 25, false];
+  const [text, delay, loop] = [`Lawrence Sanzogni \n Software Engineer\n\n (Python/Django, JavaScript/React))`, currentIndex < 38 ? 100 : 25, false];
 
   const spring = useSpring({
     from: {

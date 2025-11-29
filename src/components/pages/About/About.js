@@ -36,12 +36,13 @@ const About = ({ skillsRef }) => {
       </h2>
       <div className ={ darkTheme ? 'about_container bio dark': 'about_container bio'}>
         <p>
-        My journey as an engineer began 4 years ago with independant projects for friends, which gradually evolved into freelance web development. I then moved on to a technical support role for a software security system, which educated me on the importance of clean system design to prevent crahses, and a keen eye in resolving them. During that time I also wore hats as a technical writerm for internal SOPs, and an interview consulatnt, for new support agents. I eventually obtained a Bachelor's of Science in Computer Science form WGU, where I further developed and refined my theoretical knowledge behind computing systems.<br/><br/> I currently live in Austin but I'm originally from Rome and have lived in different parts of the United States, as well as a few years in France and Italy. If you would like to get in touch feel free to visit my <a href='https://www.linkedin.com/in/lawrencesanzogni/' >Linkedin</a> profile and/or if you want to see my codebases take a look at my <a href='https://github.com/Lawsan92' >Github</a>
+          I’m a language-agnostic full-stack engineer specializing in Python/Django and JavaScript/Node.js/React ecosystems.
+          My journey began 4 years ago with independent projects for friends that gradually evolved into full-stack freelance web development. I later moved into a technical support role for a WiFi-based camera security system, that taught me the importance of clean system design and efficient troubleshooting. During this period I also acted as a technical writer for internal SOPs and as an interview consultant, helping managers evaluate candidates. I eventually obtained a Bachelor of Science in Computer Science from WGU, where I deepened my understanding of algorithms, computing systems, and large-scale application design <br/><br/> I currently live in Austin, TX but I'm originally from Rome and have lived in different areas of the United States, as well as a few years in France. Free to reach out via my <a href='https://www.linkedin.com/in/lawrencesanzogni/' >Linkedin</a> profile. You can also visit my <a href='https://github.com/Lawsan92' >Github</a> to explore my projects.
         </p>
       </div>
-        {/* <Suspense fallback={<div>loading...</div>}>
+        <Suspense fallback={<div>loading...</div>}>
           <Textsphere/>
-        </Suspense> */}
+        </Suspense>
     </motion.section>
   )
 }

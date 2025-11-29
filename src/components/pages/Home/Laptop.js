@@ -8,7 +8,7 @@ const Laptop = ()  => {
 
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [text, delay, loop] = ['Lawrence Sanzogni,\n Software Engineer', 200, true];
+  const [text, delay, loop] = ['Lawrence Sanzogni \n Software Development Engineer', 200, true];
 
   useEffect(() => {
     if (currentIndex <= text.length) {
