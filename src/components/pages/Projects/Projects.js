@@ -123,9 +123,9 @@ const Projects = ({ projectsRef }) => {
                   <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
                 </div>
                   <div className='projects_grid text'>
-                    <div className='projects_grid text title'>
+                    <h4>
                       {project.name}
-                    </div>
+                    </h4>
                     <TechStack/>
                   </div>
               </div>
@@ -138,9 +138,9 @@ const Projects = ({ projectsRef }) => {
                   <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
                 </div>
                   <div className='projects_grid text'>
-                    <div className='projects_grid text title'>
+                    <h4>
                       {project.name}
-                    </div>
+                    </h4>
                     <TechStack/>
                   </div>
               </div>
@@ -170,9 +170,9 @@ const Projects = ({ projectsRef }) => {
               <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
             </div>
               <div className='projects_grid text'>
-                <div className='projects_grid text title'>
+                <h4>
                   {project.name}
-                </div>
+                </h4>
                 <TechStack/>
               </div>
           </div>
