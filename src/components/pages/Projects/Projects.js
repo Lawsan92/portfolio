@@ -76,7 +76,7 @@ const Projects = ({ projectsRef }) => {
   }
 
 
-  const mapProjects = () => {
+  const renderProjectCards = () => {
 
     return projects.map((project, index) => {
 
@@ -91,7 +91,7 @@ const Projects = ({ projectsRef }) => {
 
             {project.type == 'programming' ? <GithubSVG href={projects[index].githref} /> : <a href={project.href} download ><DownloadSVG/> </a>}
             <div className='projects_grid card_shadow text' style={styles.text}>
-            see more
+              {project.summary}
             </div>
           </span>
         );
@@ -111,15 +111,12 @@ const Projects = ({ projectsRef }) => {
             <div className='projects_grid img_container'>
               <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
             </div>
-            <TechStack/>
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
                   {project.name}
                 </div>
-                <div className='projects_grid text summary'>
-                  {project.summary}
-                </div>
               </div>
+              <TechStack/>
           </div>
         );
       } else {
@@ -129,15 +126,12 @@ const Projects = ({ projectsRef }) => {
             <div className='projects_grid img_container'>
               <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
             </div>
-            <TechStack/>
               <div className='projects_grid text'>
                 <div className='projects_grid text title'>
                   {project.name}
                 </div>
-                <div className='projects_grid text summary'>
-                  {project.summary}
-                </div>
               </div>
+              <TechStack/>
           </div>
         );
       }
@@ -186,9 +180,6 @@ const Projects = ({ projectsRef }) => {
             key={`card ${index}`}
             >
             {project.type == 'programming' ? <GithubSVG href={projects[index].githref} /> : <DownloadSVG/>}
-              <div className='projects_grid card_shadow text' style={styles.text}>
-              see more
-              </div>
             </span>
           );
         };
@@ -207,15 +198,12 @@ const Projects = ({ projectsRef }) => {
               <div className='projects_grid img_container'>
                 <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
               </div>
-              <TechStack/>
                 <div className='projects_grid text'>
                   <div className='projects_grid text title'>
                     {project.name}
                   </div>
-                  <div className='projects_grid text summary'>
-                    {project.summary}
-                  </div>
                 </div>
+                <TechStack/>
             </div>
           );
         } else {
@@ -225,15 +213,12 @@ const Projects = ({ projectsRef }) => {
               <div className='projects_grid img_container'>
                 <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
               </div>
-              <TechStack/>
                 <div className='projects_grid text'>
                   <div className='projects_grid text title'>
                     {project.name}
                   </div>
-                  <div className='projects_grid text summary'>
-                    {project.summary}
-                  </div>
                 </div>
+                <TechStack/>
             </div>
           );
         }
@@ -263,7 +248,7 @@ const Projects = ({ projectsRef }) => {
         {renderCategories()}
       </div>
       <div className='projects_grid container' >
-        {!isFiltered ? mapProjects() : filterCards(cardFilter)}
+        {!isFiltered ? renderProjectCards() : filterCards(cardFilter)}
       </div>
     </motion.section>
   );
