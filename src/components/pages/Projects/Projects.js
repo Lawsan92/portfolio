@@ -23,12 +23,6 @@ const Projects = ({ projectsRef }) => {
   const [containerWidth, getWidth] = useState((windowWidth < 450) ? Math.floor((windowWidth * .9)) : Math.floor((windowWidth * .9) / 5));
   const [containerHeight, getHeight] = useState(Math.floor((window.innerHeight * .9) / 20));
 
-  // card hover state & methods
-  const [isHover, setHover] = useState(false);
-
-  const toggleHover = (index) => {
-    setHover((prevState) => ({...isHover, [index]: !prevState[index] }))
-  }
 
   // mobile navbar state & methods
   const [openMobileNavbar, setMobileNavbar] = useState(false);
@@ -118,10 +112,8 @@ const Projects = ({ projectsRef }) => {
           className='projects_grid card'
           style={styles.card}
           key={`card ${index}`}
-          onMouseLeave={() => setHover({})}
-          onMouseEnter={() => setHover({...isHover, [index]: true })}
           >
-            {isHover[index] ? <CardShadow/> : ''}
+            <CardShadow/>
             <div className='projects_grid img_container'>
               <img className='projects_grid img_container img' src={project.url} alt={project.meta} />
             </div>
@@ -140,10 +132,8 @@ const Projects = ({ projectsRef }) => {
           className='projects_grid card'
           style={styles.card}
           key={`card ${index}`}
-          onMouseLeave={prevState => setHover({...prevState, [index]: false })}
-          onMouseEnter={prevState => setHover({...prevState, [index]: true })}
           >
-            {isHover[index] ? <CardShadow/> : ''}
+            <CardShadow/>
             <div className='projects_grid img_container'>
               <img className='projects_grid img_container img' src={project.url} alt={project.meta} />
             </div>
