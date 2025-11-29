@@ -33,7 +33,6 @@
 .mobile_about_background_img{
   height: 67vh;
   transform: translate(0, -150px);
-  position: absolute;
 }
 
 .mobile_about_container {
@@ -80,7 +79,6 @@
   width: 85vw;
 
   &.header {
-    font-size: 7vh;
     font-weight: 800;
     color: steelblue;
     transition: 1s;

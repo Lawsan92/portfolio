@@ -3,7 +3,7 @@ import icons from '../../../data/icons.js'
 import MobileNavbar from '../NavBar/Mobile_Navbar.js';
 import { useTheme } from '../../ThemeContext.js'
 import { motion } from 'framer-motion';
-const Textsphere = lazy(() => import('./Textsphere.js'));
+import { MenuIcon } from '../Home/Mobile_Home';
 
 const Mobile_About = ({ skillsRef }) => {
 
@@ -26,43 +26,6 @@ const Mobile_About = ({ skillsRef }) => {
     }, [])
 
 
-      if (!openMobileNavbar) {
-        return (
-          <motion.section
-          className={ darkTheme ? 'mobile_about dark' : 'mobile_about'}
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          exit={{opacity: 0}}
-          >
-            <div className={ darkTheme ? 'mobile_about_container dark' : 'mobile_about_container'}>
-              <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
-                <div className='navbar_pulldown_bar'/>
-                <div className='navbar_pulldown_bar'/>
-                <div className='navbar_pulldown_bar'/>
-              </div>
-              <div className='mobile_about_content'>
-                <div className='mobile_about_text'>
-                  <h1 className='mobile_about_text header'>
-                    About Me
-                  </h1>
-                  <div className={darkTheme ? 'mobile_about_text content dark' : 'mobile_about_text content'}>
-                  <p>
-                    I’m a language-agnostic full-stack engineer specializing in Python/Django and JavaScript/Node.js/React ecosystems.
-                    My journey began 4 years ago with independent projects for friends that gradually evolved into full-stack freelance web development. I later moved into a technical support role for a WiFi-based camera security system, that taught me the importance of clean system design and efficient troubleshooting. During this period I also acted as a technical writer for internal SOPs and as an interview consultant, helping managers evaluate candidates. I eventually obtained a Bachelor of Science in Computer Science from WGU, where I deepened my understanding of algorithms, computing systems, and large-scale application design <br/><br/> I currently live in Austin, TX but I'm originally from Rome and have lived in different areas of the United States, as well as a few years in France. Free to reach out via my <a href='https://www.linkedin.com/in/lawrencesanzogni/' >Linkedin</a> profile. You can also visit my <a href='https://github.com/Lawsan92' >Github</a> to explore my projects.
-                  </p>
-                </div>
-              </div>
-            </div>
-          {/* <Suspense fallback={<div>loading...</div>}>
-            <Textsphere/>
-          </Suspense> */}
-        </div>
-        <div className={ darkTheme ? 'mobile_about_background dark' : 'mobile_about_background'}>
-            <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1703389638/Screenshot_2023-12-17_at_13.31-PhotoRoom_pd63hj.png' className='mobile_about_background_img'/>
-          </div>
-      </motion.section>
-        );
-      } else {
         return (
           <motion.section
           className='mobile_about'
@@ -70,8 +33,9 @@ const Mobile_About = ({ skillsRef }) => {
           animate={{opacity: 1}}
           exit={{opacity: 0}}
           >
-             <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />
+             {openMobileNavbar && <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />}
             <div className={ darkTheme ? 'mobile_about_container dark' : 'mobile_about_container'}>
+              <MenuIcon toggleMobileNavbar={toggleMobileNavbar}/>
               <div className='mobile_about_content'>
                 <div className='mobile_about_text'>
                   <h1 className='mobile_about_text header'>
@@ -93,13 +57,9 @@ const Mobile_About = ({ skillsRef }) => {
                   </div>
                 </div>
               </div>
-            <Suspense fallback={<div>loading...</div>}>
-              <Textsphere/>
-            </Suspense>
           </div>
         </motion.section>
         );
-      }
 }
 
 export default Mobile_About;

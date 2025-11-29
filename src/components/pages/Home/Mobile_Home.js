@@ -5,8 +5,17 @@ import '/public/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 const axios = require('axios');
-
 const Laptop_2 = lazy(() => import('./Laptop_2.js'));
+
+  export const MenuIcon = ({toggleMobileNavbar}) => {
+      return (
+          <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
+            <div className='navbar_pulldown_bar'/>
+            <div className='navbar_pulldown_bar'/>
+            <div className='navbar_pulldown_bar'/>
+          </div>
+      );
+  }
 
 export const Counter = ({ visits }) => {
   return (<div className='home_views'>{visits}</div>);
@@ -57,11 +66,7 @@ const Mobile_Home = () => {
         exit={{opacity: 0}}
         >
           { openMobileNavbar && <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />}
-          <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
-            <div className='navbar_pulldown_bar'/>
-            <div className='navbar_pulldown_bar'/>
-            <div className='navbar_pulldown_bar'/>
-          </div>
+          <MenuIcon toggleMobileNavbar={toggleMobileNavbar}/>
           <div className={ darkTheme ? 'mobile_home_content dark' : 'mobile_home_content'}>
             <div className={ darkTheme ? 'mobile_home_text dark' : 'mobile_home_text'} >
               <div className='mobile_home_text header'>
