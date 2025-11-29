@@ -40,9 +40,9 @@ const About = ({ skillsRef }) => {
           My journey began 4 years ago with independent projects for friends that gradually evolved into full-stack freelance web development. I later moved into a technical support role for a WiFi-based camera security system, that taught me the importance of clean system design and efficient troubleshooting. During this period I also acted as a technical writer for internal SOPs and as an interview consultant, helping managers evaluate candidates. I eventually obtained a Bachelor of Science in Computer Science from WGU, where I deepened my understanding of algorithms, computing systems, and large-scale application design <br/><br/> I currently live in Austin, TX but I'm originally from Rome and have lived in different areas of the United States, as well as a few years in France. Free to reach out via my <a href='https://www.linkedin.com/in/lawrencesanzogni/' >Linkedin</a> profile. You can also visit my <a href='https://github.com/Lawsan92' >Github</a> to explore my projects.
         </p>
       </div>
-        <Suspense fallback={<div>loading...</div>}>
+        {/* <Suspense fallback={<div>loading...</div>}>
           <Textsphere/>
-        </Suspense>
+        </Suspense> */}
     </motion.section>
   )
 }

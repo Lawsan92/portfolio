@@ -11,7 +11,7 @@ const Laptop_2 = ()  => {
   const darkTheme = useTheme();
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [text, delay, loop] = [`Lawrence Sanzogni \n Software Engineer\n\n (Python/Django, JavaScript/React))`, currentIndex < 38 ? 100 : 25, false];
+  const [text, delay, loop] = [`Lawrence Sanzogni \n Software Engineer\n\n Python/Django | JavaScript/React | Machine Learning | Data Pipelines`, currentIndex < 38 ? 100 : 25, false];
 
   const spring = useSpring({
     from: {
@@ -64,7 +64,7 @@ const Laptop_2 = ()  => {
         scale={[0.12, 0.12, 0.12]}
         anchorY={-10}
         anchorX={16}
-        >{Array.from(currentText).slice(38, text.length - 1).join('')}</Text>
+        >{Array.from(currentText).slice(38, text.length ).join('')}</Text>
       </group>
 
       <group className='circles' >
@@ -75,7 +75,7 @@ const Laptop_2 = ()  => {
         material={ new THREE.MeshPhongMaterial({ color: !isHover[0] ? 'steelblue' : 'white', transparent: currentIndex <= text.length  ? true : false, opacity: 0 }) }
         geometry={new THREE.CircleGeometry (5, 32 )}
         scale={0.06}
-        position={[0.75, 0.1, 0]}
+        position={[0.75, 0.25, 0]}
         />
         <mesh
         className='circle_2'
@@ -84,7 +84,7 @@ const Laptop_2 = ()  => {
         material={ new THREE.MeshPhongMaterial({ color: !isHover[1] ? 'steelblue' : 'white', transparent: currentIndex <= text.length  ? true : false, opacity: 0 }) }
         geometry={new THREE.CircleGeometry (5, 32 )}
         scale={0.075}
-        position={[0, -0.35, 0]}
+        position={[0, -0.2, 0]}
         />
         <mesh
         className='circle_3'
@@ -93,7 +93,7 @@ const Laptop_2 = ()  => {
         material={ new THREE.MeshPhongMaterial({ color: !isHover[2] ? 'steelblue' : 'white', transparent: currentIndex <= text.length  ? true : false, opacity: 0 }) }
         geometry={new THREE.CircleGeometry (5, 32 )}
         scale={0.1}
-        position={[1, -0.85, 0]}
+        position={[1, -0.7, 0]}
         />
       </group>
     <group dispose={null} scale={1} rotation={[0, 0, 0]} position={[0, -1.8, 1.95]}>

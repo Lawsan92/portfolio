@@ -9,6 +9,10 @@ import useResize from '../../../hooks/useResize.js';
 
 const Projects = ({ projectsRef }) => {
 
+  useEffect(() => {
+    handleMobileRender();
+  }, []);
+
   // dark mode context
   const darkTheme = useTheme();
   const { windowWidth } = useResize();
@@ -47,12 +51,7 @@ const Projects = ({ projectsRef }) => {
      });
   }
 
-  useEffect(() => {
-    handleMobileRender();
-  }, []);
-
     // function to filter projects based on their tech stack
-
   const [cardFilter, getFilter] = useState('');
   const [isFiltered, setFilter] = useState(false);
 
@@ -89,11 +88,10 @@ const Projects = ({ projectsRef }) => {
 
     return projects.map((project, index) => {
 
-      const CardShadow = ({toggleHover}) => {
+      const CardShadow = () => {
         return (
           <span
           className='projects_grid card_shadow'
-          onMouseLeave={() => {setHover({...isHover, [index]: false})}}
           key={`card_shadow ${index}`}
           >
             <div className='projects_grid card_shadow_wrapper'>
@@ -112,60 +110,18 @@ const Projects = ({ projectsRef }) => {
             </div>)
         };
 
-      let cursorHovering = isHover[index]
 
       if (isFiltered) {
         if (project.type === cardFilter) {
-           if (!cursorHovering) {
-            return (
-              <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}>
-                <div className='projects_grid img_container'>
-                  <img className='projects_grid img_container img' src={project.url} alt={project.meta} />
-                </div>
-                  <div className={darkTheme ? 'projects_grid text dark' : 'projects_grid text'}>
-                    <h4>
-                      {project.name}
-                    </h4>
-                    <TechStack/>
-                  </div>
-              </div>
-            );
-          } else {
-            return (
-              <div className='projects_grid card' style={styles.card} key={`card ${index}`}>
-                <CardShadow index={index} toggleHover={toggleHover}/>
-                <div className='projects_grid img_container'>
-                  <img className='projects_grid img_container img' src={project.url} alt={project.meta} />
-                </div>
-                  <div className={darkTheme ? 'projects_grid text dark' : 'projects_grid text'}>
-                    <h4>
-                      {project.name}
-                    </h4>
-                    <TechStack/>
-                  </div>
-              </div>
-            );
-          }
-        }
-      } else {
-         if (!cursorHovering) {
         return (
-          <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}>
-            <div className='projects_grid img_container'>
-              <img className='projects_grid img_container img' src={project.url} alt={project.meta} />
-            </div>
-              <div className={darkTheme ? 'projects_grid text dark' : 'projects_grid text'}>
-                <h4>
-                  {project.name}
-                </h4>
-                <TechStack/>
-              </div>
-          </div>
-        );
-      } else {
-        return (
-          <div className='projects_grid card' style={styles.card} key={`card ${index}`}>
-            <CardShadow index={index} toggleHover={toggleHover}/>
+          <div
+          className='projects_grid card'
+          style={styles.card}
+          key={`card ${index}`}
+          onMouseLeave={() => setHover({})}
+          onMouseEnter={() => setHover({...isHover, [index]: true })}
+          >
+            {isHover[index] ? <CardShadow/> : ''}
             <div className='projects_grid img_container'>
               <img className='projects_grid img_container img' src={project.url} alt={project.meta} />
             </div>
@@ -178,6 +134,27 @@ const Projects = ({ projectsRef }) => {
           </div>
         );
       }
+      } else {
+        return (
+          <div
+          className='projects_grid card'
+          style={styles.card}
+          key={`card ${index}`}
+          onMouseLeave={prevState => setHover({...prevState, [index]: false })}
+          onMouseEnter={prevState => setHover({...prevState, [index]: true })}
+          >
+            {isHover[index] ? <CardShadow/> : ''}
+            <div className='projects_grid img_container'>
+              <img className='projects_grid img_container img' src={project.url} alt={project.meta} />
+            </div>
+              <div className={darkTheme ? 'projects_grid text dark' : 'projects_grid text'}>
+                <h4>
+                  {project.name}
+                </h4>
+                <TechStack/>
+              </div>
+          </div>
+        );
       }
     });
   };
