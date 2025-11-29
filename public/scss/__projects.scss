@@ -19,6 +19,7 @@
 
 
 .projects_categories {
+
   display: flex;
   width: 100vw;
   justify-content: center;
@@ -88,9 +89,14 @@
 
     &:hover{
       // opacity: 1;
+      background-color: #cee2f6;
       transform: scale(1.1);
       transition: 1s ease;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, .5)
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+    }
+
+    &:hover .card_shadow {
+      opacity: 1;
     }
 
     &.dark {
@@ -118,7 +124,6 @@
     border-bottom-left-radius: .5em;
 
     &.dark {
-      background-color: #1d1d1d;
       border-left: 1px solid rgb(40, 40, 40);
       border-right: 1px solid rgb(40, 40, 40);
       border-bottom: 1px solid rgb(40, 40, 40);
@@ -144,10 +149,6 @@
     border-top-right-radius: .5em;
     color: #ffffff;
 
-  }
-
-  &.card_shadow:hover {
-    opacity: 1;
   }
 
     &.card_shadow_wrapper {

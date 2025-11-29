@@ -106,7 +106,7 @@ const Projects = ({ projectsRef }) => {
         if (project.type === cardFilter) {
         return (
           <div
-          className='projects_grid card'
+          className={ darkTheme ? 'projects_grid card dark' : 'projects_grid card'}
           style={styles.card}
           key={`card ${index}`}
           >
@@ -126,7 +126,7 @@ const Projects = ({ projectsRef }) => {
       } else {
         return (
           <div
-          className='projects_grid card'
+          className={ darkTheme ? 'projects_grid card dark' : 'projects_grid card'}
           style={styles.card}
           key={`card ${index}`}
           >
