@@ -189,6 +189,14 @@
     border-left: 1px solid rgb(233, 235, 238);
     border-right: 1px solid rgb(233, 235, 238);
     border-bottom: 1px solid rgb(233, 235, 238);
+    border-bottom-right-radius: .5em;
+    border-bottom-left-radius: .5em;
+
+    &.dark {
+      border-left: 1px solid rgb(40, 40, 40);
+      border-right: 1px solid rgb(40, 40, 40);
+      border-bottom: 1px solid rgb(40, 40, 40);
+    }
 
     &.summary{
       font-weight: 100;

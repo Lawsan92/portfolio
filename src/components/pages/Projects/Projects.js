@@ -122,7 +122,7 @@ const Projects = ({ projectsRef }) => {
                 <div className='projects_grid img_container'>
                   <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
                 </div>
-                  <div className='projects_grid text'>
+                  <div className={darkTheme ? 'projects_grid text dark' : 'projects_grid text'}>
                     <h4>
                       {project.name}
                     </h4>
@@ -137,7 +137,7 @@ const Projects = ({ projectsRef }) => {
                   <CardShadow index={index} toggleHover={toggleHover}/>
                   <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
                 </div>
-                  <div className='projects_grid text'>
+                  <div className={darkTheme ? 'projects_grid text dark' : 'projects_grid text'}>
                     <h4>
                       {project.name}
                     </h4>
@@ -154,7 +154,7 @@ const Projects = ({ projectsRef }) => {
             <div className='projects_grid img_container'>
               <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
             </div>
-              <div className='projects_grid text'>
+              <div className={darkTheme ? 'projects_grid text dark' : 'projects_grid text'}>
                 <h4>
                   {project.name}
                 </h4>
@@ -169,7 +169,7 @@ const Projects = ({ projectsRef }) => {
             <div className='projects_grid img_container'>
               <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
             </div>
-              <div className='projects_grid text'>
+              <div className={darkTheme ? 'projects_grid text dark' : 'projects_grid text'}>
                 <h4>
                   {project.name}
                 </h4>
