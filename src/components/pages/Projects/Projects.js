@@ -51,6 +51,15 @@ const Projects = ({ projectsRef }) => {
     handleMobileRender();
   }, []);
 
+    // function to filter projects based on their tech stack
+
+  const [cardFilter, getFilter] = useState('');
+  const [isFiltered, setFilter] = useState(false);
+
+  const toggleFilter = () => {
+    setFilter(prevState => !prevState)
+  };
+
 
   const styles = {
     card: {
@@ -75,8 +84,23 @@ const Projects = ({ projectsRef }) => {
     }
   }
 
+    const renderCategories = () => {
 
-  const renderProjectCards = () => {
+        let categories = ['programming', 'documentation'];
+
+        let mapCategories = categories.map((category) => {
+          return (
+            <div
+              className={ !darkTheme ? 'projects_categories card' : 'projects_categories card dark'}
+              onClick={(e) => {toggleFilter(); getFilter(e.target.innerText)}}
+            >{category}</div>
+          );
+        });
+        return mapCategories;
+      };
+
+
+  const ProjectCards = () => {
 
     return projects.map((project, index) => {
 
@@ -95,7 +119,7 @@ const Projects = ({ projectsRef }) => {
             </div>
           </span>
         );
-      }
+      };
 
       const TechStack = () => {
         return ( <div className='projects_grid tech_stack'>
@@ -103,9 +127,45 @@ const Projects = ({ projectsRef }) => {
               return <img src={img_src} className='projects_grid tech_stack img'/>;
                 })}
             </div>)
-        }
+        };
 
-      if (!isHover[index]) {
+      let cursorHovering = isHover[index]
+
+      if (isFiltered) {
+        if (project.type === cardFilter) {
+           if (!cursorHovering) {
+            return (
+              <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
+                <div className='projects_grid img_container'>
+                  <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+                </div>
+                  <div className='projects_grid text'>
+                    <div className='projects_grid text title'>
+                      {project.name}
+                    </div>
+                  </div>
+                  <TechStack/>
+              </div>
+            );
+          } else {
+            return (
+              <div className='projects_grid card' style={styles.card} key={`card ${index}`}>
+                <CardShadow index={index} toggleHover={toggleHover}/>
+                <div className='projects_grid img_container'>
+                  <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+                </div>
+                  <div className='projects_grid text'>
+                    <div className='projects_grid text title'>
+                      {project.name}
+                    </div>
+                  </div>
+                  <TechStack/>
+              </div>
+            );
+          }
+        }
+      } else {
+         if (!cursorHovering) {
         return (
           <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
             <div className='projects_grid img_container'>
@@ -135,98 +195,9 @@ const Projects = ({ projectsRef }) => {
           </div>
         );
       }
+      }
     });
   }
-
-  const renderCategories = () => {
-
-    let categories = ['programming', 'documentation'];
-
-    let mapCategories = categories.map((category) => {
-      return (
-        <div
-          className={ !darkTheme ? 'projects_categories card' : 'projects_categories card dark'}
-          onClick={(e) => {toggleFilter(); getFilter(e.target.innerText)}}
-        >{category}</div>
-      );
-    });
-    return mapCategories;
-
-  };
-
-  // function to filter projects based on their tech stack
-
-  const [cardFilter, getFilter] = useState('');
-
-  const [isFiltered, setFilter] = useState(false);
-
-  const toggleFilter = () => {
-    setFilter(prevState => !prevState)
-  };
-
-  const filterCards = (filter) => {
-
-    let mapProjects = projects.map((project, index) => {
-
-
-      if (project.type === filter) {
-
-        const CardShadow = ({toggleHover}) => {
-          return (
-            <span
-            className='projects_grid card_shadow'
-            style={styles.shadow}
-            onMouseLeave={() => {setHover({...isHover, [index]: false})}}
-            key={`card ${index}`}
-            >
-            {project.type == 'programming' ? <GithubSVG href={projects[index].githref} /> : <DownloadSVG/>}
-            </span>
-          );
-        };
-
-        const TechStack = () => {
-            return ( <div className='projects_grid tech_stack'>
-                {project.techstack.map((img_src, index) => {
-                    return <img src={img_src} className='projects_grid tech_stack img'/>;
-                    })}
-            </div>)
-        }
-
-        if (!isHover[index]) {
-          return (
-            <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
-              <div className='projects_grid img_container'>
-                <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
-              </div>
-                <div className='projects_grid text'>
-                  <div className='projects_grid text title'>
-                    {project.name}
-                  </div>
-                </div>
-                <TechStack/>
-            </div>
-          );
-        } else {
-          return (
-            <div className='projects_grid card' style={styles.card} key={`card ${index}`}>
-              <CardShadow index={index} toggleHover={toggleHover}/>
-              <div className='projects_grid img_container'>
-                <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
-              </div>
-                <div className='projects_grid text'>
-                  <div className='projects_grid text title'>
-                    {project.name}
-                  </div>
-                </div>
-                <TechStack/>
-            </div>
-          );
-        }
-      }
-    })
-
-    return mapProjects
-  };
 
 
   const mobileScreen = windowWidth < 450;
@@ -248,7 +219,7 @@ const Projects = ({ projectsRef }) => {
         {renderCategories()}
       </div>
       <div className='projects_grid container' >
-        {!isFiltered ? renderProjectCards() : filterCards(cardFilter)}
+        <ProjectCards/>
       </div>
     </motion.section>
   );
