@@ -1,6 +1,8 @@
 node_modules
 .env
 public/*.bundle.js
+public/bundle.js
+bundle.js
 pem*
 *.pem
 server*
