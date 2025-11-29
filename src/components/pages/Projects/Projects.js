@@ -65,23 +65,8 @@ const Projects = ({ projectsRef }) => {
     card: {
       // gridRowEnd: `span ${containerHeight}`,
       gridRowEnd: `span ${containerHeight}`,
-      gridRowEnd: `span 46`,
+      gridRowEnd: `span 45`,
     },
-    shadow: {
-      height: '65%',
-      width: '100%',
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-      zIndex: 3,
-      position: 'fixed',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: '.5em',
-      color: '#ffffff'
-    },
-    text: {
-      alignSelf: 'end'
-    }
   }
 
     const renderCategories = () => {
@@ -108,14 +93,12 @@ const Projects = ({ projectsRef }) => {
         return (
           <span
           className='projects_grid card_shadow'
-          style={styles.shadow}
           onMouseLeave={() => {setHover({...isHover, [index]: false})}}
           key={`card_shadow ${index}`}
           >
-
-            {project.type == 'programming' ? <GithubSVG href={projects[index].githref} /> : <a href={project.href} download ><DownloadSVG/> </a>}
-            <div className='projects_grid card_shadow text' style={styles.text}>
-              {project.summary}
+            <div className='projects_grid card_shadow_wrapper'>
+              <p>{project.summary}</p>
+              {project.type == 'programming' ? <GithubSVG href={projects[index].githref} /> : <a href={project.href} download ><DownloadSVG/> </a>}
             </div>
           </span>
         );
@@ -143,23 +126,23 @@ const Projects = ({ projectsRef }) => {
                     <div className='projects_grid text title'>
                       {project.name}
                     </div>
+                    <TechStack/>
                   </div>
-                  <TechStack/>
               </div>
             );
           } else {
             return (
               <div className='projects_grid card' style={styles.card} key={`card ${index}`}>
-                <CardShadow index={index} toggleHover={toggleHover}/>
                 <div className='projects_grid img_container'>
+                  <CardShadow index={index} toggleHover={toggleHover}/>
                   <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
                 </div>
                   <div className='projects_grid text'>
                     <div className='projects_grid text title'>
                       {project.name}
                     </div>
+                    <TechStack/>
                   </div>
-                  <TechStack/>
               </div>
             );
           }
@@ -172,11 +155,11 @@ const Projects = ({ projectsRef }) => {
               <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
             </div>
               <div className='projects_grid text'>
-                <div className='projects_grid text title'>
+                <h4>
                   {project.name}
-                </div>
+                </h4>
+                <TechStack/>
               </div>
-              <TechStack/>
           </div>
         );
       } else {
@@ -190,15 +173,14 @@ const Projects = ({ projectsRef }) => {
                 <div className='projects_grid text title'>
                   {project.name}
                 </div>
+                <TechStack/>
               </div>
-              <TechStack/>
           </div>
         );
       }
       }
     });
-  }
-
+  };
 
   const mobileScreen = windowWidth < 450;
 

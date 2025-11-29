@@ -256,7 +256,7 @@ export const GithubSVG = ({ href }) => {
   return (
     <a href={href}>
     <svg
-    className='projects_grid card_shadow icon'
+    className='projects_grid card_shadow_wrapper icon'
     title='Github'
     width="40"
     height="40"
