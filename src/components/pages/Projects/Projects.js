@@ -146,11 +146,11 @@ const Projects = ({ projectsRef }) => {
     });
   };
 
-  // const mobileScreen = windowWidth < 450;
+  const mobileScreen = windowWidth < 450;
 
-  // if (mobileScreen) {
-  //   return <Mobile_Projects/>;
-  // };
+  if (mobileScreen) {
+    return <Mobile_Projects/>;
+  };
 
   return (
     <motion.section

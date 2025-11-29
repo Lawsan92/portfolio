@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { useTheme, useThemeUpdate } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 import resume from '../../../../public/assets/Lawrence_Sanzogni.pdf';
-const Logo = lazy(() => import ('./Logo.js'));
-
 const NavBar = () => {
 
   const darkTheme = useTheme();

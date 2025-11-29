@@ -4,7 +4,6 @@ import { useTheme, useThemeUpdate } from '../../ThemeContext.js';
 import { MobileSVGicons } from '../SVGicons';
 import { motion } from 'framer-motion';
 import resume from '../../../../public/assets/Lawrence_Sanzogni.pdf';
-const Logo = lazy(() => import ('./Logo.js'));
 
 const MobileNavbar = ({ toggleMobileNavbar }) => {
 
@@ -15,13 +14,13 @@ const MobileNavbar = ({ toggleMobileNavbar }) => {
     return darkTheme ? 'dark' : '';
   };
 
-  const mapNavbarButtons = () => {
+  const NavbarButtons = () => {
     const buttons = [ { text: 'Home', link: '/' }, { text: 'About', link: '/about' }, { text: 'Projects', link: '/projects' } ];
 
     return buttons.map((item) => {
       return (
         <Link to={item.link}>
-        <h3 className={`nav-buttons mobile entry ${setDarkTheme()}`}>{item.text}</h3>
+        <p>{item.text}</p>
       </Link>
       )
     })
@@ -32,20 +31,16 @@ const MobileNavbar = ({ toggleMobileNavbar }) => {
       <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
         X
       </div>
-      <Suspense fallback={<div>loading...</div>}>
-        <Link to='/'>
-          <Logo/>
-        </Link>
-      </Suspense>
+
       <div className={ !darkTheme ? 'nav-buttons mobile' : 'nav-buttons mobile dark'}>
-        {mapNavbarButtons()}
-      </div>
-      <a href={resume} download='resume'>
-        <button className={ !darkTheme ? 'navbar_resume' : 'navbar_resume dark'}>Resume</button>
+        <NavbarButtons/>
+        <a href={resume} download='resume'>
+          <p className={ !darkTheme ? 'navbar_resume' : 'navbar_resume dark'}>Resume</p>
         </a>
+      </div>
       <button className={ darkTheme ? 'navbar_themebutton dark' : 'navbar_themebutton'} onClick={() => {toggleTheme()}} >
-        {darkTheme ? <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766274/icons/dark-mode-6682_1_tluczz.svg' alt='crescent moon icon for dark mode'/> :
-        <img src='https://res.cloudinary.com/darp0mj9i/image/upload/v1673766162/icons/dark-mode-6682_ncrhz2.svg' alt='crescent moon icon for dark mode'/>}
+        {!darkTheme ? <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1764456478/Group_15_h3zpfj.svg' alt='crescent moon icon for dark mode'/> :
+        <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1764456472/Group_14_vbyb9p.svg' alt='crescent moon icon for dark mode'/>}
       </button>
       <MobileSVGicons/>
     </section>

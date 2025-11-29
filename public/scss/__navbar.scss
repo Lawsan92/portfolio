@@ -28,6 +28,7 @@
     background-color: #ffffff;
     transition: background 1s;
     z-index: 4;
+    color: steelblue;
 
     &.dark{
       transition: background 1s;
@@ -55,6 +56,9 @@
     flex-direction: column;
     width: 100vw;
     font-size: 3vh;
+    & p {
+      color: steelblue;
+    }
   }
 }
 
@@ -80,8 +84,7 @@
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
   color: steelblue;
-  border: solid steelblue;
-  border-radius: 0.25em;
+  border: none;
   transition: 1s;
   margin: .5em;
 

@@ -6,7 +6,6 @@ import '/public/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 
-const Laptop = lazy(() => import('./Laptop.js'));
 const Laptop_2 = lazy(() => import('./Laptop_2.js'));
 
 import Mobile_Home from './Mobile_Home.js';
@@ -44,15 +43,6 @@ const Home = () => {
     body.style.backgroundColor = '';
     console.log('!darkTheme && !openMobileNavbar .backgroundColor', body.style.backgroundColor);
   }
-  // console.group()
-  //   console.log('darkTheme && !openMobileNavbar');
-  //   console.log(darkTheme && !openMobileNavbar)
-  //   console.log('darkTheme && openMobileNavbar')
-  //   console.log(darkTheme && openMobileNavbar)
-  //   console.log('!darkTheme && !openMobileNavbar')
-  //   console.log(!darkTheme && !openMobileNavbar)
-  // console.groupEnd();
-
   const handleResize = () => {
     window.addEventListener('resize', () => {
       getWindowWidth(window.innerWidth);

@@ -6,7 +6,6 @@ import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 const axios = require('axios');
 
-const Laptop = lazy(() => import('./Laptop.js'));
 const Laptop_2 = lazy(() => import('./Laptop_2.js'));
 
 export const Counter = ({ visits }) => {
@@ -39,19 +38,6 @@ const Mobile_Home = () => {
     setMobileNavbar(prevState => !openMobileNavbar)
   }
 
-  // const body = document.querySelector('body');
-
-  // styling for empty html space on mobile screens
-  // if (darkTheme && !openMobileNavbar) {
-  //   body.style.backgroundColor = '#181818'
-  // } else if (darkTheme && openMobileNavbar) {
-  //   body.style.backgroundColor = '#1d1d1d'
-  // } else if (!darkTheme && openMobileNavbar) {
-  //   body.style.backgroundColor = '#ffffff'
-  // } else {
-  //   body.style.backgroundColor = ''
-  // }
-
   const handleResize = () => {
     window.addEventListener('resize', () => {
       getWindowWidth(window.innerWidth);
@@ -63,8 +49,6 @@ const Mobile_Home = () => {
     handleViews();
   }, [])
 
-
-  if (!openMobileNavbar) {
       return (
         <motion.section
         className='mobile_home_container'
@@ -72,6 +56,7 @@ const Mobile_Home = () => {
         animate={{opacity: 1}}
         exit={{opacity: 0}}
         >
+          { openMobileNavbar && <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />}
           <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
             <div className='navbar_pulldown_bar'/>
             <div className='navbar_pulldown_bar'/>
@@ -80,17 +65,13 @@ const Mobile_Home = () => {
           <div className={ darkTheme ? 'mobile_home_content dark' : 'mobile_home_content'}>
             <div className={ darkTheme ? 'mobile_home_text dark' : 'mobile_home_text'} >
               <div className='mobile_home_text header'>
-                <p>Lawrence Sanzogni, <br/>Software Engineer</p>
+                <p>Lawrence Sanzogni <br/>Software Engineer</p>
               </div>
               <div className='mobile_home_text content' style={{background: darkTheme && '#000c'}}>
                 <p>
-                  I'm a fullstack Software Engineer with a specialty in MERN and PERN tech stacks. I freelance as a web developer and love creating new content for growing businesses.
-                  I'm currently looking for new full time opportunities and to make an impact.
+                  I'm a fullstack Software Engineer who specializes in Python/Django and JavaScript/React ecosystems.
                 </p>
               </div>
-              <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
-              <button className={ darkTheme ? 'mobile_home_text btn dark' : 'mobile_home_text btn'}>Contact Me</button>
-              </Link>
               </div>
               <div className={darkTheme ? 'mobile_home_background dark' : 'mobile_home_background'}>
                 <img src={ darkTheme ? 'https://res.cloudinary.com/ducqdbpaw/image/upload/v1703393775/portfolio/Screenshot_2023-12-23_at_22.55-PhotoRoom_fjxp7w.png' :'https://res.cloudinary.com/ducqdbpaw/image/upload/v1703393575/portfolio/Screenshot_2023-12-23_at_18.26-PhotoRoom_w6bkvp.png'} className='mobile_home_background_img'/>
@@ -98,37 +79,6 @@ const Mobile_Home = () => {
           </div>
         </motion.section>
       );
-    } else {
-      return (
-        <motion.section
-        className='mobile_home_container'
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        exit={{opacity: 0}}
-        >
-          <MobileNavbar toggleMobileNavbar={toggleMobileNavbar} />
-          <div className={ darkTheme ? 'mobile_home_content dark' : 'mobile_home_content'}>
-            <div className={ darkTheme ? 'mobile_home_text dark' : 'mobile_home_text'} >
-              <div className='mobile_home_text header'>
-                <p>Lawrence Sanzogni,<br/>Software Engineer</p>
-              </div>
-              <div className='mobile_home_text content'>
-                <p>
-                I'm a fullstack Software Engineer with a specialty in MERN and PERN tech stacks. I freelance as a web developer and love creating new content for growing businesses.
-                I'm currently looking for new full time opportunities and to make an impact.
-                </p>
-              </div>
-              <Link to='/contact' style={{textDecoration: 'none', cursor: 'pointer'}}>
-                <button className={ darkTheme ? 'mobile_home_text btn dark' : 'mobile_home_text btn'}>Contact Me</button>
-              </Link>
-              </div>
-              <Suspense fallback={<div>loading...</div>}>
-                <Bubbles/>
-              </Suspense>
-          </div>
-        </motion.section>
-      );
-    }
 }
 
 export default Mobile_Home;
