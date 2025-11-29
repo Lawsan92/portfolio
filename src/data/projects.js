@@ -6,15 +6,24 @@ let projects = [
     url: 'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764277932/portfolio/sitescan/home_page_tui6o7.jpg',
     techstack: ['https://img.shields.io/badge/Python-yellow?logo=python', 'https://img.shields.io/badge/Django-green?logo=django'],
     githref: 'https://github.com/Lawsan92/SiteScan',
+    summary: 'A financial forecasting application that assists in evaluating location suitability for expanding store operations using supervised an unsupervised machine learning algorithms',
+    type: 'programming',
+  },
+    {
+    name:'WGUPS Parcel Delivery',
+    url: 'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764392682/portfolio/wgups_main_owdsg8.png',
+    techstack: ['https://img.shields.io/badge/Python-yellow?logo=python'],
+    githref: 'https://github.com/Lawsan92/WGUPS-Parcel-Delivery-Service',
+    summary: 'A delivery service application that predicts the most efficient route using a greedy and nearest neighbor based algorithm',
     type: 'programming',
   },
   {
-    name:'System PERN Aggregator',
+    name:'Flaamenco (aka SDC)',
     url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1667429336/icons/Screen_Shot_2022-08-08_at_10.56.02_pyaaun.jpg',
     meta: 'graphic of reports',
     href: '',
     githref: 'https://github.com/Team-Dagobah/SDC-Ratings-and-Reviews',
-    techstack: [],
+    techstack: ['https://img.shields.io/badge/JavaScript%20-%23323330.svg?&style=flat-square&logo=javascript&logoColor=%23F7DF1E', 'https://img.shields.io/badge/NodeJS-white?logo=nodedotjs'],
     type: 'programming',
     summary: 'Built a RESTful API service for a clothing website that can handle web scale traffic of up to 120 000 client requests per minute.',
     gallery: [
@@ -48,7 +57,7 @@ let projects = [
     githref: 'https://github.com/Lawsan92/fabiosarts',
     techstack: ['https://img.shields.io/badge/JavaScript%20-%23323330.svg?&style=flat-square&logo=javascript&logoColor=%23F7DF1E', 'https://img.shields.io/badge/NodeJS-white?logo=nodedotjs', 'https://img.shields.io/badge/React-white?logo=react'],
     type: 'programming',
-    summary: 'Programmed a desktop and mobile versions of artist website.',
+    summary: 'A dynamic and responsive client website that has leverages spring animations.',
     gallery: [
       {
         url: 'https://res.cloudinary.com/darp0mj9i/image/upload/v1702350516/Screenshot_2023-12-11_at_21.03.16_htxgyz.jpg',
@@ -63,6 +72,7 @@ let projects = [
     gallery: [],
     href: 'assets/pdfs/C951_Task_l.pdf',
     type:'documentation',
+    summary: 'User guide and development document for a custom chatbot agent that provides career assistance to students.',
     techstack: ['https://img.shields.io/badge/docs-black?logo=googlesheets&logoColor=white'],
   },
   {
@@ -71,6 +81,7 @@ let projects = [
     gallery: [],
     href: 'assets/pdfs/D326.pdf',
     type:'documentation',
+    summary: 'User guide and development document for PostgreSQL ETL queries that allow data manipulation and extraction to track sales performance.',
     techstack: ['https://img.shields.io/badge/docs-black?logo=googlesheets&logoColor=white'],
   },
   {
@@ -79,6 +90,7 @@ let projects = [
     gallery: [],
     href: 'assets/pdfs/C951_II.pdf',
     type:'documentation',
+    summary: 'User guide and development document for 3D robot agent that demonstrates artificial intelligence capabilites through objective-based behavior, and reasoning.',
     techstack: ['https://img.shields.io/badge/docs-black?logo=googlesheets&logoColor=white'],
   },
   {
@@ -87,6 +99,7 @@ let projects = [
     gallery: [],
     href: 'assets/pdfs/SiteScan_Doc.pdf',
     type:'documentation',
+    summary: 'Business proposal and development document for SiteScan financial forecast application.',
     techstack: ['https://img.shields.io/badge/docs-black?logo=googlesheets&logoColor=white']
   }
   /*

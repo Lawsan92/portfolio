@@ -118,9 +118,9 @@ const Projects = ({ projectsRef }) => {
         if (project.type === cardFilter) {
            if (!cursorHovering) {
             return (
-              <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
+              <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}>
                 <div className='projects_grid img_container'>
-                  <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+                  <img className='projects_grid img_container img' src={project.url} alt={project.meta} />
                 </div>
                   <div className={darkTheme ? 'projects_grid text dark' : 'projects_grid text'}>
                     <h4>
@@ -133,9 +133,9 @@ const Projects = ({ projectsRef }) => {
           } else {
             return (
               <div className='projects_grid card' style={styles.card} key={`card ${index}`}>
+                <CardShadow index={index} toggleHover={toggleHover}/>
                 <div className='projects_grid img_container'>
-                  <CardShadow index={index} toggleHover={toggleHover}/>
-                  <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+                  <img className='projects_grid img_container img' src={project.url} alt={project.meta} />
                 </div>
                   <div className={darkTheme ? 'projects_grid text dark' : 'projects_grid text'}>
                     <h4>
@@ -150,9 +150,9 @@ const Projects = ({ projectsRef }) => {
       } else {
          if (!cursorHovering) {
         return (
-          <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`}>
+          <div className={ !darkTheme ? 'projects_grid card' : 'projects_grid card dark'} style={styles.card} key={`card ${index}`} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}}>
             <div className='projects_grid img_container'>
-              <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+              <img className='projects_grid img_container img' src={project.url} alt={project.meta} />
             </div>
               <div className={darkTheme ? 'projects_grid text dark' : 'projects_grid text'}>
                 <h4>
@@ -167,7 +167,7 @@ const Projects = ({ projectsRef }) => {
           <div className='projects_grid card' style={styles.card} key={`card ${index}`}>
             <CardShadow index={index} toggleHover={toggleHover}/>
             <div className='projects_grid img_container'>
-              <img className='projects_grid img_container img' src={project.url} alt={project.meta} onMouseLeave={() => {toggleHover(index)}} onMouseEnter={() => {toggleHover(index)}} />
+              <img className='projects_grid img_container img' src={project.url} alt={project.meta} />
             </div>
               <div className={darkTheme ? 'projects_grid text dark' : 'projects_grid text'}>
                 <h4>
