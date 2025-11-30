@@ -43,16 +43,8 @@ const Mobile_About = ({ skillsRef }) => {
                   </h1>
                   <div className={darkTheme ? 'mobile_about_text content dark' : 'mobile_about_text content'}>
                     <p>
-                      My professional coding journey began after school when I decided to take on more hands-on experience by enrolling in Hack Reactor's 13 week immersive.
-                    </p>
-                    <p>
-                      Now fully equipped with a skillset beyond the theoretical, I've continued my journey through freelancing work. Enabling me to refine my current skillset, add to it and accrue a professional work history. I'm now ready to take that next leap into becoming part of a team.
-                    </p>
-                    <p>
-                      I currently live in Austin but I'm originally from Rome and have spent time all over the United States, as well as a few years in France and Italy. My hobbies include: working on web applications, programming, playing guitar, singing, writing songs and running.
-                    </p>
-                    <p>
-                    If you would like to get in touch feel free to visit my <a href='https://www.linkedin.com/in/lawrencesanzogni/' >Linkedin</a> profile and/or if you want to see my codebases take a look at my <a href='https://github.com/Lawsan92' >Github</a>
+                      I’m a language-agnostic full-stack engineer specializing in Python/Django and JavaScript/Node.js/React ecosystems.
+                      My journey began 4 years ago with independent projects for friends that gradually evolved into full-stack freelance web development. I later moved into a technical support role for a WiFi-based camera security system, that taught me the importance of clean system design and efficient troubleshooting. During this period I also acted as a technical writer for internal SOPs and as an interview consultant, helping managers evaluate candidates. I eventually obtained a Bachelor of Science in Computer Science from WGU, where I deepened my understanding of algorithms, computing systems, and large-scale application design <br/><br/> I currently live in Austin, TX but I'm originally from Rome and have lived in different areas of the United States, as well as a few years in France. Free to reach out via my <a href='https://www.linkedin.com/in/lawrencesanzogni/' >Linkedin</a> profile. You can also visit my <a href='https://github.com/Lawsan92' >Github</a> to explore my projects.
                     </p>
                   </div>
                 </div>
