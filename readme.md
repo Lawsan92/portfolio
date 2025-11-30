@@ -4,7 +4,7 @@
 
 | desktop  | mobile |
 | ------------- | ------------- |
-| <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1764370785/portfolio/Screenshot_2025-11-28_at_16.58.11_rwajms.jpg'/>  | <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1764465862/iPhone-12-PRO-lawrence-sanzogni.com_h03gen.png'/> |
+| <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1764370785/portfolio/Screenshot_2025-11-28_at_16.58.11_rwajms.jpg'/>  | <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1764480431/iPhone-12-PRO-lawrence-sanzogni.com_h03gen.png'/> |
 
 
 ### Tech stack:
