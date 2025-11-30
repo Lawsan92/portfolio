@@ -50,6 +50,21 @@ const Mobile_About = ({ skillsRef }) => {
                 </div>
               </div>
           </div>
+
+      <div className={ darkTheme ? 'mobile_about_container_badges dark': 'mobile_about_container_badges'}>
+          <img src='https://img.shields.io/badge/Python-steelblue?logo=python&logoColor=white'/>
+          <img alt="Static Badge" src="https://img.shields.io/badge/Django-steelblue?logo=django&logoColor=white"/>
+          <img src='https://img.shields.io/badge/JavaScript-steelblue?logo=javascript&logoColor=white'/>
+          <img alt="Static Badge" src="https://img.shields.io/badge/React-steelblue?logo=react&logoColor=white"/>
+          <img alt="Static Badge" src="https://img.shields.io/badge/Node.js-steelblue?logo=nodedotjs&logoColor=white"/>
+          <img src='https://img.shields.io/badge/Java-steelblue?logo=coffeescript&logoColor=white'/>
+          <img alt="Static Badge" src="https://img.shields.io/badge/HTML-steelblue?logo=htmx&logoColor=white"/>
+          <img alt="Static Badge" src="https://img.shields.io/badge/CSS-steelblue?logo=css&logoColor=white"/>
+          <img alt="Static Badge" src="https://img.shields.io/badge/Lua-steelblue?logo=lu
+          a&logoColor=white"/>
+          <img alt="Static Badge" src="https://img.shields.io/badge/PostgreSQL-steelblue?logo=postgresql&logoColor=white"/>
+          <img alt="Static Badge" src="https://img.shields.io/badge/Docs-steelblue?logo=googlesheets&logoColor=white"/>
+      </div>
         </motion.section>
         );
 }

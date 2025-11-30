@@ -3,7 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center; /* y-axis/cross-axis*/
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
   width: 100vw;
   background-color: #edf2f8;
   transition: background 1s;
@@ -74,6 +75,23 @@
     }
   }
 }
+
+  .mobile_about_container_badges{
+    margin: 5vw;
+    padding: 5vw;
+    background-color: #fffb;
+    border-radius: .25em;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 75vw;
+    & img {
+      margin: 0.25em;
+    }
+    &.dark {
+      background-color: #000b;
+    }
+  }
 
 .mobile_about_text {
   width: 85vw;
