@@ -112,7 +112,7 @@ const Projects = ({ projectsRef }) => {
           >
             <CardShadow/>
             <div className='projects_grid img_container'>
-              <img className='projects_grid img_container img' src={project.url} alt={project.meta} />
+              {project.url.map((url, index )=> {return <img className={`projects_grid img_container_img _${index}`} src={url} alt={project.meta} />})}
             </div>
               <div className={darkTheme ? 'projects_grid text dark' : 'projects_grid text'}>
                 <h4>
@@ -132,7 +132,7 @@ const Projects = ({ projectsRef }) => {
           >
             <CardShadow/>
             <div className='projects_grid img_container'>
-              <img className='projects_grid img_container img' src={project.url} alt={project.meta} />
+              {project.url.map((url, index )=> {return <img className={`projects_grid img_container_img ${index}`} src={url} alt={project.meta} />})}
             </div>
               <div className={darkTheme ? 'projects_grid text dark' : 'projects_grid text'}>
                 <h4>
