@@ -101,7 +101,10 @@
     justify-content: center;
     align-items: center;
     background: #fffb;
-    padding: 0 10px;
+    & p {
+      margin: 1em;
+    }
+
     &.dark {
       background: #000b;
     }

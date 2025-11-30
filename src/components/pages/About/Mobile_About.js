@@ -28,7 +28,7 @@ const Mobile_About = ({ skillsRef }) => {
 
         return (
           <motion.section
-          className='mobile_about'
+          className={darkTheme ? 'mobile_about dark' : 'mobile_about'}
           initial={{opacity: 0}}
           animate={{opacity: 1}}
           exit={{opacity: 0}}
