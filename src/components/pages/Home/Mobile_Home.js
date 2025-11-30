@@ -61,7 +61,7 @@ const Mobile_Home = () => {
 
       return (
         <motion.section
-        className='mobile_home_container'
+        className={darkTheme ? 'mobile_home_container dark' : 'mobile_home_container'}
         initial={{opacity: 0}}
         animate={{opacity: 1}}
         exit={{opacity: 0}}
