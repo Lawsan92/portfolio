@@ -2,7 +2,10 @@
 
 ### Visit my portfolio at <a href='https://lawrence-sanzogni.com'>lawrence-sanzogni.com</a>
 
-<img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1764370785/portfolio/Screenshot_2025-11-28_at_16.58.11_rwajms.jpg'/>
+| desktop  | mobile |
+| ------------- | ------------- |
+| <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1764370785/portfolio/Screenshot_2025-11-28_at_16.58.11_rwajms.jpg'/>  | <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1764480431/iPhone-12-PRO-lawrence-sanzogni.com_h03gen.png'/> |
+
 
 ### Tech stack:
 ![JavaScript](https://img.shields.io/badge/JavaScript-grey?logo=javascript)
