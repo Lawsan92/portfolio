@@ -59,7 +59,7 @@ const Projects = ({ projectsRef }) => {
     },
   }
 
-    const renderCategories = () => {
+    const Categories = () => {
 
         let categories = ['programming', 'documentation'];
 
@@ -162,7 +162,7 @@ const Projects = ({ projectsRef }) => {
       <NavBar/>
       <h2>Projects</h2>
       <div className='projects_categories'>
-        {renderCategories()}
+        <Categories/>
       </div>
       <div className='projects_grid container' >
         <ProjectCards/>

@@ -7,6 +7,11 @@ import { motion } from 'framer-motion';
 const axios = require('axios');
 const Laptop_2 = lazy(() => import('./Laptop_2.js'));
 
+
+export const Counter = ({ visits }) => {
+  return (<div className='home_views'>{visits}</div>);
+}
+
   export const MenuIcon = ({toggleMobileNavbar}) => {
       return (
           <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
@@ -16,10 +21,6 @@ const Laptop_2 = lazy(() => import('./Laptop_2.js'));
           </div>
       );
   }
-
-export const Counter = ({ visits }) => {
-  return (<div className='home_views'>{visits}</div>);
-}
 
 const Mobile_Home = () => {
 
