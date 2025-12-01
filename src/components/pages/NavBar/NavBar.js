@@ -35,7 +35,7 @@ const NavBar = () => {
         <Link to='/'><h3>/ Home</h3></Link>
         <Link to='/about'><h3>/ About</h3></Link>
         <Link to='/projects'><h3>/ Projects</h3></Link>
-        <a href={resume} download='resume'>
+        <a href={resume} download='lawrence_sanzogni_resume'>
           <h3>/ Resume</h3>
         </a>
       <button className={ darkTheme ? 'navbar_themebutton dark' : 'navbar_themebutton'} onClick={() => {toggleTheme()}} >

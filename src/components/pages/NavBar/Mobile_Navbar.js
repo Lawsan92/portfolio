@@ -34,7 +34,7 @@ const MobileNavbar = ({ toggleMobileNavbar }) => {
 
       <div className={ !darkTheme ? 'nav-buttons mobile' : 'nav-buttons mobile dark'}>
         <NavbarButtons/>
-        <a href={resume} download='resume'>
+        <a href={resume} download='lawrence_sanzogni_resume'>
           <p className={ !darkTheme ? 'navbar_resume' : 'navbar_resume dark'}>Resume</p>
         </a>
       </div>
