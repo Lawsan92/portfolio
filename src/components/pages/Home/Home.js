@@ -6,7 +6,7 @@ import '/public/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 
-const Laptop_2 = lazy(() => import('./Laptop_2.js'));
+const Laptop = lazy(() => import('./Laptop.js'));
 
 import Mobile_Home from './Mobile_Home.js';
 
@@ -68,7 +68,7 @@ const Home = () => {
       <NavBar/>
       <div className='home_laptop' style={{display:'flex', justifyContent: 'center', alignItems: 'center'}}>
         <Suspense fallback={<div>loading gltf asset...</div>}>
-          <Laptop_2/>
+          <Laptop/>
           {/* <img src={darkTheme ? 'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764285393/Screenshot_2025-11-27_at_17.16.08-Photoroom_rly1c5.png' : 'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764284445/Screenshot_2025-11-27_at_17.00.06-Photoroom_in4t5p.png'} style={{height: '90vh'}}></img> */}
           {/* {darkTheme ? <img src='https://res.cloudinary.com/ducqdbpaw/image/upload/v1764285393/Screenshot_2025-11-27_at_17.16.08-Photoroom_rly1c5.png' style={{height: '90vh'}}/> :
               <video autoPlay muted playsInline height='775vh' >

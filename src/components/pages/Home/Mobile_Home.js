@@ -5,8 +5,6 @@ import '/public/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 const axios = require('axios');
-const Laptop_2 = lazy(() => import('./Laptop_2.js'));
-
 
 export const Counter = ({ visits }) => {
   return (<div className='home_views'>{visits}</div>);
