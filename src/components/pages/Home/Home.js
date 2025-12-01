@@ -27,21 +27,21 @@ const Home = () => {
 
   // styling for empty html space on mobile screens
   if (darkTheme && !openMobileNavbar) {
-    console.log('darkTheme && !openMobileNavbar <body/>:', body);
+    // console.log('darkTheme && !openMobileNavbar <body/>:', body);
     body.style.backgroundColor = '#181818';
-    console.log('darkTheme && !openMobileNavbar .backgroundColor', body.style.backgroundColor);
+    // console.log('darkTheme && !openMobileNavbar .backgroundColor', body.style.backgroundColor);
   } else if (darkTheme && openMobileNavbar) {
-    console.log('darkTheme && openMobileNavbar <body/>:', body);
+    // console.log('darkTheme && openMobileNavbar <body/>:', body);
     body.style.backgroundColor = '#1d1d1d';
-    console.log('darkTheme && openMobileNavbar .backgroundColor:', body.style.backgroundColor);
+    // console.log('darkTheme && openMobileNavbar .backgroundColor:', body.style.backgroundColor);
   } else if (!darkTheme && openMobileNavbar) {
-    console.log('!darkTheme && openMobileNavbar <body/>:', body);
+    // console.log('!darkTheme && openMobileNavbar <body/>:', body);
     body.style.backgroundColor = '#ffffff';
-    console.log('!darkTheme && openMobileNavbar .backgroundColor:', body.style.backgroundColor);
+    // console.log('!darkTheme && openMobileNavbar .backgroundColor:', body.style.backgroundColor);
   } else {
-    console.log('!darkTheme && !openMobileNavbar <body/>:', body);
+    // console.log('!darkTheme && !openMobileNavbar <body/>:', body);
     body.style.backgroundColor = '';
-    console.log('!darkTheme && !openMobileNavbar .backgroundColor', body.style.backgroundColor);
+    // console.log('!darkTheme && !openMobileNavbar .backgroundColor', body.style.backgroundColor);
   }
   const handleResize = () => {
     window.addEventListener('resize', () => {

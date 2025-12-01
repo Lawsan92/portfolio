@@ -6,7 +6,7 @@ const useResize = () => {
 
   const handleResize = () => {
     window.addEventListener('resize', () => {
-      console.log('componentWidth:', window.innerWidth);
+      // console.log('componentWidth:', window.innerWidth);
       getWindowWidth(window.innerWidth);
     });
   };
