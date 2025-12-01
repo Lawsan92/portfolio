@@ -140,7 +140,7 @@ const Mobile_Projects = ({ projectsRef }) => {
       <div className='projects_categories'>
         <Categories/>
       </div>
-      <div className='projects_grid container' >
+      <div className='mobile_projects_grid container' >
         <ProjectCards/>
       </div>
     </motion.section>
