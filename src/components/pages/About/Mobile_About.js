@@ -60,10 +60,10 @@ const Mobile_About = ({ skillsRef }) => {
           <img src='https://img.shields.io/badge/Java-steelblue?logo=coffeescript&logoColor=white'/>
           <img alt="Static Badge" src="https://img.shields.io/badge/HTML-steelblue?logo=htmx&logoColor=white"/>
           <img alt="Static Badge" src="https://img.shields.io/badge/CSS-steelblue?logo=css&logoColor=white"/>
-          <img alt="Static Badge" src="https://img.shields.io/badge/Lua-steelblue?logo=lu
-          a&logoColor=white"/>
+          <img alt="Static Badge" src="https://img.shields.io/badge/Lua-steelblue?logo=lua&logoColor=white"/>
           <img alt="Static Badge" src="https://img.shields.io/badge/PostgreSQL-steelblue?logo=postgresql&logoColor=white"/>
           <img alt="Static Badge" src="https://img.shields.io/badge/Docs-steelblue?logo=googlesheets&logoColor=white"/>
+          <img alt="Static Badge" src="https://img.shields.io/badge/Git-steelblue?logo=git&logoColor=white"/>
       </div>
         </motion.section>
         );
