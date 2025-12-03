@@ -87,7 +87,8 @@ const Projects = ({ projectsRef }) => {
           >
             <div className='projects_grid card_shadow_wrapper'>
               <p>{project.summary}</p>
-              {project.type == 'programming' ? <GithubSVG href={projects[index].githref} /> : <a href={project.href} download ><DownloadSVG/> </a>}
+              {project.githref && <GithubSVG href={projects[index].githref} />}
+              { project.href && <a href={project.href} download ><DownloadSVG/> </a>}
             </div>
           </span>
         );
