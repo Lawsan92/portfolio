@@ -9,7 +9,7 @@ let projects = [
     summary: 'A financial forecasting application that assists in evaluating location suitability for expanding store operations using supervised an unsupervised machine learning algorithms',
     type: 'programming',
   },
-    {
+  {
     name:'WGUPS Parcel Delivery',
     url:[ 'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764392682/portfolio/wgups_main_owdsg8.png'],
     techstack: ['https://img.shields.io/badge/Python-yellow?logo=python'],
@@ -67,7 +67,7 @@ let projects = [
   }
   ,
   {
-    name:'Chatbot documentation (WGU C951)',
+    name:'CareerBot documentation (WGU C951)',
     url:['https://res.cloudinary.com/ducqdbpaw/image/upload/v1764343820/portfolio/C951_-_Task_l_oruazg.jpg', 'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764511344/Screenshot_2025-11-30_at_07.45.18-Photoroom_ebxzlp.png'],
     gallery: [],
     href: 'assets/pdfs/C951_Task_l.pdf',
@@ -101,7 +101,15 @@ let projects = [
     type:'documentation',
     summary: 'Business proposal and development document for SiteScan financial forecast application.',
     techstack: ['https://img.shields.io/badge/docs-black?logo=googlesheets&logoColor=white']
-  }
+  },
+    {
+    name:'WGUPS documentation (WGU C950)',
+    url:['https://res.cloudinary.com/ducqdbpaw/image/upload/v1764737400/wgups/C950_Submission_acpsnx.jpg', 'https://res.cloudinary.com/ducqdbpaw/image/upload/v1764392682/portfolio/wgups_main_owdsg8.png'],
+    techstack: ['https://img.shields.io/badge/docs-black?logo=googlesheets&logoColor=white'],
+    githref: 'https://github.com/Lawsan92/WGUPS-Parcel-Delivery-Service',
+    summary: 'Development and techncal documentation for WGUPS routing app',
+    type:'documentation',
+  },
   /*
   {
     name:'Template',
