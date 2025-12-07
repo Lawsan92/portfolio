@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom';
 import '/public/scss/styles.scss';
 import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
+import ReactGA from "react-ga4";
 
 const Laptop = lazy(() => import('./Laptop.js'));
+ReactGA.initialize(`${process.env.GOOGLE_ANALYTICS}`);
 
 import Mobile_Home from './Mobile_Home.js';
 
