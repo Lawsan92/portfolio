@@ -10,7 +10,7 @@ import useResize from '../../../hooks/useResize.js';
 const Projects = ({ pageRef }) => {
 
   useEffect(() => {
-    pageRef.current.push('/projects');
+    pageRef.current['/projects'] = true;
     handleMobileRender();
   }, []);
 

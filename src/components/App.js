@@ -9,7 +9,7 @@ const App = () => {
 
   const visitedRef = useRef(false);
   let hasVisited = visitedRef.current;
-  let pageRef = useRef([])
+  let pageRef = useRef({})
 
 
   useEffect(() => {
@@ -18,7 +18,6 @@ const App = () => {
     };
     hasVisited = true;
     handleVisits();
-
   }, []);
 
     const handleVisits = async () => {
@@ -31,13 +30,14 @@ const App = () => {
             city: result.city.name,
             lat: result.location.latitude,
             long: result.location.longitude,
-            date: Date(),
+            date: new Date(),
           }
 
           window.addEventListener("beforeunload", (event) => {
-            data.end = Date()
+            // data['session_time'] = new Date().getSeconds()
+            data['session_time'] = Math.floor((new Date().getTime() - data.date.getTime()) / 1000);
             try {
-             data.pages = pageRef
+             data.pages = pageRef.current
             } catch (error) {
               console.console.error();
 

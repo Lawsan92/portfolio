@@ -18,7 +18,9 @@ const About = ({ pageRef }) => {
     setMobileNavbar(prevState => !openMobileNavbar)
   }
 
-  useEffect(() => {pageRef.current.push('/about')}, [])
+  useEffect(() => {
+    pageRef.current['/about'] = true;
+  }, [])
 
   if (windowWidth < 450) {
     return <Mobile_About/>;

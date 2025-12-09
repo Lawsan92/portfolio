@@ -52,7 +52,7 @@ const Home = ({pageRef}) => {
 
   useEffect(() => {
     handleResize();
-    pageRef.current.push('/home')
+    pageRef.current['/home'] = true;
   }, [])
 
   // mobile rendering
