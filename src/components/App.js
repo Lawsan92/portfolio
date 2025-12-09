@@ -7,20 +7,21 @@ const axios = require('axios');
 
 const App = () => {
 
-  // const hasTrackedRef = useRef(false)
+  const visitedRef = useRef(false);
+  let hasVisited = visitedRef.current;
 
-  // const [visits, setVisits] = useState(0);
-  // const [analytics, getAnalytics] = useState({region: '', visit: 0});
-  // const [country, getCountry] = useState('');
+  const [visits, setVisits] = useState(0);
+  const [analytics, getAnalytics] = useState({region: '', visit: 0});
+  const [country, getCountry] = useState('');
 
-  // const location = useLocation();
+  const location = useLocation();
 
-  // useEffect(() => {
-  //   if (hasTrackedRef.current) {
-  //     return
-  //   };
+  useEffect(() => {
+    if (hasVisited) {
+      return
+    };
 
-  //   hasTrackedRef.current = true;
+    hasVisited = true;
 
   //   const trackVisit = () => {
   //     try {
@@ -39,17 +40,30 @@ const App = () => {
 
   // }, []);
 
-  // const handleViews = async () => {
-  //   await Promise.all([
-  //     axios({method: 'put', url: '/visits', data: {}}),
-  //     axios({method: 'get', url: '/visits'})
-  //       .then((res) => {console.log('res.data:', res.data); setVisits(res.data.visits)}),
-  //     axios({method: 'post', url: '/visitRecords', data: {}}),
-  //     axios({method: 'put', url: '/locations', data: {location: country}}),
-  //     axios({method: 'get', url: '/locations'})
-  //       .then((res) => {console.log('res.data /locations:', res.data.visits.locations); getAnalytics(res.data.visits.locations)}),
-  //   ]);
-  // }
+    const trackVisit = () => {
+      try {
+        handleViews();
+      } catch (error) {
+             console.error('analytics failed', error);
+      }
+    }
+
+    trackVisit();
+
+  }, []);
+
+
+  const handleViews = async () => {
+    await Promise.all([
+      axios({method: 'put', url: '/visits', data: {}}),
+      axios({method: 'get', url: '/visits'})
+        .then((res) => {console.log('res.data:', res.data); setVisits(res.data.visits)}),
+      // axios({method: 'post', url: '/visitRecords', data: {}}),
+      // axios({method: 'put', url: '/locations', data: {location: country}}),
+      // axios({method: 'get', url: '/locations'})
+      //   .then((res) => {console.log('res.data /locations:', res.data.visits.locations); getAnalytics(res.data.visits.locations)}),
+    ]);
+  }
 
   return (
     <div id='app'>
