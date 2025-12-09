@@ -27,7 +27,8 @@ const App = () => {
             country: result.country['iso_code'],
             city: result.city.name,
             lat: result.location.latitude,
-            long: result.location.longitude
+            long: result.location.longitude,
+            date: Date()
           }
 
         axios({method: 'put', url: '/visits', data: data})

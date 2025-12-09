@@ -7,12 +7,12 @@ const updateVisits = (visit) => {
     .then((res) => {
       let noEntry = res.rows == false;
       if (noEntry) {
-        const insertQuery = `insert into visitors values($1, $2, $3, $4, $5)`;
-        const insertValues = [visit.ip, visit.country, visit.city, visit.lat, visit.long]
+        const insertQuery = `insert into visitors values($1, $2, $3, $4, $5, $6, $7)`;
+        const insertValues = [visit.ip, visit.country, visit.city, visit.lat, visit.long, visit.date, visit.date]
         client.query(insertQuery, insertValues)
       } else {
-        const updateQuery = `update visitors set visit_count=visit_count+1 where ip=$1`
-        const updateValues = [visit.ip]
+        const updateQuery = `update visitors set visit_count=visit_count+1, last_visit=$2 where ip=$1`
+        const updateValues = [visit.ip, visit.date]
         client.query(updateQuery, updateValues)
       }
     })
