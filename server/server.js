@@ -41,8 +41,10 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 https
   .createServer({
-    key: readFileSync('/Users/lawrence/portfolio/pem/key.pem'),
-    cert: readFileSync('/Users/lawrence/portfolio/pem/cert.pem')
+    // key: readFileSync('/Users/lawrence/portfolio/pem/key.pem'),
+    // cert: readFileSync('/Users/lawrence/portfolio/pem/cert.pem')
+    key: readFileSync(process.env.KEY_PATH),
+    cert: readFileSync(process.env.CERT_PATH)
   }, app)
   .listen(8443, () => {
     console.log(`listening to localhost: ${port}`);
