@@ -10,7 +10,7 @@ const App = () => {
   const visitedRef = useRef(false);
   let hasVisited = visitedRef.current;
 
-  const [visits, setVisits] = useState(0);
+  const [visits, setVisits] = useState({});
   const [analytics, getAnalytics] = useState({region: '', visit: 0});
   const [country, getCountry] = useState('');
 
@@ -49,12 +49,36 @@ const App = () => {
   //   ]);
   // };
 
+
+    console.log('location.pathname:', location.pathname, 'location.search:', location.search);
+
     const handleVisits = async () => {
-    await Promise.all([
-      axios({method: 'put', url: '/visits', data: {}}),
-      axios({method: 'get', url: '/visits'})
-        .then((res) => {console.log('res.data:', res.data); setVisits(res.data.visits)})
-    ]);
+      useGeoApify()
+        .then((response) => {return response.json();})
+        .then((result) => {
+          console.log('userLocationObj:', result);
+          let data = {
+            ip: result.ip,
+            country: result.country['iso_code'],
+            city: result.city.name,
+            lat: result.location.latitude,
+            long: result.location.longitude
+          }
+
+       Promise.all([
+        axios({method: 'put', url: '/visits', data: data}),
+        // axios({method: 'get', url: '/visits'})
+        //   .then((res) => {console.log('res.data:', res.data); setVisits(res.data.visits)})
+        ]);
+
+        })
+        .catch((error) => {console.log('error', error)});
+
+    //   await Promise.all([
+    //     axios({method: 'put', url: '/visits', data: country}),
+    //     // axios({method: 'get', url: '/visits'})
+    //     //   .then((res) => {console.log('res.data:', res.data); setVisits(res.data.visits)})
+    // ]);
   };
 
   return (

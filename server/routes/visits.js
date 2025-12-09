@@ -14,7 +14,7 @@ router.use((req, res, next) => {
 router
   .route('/')
   .put((req, res) => { try {
-    updateVisits()
+    updateVisits(req.body)
     res.send('200, VISITS UPDATED')
   } catch (error) {
       res.send(console.error())
