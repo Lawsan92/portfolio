@@ -9,6 +9,7 @@ const App = () => {
 
   const visitedRef = useRef(false);
   let hasVisited = visitedRef.current;
+  const [visit, getVisit] = useState({})
 
   useEffect(() => {
     if (hasVisited) {
@@ -16,6 +17,7 @@ const App = () => {
     };
     hasVisited = true;
     handleVisits();
+
   }, []);
 
     const handleVisits = async () => {
@@ -28,11 +30,13 @@ const App = () => {
             city: result.city.name,
             lat: result.location.latitude,
             long: result.location.longitude,
-            date: Date()
+            date: Date(),
           }
 
-        axios({method: 'put', url: '/visits', data: data})
-
+          window.addEventListener("beforeunload", (event) => {
+            data.end = Date()
+            axios({method: 'put', url: '/visits', data: data})
+          })
 
         })
         .catch((error) => {console.log('error', error)});

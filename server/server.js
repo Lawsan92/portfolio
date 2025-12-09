@@ -49,6 +49,12 @@ https
   })
 
 app.get('/test3000', (req, res) => {
+  console.log('UNMOUNT:', req.body)
+  res.sendStatus(200);
+})
+
+app.put('/test3000', (req, res) => {
+  console.log('UNMOUNT:', req.body)
   res.sendStatus(200);
 })
 

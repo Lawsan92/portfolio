@@ -8,4 +8,4 @@ const getVisits = (visit) => {
   .catch((err) => {console.log('err:', err)});
 }
 
-module.exports = getVisits;
+module.exports = getVisits
