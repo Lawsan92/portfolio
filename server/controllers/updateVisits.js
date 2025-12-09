@@ -6,7 +6,6 @@ const updateVisits = (visit) => {
   client.query(flagQuery, flagValues)
     .then((res) => {
       let noEntry = res.rows == false;
-      console.log('res:', res.rows)
       if (noEntry) {
         const insertQuery = `insert into visitors values($1, $2, $3, $4, $5)`;
         const insertValues = [visit.ip, visit.country, visit.city, visit.lat, visit.long]
