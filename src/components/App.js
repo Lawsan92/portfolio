@@ -14,11 +14,8 @@ const App = () => {
     if (hasVisited) {
       return
     };
-
     hasVisited = true;
-
-  handleVisits();
-
+    handleVisits();
   }, []);
 
     const handleVisits = async () => {

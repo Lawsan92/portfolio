@@ -2,8 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const visits = require('./routes/visits.js');
-const locations = require('./routes/locations.js');
-const visitRecords = require('./routes/visitRecords.js');
 const compression = require('compression');
 const path = require('path');
 const port = process.env.PORT;
@@ -55,8 +53,6 @@ app.get('/test3000', (req, res) => {
 })
 
 app.use('/visits', visits);
-app.use('/locations', locations);
-app.use('/visitRecords', visitRecords);
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'), (err) => {
