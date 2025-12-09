@@ -23,47 +23,39 @@ const App = () => {
 
     hasVisited = true;
 
-  //   const trackVisit = () => {
-  //     try {
-  //       useGeoApify()
-  //         .then((response) => {return response.json();})
-  //         .then((result) => {console.log('userLocationObj:', result); getCountry(result.country.name)})
-  //         .catch((error) => {console.log('error', error)});
-  //       console.log('location.pathname:', location.pathname, 'location.search:', location.search);
-  //       handleViews();
-  //     } catch (error) {
-  //            console.error('analytics failed', error);
-  //     }
-  //   }
+    /*
+    useGeoApify()
+      .then((response) => {return response.json();})
+      .then((result) => {console.log('userLocationObj:', result); getCountry(result.country.name)})
+      .catch((error) => {console.log('error', error)});
 
-  //   trackVisit();
+    console.log('location.pathname:', location.pathname, 'location.search:', location.search);
+    */
 
-  // }, []);
-
-    const trackVisit = () => {
-      try {
-        handleViews();
-      } catch (error) {
-             console.error('analytics failed', error);
-      }
-    }
-
-    trackVisit();
+  handleVisits();
 
   }, []);
 
 
-  const handleViews = async () => {
+  // const handleVisits = async () => {
+  //   await Promise.all([
+  //     axios({method: 'put', url: '/visits', data: {}}),
+  //     axios({method: 'get', url: '/visits'})
+  //       .then((res) => {console.log('res.data:', res.data); setVisits(res.data.visits)}),
+  //     axios({method: 'post', url: '/visitRecords', data: {}}),
+  //     axios({method: 'put', url: '/locations', data: {location: country}}),
+  //     axios({method: 'get', url: '/locations'})
+  //       .then((res) => {console.log('res.data /locations:', res.data.visits.locations); getAnalytics(res.data.visits.locations)}),
+  //   ]);
+  // };
+
+    const handleVisits = async () => {
     await Promise.all([
       axios({method: 'put', url: '/visits', data: {}}),
       axios({method: 'get', url: '/visits'})
-        .then((res) => {console.log('res.data:', res.data); setVisits(res.data.visits)}),
-      // axios({method: 'post', url: '/visitRecords', data: {}}),
-      // axios({method: 'put', url: '/locations', data: {location: country}}),
-      // axios({method: 'get', url: '/locations'})
-      //   .then((res) => {console.log('res.data /locations:', res.data.visits.locations); getAnalytics(res.data.visits.locations)}),
+        .then((res) => {console.log('res.data:', res.data); setVisits(res.data.visits)})
     ]);
-  }
+  };
 
   return (
     <div id='app'>

@@ -12,5 +12,4 @@ client
     console.log('Postgres DB connection error:', err.slice(0, endOfErr + 5));
   });
 
-
 module.exports = client;

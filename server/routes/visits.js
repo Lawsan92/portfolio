@@ -13,7 +13,18 @@ router.use((req, res, next) => {
 //--------------------ROUTES--------------------*/
 router
   .route('/')
-  .put((req, res) => { updateVisits() })
-  .get((req, res) => {getVisits().then((data) => {res.send({visits: data})});})
+  .put((req, res) => { try {
+    updateVisits()
+    res.send('200, VISITS UPDATED')
+  } catch (error) {
+      res.send(console.error())
+  } })
+  .get((req, res) => {
+    try {
+     getVisits().then((data) => {res.send({visits: data})})
+    } catch (error) {
+      res.send(console.error())
+    }
+  })
 
 module.exports = router;

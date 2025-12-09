@@ -6,7 +6,9 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useTheme } from '../../ThemeContext.js';
 import * as THREE from 'three';
 
-const Laptop_2 = ()  => {
+const MODEL_PATH = "/assets/laptop.gltf";
+
+const Laptop = ()  => {
 
   const darkTheme = useTheme();
   const [currentText, setCurrentText] = useState('');
@@ -43,15 +45,16 @@ const Laptop_2 = ()  => {
     };
   }
 
-  const { nodes, materials } = useGLTF("/assets/laptop.gltf");
+  const { nodes, materials } = useGLTF(MODEL_PATH);
+
   return (
     <animated.div style={spring} className='home_laptop_wrapper'>
     <Canvas camera={{fov: 37, position: [-7, 3, 10]}} shadows style={{...spring }}>
-      <AdjustCameraY y={2.5}/>
+      {/* <AdjustCameraY y={2.5}/> */}
       <Suspense fallback={null}>
       <ambientLight intensity={2}/>
       <pointLight/>
-      {/* <OrbitControls/> */}
+      <OrbitControls/>
 
       <group>
         <Text color='steelblue'
@@ -178,15 +181,15 @@ const Laptop_2 = ()  => {
   );
 };
 
-useGLTF.preload("/laptop.gltf");
+useGLTF.preload(MODEL_PATH);
 
-export const AdjustCameraY = ({ y }) => {
-    const { camera } = useThree();
-    useEffect(() => {
-      camera.position.y = y;
-    }, [y])
-    return;
-  }
+// export const AdjustCameraY = ({ y }) => {
+//     const { camera } = useThree();
+//     useEffect(() => {
+//       camera.position.y = y;
+//     }, [y])
+//     return;
+//   }
 
 
-export default Laptop_2;
+export default Laptop;
