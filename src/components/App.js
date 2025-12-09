@@ -9,7 +9,8 @@ const App = () => {
 
   const visitedRef = useRef(false);
   let hasVisited = visitedRef.current;
-  const [visit, getVisit] = useState({})
+  let pageRef = useRef([])
+
 
   useEffect(() => {
     if (hasVisited) {
@@ -35,6 +36,12 @@ const App = () => {
 
           window.addEventListener("beforeunload", (event) => {
             data.end = Date()
+            try {
+             data.pages = pageRef
+            } catch (error) {
+              console.console.error();
+
+            }
             axios({method: 'put', url: '/visits', data: data})
           })
 
@@ -45,7 +52,7 @@ const App = () => {
   return (
     <div id='app'>
       <ThemeProvider>
-        <Router/>
+        <Router pageRef={pageRef}/>
       </ThemeProvider>
     </div>
   );

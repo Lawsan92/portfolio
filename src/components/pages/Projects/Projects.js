@@ -7,9 +7,10 @@ import { motion } from 'framer-motion';
 import Mobile_Projects from './Mobile_Projects.js';
 import useResize from '../../../hooks/useResize.js';
 
-const Projects = ({ projectsRef }) => {
+const Projects = ({ pageRef }) => {
 
   useEffect(() => {
+    pageRef.current.push('/projects');
     handleMobileRender();
   }, []);
 

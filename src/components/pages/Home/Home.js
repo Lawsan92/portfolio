@@ -11,7 +11,7 @@ const Laptop = lazy(() => import('./Laptop.js'));
 
 import Mobile_Home from './Mobile_Home.js';
 
-const Home = () => {
+const Home = ({pageRef}) => {
 
   const darkTheme = useTheme();
 
@@ -52,6 +52,7 @@ const Home = () => {
 
   useEffect(() => {
     handleResize();
+    pageRef.current.push('/home')
   }, [])
 
   // mobile rendering

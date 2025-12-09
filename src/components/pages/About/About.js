@@ -7,7 +7,7 @@ const Textsphere = lazy(() => import('./Textsphere.js'));
 import Mobile_About from './Mobile_About.js';
 import useResize from '../../../hooks/useResize.js';
 
-const About = ({ skillsRef }) => {
+const About = ({ pageRef }) => {
 
   const darkTheme = useTheme();
   const { windowWidth } = useResize();
@@ -18,10 +18,11 @@ const About = ({ skillsRef }) => {
     setMobileNavbar(prevState => !openMobileNavbar)
   }
 
+  useEffect(() => {pageRef.current.push('/about')}, [])
 
-    if (windowWidth < 450) {
-      return <Mobile_About/>;
-    }
+  if (windowWidth < 450) {
+    return <Mobile_About/>;
+  }
 
   return (
     <motion.section
