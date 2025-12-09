@@ -50,11 +50,11 @@ const Laptop = ()  => {
   return (
     <animated.div style={spring} className='home_laptop_wrapper'>
     <Canvas camera={{fov: 37, position: [-7, 3, 10]}} shadows style={{...spring }}>
-      {/* <AdjustCameraY y={2.5}/> */}
+      <AdjustCameraY y={2.5}/>
       <Suspense fallback={null}>
       <ambientLight intensity={2}/>
       <pointLight/>
-      <OrbitControls/>
+      {/* <OrbitControls/> */}
 
       <group>
         <Text color='steelblue'
@@ -183,13 +183,13 @@ const Laptop = ()  => {
 
 useGLTF.preload(MODEL_PATH);
 
-// export const AdjustCameraY = ({ y }) => {
-//     const { camera } = useThree();
-//     useEffect(() => {
-//       camera.position.y = y;
-//     }, [y])
-//     return;
-//   }
+export const AdjustCameraY = ({ y }) => {
+    const { camera } = useThree();
+    useEffect(() => {
+      camera.position.y = y;
+    }, [y])
+    return;
+  }
 
 
 export default Laptop;
