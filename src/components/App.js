@@ -30,12 +30,13 @@ const App = () => {
             city: result.city.name,
             lat: result.location.latitude,
             long: result.location.longitude,
-            date: new Date(),
+            date: Date(),
           }
 
+          let mountDate = new Date();
+
           window.addEventListener("beforeunload", (event) => {
-            // data['session_time'] = new Date().getSeconds()
-            data['session_time'] = Math.floor((new Date().getTime() - data.date.getTime()) / 1000);
+            data['session_time'] = Math.floor((new Date().getTime() - mountDate.getTime()) / 1000);
             try {
              data.pages = pageRef.current
             } catch (error) {
