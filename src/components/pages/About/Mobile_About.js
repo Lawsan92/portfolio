@@ -5,7 +5,7 @@ import { useTheme } from '../../ThemeContext.js'
 import { motion } from 'framer-motion';
 import { MenuIcon } from '../Home/Mobile_Home';
 
-const Mobile_About = ({ skillsRef }) => {
+const Mobile_About = ({ pageRef }) => {
 
   const darkTheme = useTheme();
 
@@ -20,6 +20,7 @@ const Mobile_About = ({ skillsRef }) => {
   }
 
     useEffect(() => {
+      pageRef.current['/about'] = true;
       window.addEventListener('resize', () => {
         getWindowWidth(window.innerWidth);
       })

@@ -23,7 +23,7 @@ const About = ({ pageRef }) => {
   }, [])
 
   if (windowWidth < 450) {
-    return <Mobile_About/>;
+    return <Mobile_About pageRef={pageRef}/>;
   }
 
   return (

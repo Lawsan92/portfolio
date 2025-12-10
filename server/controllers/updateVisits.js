@@ -1,6 +1,7 @@
 const client = require('../database/Postgres.database.js');
 
 const updateVisits = (visit) => {
+
   const flagQuery = `select * from visitors where ip=$1`;
   const flagValues = [visit.ip];
   client.query(flagQuery, flagValues)

@@ -55,6 +55,7 @@ app.get('/test3000', (req, res) => {
 })
 
 app.put('/test3000', (req, res) => {
+  console.log(200)
   res.sendStatus(200);
 })
 

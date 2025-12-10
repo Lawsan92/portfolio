@@ -57,7 +57,7 @@ const Home = ({pageRef}) => {
 
   // mobile rendering
   if (windowWidth < 450) {
-    return <Mobile_Home/>;
+    return <Mobile_Home pageRef={pageRef}/>;
   }
 
   return (

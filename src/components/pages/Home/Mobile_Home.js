@@ -6,10 +6,6 @@ import { useTheme } from '../../ThemeContext.js';
 import { motion } from 'framer-motion';
 const axios = require('axios');
 
-export const Counter = ({ visits }) => {
-  return (<div className='home_views'>{visits}</div>);
-}
-
   export const MenuIcon = ({toggleMobileNavbar}) => {
       return (
           <div className='navbar_pulldown' onClick={() => {toggleMobileNavbar()}}>
@@ -20,24 +16,13 @@ export const Counter = ({ visits }) => {
       );
   }
 
-const Mobile_Home = () => {
+const Mobile_Home = ({pageRef}) => {
 
   const darkTheme = useTheme();
 
   const [windowWidth, getWindowWidth] = useState(window.innerWidth);
   const [visits, setVisits] = useState(0);
 
-
-  const handleViews = () => {
-    window.addEventListener('load', async () => {
-      await Promise.all([
-        axios({method: 'put', url: '/visits', data: {}}),
-        axios({method: 'get', url: '/visits'})
-          .then((res) => {console.log('res.data:', res.data); setVisits(res.data.visits)}),
-        axios({method: 'post', url: '/visitRecords', data: {}})
-      ]);
-    })
-  }
 
   // mobile navbar state & methods
   const [openMobileNavbar, setMobileNavbar] = useState(false);
@@ -53,8 +38,8 @@ const Mobile_Home = () => {
   };
 
   useEffect(() => {
+    pageRef.current['/home'] = true;
     handleResize();
-    handleViews();
   }, [])
 
       return (

@@ -18,6 +18,9 @@ const App = () => {
     };
     hasVisited = true;
     handleVisits();
+    return () => {
+      console.log('UNMOUNT')
+    }
   }, []);
 
     const handleVisits = async () => {

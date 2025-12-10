@@ -151,7 +151,7 @@ const Projects = ({ pageRef }) => {
   const mobileScreen = windowWidth < 450;
 
   if (mobileScreen) {
-    return <Mobile_Projects/>;
+    return <Mobile_Projects pageRef={pageRef}/>;
   };
 
   return (

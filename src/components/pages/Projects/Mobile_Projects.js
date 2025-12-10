@@ -6,10 +6,10 @@ import { GithubSVG, DownloadSVG} from './../SVGicons.js';
 import { motion } from 'framer-motion';
 import { MenuIcon } from '../Home/Mobile_Home';
 
-const Mobile_Projects = ({ projectsRef }) => {
+const Mobile_Projects = ({ pageRef }) => {
 
   useEffect(() => {
-
+    pageRef.current['/projects'] = true;
   }, []);
 
   // dark mode context
