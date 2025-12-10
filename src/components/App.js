@@ -38,17 +38,20 @@ const App = () => {
 
           let mountDate = new Date();
 
-          window.addEventListener("beforeunload", (event) => {
-            data['session_time'] = Math.floor((new Date().getTime() - mountDate.getTime()) / 1000);
-            try {
-             data.pages = pageRef.current
-            } catch (error) {
-              console.console.error();
+          window.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "hidden") {
 
-            }
-            axios({method: 'put', url: '/visits', data: data})
-          })
+              data['session_time'] = Math.floor((new Date().getTime() - mountDate.getTime()) / 1000);
 
+              try {
+                data.pages = pageRef.current
+                } catch (error) {
+                  console.console.error();
+              }
+              const blob = new Blob([JSON.stringify(data)], { type: "application/json" });
+              navigator.sendBeacon("/visits", blob);
+             }
+          });
         })
         .catch((error) => {console.log('error', error)});
   };

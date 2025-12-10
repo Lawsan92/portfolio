@@ -13,7 +13,7 @@ router.use((req, res, next) => {
 //--------------------ROUTES--------------------*/
 router
   .route('/')
-  .put((req, res) => { try {
+  .post((req, res) => { try {
     console.log('req.body:', req.body)
      if (JSON.stringify(req.body) == '{}') {
       res.send('404, FAILED TP UPDATE \'{}\'')
