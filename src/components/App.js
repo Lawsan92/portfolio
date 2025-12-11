@@ -6,11 +6,9 @@ import ThemeProvider from './ThemeContext.js';
 const axios = require('axios');
 
 const App = () => {
-
   const visitedRef = useRef(false);
   let hasVisited = visitedRef.current;
-  let pageRef = useRef({})
-
+  let pageRef = useRef({});
 
   useEffect(() => {
     if (hasVisited) {
@@ -20,40 +18,39 @@ const App = () => {
     handleVisits();
     return () => {
       console.log('UNMOUNT')
-    }
+    };
   }, []);
 
-    const handleVisits = async () => {
-      useGeoApify()
-        .then((response) => {return response.json();})
-        .then((result) => {
-          let data = {
-            ip: result.ip,
-            country: result.country['iso_code'],
-            city: result.city.name,
-            lat: result.location.latitude,
-            long: result.location.longitude,
-            date: Date(),
+  const handleVisits = async () => {
+    useGeoApify()
+    .then((response) => {return response.json();})
+    .then((result) => {
+      let data = {
+        ip: result.ip,
+        country: result.country['iso_code'],
+        city: result.city.name,
+        lat: result.location.latitude,
+        long: result.location.longitude,
+          date: Date(),
+        }
+      let mountDate = new Date();
+      const handleUnmount = () => {
+        window.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "hidden") {
+            data['session_time'] = Math.floor((new Date().getTime() - mountDate.getTime()) / 1000);
+            try {
+              data.pages = pageRef.current
+              } catch (error) {
+                console.console.error();
+            }
+            const blob = new Blob([JSON.stringify(data)], { type: "application/json" });
+            navigator.sendBeacon("/visits", blob);
           }
-
-          let mountDate = new Date();
-
-          window.addEventListener("visibilitychange", () => {
-            if (document.visibilityState === "hidden") {
-
-              data['session_time'] = Math.floor((new Date().getTime() - mountDate.getTime()) / 1000);
-
-              try {
-                data.pages = pageRef.current
-                } catch (error) {
-                  console.console.error();
-              }
-              const blob = new Blob([JSON.stringify(data)], { type: "application/json" });
-              navigator.sendBeacon("/visits", blob);
-             }
-          });
-        })
-        .catch((error) => {console.log('error', error)});
+        });
+      }
+      handleUnmount();
+    })
+    .catch((error) => {console.log('error', error)});
   };
 
   return (

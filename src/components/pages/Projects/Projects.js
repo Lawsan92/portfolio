@@ -51,15 +51,6 @@ const Projects = ({ pageRef }) => {
     setFilter(prevState => !prevState)
   };
 
-
-  const styles = {
-    card: {
-      // gridRowEnd: `span ${containerHeight}`,
-      gridRowEnd: `span ${containerHeight}`,
-      gridRowEnd: `span 45`,
-    },
-  }
-
     const Categories = () => {
 
         let categories = ['programming', 'documentation'];
@@ -109,7 +100,6 @@ const Projects = ({ pageRef }) => {
         return (
           <div
           className={ darkTheme ? 'projects_grid card dark' : 'projects_grid card'}
-          style={styles.card}
           key={`card ${index}`}
           >
             <CardShadow/>
@@ -129,7 +119,6 @@ const Projects = ({ pageRef }) => {
         return (
           <div
           className={ darkTheme ? 'projects_grid card dark' : 'projects_grid card'}
-          style={styles.card}
           key={`card ${index}`}
           >
             <CardShadow/>
