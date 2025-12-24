@@ -51,26 +51,23 @@ const Projects = ({ pageRef }) => {
     setFilter(prevState => !prevState)
   };
 
-    const Categories = () => {
-
-        let categories = ['programming', 'documentation'];
-
-        let mapCategories = categories.map((category) => {
-          return (
-            <div
-              className={ !darkTheme ? 'projects_categories card' : 'projects_categories card dark'}
-              onClick={(e) => {toggleFilter(); getFilter(e.target.innerText)}}
-            >{category}</div>
-          );
-        });
-        return mapCategories;
-      };
+  const Categories = () => {
+    let categories = ['programming', 'documentation'];
+    let mapCategories = categories.map((category) => {
+      return (
+        <div
+          className={ !darkTheme ? 'projects_categories card' : 'projects_categories card dark'}
+          onClick={(e) => {toggleFilter(); getFilter(e.target.innerText)}}
+          >{category}</div>
+      );
+    });
+    return mapCategories;
+  };
 
 
   const ProjectCards = () => {
 
     return projects.map((project, index) => {
-
       const CardShadow = () => {
         return (
           <span
@@ -86,17 +83,18 @@ const Projects = ({ pageRef }) => {
         );
       };
 
-      const TechStack = () => {
-        return ( <div className='projects_grid tech_stack'>
+    const TechStack = () => {
+      return (
+        <div className='projects_grid tech_stack'>
           {project.techstack.map((img_src, index) => {
-              return <img src={img_src} className='projects_grid tech_stack img'/>;
-                })}
-            </div>)
-        };
+            return <img src={img_src} className='projects_grid tech_stack img'/>;
+            })}
+        </div>
+      )
+    };
 
-
-      if (isFiltered) {
-        if (project.type === cardFilter) {
+    if (isFiltered) {
+      if (project.type === cardFilter) {
         return (
           <div
           className={ darkTheme ? 'projects_grid card dark' : 'projects_grid card'}
