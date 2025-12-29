@@ -5,8 +5,6 @@ const visits = require("./routes/visits.js");
 const email = require("./routes/email.js");
 const compression = require("compression");
 const path = require("path");
-const port = process.env.PORT;
-// Server instance
 const https = require("https");
 const { readFileSync } = require("fs");
 const crypto = require("crypto");
@@ -37,6 +35,9 @@ app.use(compression({ filter: shouldCompress }));
 app.use(express.static(path.join(__dirname, "../public")));
 
 //--------------------ROUTES--------------------*/
+app.listen(process.env.HTTP_PORT || 3000, (req, res) => {
+  console.log(`listening to port ${process.env.HTTP_PORT || 3000}...`);
+});
 
 https
   .createServer(
@@ -46,9 +47,12 @@ https
     },
     app
   )
-  .listen(8443, () => {
-    console.log(`listening to localhost: ${port}`);
+  .listen(process.env.HTTPS_PORT || 8443, () => {
+    console.log(`listening to localhost: ${process.env.HTTPS_PORT || 8443}...`);
   });
+
+app.use("/visits", visits);
+app.use("/email", email);
 
 app.get("/test3000", (req, res) => {
   res.sendStatus(200);
@@ -57,13 +61,6 @@ app.get("/test3000", (req, res) => {
 app.put("/test3000", (req, res) => {
   console.log(200);
   res.sendStatus(200);
-});
-
-app.use("/visits", visits);
-app.use("/email", email);
-
-app.listen(port || 3000, (req, res) => {
-  console.log("listening to port 3000...");
 });
 
 app.get("/test8080", (req, res) => {
