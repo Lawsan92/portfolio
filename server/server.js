@@ -1,21 +1,21 @@
-require('dotenv').config();
-const express = require('express');
+require("dotenv").config();
+const express = require("express");
 const app = express();
-const visits = require('./routes/visits.js');
-const compression = require('compression');
-const path = require('path');
+const visits = require("./routes/visits.js");
+const compression = require("compression");
+const path = require("path");
 const port = process.env.PORT;
 // Server instance
-const https = require('https');
-const { readFileSync } = require('fs');
-const crypto = require('crypto')
+const https = require("https");
+const { readFileSync } = require("fs");
+const crypto = require("crypto");
+const nodemailer = require("nodemailer");
 const shouldCompress = (req, res) => {
-  if(req.headers['x-no-compression']) {
+  if (req.headers["x-no-compression"]) {
     return false;
   }
   return compression.filter(req, res);
-}
-
+};
 
 //--------------------MIDDLEWARE--------------------*/
 // app.use((req, res, next) => {
@@ -33,46 +33,71 @@ const shouldCompress = (req, res) => {
 //   return next();
 // });
 app.use(express.json());
-app.use(compression({filter: shouldCompress}));
-app.use(express.static(path.join(__dirname, '../public')));
-
+app.use(compression({ filter: shouldCompress }));
+app.use(express.static(path.join(__dirname, "../public")));
 
 //--------------------ROUTES--------------------*/
 
 https
-  .createServer({
-    // key: readFileSync('/Users/lawrence/portfolio/pem/key.pem'),
-    // cert: readFileSync('/Users/lawrence/portfolio/pem/cert.pem')
-    key: readFileSync(process.env.KEY_PATH),
-    cert: readFileSync(process.env.CERT_PATH)
-  }, app)
+  .createServer(
+    {
+      // key: readFileSync('/Users/lawrence/portfolio/pem/key.pem'),
+      // cert: readFileSync('/Users/lawrence/portfolio/pem/cert.pem')
+      key: readFileSync(process.env.KEY_PATH),
+      cert: readFileSync(process.env.CERT_PATH),
+    },
+    app
+  )
   .listen(8443, () => {
     console.log(`listening to localhost: ${port}`);
-  })
+  });
 
-app.get('/test3000', (req, res) => {
+app.get("/test3000", (req, res) => {
   res.sendStatus(200);
-})
+});
 
-app.put('/test3000', (req, res) => {
-  console.log(200)
+app.put("/test3000", (req, res) => {
+  console.log(200);
   res.sendStatus(200);
-})
+});
 
-app.use('/visits', visits);
+app.use("/visits", visits);
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'), (err) => {
-    err && console.log('err:', err.stack);
-  })
+app.get("/email", (req, res) => {
+  console.log(`Email route hit`);
+  res.send("Email Sent");
+  const transporter = nodemailer.createTransport({
+    service: process.env.SMTP_HOST,
+    auth: {
+      user: process.env.SMTP_AUTH_USER,
+      pass: process.env.SMTP_AUTH_PASS,
+    },
+  });
+
+  // Send an email using async/await
+  (async () => {
+    const info = await transporter.sendMail({
+      from: process.env.SMTP_SENDER,
+      to: process.env.SMTP_RECEIVER,
+      subject: "New Visitor ✔",
+      text: "New visitor to portfolio website",
+      html: "<b>New visitor to portfolio website</b>",
+    });
+
+    console.log("Message sent:", info.messageId);
+  })();
+});
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"), (err) => {
+    err && console.log("err:", err.stack);
+  });
 });
 
 app.listen(port || 3000, (req, res) => {
-  console.log('listening to port 3000...');
-
+  console.log("listening to port 3000...");
 });
 
-app.get('/test8080', (req, res) => {
+app.get("/test8080", (req, res) => {
   res.send(200);
 });
-
