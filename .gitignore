@@ -5,7 +5,5 @@ public/bundle.js
 bundle.js
 pem*
 *.pem
-server*
-server.js
 package-lock.json
 .DS_Store
