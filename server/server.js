@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const visits = require("./routes/visits.js");
+const email = require("./routes/email.js");
 const compression = require("compression");
 const path = require("path");
 const port = process.env.PORT;
@@ -9,7 +10,6 @@ const port = process.env.PORT;
 const https = require("https");
 const { readFileSync } = require("fs");
 const crypto = require("crypto");
-const nodemailer = require("nodemailer");
 const shouldCompress = (req, res) => {
   if (req.headers["x-no-compression"]) {
     return false;
@@ -41,8 +41,6 @@ app.use(express.static(path.join(__dirname, "../public")));
 https
   .createServer(
     {
-      // key: readFileSync('/Users/lawrence/portfolio/pem/key.pem'),
-      // cert: readFileSync('/Users/lawrence/portfolio/pem/cert.pem')
       key: readFileSync(process.env.KEY_PATH),
       cert: readFileSync(process.env.CERT_PATH),
     },
@@ -62,37 +60,7 @@ app.put("/test3000", (req, res) => {
 });
 
 app.use("/visits", visits);
-
-app.get("/email", (req, res) => {
-  console.log(`Email route hit`);
-  res.send("Email Sent");
-  const transporter = nodemailer.createTransport({
-    service: process.env.SMTP_HOST,
-    auth: {
-      user: process.env.SMTP_AUTH_USER,
-      pass: process.env.SMTP_AUTH_PASS,
-    },
-  });
-
-  // Send an email using async/await
-  (async () => {
-    const info = await transporter.sendMail({
-      from: process.env.SMTP_SENDER,
-      to: process.env.SMTP_RECEIVER,
-      subject: "New Visitor ✔",
-      text: "New visitor to portfolio website",
-      html: "<b>New visitor to portfolio website</b>",
-    });
-
-    console.log("Message sent:", info.messageId);
-  })();
-});
-
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/index.html"), (err) => {
-    err && console.log("err:", err.stack);
-  });
-});
+app.use("/email", email);
 
 app.listen(port || 3000, (req, res) => {
   console.log("listening to port 3000...");
@@ -100,4 +68,11 @@ app.listen(port || 3000, (req, res) => {
 
 app.get("/test8080", (req, res) => {
   res.send(200);
+});
+
+// route fallback
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"), (err) => {
+    err && console.log("err:", err.stack);
+  });
 });
