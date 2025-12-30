@@ -15,11 +15,20 @@ const App = () => {
       return;
     }
     hasVisited = true;
+    visitPushNotif();
     handleVisits();
     return () => {
       console.log("UNMOUNT");
     };
   }, []);
+
+  const visitPushNotif = async () => {
+    try {
+      await axios.post("/email");
+    } catch (error) {
+      console.error("Error sending push email:", error);
+    }
+  };
 
   const handleVisits = async () => {
     useGeoApify()
@@ -51,7 +60,6 @@ const App = () => {
                 type: "application/json",
               });
               navigator.sendBeacon("/visits", blob);
-              navigator.sendBeacon("/email");
             }
           });
         };
