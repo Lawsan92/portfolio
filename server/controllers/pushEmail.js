@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-const pushEmail = () => {
+const pushEmail = (country, city) => {
   const transporter = nodemailer.createTransport({
     service: process.env.SMTP_HOST,
     auth: {
@@ -15,8 +15,8 @@ const pushEmail = () => {
       from: process.env.SMTP_SENDER,
       to: process.env.SMTP_RECEIVER,
       subject: "New Visitor ✔",
-      text: "New visitor to portfolio website",
-      html: "<b>New visitor to portfolio website</b>",
+      text: `New visitor to portfolio website from ${city}, ${country}`,
+      html: `<b>New visitor to portfolio website from ${city}, ${country}</b>`,
     });
     console.log("Message sent:", info.messageId);
   })();

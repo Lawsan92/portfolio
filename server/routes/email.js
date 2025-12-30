@@ -11,7 +11,7 @@ router.use((req, res, next) => {
 //--------------------ROUTES--------------------*/
 router.route("/").post((req, res) => {
   console.log(`Email route hit`);
-  pushEmail();
+  pushEmail(req.body.country, req.body.city);
   res.send("Email Sent");
 });
 module.exports = router;

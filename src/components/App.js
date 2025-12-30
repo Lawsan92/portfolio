@@ -15,20 +15,11 @@ const App = () => {
       return;
     }
     hasVisited = true;
-    visitPushNotif();
     handleVisits();
     return () => {
       console.log("UNMOUNT");
     };
   }, []);
-
-  const visitPushNotif = async () => {
-    try {
-      await axios.post("/email");
-    } catch (error) {
-      console.error("Error sending push email:", error);
-    }
-  };
 
   const handleVisits = async () => {
     useGeoApify()
@@ -44,6 +35,7 @@ const App = () => {
           long: result.location.longitude,
           date: Date(),
         };
+        axios.post("/email", { country: data.country, city: data.city });
         let mountDate = new Date();
         const handleUnmount = () => {
           window.addEventListener("visibilitychange", () => {
