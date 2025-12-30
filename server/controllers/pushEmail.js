@@ -18,7 +18,7 @@ const pushEmail = (country, city) => {
       text: `New visitor to portfolio website from ${city}, ${country}`,
       html: `<b>New visitor to portfolio website from ${city}, ${country}</b>`,
     });
-    console.log("Message sent:", info.messageId);
+    console.log("Message sent:", info.messageId, city, country);
   })();
 };
 
